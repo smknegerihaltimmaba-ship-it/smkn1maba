@@ -1,6 +1,55 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
 <head>
+    <body>
+    <!-- HEADER ASLI WEBSITE ANDA -->
+    <header class="...">
+        <!-- ... isi header asli ... -->
+        
+        <!-- SISIPKAN TOMBOL SWITCH DI SINI (CONTOH) -->
+        <div class="flex space-x-2">
+            <button onclick="switchMode('public')" id="btn-public" class="px-3 py-1 text-xs rounded bg-yellow-500 font-bold">Public</button>
+            <button onclick="switchMode('admin')" id="btn-admin" class="px-3 py-1 text-xs rounded bg-blue-800 text-white">Admin</button>
+        </div>
+    </header>
+
+    <!-- WRAPPER UNTUK KONTEN PUBLIC UTAMA ANDA -->
+    <div id="view-public" class="block">
+        <!-- SEMUA KODE WEBSITE ASLI ANDA MASUK DI SINI -->
+    </div>
+
+    <!-- SISIPKAN SECTION ADMIN DI SINI (TERSEMBUNYI SECARA DEFAULT) -->
+    <div id="view-admin" class="hidden container mx-auto px-4 py-8">
+        <div class="bg-white rounded-xl shadow-md p-6 border">
+            <h2 class="text-xl font-bold text-blue-900 mb-4"><i class="fa-solid fa-gauge mr-2"></i>Dashboard Admin Sekolah</h2>
+            
+            <!-- Form Tambah -->
+            <div class="bg-gray-50 p-4 rounded-lg border mb-6">
+                <h3 class="font-bold text-blue-900 mb-2">Tambah Data Jurusan</h3>
+                <form id="form-jurusan" onsubmit="tambahJurusan(event)" class="grid md:grid-cols-3 gap-3">
+                    <input type="text" id="nama-jurusan" placeholder="Nama Jurusan" class="border p-2 rounded text-sm" required>
+                    <input type="text" id="desc-jurusan" placeholder="Deskripsi Singkat" class="border p-2 rounded text-sm" required>
+                    <button type="submit" class="bg-blue-600 text-white font-bold py-2 px-4 rounded text-sm">Simpan</button>
+                </form>
+            </div>
+
+            <!-- Tabel Data -->
+            <h3 class="font-bold text-blue-900 mb-2">Daftar Jurusan</h3>
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-blue-900 text-white text-sm">
+                        <th class="p-2">No</th>
+                        <th class="p-2">Nama Jurusan</th>
+                        <th class="p-2">Deskripsi</th>
+                        <th class="p-2 text-center">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="admin-jurusan-table" class="text-sm divide-y"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SMK Negeri 1 Halmahera Timur (SMKN 1 Maba) | Portal Resmi Sekolah Vokasi</title>
@@ -133,7 +182,7 @@
                     <a href="#beranda" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-amber-400 transition">Beranda</a>
                     <a href="#profil" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-amber-400 transition">Profil</a>
                     <a href="#jurusan" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-amber-400 transition">Kompetensi Keahlian</a>
-                    <a href="#pkl-bkk" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-amber-400 transition">PKL & BKK</a>
+                    <a href="#pkl-bkk" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-amber-400 transition">PKL </a>
                     <a href="#akademik" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-amber-400 transition">Layanan Akademik</a>
                     <a href="#berita" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-amber-400 transition">Berita</a>
                     <a href="#kontak" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-amber-400 transition">Kontak</a>
@@ -165,7 +214,7 @@
             <a href="#beranda" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Beranda</a>
             <a href="#profil" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Profil & Identitas</a>
             <a href="#jurusan" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Kompetensi Keahlian (Jurusan)</a>
-            <a href="#pkl-bkk" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Sistem PKL & BKK Industri</a>
+            <a href="#pkl-bkk" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Sistem PKL Industri</a>
             <a href="#akademik" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">PPDB, Cek NISN & Jadwal</a>
             <a href="#berita" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Berita & Galeri Praktik</a>
             <a href="#kontak" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Hubungi Kami</a>
@@ -478,11 +527,11 @@
                         </tr>
                         <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50">
                             <th class="py-3.5 px-4 font-semibold text-slate-500 dark:text-slate-400">Waktu Penyelenggaraan</th>
-                            <td class="py-3.5 px-4">Pagi / 6 Hari Kerja (Senin – Sabtu, Waktu Indonesia Timur / WIT)</td>
+                            <td class="py-3.5 px-4">Pagi / 6 Hari Kerja (Senin – Jumat, Waktu Indonesia Timur / WIT)</td>
                         </tr>
                         <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50">
                             <th class="py-3.5 px-4 font-semibold text-slate-500 dark:text-slate-400">Kontak Resmi & Pos-el</th>
-                            <td class="py-3.5 px-4">Telp/WA: 0853-1188-4115 | Email: smkn1maba@gmail.com | Web: smkn1haltim.sch.id</td>
+                            <td class="py-3.5 px-4">Telp/WA: 0822-5061-6906 | Email: smknegerihaltimmaba@gmail.com | Web: https://smknegerihaltimmaba-ship-it.github.io</td>
                         </tr>
                     </tbody>
                 </table>
@@ -676,7 +725,7 @@
                         </div>
                         <div>
                             <h4 class="font-bold text-sm text-slate-900 dark:text-white">Perguruan Tinggi di Maluku Utara</h4>
-                            <p class="text-xs text-slate-500 dark:text-slate-400">UPT TIK & Fakultas Teknik Universitas Khairun (Unkhair) Ternate</p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">UPT TIK & Universitas Muhammadiyah Maluku Utara(UMMU) Ternate</p>
                         </div>
                     </div>
                 </div>
@@ -996,7 +1045,7 @@
                         <span class="text-brand-600 dark:text-amber-400 font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">Layanan Informasi Publik</span>
                         <h2 class="font-display font-extrabold text-3xl text-slate-900 dark:text-white mt-3">Hubungi SMK Negeri 1 Halmahera Timur</h2>
                         <p class="text-slate-600 dark:text-slate-400 mt-2 text-sm">
-                            Kunjungi kampus kami di Desa Soa Gimalaha, Kecamatan Kota Maba, atau kirimkan pesan terkait layanan akademik, legalisir ijazah, maupun kerja sama industri.
+                            Kunjungi sekolah kami di Desa Soa Gimalaha, Kecamatan Kota Maba, atau kirimkan pesan terkait layanan akademik, legalisir ijazah, maupun kerja sama industri.
                         </p>
                     </div>
 
@@ -1018,8 +1067,8 @@
                             <h3 class="font-bold text-sm text-slate-900 dark:text-white">Telepon & Pos-el Resmi</h3>
                             <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
                                 Telp/WA: <strong>0853-1188-4115</strong><br>
-                                Email: smkn1maba@gmail.com<br>
-                                Web: smkn1haltim.sch.id
+                                Email: smknegerihaltimmaba@gmail.com<br>
+                                Web: https://smknegerihaltimmaba-ship-it.github.io/
                             </p>
                         </div>
                     </div>
@@ -1138,7 +1187,7 @@
                         Jl. Poros Soagimalaha / Jl. Pendidikan, Desa Soa Gimalaha, Kec. Kota Maba, Kab. Halmahera Timur, Maluku Utara 97862
                     </p>
                     <p class="text-xs mt-2 text-slate-300">
-                        <i class="fa-solid fa-phone mr-1 text-emerald-400"></i> 0853-1188-4115<br>
+                        <i class="fa-solid fa-phone mr-1 text-emerald-400"></i> 0822-5061-6906<br>
                         <i class="fa-solid fa-envelope mr-1 text-amber-400"></i> smkn1maba@gmail.com
                     </p>
                 </div>
@@ -1579,10 +1628,10 @@
         }
 
         function fillDemoPPDB() {
-            document.getElementById('ppdb-nama').value = 'Alfian Ramadhan';
-            document.getElementById('ppdb-nisn').value = '0094827165';
-            document.getElementById('ppdb-smp').value = 'SMP Negeri 1 Maba';
-            document.getElementById('ppdb-wa').value = '085311884115';
+            document.getElementById('ppdb-nama').value = 'Alifiyana R.Buamonabot';
+            document.getElementById('ppdb-nisn').value = '3086873197';
+            document.getElementById('ppdb-smk').value = 'SMK Negeri 1 Maba';
+            document.getElementById('ppdb-wa').value = '082290485401';
             document.getElementById('ppdb-alamat').value = 'Desa Soa Gimalaha, Kec. Kota Maba';
             handlePPDBSubmit(new Event('submit'));
         }
@@ -1600,7 +1649,7 @@
         // NISN Lookup Database & Handler
         const sampleStudents = {
             '0067891234': {
-                nama: 'Fikri Haikal Tidore',
+                nama: 'Alifiyana R.Buamonabot',
                 nisn: '0067891234',
                 kelas: 'XII TJKT 1',
                 jurusan: 'Teknik Jaringan Komputer & Telekomunikasi (TJKT)',
@@ -1820,6 +1869,77 @@
             filterSchedule('TJKT');
             filterNews('ALL');
         };
+    </script>
+    <script>
+        // Data Jurusan (bisa disesuaikan dengan data asli website Anda)
+        let jurusanData = [
+            { id: 1, nama: "Teknik Jaringan Komputer & Telekomunikasi", desc: "Mempelajari instalasi jaringan, server, dan fiber optic." },
+            { id: 2, nama: "Teknik Ketenagalistrikan", desc: "Fokus pada instalasi tenaga listrik industri dan rumah tangga." },
+            { id: 3, nama: "Teknik Otomotif / Alat Berat", desc: "Perawatan dan perbaikan mesin kendaraan ringan serta alat berat." }
+        ];
+
+        // Fungsi Ganti Tampilan
+        function switchMode(mode) {
+            const pubView = document.getElementById('view-public');
+            const admView = document.getElementById('view-admin');
+            const btnPub = document.getElementById('btn-public');
+            const btnAdm = document.getElementById('btn-admin');
+
+            if (mode === 'public') {
+                pubView.classList.remove('hidden');
+                admView.classList.add('hidden');
+                if(btnPub) btnPub.className = "px-3 py-1 text-xs rounded bg-yellow-500 font-bold text-blue-900 shadow";
+                if(btnAdm) btnAdm.className = "px-3 py-1 text-xs rounded bg-blue-800 text-white";
+            } else {
+                pubView.classList.add('hidden');
+                admView.classList.remove('hidden');
+                if(btnAdm) btnAdm.className = "px-3 py-1 text-xs rounded bg-yellow-500 font-bold text-blue-900 shadow";
+                if(btnPub) btnPub.className = "px-3 py-1 text-xs rounded bg-blue-800 text-white";
+                renderAdmin();
+            }
+        }
+
+        // Render Tabel Admin
+        function renderAdmin() {
+            const tbody = document.getElementById('admin-jurusan-table');
+            if (!tbody) return;
+            tbody.innerHTML = '';
+            if (jurusanData.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="4" class="p-4 text-center text-gray-500">Belum ada data.</td></tr>`;
+                return;
+            }
+            jurusanData.forEach((item, index) => {
+                tbody.innerHTML += `
+                    <tr class="hover:bg-gray-50">
+                        <td class="p-2">${index + 1}</td>
+                        <td class="p-2 font-semibold text-blue-900">${item.nama}</td>
+                        <td class="p-2 text-gray-600">${item.desc}</td>
+                        <td class="p-2 text-center">
+                            <button onclick="hapusJurusan(${item.id})" class="bg-red-500 text-white px-2 py-1 rounded text-xs">Hapus</button>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+
+        // Tambah Data
+        function tambahJurusan(e) {
+            e.preventDefault();
+            const nama = document.getElementById('nama-jurusan').value;
+            const desc = document.getElementById('desc-jurusan').value;
+            jurusanData.push({ id: Date.now(), nama, desc });
+            document.getElementById('form-jurusan').reset();
+            renderAdmin();
+            alert("Data berhasil ditambahkan!");
+        }
+
+        // Hapus Data
+        function hapusJurusan(id) {
+            if (confirm("Yakin ingin menghapus data ini?")) {
+                jurusanData = jurusanData.filter(item => item.id !== id);
+                renderAdmin();
+            }
+        }
     </script>
 </body>
 </html>

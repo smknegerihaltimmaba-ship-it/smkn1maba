@@ -671,122 +671,66 @@
 
     <!-- ==================== ALPINE.JS LOGIC ==================== -->
     <script>
-        function schoolApp() {
-            return {
-                currentView: 'public', // 'public', 'login-admin', 'dashboard-admin'
-                adminUser: '',
-                adminPass: '',
-                adminModal: null,
+  // ==========================================
+  // 1. KODE UNTUK MEMUNCULKAN POP-UP LOGIN
+  // ==========================================
+  const loginModal = document.getElementById('loginModal');
+  
+  function openModal() {
+    if (loginModal) loginModal.classList.remove('hidden');
+  }
+  
+  function closeModal() {
+    if (loginModal) loginModal.classList.add('hidden');
+  }
 
-                // Data storage in LocalStorage
-                ppdbList: JSON.parse(localStorage.getItem('smk_ppdb_list')) || [
-                    { code: 'PPDB-2026-9012', nama: 'Budi Santoso', nisn: '0081234567', asalSekolah: 'SMPN 1 Maba', jurusan: 'TJKT', whatsapp: '08123456789' },
-                    { code: 'PPDB-2026-4431', nama: 'Siti Aminah', nisn: '0087654321', asalSekolah: 'SMPN 2 Maba', jurusan: 'TITL', whatsapp: '08198765432' }
-                ],
-                announcements: JSON.parse(localStorage.getItem('smk_announcements')) || [
-                    { tanggal: '10 November 2026', judul: 'Pengajuan Proposal PKL Kelas XI', isi: 'Siswa diwajibkan mengunggah berkas usulan tempat magang/PKL melalui portal.' },
-                    { tanggal: '01 November 2026', judul: 'Pembukaan PPDB Online 2026/2027', isi: 'Pendaftaran calon siswa baru resmi dibuka secara online melalui formulir.' }
-                ],
+  // Fungsi tambahan untuk menu mobile (HP)
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu) menu.classList.toggle('hidden');
+  }
 
-                // Public Form state
-                ppdbForm: { nama: '', nisn: '', asalSekolah: '', jurusan: '', whatsapp: '', alamat: '' },
-                ppdbSuccess: false,
-                regCode: '',
-                searchNisn: '',
-                nisnResult: null,
-                nisnData: {},
 
-                // Edit forms
-                editIndex: null,
-                editForm: { nama: '', nisn: '', asalSekolah: '', jurusan: '', whatsapp: '' },
-                annEditIdx: null,
-                annForm: { tanggal: '', judul: '', isi: '' },
+  // ==========================================
+  // 2. KODE UNTUK PROSES LOGIN KE GOOGLE SHEETS
+  // ==========================================
+  const loginForm = document.querySelector('form');
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwoDOArXwWO2rFVse_80PNy-gDpf-kthAKu1PBHg5dBAA6co1B0E96KBrj_itSb5Nce/exec'; 
 
-                // Public PPDB Submit
-                submitPpdb() {
-                    const code = 'PPDB-2026-' + Math.floor(1000 + Math.random() * 9000);
-                    this.regCode = code;
-                    const newEntry = { ...this.ppdbForm, code: code };
-                    this.ppdbList.unshift(newEntry);
-                    localStorage.setItem('smk_ppdb_list', JSON.stringify(this.ppdbList));
-                    this.ppdbSuccess = true;
-                    this.ppdbForm = { nama: '', nisn: '', asalSekolah: '', jurusan: '', whatsapp: '', alamat: '' };
-                    setTimeout(() => { this.ppdbSuccess = false; }, 8000);
-                },
+  if(loginForm) {
+    loginForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const btnSubmit = loginForm.querySelector('button[type="submit"]');
+      const originalText = btnSubmit.innerHTML;
+      btnSubmit.innerHTML = 'Memeriksa...';
+      btnSubmit.disabled = true;
 
-                // Check NISN (Public)
-                checkNisn() {
-                    const found = this.ppdbList.find(s => s.nisn === this.searchNisn.trim()) || [
-                        { nisn: '0081234567', nama: 'Muhammad Rizki', jurusan: 'TJKT' }
-                    ].find(s => s.nisn === this.searchNisn.trim());
+      const user = document.getElementById('username').value;
+      const pass = document.getElementById('password').value;
 
-                    if (found) {
-                        this.nisnResult = true;
-                        this.nisnData = found;
-                    } else if (this.searchNisn.trim() !== '') {
-                        this.nisnResult = false;
-                    } else {
-                        this.nisnResult = null;
-                    }
-                },
-
-                // Admin Login handler
-                handleAdminLogin() {
-                    if (this.adminUser.trim() === 'admin' && this.adminPass.trim() === 'admin123') {
-                        this.currentView = 'dashboard-admin';
-                    } else {
-                        alert('Username atau Password Admin salah! Gunakan: admin / admin123');
-                    }
-                },
-
-                // Admin CRUD: Edit PPDB
-                editPpdb(index) {
-                    this.editIndex = index;
-                    this.editForm = { ...this.ppdbList[index] };
-                    this.adminModal = 'edit-ppdb';
-                },
-                saveEditPpdb() {
-                    this.ppdbList[this.editIndex] = { ...this.ppdbList[this.editIndex], ...this.editForm };
-                    localStorage.setItem('smk_ppdb_list', JSON.stringify(this.ppdbList));
-                    this.adminModal = null;
-                    alert('Data pendaftar PPDB berhasil diperbarui secara otomatis!');
-                },
-                deletePpdb(index) {
-                    if(confirm('Yakin ingin menghapus data pendaftar ini?')) {
-                        this.ppdbList.splice(index, 1);
-                        localStorage.setItem('smk_ppdb_list', JSON.stringify(this.ppdbList));
-                    }
-                },
-
-                // Admin CRUD: Announcements
-                openAddAnnouncement() {
-                    this.annEditIdx = null;
-                    this.annForm = { tanggal: '', judul: '', isi: '' };
-                    this.adminModal = 'announcement';
-                },
-                editAnnouncement(index) {
-                    this.annEditIdx = index;
-                    this.annForm = { ...this.announcements[index] };
-                    this.adminModal = 'announcement';
-                },
-                saveAnnouncement() {
-                    if(this.annEditIdx !== null) {
-                        this.announcements[this.annEditIdx] = { ...this.annForm };
-                    } else {
-                        this.announcements.unshift({ ...this.annForm });
-                    }
-                    localStorage.setItem('smk_announcements', JSON.stringify(this.announcements));
-                    this.adminModal = null;
-                    alert('Pengumuman berhasil disimpan otomatis!');
-                },
-                deleteAnnouncement(index) {
-                    if(confirm('Hapus pengumuman ini?')) {
-                        this.announcements.splice(index, 1);
-                        localStorage.setItem('smk_announcements', JSON.stringify(this.announcements));
-                    }
-                }
-            }
+      fetch(scriptURL, {
+        method: 'POST',
+        body: JSON.stringify({ username: user, password: pass })
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.status === 'success') {
+          alert('Login Berhasil! Mengalihkan ke Dashboard...');
+          window.location.href = 'dashboard.html'; 
+        } else {
+          alert('Gagal: Username atau Password salah!');
+          btnSubmit.innerHTML = originalText;
+          btnSubmit.disabled = false;
         }
-    </script>
+      })
+      .catch(error => {
+        alert('Terjadi kesalahan jaringan!');
+        btnSubmit.innerHTML = originalText;
+        btnSubmit.disabled = false;
+      });
+    });
+  }
+</script>
 </body>
 </html>

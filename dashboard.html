@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin - SMK N 1 Haltim</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 font-sans">
+    <!-- Navbar Dashboard -->
+    <nav class="bg-blue-800 text-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="font-bold text-xl flex items-center gap-2">
+                <div class="w-8 h-8 bg-white text-blue-800 rounded-full flex items-center justify-center font-bold text-sm">S</div>
+                Admin Panel
+            </div>
+            <button onclick="logout()" class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" /></svg>
+                Logout
+            </button>
+        </div>
+    </nav>
+
+    <!-- Konten Utama Dashboard -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200">
+            <h1 class="text-3xl font-bold text-slate-800 mb-2">Selamat Datang, Administrator!</h1>
+            <p class="text-slate-600 mb-8 border-b pb-6">Anda telah berhasil masuk ke dalam sistem backend SMK Negeri 1 Halmahera Timur.</p>
+
+            <!-- Menu Card -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-blue-50 p-6 rounded-xl border border-blue-100 hover:shadow-md transition cursor-pointer">
+                    <h2 class="text-xl font-bold text-blue-800 mb-2">Kelola Profil</h2>
+                    <p class="text-slate-600 text-sm">Ubah sambutan Kepala Sekolah dan visi misi institusi.</p>
+                </div>
+                
+                <div class="bg-yellow-50 p-6 rounded-xl border border-yellow-100 hover:shadow-md transition cursor-pointer">
+                    <h2 class="text-xl font-bold text-yellow-800 mb-2">Kelola Jurusan</h2>
+                    <p class="text-slate-600 text-sm">Update informasi terkait program keahlian TKJ, TITL, dan BKP.</p>
+                </div>
+                
+                <div class="bg-emerald-50 p-6 rounded-xl border border-emerald-100 hover:shadow-md transition cursor-pointer">
+                    <h2 class="text-xl font-bold text-emerald-800 mb-2">Data Pengguna</h2>
+                    <p class="text-slate-600 text-sm">Lihat data yang terhubung ke sistem Google Sheets.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Script Logout -->
+    <script>
+        function logout() {
+            // Mengarahkan kembali ke halaman utama (index.html)
+            window.location.replace('index.html');
+        }
+    </script>
+</body>
+</html>

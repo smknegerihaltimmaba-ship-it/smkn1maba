@@ -5,23 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SMK Negeri 1 Halmahera Timur</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Import Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, .font-poppins { font-family: 'Poppins', sans-serif; }
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans">
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-blue-200 selection:text-blue-900">
 
-    <nav class="bg-white shadow-md sticky top-0 z-50">
+    <!-- Navbar Glassmorphism -->
+    <nav class="bg-white/80 backdrop-blur-lg border-b border-slate-200/50 sticky top-0 z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center gap-3">
-                        <div class="w-10 h-10 bg-blue-700 text-white rounded-full flex items-center justify-center font-bold text-xl shadow-lg">S</div>
-                        <span class="font-bold text-xl md:text-2xl text-slate-800 tracking-tight">SMK N 1 HALTIM</span>
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-xl flex items-center justify-center font-poppins font-bold text-2xl shadow-lg shadow-blue-500/30">S</div>
+                    <div class="flex flex-col">
+                        <span class="font-poppins font-bold text-xl leading-tight text-slate-800 tracking-tight">SMK N 1 HALTIM</span>
+                        <span class="text-[10px] font-semibold tracking-wider text-slate-500 uppercase">Maluku Utara</span>
                     </div>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#" class="text-slate-600 hover:text-blue-700 font-medium">Beranda</a>
-                    <a href="#sambutan" class="text-slate-600 hover:text-blue-700 font-medium">Sambutan</a>
-                    <a href="#jurusan" class="text-slate-600 hover:text-blue-700 font-medium">Jurusan</a>
-                    <button onclick="openModal()" class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-2.5 rounded-lg font-medium shadow-md transition">
+                    <a href="#" class="text-sm font-semibold text-slate-600 hover:text-blue-700 transition">Beranda</a>
+                    <a href="#sambutan" class="text-sm font-semibold text-slate-600 hover:text-blue-700 transition">Profil</a>
+                    <a href="#jurusan" class="text-sm font-semibold text-slate-600 hover:text-blue-700 transition">Program Keahlian</a>
+                    <button onclick="openModal()" class="bg-slate-900 hover:bg-blue-700 text-white px-6 py-2.5 rounded-full text-sm font-semibold shadow-md hover:shadow-xl transition-all duration-300 flex items-center gap-2">
                         Login Admin
                     </button>
                 </div>
@@ -29,80 +37,147 @@
         </div>
     </nav>
 
-    <div class="relative bg-blue-900 text-white overflow-hidden">
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 flex flex-col items-center text-center">
-            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
-                Selamat Datang di<br/><span class="text-yellow-400">SMK Negeri 1 Halmahera Timur</span>
+    <!-- Hero Section Modern -->
+    <div class="relative bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white overflow-hidden">
+        <!-- Dekorasi Background -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-40 flex flex-col items-center text-center z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-8">
+                <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                <span class="text-xs font-semibold tracking-wider text-blue-100 uppercase">Penerimaan Siswa Baru Akan Segera Dibuka</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-poppins font-extrabold tracking-tight mb-6 leading-tight">
+                Masa Depan Vokasi <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300">Dimulai Dari Sini.</span>
             </h1>
-            <p class="text-lg md:text-xl text-blue-100 max-w-2xl leading-relaxed">
-                Mencetak generasi vokasi yang unggul, terampil, dan siap kerja.
+            <p class="text-lg md:text-xl text-blue-100/80 max-w-2xl mb-10 leading-relaxed font-light">
+                SMK Negeri 1 Halmahera Timur berdedikasi mencetak generasi unggul, terampil, berkarakter, dan siap bersaing di dunia industri modern.
             </p>
+            <div class="flex gap-4">
+                <a href="#jurusan" class="bg-white text-blue-900 px-8 py-3.5 rounded-full font-bold shadow-lg shadow-white/20 hover:scale-105 transition-transform duration-300">Jelajahi Jurusan</a>
+                <a href="#sambutan" class="bg-blue-800/50 border border-blue-400/30 text-white backdrop-blur-md px-8 py-3.5 rounded-full font-bold hover:bg-blue-700/50 transition-colors duration-300">Profil Sekolah</a>
+            </div>
+        </div>
+        
+        <!-- Shape Divider Bawah -->
+        <div class="absolute bottom-0 w-full overflow-hidden leading-none">
+            <svg class="relative block w-full h-12 md:h-20" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.11,130.83,119.34,198.36,110.15Z" fill="#f8fafc"></path>
+            </svg>
         </div>
     </div>
 
-    <section id="sambutan" class="py-20 bg-white">
+    <!-- Sambutan Kepala Sekolah Premium -->
+    <section id="sambutan" class="py-24 bg-slate-50 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="w-full md:w-1/3 flex justify-center">
-                    <div class="w-64 h-64 bg-slate-200 rounded-2xl shadow-xl flex items-center justify-center border-4 border-white">
-                        <svg class="w-24 h-24 text-slate-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+            <div class="bg-white rounded-[2.5rem] shadow-xl shadow-slate-200/50 border border-slate-100 p-8 md:p-16 relative overflow-hidden">
+                <!-- Icon Quote Besar di Background -->
+                <svg class="absolute top-10 right-10 w-40 h-40 text-slate-50 opacity-50 rotate-180" fill="currentColor" viewBox="0 0 32 32"><path d="M10 8c-3.3 0-6 2.7-6 6v10h10V14H8c0-1.1.9-2 2-2h4V8h-4zm14 0c-3.3 0-6 2.7-6 6v10h10V14h-6c0-1.1.9-2 2-2h4V8h-4z"/></svg>
+
+                <div class="flex flex-col lg:flex-row items-center gap-16 relative z-10">
+                    <div class="w-full lg:w-1/3 flex justify-center">
+                        <!-- Bingkai Foto Aesthetic -->
+                        <div class="relative group">
+                            <div class="absolute -inset-4 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full opacity-20 group-hover:opacity-40 blur-lg transition duration-500"></div>
+                            <div class="w-64 h-64 md:w-80 md:h-80 bg-slate-100 rounded-full overflow-hidden border-8 border-white shadow-2xl relative z-10 flex items-center justify-center">
+                                <svg class="w-32 h-32 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="w-full md:w-2/3">
-                    <div class="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4">PROFIL SEKOLAH</div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-6">Sambutan Kepala Sekolah</h2>
-                    <p id="tampil-sambutan" class="text-slate-600 mb-6 leading-relaxed text-lg italic">Memuat data...</p>
-                    <div class="border-l-4 border-blue-700 pl-4">
-                        <p id="tampil-kepsek" class="font-bold text-slate-800 text-lg">Memuat...</p>
-                        <p class="text-sm text-slate-500">Kepala SMK Negeri 1 Halmahera Timur</p>
+                    <div class="w-full lg:w-2/3">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-bold tracking-widest uppercase mb-6">
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                            Profil Institusi
+                        </div>
+                        <h2 class="text-4xl md:text-5xl font-poppins font-bold text-slate-800 mb-8">Sambutan Kepala Sekolah</h2>
+                        
+                        <!-- Whitespace-pre-wrap ditambahkan agar format paragraf dari Google Sheets terjaga -->
+                        <p id="tampil-sambutan" class="text-slate-600 mb-8 leading-relaxed text-lg whitespace-pre-wrap">
+                            Memuat data dari server...
+                        </p>
+                        
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-1 bg-blue-600 rounded-full"></div>
+                            <div>
+                                <p id="tampil-kepsek" class="font-poppins font-bold text-slate-800 text-xl">Memuat...</p>
+                                <p class="text-sm font-medium text-slate-500">Kepala SMK Negeri 1 Halmahera Timur</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- BAGIAN JURUSAN DINAMIS -->
-    <section id="jurusan" class="py-20 bg-slate-50">
+    <!-- Program Keahlian dengan Card Modern -->
+    <section id="jurusan" class="py-24 bg-white relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Program Keahlian</h2>
-                <div class="w-24 h-1 bg-blue-700 mx-auto rounded-full"></div>
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-poppins font-bold text-slate-800 mb-4">Program Keahlian</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto text-lg">Mempersiapkan tenaga kerja profesional melalui kurikulum yang diselaraskan dengan kebutuhan industri terkini.</p>
             </div>
             
-            <div id="container-jurusan" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <p class="text-center text-slate-500 col-span-3">Memuat data jurusan dari server...</p>
+            <div id="container-jurusan" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Data akan dimuat disini oleh Javascript -->
+                <div class="col-span-full text-center py-10">
+                    <div class="inline-block animate-spin w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full mb-4"></div>
+                    <p class="text-slate-500 font-medium">Mengambil data program keahlian...</p>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer Simple Premium -->
+    <footer class="bg-slate-900 border-t border-slate-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-slate-800 text-white rounded-lg flex items-center justify-center font-poppins font-bold text-xl">S</div>
+                <span class="font-poppins font-bold text-xl text-white tracking-tight">SMK N 1 HALTIM</span>
+            </div>
+            <p class="text-slate-400 text-sm font-medium">© 2026 SMK Negeri 1 Halmahera Timur. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- MODAL LOGIN GLASSMORPHISM -->
     <div id="loginModal" class="fixed inset-0 z-[100] hidden">
-        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeModal()"></div>
-        <div class="flex items-center justify-center min-h-screen px-4">
-            <div class="relative bg-white rounded-2xl w-full max-w-md overflow-hidden shadow-2xl">
-                <div class="bg-blue-700 px-6 py-4 flex justify-between">
-                    <h3 class="text-lg font-bold text-white">Login Administrator</h3>
-                    <button onclick="closeModal()" class="text-blue-200 hover:text-white">&times;</button>
+        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+        <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:p-0">
+            <div class="relative bg-white rounded-[2rem] text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:max-w-md w-full border border-slate-100">
+                <div class="px-8 pt-8 pb-6 border-b border-slate-100 flex justify-between items-center">
+                    <div>
+                        <h3 class="text-2xl font-poppins font-bold text-slate-800">Login Admin</h3>
+                        <p class="text-sm text-slate-500 mt-1">Masuk untuk mengelola konten website</p>
+                    </div>
+                    <button onclick="closeModal()" class="w-8 h-8 bg-slate-100 text-slate-500 hover:bg-red-100 hover:text-red-600 rounded-full flex items-center justify-center transition-colors">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                    </button>
                 </div>
-                <div class="px-6 py-8">
+                <div class="px-8 py-8 bg-slate-50/50">
                     <form id="formLoginBackend">
                         <div class="mb-5">
-                            <label class="block text-sm font-medium mb-2">Username</label>
-                            <input type="text" id="username" required class="w-full px-4 py-3 border rounded-lg">
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Username</label>
+                            <input type="text" id="username" required class="w-full px-5 py-3.5 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition-all font-medium text-slate-800 shadow-sm" placeholder="Masukkan username">
                         </div>
-                        <div class="mb-6">
-                            <label class="block text-sm font-medium mb-2">Password</label>
-                            <input type="password" id="password" required class="w-full px-4 py-3 border rounded-lg">
+                        <div class="mb-8">
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Password</label>
+                            <input type="password" id="password" required class="w-full px-5 py-3.5 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition-all font-medium text-slate-800 shadow-sm" placeholder="••••••••">
                         </div>
-                        <button type="submit" class="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-4 rounded-lg">Masuk</button>
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg shadow-blue-600/30 hover:shadow-blue-600/50 transition-all active:scale-[0.98]">
+                            Masuk ke Dashboard
+                        </button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- SCRIPT LOGIC -->
     <script>
         // ==========================================
-        // GANTI DENGAN URL API BARU ANDA
+        // GANTI DENGAN URL API BARU ANDA DI BAWAH INI
         // ==========================================
         const scriptURL = 'https://script.google.com/macros/s/AKfycbwO-KSvWN81s52CJhNpxRv6c1j28NA-A-fRCGr87MDzjyzagtVgeNzfLFTPoyfrn3ZC/exec'; 
 
@@ -110,7 +185,7 @@
         function openModal() { loginModal.classList.remove('hidden'); }
         function closeModal() { loginModal.classList.add('hidden'); }
 
-        // Ambil Data Profil & Jurusan
+        // Fetch Data dengan Template Card Modern
         document.addEventListener("DOMContentLoaded", function() {
             fetch(scriptURL)
             .then(res => res.json())
@@ -124,9 +199,13 @@
                     
                     data.jurusan.forEach(item => {
                         const card = `
-                        <div class="bg-white p-8 rounded-2xl shadow border border-slate-100 hover:shadow-md transition">
-                            <h3 class="text-2xl font-bold text-slate-800 mb-2">${item.singkatan}</h3>
-                            <p class="text-sm text-blue-600 font-semibold mb-4">${item.nama}</p>
+                        <div class="group bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-bl-full -z-10 group-hover:scale-125 transition-transform duration-500"></div>
+                            <div class="w-14 h-14 bg-blue-100/50 text-blue-700 rounded-2xl flex items-center justify-center mb-6 shadow-sm border border-blue-100 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+                                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                            </div>
+                            <h3 class="text-2xl font-poppins font-bold text-slate-800 mb-3 group-hover:text-blue-700 transition-colors">${item.singkatan}</h3>
+                            <p class="text-slate-600 font-medium leading-relaxed">${item.nama}</p>
                         </div>
                         `;
                         container.innerHTML += card;
@@ -135,13 +214,13 @@
             }).catch(e => console.error(e));
         });
 
-        // Login
+        // Login Script
         const loginForm = document.getElementById('formLoginBackend');
         if(loginForm) {
             loginForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 const btn = loginForm.querySelector('button[type="submit"]');
-                btn.innerHTML = 'Memeriksa...'; btn.disabled = true;
+                btn.innerHTML = 'Memeriksa Kredensial...'; btn.disabled = true;
 
                 fetch(scriptURL, {
                     method: 'POST',
@@ -150,8 +229,8 @@
                 .then(res => res.json())
                 .then(data => {
                     if (data.status === 'success') { window.location.href = 'dashboard.html'; } 
-                    else { alert('Gagal Login!'); btn.innerHTML = 'Masuk'; btn.disabled = false; }
-                }).catch(e => { alert('Error!'); btn.innerHTML = 'Masuk'; btn.disabled = false; });
+                    else { alert('Gagal Login! Periksa kembali Username/Password Anda.'); btn.innerHTML = 'Masuk ke Dashboard'; btn.disabled = false; }
+                }).catch(e => { alert('Terjadi kesalahan koneksi.'); btn.innerHTML = 'Masuk ke Dashboard'; btn.disabled = false; });
             });
         }
     </script>

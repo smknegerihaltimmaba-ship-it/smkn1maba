@@ -8,7 +8,6 @@
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans">
 
-    <!-- Navigasi -->
     <nav class="bg-white shadow-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20">
@@ -19,10 +18,10 @@
                     </div>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#" class="text-slate-600 hover:text-blue-700 font-medium transition">Beranda</a>
-                    <a href="#sambutan" class="text-slate-600 hover:text-blue-700 font-medium transition">Sambutan</a>
-                    <a href="#jurusan" class="text-slate-600 hover:text-blue-700 font-medium transition">Jurusan</a>
-                    <button onclick="openModal()" class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-2.5 rounded-lg font-medium shadow-md hover:shadow-lg transition flex items-center gap-2">
+                    <a href="#" class="text-slate-600 hover:text-blue-700 font-medium">Beranda</a>
+                    <a href="#sambutan" class="text-slate-600 hover:text-blue-700 font-medium">Sambutan</a>
+                    <a href="#jurusan" class="text-slate-600 hover:text-blue-700 font-medium">Jurusan</a>
+                    <button onclick="openModal()" class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-2.5 rounded-lg font-medium shadow-md transition">
                         Login Admin
                     </button>
                 </div>
@@ -30,39 +29,30 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <div class="relative bg-blue-900 text-white overflow-hidden">
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 flex flex-col items-center text-center">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
-                Selamat Datang di<br/>
-                <span class="text-yellow-400">SMK Negeri 1 Halmahera Timur</span>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 flex flex-col items-center text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
+                Selamat Datang di<br/><span class="text-yellow-400">SMK Negeri 1 Halmahera Timur</span>
             </h1>
-            <p class="text-lg md:text-xl text-blue-100 max-w-2xl mb-10 leading-relaxed">
+            <p class="text-lg md:text-xl text-blue-100 max-w-2xl leading-relaxed">
                 Mencetak generasi vokasi yang unggul, terampil, dan siap kerja.
             </p>
         </div>
     </div>
 
-    <!-- Sambutan Kepala Sekolah -->
     <section id="sambutan" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <div class="w-full md:w-1/3 flex justify-center">
-                    <div class="w-64 h-64 md:w-72 md:h-72 bg-slate-200 rounded-2xl shadow-xl overflow-hidden flex items-center justify-center border-4 border-white">
+                    <div class="w-64 h-64 bg-slate-200 rounded-2xl shadow-xl flex items-center justify-center border-4 border-white">
                         <svg class="w-24 h-24 text-slate-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
                     </div>
                 </div>
                 <div class="w-full md:w-2/3">
-                    <div class="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4 tracking-wide">PROFIL SEKOLAH</div>
+                    <div class="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4">PROFIL SEKOLAH</div>
                     <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-6">Sambutan Kepala Sekolah</h2>
-                    
-                    <!-- ID ini digunakan Javascript untuk mengubah teks -->
-                    <p id="tampil-sambutan" class="text-slate-600 mb-6 leading-relaxed text-lg italic">
-                        Memuat data dari server...
-                    </p>
-                    
+                    <p id="tampil-sambutan" class="text-slate-600 mb-6 leading-relaxed text-lg italic">Memuat data...</p>
                     <div class="border-l-4 border-blue-700 pl-4">
-                        <!-- ID ini digunakan Javascript untuk mengubah teks -->
                         <p id="tampil-kepsek" class="font-bold text-slate-800 text-lg">Memuat...</p>
                         <p class="text-sm text-slate-500">Kepala SMK Negeri 1 Halmahera Timur</p>
                     </div>
@@ -71,48 +61,37 @@
         </div>
     </section>
 
-    <!-- Program Keahlian -->
+    <!-- BAGIAN JURUSAN DINAMIS -->
     <section id="jurusan" class="py-20 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Program Keahlian</h2>
                 <div class="w-24 h-1 bg-blue-700 mx-auto rounded-full"></div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-2xl shadow border border-slate-100">
-                    <h3 class="text-2xl font-bold text-slate-800 mb-2">TKJ</h3>
-                    <p class="text-sm text-blue-600 font-semibold mb-4">Teknik Komputer dan Jaringan</p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow border border-slate-100">
-                    <h3 class="text-2xl font-bold text-slate-800 mb-2">TITL</h3>
-                    <p class="text-sm text-yellow-600 font-semibold mb-4">Teknik Instalasi Tenaga Listrik</p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow border border-slate-100">
-                    <h3 class="text-2xl font-bold text-slate-800 mb-2">BKP</h3>
-                    <p class="text-sm text-emerald-600 font-semibold mb-4">Bisnis Konstruksi dan Properti</p>
-                </div>
+            
+            <div id="container-jurusan" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <p class="text-center text-slate-500 col-span-3">Memuat data jurusan dari server...</p>
             </div>
         </div>
     </section>
 
-    <!-- MODAL LOGIN -->
     <div id="loginModal" class="fixed inset-0 z-[100] hidden">
         <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeModal()"></div>
-        <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:p-0">
-            <div class="relative bg-white rounded-2xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:max-w-md w-full">
-                <div class="bg-blue-700 px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center justify-center min-h-screen px-4">
+            <div class="relative bg-white rounded-2xl w-full max-w-md overflow-hidden shadow-2xl">
+                <div class="bg-blue-700 px-6 py-4 flex justify-between">
                     <h3 class="text-lg font-bold text-white">Login Administrator</h3>
                     <button onclick="closeModal()" class="text-blue-200 hover:text-white">&times;</button>
                 </div>
                 <div class="px-6 py-8">
                     <form id="formLoginBackend">
                         <div class="mb-5">
-                            <label class="block text-sm font-medium text-slate-700 mb-2">Username</label>
-                            <input type="text" id="username" required class="w-full px-4 py-3 border border-slate-300 rounded-lg">
+                            <label class="block text-sm font-medium mb-2">Username</label>
+                            <input type="text" id="username" required class="w-full px-4 py-3 border rounded-lg">
                         </div>
                         <div class="mb-6">
-                            <label class="block text-sm font-medium text-slate-700 mb-2">Password</label>
-                            <input type="password" id="password" required class="w-full px-4 py-3 border border-slate-300 rounded-lg">
+                            <label class="block text-sm font-medium mb-2">Password</label>
+                            <input type="password" id="password" required class="w-full px-4 py-3 border rounded-lg">
                         </div>
                         <button type="submit" class="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-4 rounded-lg">Masuk</button>
                     </form>
@@ -121,60 +100,58 @@
         </div>
     </div>
 
-    <!-- SCRIPT GABUNGAN -->
     <script>
+        // ==========================================
+        // GANTI DENGAN URL API BARU ANDA
+        // ==========================================
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwO-KSvWN81s52CJhNpxRv6c1j28NA-A-fRCGr87MDzjyzagtVgeNzfLFTPoyfrn3ZC/exec'; 
 
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbz0hEtXfuSwrsdGP4NfcIOTgIw7ZO16pr0l8R8lzRpcbjSRY6QCiLh6ztbvy3rVUu2_/exec'; 
-
-        // 1. Script Tampil Modal
         const loginModal = document.getElementById('loginModal');
         function openModal() { loginModal.classList.remove('hidden'); }
         function closeModal() { loginModal.classList.add('hidden'); }
 
-        // 2. Script Mengambil Data Profil dari Sheets saat web dibuka
+        // Ambil Data Profil & Jurusan
         document.addEventListener("DOMContentLoaded", function() {
             fetch(scriptURL)
-            .then(response => response.json())
+            .then(res => res.json())
             .then(data => {
                 if(data.status === 'success') {
                     document.getElementById('tampil-kepsek').innerText = data.profil.namaKepsek;
                     document.getElementById('tampil-sambutan').innerText = data.profil.sambutan;
+
+                    const container = document.getElementById('container-jurusan');
+                    container.innerHTML = ''; 
+                    
+                    data.jurusan.forEach(item => {
+                        const card = `
+                        <div class="bg-white p-8 rounded-2xl shadow border border-slate-100 hover:shadow-md transition">
+                            <h3 class="text-2xl font-bold text-slate-800 mb-2">${item.singkatan}</h3>
+                            <p class="text-sm text-blue-600 font-semibold mb-4">${item.nama}</p>
+                        </div>
+                        `;
+                        container.innerHTML += card;
+                    });
                 }
-            }).catch(error => console.error('Error fetching data:', error));
+            }).catch(e => console.error(e));
         });
 
-        // 3. Script Login
+        // Login
         const loginForm = document.getElementById('formLoginBackend');
         if(loginForm) {
             loginForm.addEventListener('submit', function(e) {
                 e.preventDefault();
-                const btnSubmit = loginForm.querySelector('button[type="submit"]');
-                btnSubmit.innerHTML = 'Memeriksa...';
-                btnSubmit.disabled = true;
-
-                const user = document.getElementById('username').value;
-                const pass = document.getElementById('password').value;
+                const btn = loginForm.querySelector('button[type="submit"]');
+                btn.innerHTML = 'Memeriksa...'; btn.disabled = true;
 
                 fetch(scriptURL, {
                     method: 'POST',
-                    body: JSON.stringify({ action: 'login', username: user, password: pass })
+                    body: JSON.stringify({ action: 'login', username: username.value, password: password.value })
                 })
-                .then(response => response.json())
+                .then(res => res.json())
                 .then(data => {
-                    if (data.status === 'success') {
-                        alert('Login Berhasil!');
-                        window.location.href = 'dashboard.html'; 
-                    } else {
-                        alert('Gagal: Username atau Password salah!');
-                        btnSubmit.innerHTML = 'Masuk';
-                        btnSubmit.disabled = false;
-                    }
-                })
-                .catch(error => {
-                    alert('Terjadi kesalahan jaringan!');
-                    btnSubmit.innerHTML = 'Masuk';
-                    btnSubmit.disabled = false;
-                });
+                    if (data.status === 'success') { window.location.href = 'dashboard.html'; } 
+                    else { alert('Gagal Login!'); btn.innerHTML = 'Masuk'; btn.disabled = false; }
+                }).catch(e => { alert('Error!'); btn.innerHTML = 'Masuk'; btn.disabled = false; });
             });
         }
     </script>

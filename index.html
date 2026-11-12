@@ -11,24 +11,25 @@
         h1, h2, h3, h4, .font-poppins { font-family: 'Poppins', sans-serif; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased">
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-blue-200 selection:text-blue-900">
 
     <!-- NAVBAR -->
     <nav class="bg-white/90 backdrop-blur-lg border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20">
                 <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-xl flex items-center justify-center font-poppins font-bold text-2xl shadow-lg shadow-blue-500/30">S</div>
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-xl flex items-center justify-center font-poppins font-bold text-xl md:text-2xl shadow-lg">S</div>
                     <div class="flex flex-col">
-                        <span class="font-poppins font-bold text-xl leading-tight tracking-tight">SMK N 1 HALTIM</span>
+                        <span class="font-poppins font-bold text-lg md:text-xl leading-tight tracking-tight">SMK N 1 HALTIM</span>
                         <span class="text-[10px] font-semibold text-slate-500 uppercase tracking-wider">Maluku Utara</span>
                     </div>
                 </div>
-                <div class="hidden md:flex items-center space-x-6">
+                <div class="hidden lg:flex items-center space-x-5">
                     <a href="#" class="text-sm font-semibold text-slate-600 hover:text-blue-700">Beranda</a>
                     <a href="#sambutan" class="text-sm font-semibold text-slate-600 hover:text-blue-700">Profil</a>
-                    <a href="#visimisi" class="text-sm font-semibold text-slate-600 hover:text-blue-700">Visi Misi</a>
-                    <a href="#jurusan" class="text-sm font-semibold text-slate-600 hover:text-blue-700">Program Keahlian</a>
+                    <a href="#jurusan" class="text-sm font-semibold text-slate-600 hover:text-blue-700">Jurusan</a>
+                    <a href="#pengumuman" class="text-sm font-semibold text-slate-600 hover:text-blue-700">Info</a>
+                    <a href="#galeri" class="text-sm font-semibold text-slate-600 hover:text-blue-700">Galeri</a>
                     <a href="#kontak" class="text-sm font-semibold text-slate-600 hover:text-blue-700">Kontak</a>
                     <button onclick="openModal()" class="bg-slate-900 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-semibold shadow-md transition-all">
                         Login Admin
@@ -39,27 +40,27 @@
     </nav>
 
     <!-- HERO SECTION -->
-    <div class="relative bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white overflow-hidden py-32 flex flex-col items-center text-center">
+    <div class="relative bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white overflow-hidden py-24 md:py-32 flex flex-col items-center text-center">
         <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
         <div class="relative max-w-5xl mx-auto px-4 z-10">
-            <h1 class="text-5xl md:text-7xl font-poppins font-extrabold tracking-tight mb-6 leading-tight">
+            <h1 class="text-4xl md:text-7xl font-poppins font-extrabold tracking-tight mb-6 leading-tight">
                 Masa Depan Vokasi <br/>
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300">Dimulai Dari Sini.</span>
             </h1>
-            <p class="text-lg text-blue-100/80 max-w-2xl mx-auto mb-10">SMK Negeri 1 Halmahera Timur berdedikasi mencetak generasi unggul, terampil, berkarakter, dan siap bersaing di dunia industri modern.</p>
+            <p class="text-lg md:text-xl text-blue-100/80 max-w-2xl mx-auto mb-10">Mencetak generasi unggul, terampil, berkarakter, dan siap bersaing di dunia industri modern.</p>
         </div>
     </div>
 
-    <!-- PROFIL / SAMBUTAN -->
-    <section id="sambutan" class="py-20 bg-white">
+    <!-- PROFIL & SAMBUTAN -->
+    <section id="sambutan" class="py-20 bg-white border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row items-center gap-12">
-                <div class="w-full lg:w-1/3 flex justify-center">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/3 flex justify-center">
                     <div class="w-64 h-64 bg-slate-100 rounded-full border-8 border-slate-50 shadow-xl flex items-center justify-center">
                         <svg class="w-24 h-24 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
                     </div>
                 </div>
-                <div class="w-full lg:w-2/3">
+                <div class="w-full md:w-2/3">
                     <h2 class="text-3xl font-poppins font-bold text-slate-800 mb-6">Sambutan Kepala Sekolah</h2>
                     <p id="tampil-sambutan" class="text-slate-600 mb-6 leading-relaxed whitespace-pre-wrap">Memuat data dari server...</p>
                     <div class="border-l-4 border-blue-600 pl-4">
@@ -72,21 +73,15 @@
     </section>
 
     <!-- VISI & MISI -->
-    <section id="visimisi" class="py-20 bg-slate-50 border-y border-slate-200">
+    <section id="visimisi" class="py-20 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100">
-                    <div class="w-14 h-14 bg-blue-100 text-blue-700 rounded-2xl flex items-center justify-center mb-6">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-                    </div>
-                    <h3 class="text-3xl font-poppins font-bold text-slate-800 mb-4">Visi</h3>
-                    <p id="tampil-visi" class="text-slate-600 leading-relaxed text-lg italic whitespace-pre-wrap">Memuat Visi...</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                    <h3 class="text-2xl font-poppins font-bold text-blue-700 mb-4 flex items-center gap-3"><span class="text-3xl">🎯</span> Visi</h3>
+                    <p id="tampil-visi" class="text-slate-600 leading-relaxed italic whitespace-pre-wrap">Memuat Visi...</p>
                 </div>
-                <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100">
-                    <div class="w-14 h-14 bg-indigo-100 text-indigo-700 rounded-2xl flex items-center justify-center mb-6">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
-                    </div>
-                    <h3 class="text-3xl font-poppins font-bold text-slate-800 mb-4">Misi</h3>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                    <h3 class="text-2xl font-poppins font-bold text-indigo-700 mb-4 flex items-center gap-3"><span class="text-3xl">🚀</span> Misi</h3>
                     <p id="tampil-misi" class="text-slate-600 leading-relaxed whitespace-pre-wrap">Memuat Misi...</p>
                 </div>
             </div>
@@ -96,54 +91,77 @@
     <!-- JURUSAN -->
     <section id="jurusan" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-poppins font-bold text-slate-800 mb-12">Program Keahlian</h2>
+            <h2 class="text-3xl md:text-4xl font-poppins font-bold text-slate-800 mb-12">Program Keahlian</h2>
             <div id="container-jurusan" class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-                <p class="col-span-full text-slate-500">Memuat data jurusan...</p>
+                <p class="col-span-full text-slate-500 text-center">Memuat data jurusan...</p>
             </div>
         </div>
     </section>
 
-    <!-- KONTAK & LOKASI -->
-    <section id="kontak" class="py-20 bg-slate-900 text-white">
+    <!-- PENGUMUMAN & BERITA -->
+    <section id="pengumuman" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-end mb-12 border-b border-slate-700 pb-4">
+                <h2 class="text-3xl md:text-4xl font-poppins font-bold">Papan Pengumuman</h2>
+                <span class="text-blue-400 text-sm font-semibold hidden md:block">Informasi Terkini</span>
+            </div>
+            <div id="container-pengumuman" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <p class="col-span-full text-slate-400">Memuat pengumuman...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERI SEKOLAH -->
+    <section id="galeri" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-poppins font-bold text-slate-800 mb-4 text-center">Galeri Sekolah</h2>
+            <p class="text-slate-500 text-center mb-12 max-w-2xl mx-auto">Dokumentasi kegiatan, fasilitas, dan lingkungan belajar di SMK Negeri 1 Halmahera Timur.</p>
+            
+            <div id="container-galeri" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                <p class="col-span-full text-center text-slate-500">Memuat galeri...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- KONTAK -->
+    <section id="kontak" class="py-20 bg-white border-t border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
                 <div>
-                    <h2 class="text-3xl font-poppins font-bold mb-8">Hubungi Kami</h2>
+                    <h2 class="text-3xl font-poppins font-bold mb-8 text-slate-800">Hubungi Kami</h2>
                     <div class="space-y-6">
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center shrink-0">
-                                <svg class="w-5 h-5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                            </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center shrink-0"><span class="text-xl">📍</span></div>
                             <div>
-                                <p class="text-sm text-slate-400 font-semibold mb-1">Alamat</p>
-                                <p id="tampil-alamat" class="text-slate-200">Memuat...</p>
+                                <p class="text-sm text-slate-500 font-semibold mb-1">Alamat Lengkap</p>
+                                <p id="tampil-alamat" class="text-slate-800 font-medium">Memuat...</p>
                             </div>
                         </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center shrink-0">
-                                <svg class="w-5 h-5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                            </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center shrink-0"><span class="text-xl">✉️</span></div>
                             <div>
-                                <p class="text-sm text-slate-400 font-semibold mb-1">Email</p>
-                                <p id="tampil-email" class="text-slate-200">Memuat...</p>
+                                <p class="text-sm text-slate-500 font-semibold mb-1">Email</p>
+                                <p id="tampil-email" class="text-slate-800 font-medium">Memuat...</p>
                             </div>
                         </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center shrink-0">
-                                <svg class="w-5 h-5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                            </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center shrink-0"><span class="text-xl">📞</span></div>
                             <div>
-                                <p class="text-sm text-slate-400 font-semibold mb-1">Telepon</p>
-                                <p id="tampil-telepon" class="text-slate-200">Memuat...</p>
+                                <p class="text-sm text-slate-500 font-semibold mb-1">Telepon</p>
+                                <p id="tampil-telepon" class="text-slate-800 font-medium">Memuat...</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="h-80 bg-slate-800 rounded-2xl overflow-hidden border border-slate-700">
+                <div class="h-80 bg-slate-200 rounded-2xl overflow-hidden shadow-inner">
                     <iframe id="tampil-peta" src="" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
+    </section>
+
+    <footer class="bg-slate-900 border-t border-slate-800 py-8 text-center text-slate-400 text-sm">
+        © 2026 SMK Negeri 1 Halmahera Timur. All rights reserved.
     </footer>
 
     <!-- MODAL LOGIN -->
@@ -161,19 +179,19 @@
                         <label class="block text-sm font-semibold mb-2">Password</label>
                         <input type="password" id="password" required class="w-full px-4 py-3 border rounded-xl bg-slate-50">
                     </div>
-                    <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 rounded-xl hover:bg-blue-700">Masuk</button>
+                    <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 rounded-xl hover:bg-blue-700">Masuk Dashboard</button>
                 </form>
-                <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-red-500">✖</button>
+                <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-red-500 text-2xl">&times;</button>
             </div>
         </div>
     </div>
 
-    <!-- SCRIPT GABUNGAN -->
+    <!-- SCRIPT LOGIC -->
     <script>
         // ==========================================
-        // GANTI DENGAN URL API BARU ANDA (TAHAP 1 TADI)
+        // GANTI DENGAN URL API BARU ANDA DI BAWAH INI
         // ==========================================
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbwLAud49CyQ3SGnQy6OL0f5718d9xAmU6l6gI5L6GvjcTAAZTOn8lcVdyMjf_lvoJXo/exec'; 
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzS8XTKKd8hWxdZ0ms0r6DBfo4iXwazvuK9IN4JHPSMnTEPTRRU5revzjycJ1gD8KC6/exec'; 
 
         function openModal() { document.getElementById('loginModal').classList.remove('hidden'); }
         function closeModal() { document.getElementById('loginModal').classList.add('hidden'); }
@@ -181,11 +199,9 @@
         document.addEventListener("DOMContentLoaded", function() {
             fetch(scriptURL).then(res => res.json()).then(data => {
                 if(data.status === 'success') {
-                    // Profil
+                    // Profil & Visi Misi
                     document.getElementById('tampil-kepsek').innerText = data.profil.namaKepsek;
                     document.getElementById('tampil-sambutan').innerText = data.profil.sambutan;
-                    
-                    // Visi Misi
                     document.getElementById('tampil-visi').innerText = data.visimisi.visi;
                     document.getElementById('tampil-misi').innerText = data.visimisi.misi;
 
@@ -200,9 +216,36 @@
                     contJ.innerHTML = ''; 
                     data.jurusan.forEach(item => {
                         contJ.innerHTML += `
-                        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition">
-                            <h3 class="text-2xl font-poppins font-bold text-slate-800 mb-2">${item.singkatan}</h3>
+                        <div class="bg-white p-8 rounded-2xl border border-slate-100 hover:shadow-lg hover:border-blue-200 transition group">
+                            <h3 class="text-2xl font-poppins font-bold text-slate-800 mb-2 group-hover:text-blue-700 transition">${item.singkatan}</h3>
                             <p class="text-slate-600">${item.nama}</p>
+                        </div>`;
+                    });
+
+                    // Pengumuman
+                    const contP = document.getElementById('container-pengumuman');
+                    contP.innerHTML = '';
+                    if(data.pengumuman.length === 0) contP.innerHTML = '<p class="text-slate-400">Belum ada pengumuman.</p>';
+                    data.pengumuman.forEach(item => {
+                        contP.innerHTML += `
+                        <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 hover:bg-slate-700 transition">
+                            <div class="text-xs font-bold text-blue-400 mb-2 uppercase tracking-wider">${item.tanggal}</div>
+                            <h3 class="text-xl font-poppins font-bold text-white mb-3">${item.judul}</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed">${item.isi}</p>
+                        </div>`;
+                    });
+
+                    // Galeri
+                    const contG = document.getElementById('container-galeri');
+                    contG.innerHTML = '';
+                    if(data.galeri.length === 0) contG.innerHTML = '<p class="col-span-full text-center text-slate-500">Galeri belum tersedia.</p>';
+                    data.galeri.forEach(item => {
+                        contG.innerHTML += `
+                        <div class="group relative aspect-video bg-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+                            <img src="${item.link}" alt="${item.judul}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                                <div class="p-4 w-full"><p class="text-white font-semibold truncate">${item.judul}</p></div>
+                            </div>
                         </div>`;
                     });
                 }
@@ -217,12 +260,10 @@
                 const btn = loginForm.querySelector('button[type="submit"]');
                 btn.innerHTML = 'Memeriksa...'; btn.disabled = true;
 
-                fetch(scriptURL, {
-                    method: 'POST',
-                    body: JSON.stringify({ action: 'login', username: username.value, password: password.value })
-                }).then(res => res.json()).then(data => {
+                fetch(scriptURL, { method: 'POST', body: JSON.stringify({ action: 'login', username: username.value, password: password.value }) })
+                .then(res => res.json()).then(data => {
                     if (data.status === 'success') { window.location.href = 'dashboard.html'; } 
-                    else { alert('Username/Password Salah!'); btn.innerHTML = 'Masuk'; btn.disabled = false; }
+                    else { alert('Login Gagal! Periksa Kredensial.'); btn.innerHTML = 'Masuk Dashboard'; btn.disabled = false; }
                 });
             });
         }

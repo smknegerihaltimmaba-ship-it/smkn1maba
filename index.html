@@ -6,10 +6,7 @@
     <title>SMK Negeri 1 Halmahera Timur</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        h1, h2, h3, h4, .font-poppins { font-family: 'Poppins', sans-serif; }
-    </style>
+    <style> body { font-family: 'Inter', sans-serif; } h1, h2, h3, h4, .font-poppins { font-family: 'Poppins', sans-serif; } </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-blue-200 selection:text-blue-900">
 
@@ -17,7 +14,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20">
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-xl flex items-center justify-center font-poppins font-bold text-xl md:text-2xl shadow-lg">S</div>
+                    <!-- LOGO SEKOLAH DIPASANG DI SINI -->
+                    <img src="logo.png" alt="Logo SMK N 1 Haltim" class="w-10 h-10 md:w-12 md:h-12 object-contain drop-shadow-md">
                     <div class="flex flex-col">
                         <span class="font-poppins font-bold text-lg md:text-xl leading-tight tracking-tight">SMK N 1 HALTIM</span>
                         <span class="text-[10px] font-semibold text-slate-500 uppercase tracking-wider">Maluku Utara</span>
@@ -30,10 +28,7 @@
                     <a href="#fasilitas" class="text-sm font-semibold text-slate-600 hover:text-blue-700">Fasilitas</a>
                     <a href="#jurusan" class="text-sm font-semibold text-slate-600 hover:text-blue-700">Jurusan</a>
                     <a href="#guru" class="text-sm font-semibold text-slate-600 hover:text-blue-700">Guru</a>
-                    <a href="#pengumuman" class="text-sm font-semibold text-slate-600 hover:text-blue-700">Info</a>
-                    <button onclick="openModal()" class="bg-slate-900 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-semibold shadow-md transition-all">
-                        Login Admin
-                    </button>
+                    <button onclick="openModal()" class="bg-slate-900 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-semibold shadow-md transition-all">Login Admin</button>
                 </div>
             </div>
         </div>
@@ -42,21 +37,19 @@
     <div class="relative bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white overflow-hidden py-24 md:py-32 flex flex-col items-center text-center">
         <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
         <div class="relative max-w-5xl mx-auto px-4 z-10">
-            <h1 class="text-4xl md:text-7xl font-poppins font-extrabold tracking-tight mb-6 leading-tight">
-                Masa Depan Vokasi <br/>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300">Dimulai Dari Sini.</span>
-            </h1>
+            <h1 class="text-4xl md:text-7xl font-poppins font-extrabold tracking-tight mb-6 leading-tight">Masa Depan Vokasi <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300">Dimulai Dari Sini.</span></h1>
             <p class="text-lg md:text-xl text-blue-100/80 max-w-2xl mx-auto mb-10">Mencetak generasi unggul, terampil, berkarakter, dan siap bersaing di dunia industri modern.</p>
         </div>
     </div>
 
-    <!-- PROFIL & VISI MISI -->
+    <!-- PROFIL (DENGAN FOTO KEPSEK) -->
     <section id="profil" class="py-20 bg-white border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <div class="w-full md:w-1/3 flex justify-center">
-                    <div class="w-64 h-64 bg-slate-100 rounded-full border-8 border-slate-50 shadow-xl flex items-center justify-center">
-                        <svg class="w-24 h-24 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    <!-- FOTO KEPALA SEKOLAH -->
+                    <div class="w-64 h-64 md:w-80 md:h-80 bg-slate-100 rounded-full border-8 border-slate-50 shadow-xl flex items-center justify-center overflow-hidden">
+                        <img id="tampil-foto-kepsek" src="https://via.placeholder.com/400?text=Foto+Kepsek" alt="Foto Kepala Sekolah" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
                     </div>
                 </div>
                 <div class="w-full md:w-2/3">
@@ -70,28 +63,17 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-20 pt-10 border-t border-slate-100">
-                <div class="bg-blue-50/50 p-8 rounded-3xl border border-blue-100">
-                    <h3 class="text-2xl font-poppins font-bold text-blue-700 mb-4 flex items-center gap-3"><span class="text-3xl">🎯</span> Visi</h3>
-                    <p id="tampil-visi" class="text-slate-600 leading-relaxed italic whitespace-pre-wrap">Memuat...</p>
-                </div>
-                <div class="bg-indigo-50/50 p-8 rounded-3xl border border-indigo-100">
-                    <h3 class="text-2xl font-poppins font-bold text-indigo-700 mb-4 flex items-center gap-3"><span class="text-3xl">🚀</span> Misi</h3>
-                    <p id="tampil-misi" class="text-slate-600 leading-relaxed whitespace-pre-wrap">Memuat...</p>
-                </div>
+                <div class="bg-blue-50/50 p-8 rounded-3xl border border-blue-100"><h3 class="text-2xl font-poppins font-bold text-blue-700 mb-4 flex items-center gap-3"><span class="text-3xl">🎯</span> Visi</h3><p id="tampil-visi" class="text-slate-600 leading-relaxed italic whitespace-pre-wrap">Memuat...</p></div>
+                <div class="bg-indigo-50/50 p-8 rounded-3xl border border-indigo-100"><h3 class="text-2xl font-poppins font-bold text-indigo-700 mb-4 flex items-center gap-3"><span class="text-3xl">🚀</span> Misi</h3><p id="tampil-misi" class="text-slate-600 leading-relaxed whitespace-pre-wrap">Memuat...</p></div>
             </div>
         </div>
     </section>
 
-    <!-- SEJARAH SEKOLAH BARU -->
+    <!-- SEJARAH SEKOLAH -->
     <section id="sejarah" class="py-20 bg-slate-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 id="tampil-sejarah-judul" class="text-3xl md:text-4xl font-poppins font-bold mb-4">Sejarah Sekolah</h2>
-                <div class="w-24 h-1 bg-blue-500 mx-auto rounded-full"></div>
-            </div>
-            <div class="max-w-4xl mx-auto bg-slate-800/50 backdrop-blur-sm p-8 md:p-12 rounded-3xl shadow-2xl border border-slate-700">
-                <p id="tampil-sejarah-isi" class="text-slate-300 leading-relaxed text-lg whitespace-pre-wrap text-justify">Memuat data sejarah dari server...</p>
-            </div>
+            <div class="text-center mb-12"><h2 id="tampil-sejarah-judul" class="text-3xl md:text-4xl font-poppins font-bold mb-4">Sejarah Sekolah</h2><div class="w-24 h-1 bg-blue-500 mx-auto rounded-full"></div></div>
+            <div class="max-w-4xl mx-auto bg-slate-800/50 backdrop-blur-sm p-8 md:p-12 rounded-3xl shadow-2xl border border-slate-700"><p id="tampil-sejarah-isi" class="text-slate-300 leading-relaxed text-lg whitespace-pre-wrap text-justify">Memuat sejarah...</p></div>
         </div>
     </section>
 
@@ -99,53 +81,28 @@
     <section id="fasilitas" class="py-20 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl md:text-4xl font-poppins font-bold text-slate-800 mb-4">Fasilitas Sekolah</h2>
-            <p class="text-slate-500 mb-12 max-w-2xl mx-auto">Sarana dan prasarana lengkap untuk mendukung kegiatan belajar mengajar berstandar industri.</p>
-            <div id="container-fasilitas" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
-                <p class="col-span-full text-slate-500 text-center">Memuat fasilitas...</p>
-            </div>
+            <div id="container-fasilitas" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left mt-10"><p class="col-span-full text-slate-500 text-center">Memuat fasilitas...</p></div>
         </div>
     </section>
 
-    <!-- JURUSAN -->
+    <!-- JURUSAN & GURU (Digabung dalam satu pandangan ringkas) -->
     <section id="jurusan" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl md:text-4xl font-poppins font-bold text-slate-800 mb-12">Program Keahlian</h2>
-            <div id="container-jurusan" class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-                <p class="col-span-full text-slate-500 text-center">Memuat jurusan...</p>
-            </div>
+            <div id="container-jurusan" class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left mb-20"><p class="col-span-full text-slate-500 text-center">Memuat jurusan...</p></div>
+            <h2 id="guru" class="text-3xl md:text-4xl font-poppins font-bold text-slate-800 mb-12">Tenaga Pendidik</h2>
+            <div id="container-guru" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left"><p class="col-span-full text-slate-500 text-center">Memuat data guru...</p></div>
         </div>
     </section>
 
-    <!-- GURU -->
-    <section id="guru" class="py-20 bg-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-poppins font-bold mb-4 text-slate-800">Tenaga Pendidik</h2>
-            <p class="text-slate-500 mb-12 max-w-2xl mx-auto">Dibimbing oleh guru dan praktisi profesional di bidangnya.</p>
-            <div id="container-guru" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
-                <p class="col-span-full text-slate-500 text-center">Memuat data guru...</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- PENGUMUMAN -->
-    <section id="pengumuman" class="py-20 bg-white border-t border-slate-100">
+    <!-- PENGUMUMAN & GALERI -->
+    <section id="pengumuman" class="py-20 bg-slate-50 border-t border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-end mb-10 border-b border-slate-200 pb-4">
-                <h2 class="text-3xl font-poppins font-bold text-slate-800">Papan Pengumuman</h2>
-            </div>
-            <div id="container-pengumuman" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <p class="col-span-full text-slate-500">Memuat pengumuman...</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- GALERI -->
-    <section id="galeri" class="py-20 bg-slate-50 border-t border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-end mb-10 border-b border-slate-200 pb-4"><h2 class="text-3xl font-poppins font-bold text-slate-800">Papan Pengumuman</h2></div>
+            <div id="container-pengumuman" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20"><p class="col-span-full text-slate-500">Memuat pengumuman...</p></div>
+            
             <h2 class="text-3xl font-poppins font-bold text-slate-800 mb-10 text-center">Galeri Kegiatan</h2>
-            <div id="container-galeri" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                <p class="col-span-full text-center text-slate-500">Memuat galeri...</p>
-            </div>
+            <div id="container-galeri" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"><p class="col-span-full text-center text-slate-500">Memuat galeri...</p></div>
         </div>
     </section>
 
@@ -156,30 +113,17 @@
                 <div>
                     <h2 class="text-3xl font-poppins font-bold mb-8">Hubungi Kami</h2>
                     <div class="space-y-6">
-                        <div class="flex gap-4 items-center">
-                            <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center shrink-0">📍</div>
-                            <div><p class="text-sm text-slate-400 font-semibold">Alamat</p><p id="tampil-alamat" class="font-medium">Memuat...</p></div>
-                        </div>
-                        <div class="flex gap-4 items-center">
-                            <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center shrink-0">✉️</div>
-                            <div><p class="text-sm text-slate-400 font-semibold">Email</p><p id="tampil-email" class="font-medium">Memuat...</p></div>
-                        </div>
-                        <div class="flex gap-4 items-center">
-                            <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center shrink-0">📞</div>
-                            <div><p class="text-sm text-slate-400 font-semibold">Telepon</p><p id="tampil-telepon" class="font-medium">Memuat...</p></div>
-                        </div>
+                        <div class="flex gap-4 items-center"><div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center shrink-0">📍</div><div><p class="text-sm text-slate-400 font-semibold">Alamat</p><p id="tampil-alamat" class="font-medium">Memuat...</p></div></div>
+                        <div class="flex gap-4 items-center"><div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center shrink-0">✉️</div><div><p class="text-sm text-slate-400 font-semibold">Email</p><p id="tampil-email" class="font-medium">Memuat...</p></div></div>
+                        <div class="flex gap-4 items-center"><div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center shrink-0">📞</div><div><p class="text-sm text-slate-400 font-semibold">Telepon</p><p id="tampil-telepon" class="font-medium">Memuat...</p></div></div>
                     </div>
                 </div>
-                <div class="h-80 bg-slate-800 rounded-2xl overflow-hidden shadow-inner">
-                    <iframe id="tampil-peta" src="" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
+                <div class="h-80 bg-slate-800 rounded-2xl overflow-hidden shadow-inner"><iframe id="tampil-peta" src="" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-black py-6 text-center text-slate-500 text-sm">
-        © 2026 SMK Negeri 1 Halmahera Timur. All rights reserved.
-    </footer>
+    <footer class="bg-black py-6 text-center text-slate-500 text-sm">© 2026 SMK Negeri 1 Halmahera Timur. All rights reserved.</footer>
 
     <!-- MODAL LOGIN -->
     <div id="loginModal" class="fixed inset-0 z-[100] hidden">
@@ -188,14 +132,8 @@
             <div class="relative bg-white rounded-2xl w-full max-w-md p-8 shadow-2xl">
                 <h3 class="text-2xl font-poppins font-bold text-slate-800 mb-6">Login Admin</h3>
                 <form id="formLoginBackend">
-                    <div class="mb-4">
-                        <label class="block text-sm font-semibold mb-2">Username</label>
-                        <input type="text" id="username" required class="w-full px-4 py-3 border rounded-xl bg-slate-50 focus:ring-2 focus:ring-blue-600">
-                    </div>
-                    <div class="mb-6">
-                        <label class="block text-sm font-semibold mb-2">Password</label>
-                        <input type="password" id="password" required class="w-full px-4 py-3 border rounded-xl bg-slate-50 focus:ring-2 focus:ring-blue-600">
-                    </div>
+                    <div class="mb-4"><label class="block text-sm font-semibold mb-2">Username</label><input type="text" id="username" required class="w-full px-4 py-3 border rounded-xl bg-slate-50 focus:ring-2 focus:ring-blue-600"></div>
+                    <div class="mb-6"><label class="block text-sm font-semibold mb-2">Password</label><input type="password" id="password" required class="w-full px-4 py-3 border rounded-xl bg-slate-50 focus:ring-2 focus:ring-blue-600"></div>
                     <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 rounded-xl hover:bg-blue-700 transition">Masuk Dashboard</button>
                 </form>
                 <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-red-500 text-2xl">&times;</button>
@@ -206,9 +144,9 @@
     <!-- SCRIPT GABUNGAN -->
     <script>
         // ==========================================
-        // GANTI DENGAN URL API BARU ANDA
+        // GANTI DENGAN URL API BARU ANDA (VERSI 9)
         // ==========================================
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbz725IzQRVod2zxJ2DbIv9-L0XMZIxUEyMkVHt4mK5rubQ0RhcKUjLELrrz8zILIgiT/exec'; 
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzseK3RqXM8uw__fKoLyOTsZt9WNW1B4-W16LTnNCrVytelrHzr8vQqQTPw9l0I39xX/exec'; 
 
         function openModal() { document.getElementById('loginModal').classList.remove('hidden'); }
         function closeModal() { document.getElementById('loginModal').classList.add('hidden'); }
@@ -216,63 +154,46 @@
         document.addEventListener("DOMContentLoaded", function() {
             fetch(scriptURL).then(res => res.json()).then(data => {
                 if(data.status === 'success') {
-                    // Profil & Visi Misi & Kontak & Sejarah
-                    document.getElementById('tampil-kepsek').innerText = data.profil.namaKepsek; document.getElementById('tampil-sambutan').innerText = data.profil.sambutan;
+                    document.getElementById('tampil-kepsek').innerText = data.profil.namaKepsek; 
+                    document.getElementById('tampil-sambutan').innerText = data.profil.sambutan;
+                    // Tampilkan Foto Kepsek (Gunakan foto placeholder jika kosong)
+                    if(data.profil.fotoKepsek) document.getElementById('tampil-foto-kepsek').src = data.profil.fotoKepsek;
+
                     document.getElementById('tampil-visi').innerText = data.visimisi.visi; document.getElementById('tampil-misi').innerText = data.visimisi.misi;
                     document.getElementById('tampil-alamat').innerText = data.kontak.alamat; document.getElementById('tampil-email').innerText = data.kontak.email;
                     document.getElementById('tampil-telepon').innerText = data.kontak.telepon; document.getElementById('tampil-peta').src = data.kontak.peta;
                     
-                    // Sejarah Baru
                     document.getElementById('tampil-sejarah-judul').innerText = data.sejarah.judul || 'Sejarah Singkat';
                     document.getElementById('tampil-sejarah-isi').innerText = data.sejarah.isi || 'Data sejarah belum tersedia.';
 
-                    // Jurusan
                     const contJ = document.getElementById('container-jurusan'); contJ.innerHTML = ''; 
-                    data.jurusan.forEach(item => {
-                        contJ.innerHTML += `<div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition"><h3 class="text-2xl font-poppins font-bold text-slate-800 mb-2">${item.singkatan}</h3><p class="text-slate-600">${item.nama}</p></div>`;
-                    });
+                    data.jurusan.forEach(item => { contJ.innerHTML += `<div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition"><h3 class="text-2xl font-poppins font-bold text-slate-800 mb-2">${item.singkatan}</h3><p class="text-slate-600">${item.nama}</p></div>`; });
 
-                    // Fasilitas
                     const contF = document.getElementById('container-fasilitas'); contF.innerHTML = '';
                     if(data.fasilitas.length === 0) contF.innerHTML = '<p class="col-span-full text-center text-slate-500">Belum ada data fasilitas.</p>';
-                    data.fasilitas.forEach(item => {
-                        contF.innerHTML += `<div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition group"><div class="aspect-video bg-slate-200 overflow-hidden"><img src="${item.foto}" alt="${item.nama}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500"></div><div class="p-6"><h3 class="font-poppins font-bold text-xl text-slate-800 mb-2">${item.nama}</h3><p class="text-slate-600 text-sm leading-relaxed">${item.deskripsi}</p></div></div>`;
-                    });
+                    data.fasilitas.forEach(item => { contF.innerHTML += `<div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition group"><div class="aspect-video bg-slate-200 overflow-hidden"><img src="${item.foto}" alt="${item.nama}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500"></div><div class="p-6"><h3 class="font-poppins font-bold text-xl text-slate-800 mb-2">${item.nama}</h3><p class="text-slate-600 text-sm leading-relaxed">${item.deskripsi}</p></div></div>`; });
 
-                    // Guru
                     const contG = document.getElementById('container-guru'); contG.innerHTML = '';
                     if(data.guru.length === 0) contG.innerHTML = '<p class="col-span-full text-center text-slate-400">Belum ada data guru.</p>';
-                    data.guru.forEach(item => {
-                        contG.innerHTML += `<div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:border-blue-500 transition group"><div class="aspect-square bg-slate-200 overflow-hidden"><img src="${item.foto}" alt="${item.nama}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><div class="p-5 text-center"><h3 class="font-poppins font-bold text-slate-800 mb-1 truncate">${item.nama}</h3><p class="text-blue-600 text-xs font-bold uppercase tracking-wider truncate">${item.mapel}</p></div></div>`;
-                    });
+                    data.guru.forEach(item => { contG.innerHTML += `<div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:border-blue-500 transition group"><div class="aspect-square bg-slate-200 overflow-hidden"><img src="${item.foto}" alt="${item.nama}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><div class="p-5 text-center"><h3 class="font-poppins font-bold text-slate-800 mb-1 truncate">${item.nama}</h3><p class="text-blue-600 text-xs font-bold uppercase tracking-wider truncate">${item.mapel}</p></div></div>`; });
 
-                    // Pengumuman
                     const contP = document.getElementById('container-pengumuman'); contP.innerHTML = '';
                     if(data.pengumuman.length === 0) contP.innerHTML = '<p class="text-slate-500">Belum ada pengumuman.</p>';
-                    data.pengumuman.forEach(item => {
-                        contP.innerHTML += `<div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition"><div class="text-xs font-bold text-blue-600 mb-2 uppercase tracking-wider">${item.tanggal}</div><h3 class="text-xl font-poppins font-bold text-slate-800 mb-3">${item.judul}</h3><p class="text-slate-600 text-sm leading-relaxed">${item.isi}</p></div>`;
-                    });
+                    data.pengumuman.forEach(item => { contP.innerHTML += `<div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition"><div class="text-xs font-bold text-blue-600 mb-2 uppercase tracking-wider">${item.tanggal}</div><h3 class="text-xl font-poppins font-bold text-slate-800 mb-3">${item.judul}</h3><p class="text-slate-600 text-sm leading-relaxed">${item.isi}</p></div>`; });
 
-                    // Galeri
                     const contGl = document.getElementById('container-galeri'); contGl.innerHTML = '';
                     if(data.galeri.length === 0) contGl.innerHTML = '<p class="col-span-full text-center text-slate-500">Galeri belum tersedia.</p>';
-                    data.galeri.forEach(item => {
-                        contGl.innerHTML += `<div class="group relative aspect-video bg-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all"><img src="${item.link}" alt="${item.judul}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"><div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end"><div class="p-4 w-full"><p class="text-white font-semibold truncate">${item.judul}</p></div></div></div>`;
-                    });
+                    data.galeri.forEach(item => { contGl.innerHTML += `<div class="group relative aspect-video bg-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all"><img src="${item.link}" alt="${item.judul}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"><div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end"><div class="p-4 w-full"><p class="text-white font-semibold truncate">${item.judul}</p></div></div></div>`; });
                 }
             });
         });
 
-        // Login Script
         const loginForm = document.getElementById('formLoginBackend');
         if(loginForm) {
             loginForm.addEventListener('submit', function(e) {
                 e.preventDefault(); const btn = loginForm.querySelector('button[type="submit"]'); btn.innerHTML = 'Memeriksa...'; btn.disabled = true;
                 fetch(scriptURL, { method: 'POST', body: JSON.stringify({ action: 'login', username: username.value, password: password.value }) })
-                .then(res => res.json()).then(data => {
-                    if (data.status === 'success') { window.location.href = 'dashboard.html'; } 
-                    else { alert('Login Gagal! Periksa Kredensial.'); btn.innerHTML = 'Masuk Dashboard'; btn.disabled = false; }
-                });
+                .then(res => res.json()).then(data => { if (data.status === 'success') { window.location.href = 'dashboard.html'; } else { alert('Login Gagal! Periksa Kredensial.'); btn.innerHTML = 'Masuk Dashboard'; btn.disabled = false; } });
             });
         }
     </script>

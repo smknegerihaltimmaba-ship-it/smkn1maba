@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CMS Dashboard - SMK Negeri 1 Halmahera Timur </title>
+    <title>CMS Dashboard - SMK N 1 Haltim</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <style> h1, h2, h3, .font-poppins { font-family: 'Poppins', sans-serif; } </style>
@@ -13,8 +13,7 @@
     <nav class="bg-slate-900 text-white shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
             <div class="font-poppins font-bold text-xl cursor-pointer flex items-center gap-3" onclick="showMenu('dashboard')">
-                <!-- LOGO SEKOLAH DIPASANG DI DASHBOARD -->
-                <img src="logo.jpg" alt="Logo SMK N 1 Haltim" class="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover drop-shadow-md">
+                <img src="logo.png" alt="Logo SMK N 1 Haltim" class="w-8 h-8 rounded-full object-cover bg-white">
                 CMS Panel
             </div>
             <button onclick="logout()" class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded-lg text-sm font-semibold transition">Logout</button>
@@ -29,41 +28,29 @@
                 <div onclick="showMenu('profil')" class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 cursor-pointer hover:border-blue-400"><h2 class="text-sm font-bold">👤 Profil & Sambutan</h2></div>
                 <div onclick="showMenu('visimisi')" class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 cursor-pointer hover:border-indigo-400"><h2 class="text-sm font-bold">🎯 Visi & Misi</h2></div>
                 <div onclick="showMenu('sejarah')" class="bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-700 cursor-pointer hover:border-slate-400"><h2 class="text-sm font-bold text-white">📜 Sejarah Sekolah</h2></div>
-                <div onclick="showMenu('kontak')" class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 cursor-pointer hover:border-green-400"><h2 class="text-sm font-bold">📞 Kontak & Lokasi</h2></div>
+                
+                <!-- MENU KEGIATAN BARU -->
+                <div onclick="showMenu('kegiatan')" class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 cursor-pointer hover:border-emerald-400 bg-emerald-50/30"><h2 class="text-sm font-bold text-emerald-800">🏃 Riwayat Kegiatan</h2></div>
+                
                 <div onclick="showMenu('fasilitas')" class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 cursor-pointer hover:border-cyan-400 bg-cyan-50/30"><h2 class="text-sm font-bold text-cyan-800">🏢 Fasilitas</h2></div>
                 <div onclick="showMenu('jurusan')" class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 cursor-pointer hover:border-yellow-400 bg-yellow-50/30"><h2 class="text-sm font-bold text-yellow-800">🎓 Jurusan</h2></div>
                 <div onclick="showMenu('guru')" class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 cursor-pointer hover:border-purple-400 bg-purple-50/30"><h2 class="text-sm font-bold text-purple-800">👨‍🏫 Tenaga Pendidik</h2></div>
                 <div onclick="showMenu('pengumuman')" class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 cursor-pointer hover:border-orange-400 bg-orange-50/30"><h2 class="text-sm font-bold text-orange-800">📢 Pengumuman</h2></div>
                 <div onclick="showMenu('galeri')" class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 cursor-pointer hover:border-pink-400 bg-pink-50/30"><h2 class="text-sm font-bold text-pink-800">🖼️ Galeri Foto</h2></div>
+                <div onclick="showMenu('kontak')" class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 cursor-pointer hover:border-green-400"><h2 class="text-sm font-bold">📞 Kontak & Lokasi</h2></div>
                 <div onclick="showMenu('admin')" class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 cursor-pointer hover:border-red-400"><h2 class="text-sm font-bold">🔐 Kelola Admin</h2></div>
             </div>
         </div>
 
-        <!-- FORM PROFIL (DITAMBAH FOTO KEPSEK) -->
-        <div id="view-profil" class="bg-white p-6 rounded-xl shadow-sm border hidden">
-            <div class="flex justify-between items-center border-b pb-4 mb-4"><h2 class="text-xl font-bold">Profil</h2><button onclick="showMenu('dashboard')" class="text-xs bg-slate-100 px-3 py-1 rounded">Kembali</button></div>
-            <form id="formProfil">
-                <input type="text" id="inKepsek" class="w-full px-3 py-2 border rounded mb-3" placeholder="Nama Kepsek" required>
-                <!-- TAMBAHAN INPUT LINK FOTO -->
-                <input type="text" id="inFotoKepsek" class="w-full px-3 py-2 border rounded mb-3" placeholder="Link Foto Kepsek (URL gambar bebas)">
-                <textarea id="inSambutan" rows="5" class="w-full px-3 py-2 border rounded mb-3" placeholder="Sambutan Kepala Sekolah" required></textarea>
-                <button type="submit" id="btnProfil" class="bg-blue-600 text-white font-bold py-2 px-6 rounded">Simpan</button>
-            </form>
-        </div>
+        <div id="view-profil" class="bg-white p-6 rounded-xl shadow-sm border hidden"><div class="flex justify-between items-center border-b pb-4 mb-4"><h2 class="text-xl font-bold">Profil</h2><button onclick="showMenu('dashboard')" class="text-xs bg-slate-100 px-3 py-1 rounded">Kembali</button></div><form id="formProfil"><input type="text" id="inKepsek" class="w-full px-3 py-2 border rounded mb-3" placeholder="Nama Kepsek" required><input type="text" id="inFotoKepsek" class="w-full px-3 py-2 border rounded mb-3" placeholder="Link Foto Kepsek (Contoh: kepsek.jpg)"><textarea id="inSambutan" rows="5" class="w-full px-3 py-2 border rounded mb-3" placeholder="Sambutan Kepala Sekolah" required></textarea><button type="submit" id="btnProfil" class="bg-blue-600 text-white font-bold py-2 px-6 rounded">Simpan</button></form></div>
+        <div id="view-visimisi" class="bg-white p-6 rounded-xl shadow-sm border hidden"><div class="flex justify-between items-center border-b pb-4 mb-4"><h2 class="text-xl font-bold">Visi Misi</h2><button onclick="showMenu('dashboard')" class="text-xs bg-slate-100 px-3 py-1 rounded">Kembali</button></div><form id="formVM"><textarea id="inVisi" rows="3" class="w-full px-3 py-2 border rounded mb-3" required></textarea><textarea id="inMisi" rows="5" class="w-full px-3 py-2 border rounded mb-3" required></textarea><button type="submit" id="btnVM" class="bg-blue-600 text-white font-bold py-2 px-6 rounded">Simpan</button></form></div>
+        <div id="view-sejarah" class="bg-white p-6 rounded-xl shadow-sm border hidden"><div class="flex justify-between items-center border-b pb-4 mb-4"><h2 class="text-xl font-bold">Sejarah Sekolah</h2><button onclick="showMenu('dashboard')" class="text-xs bg-slate-100 px-3 py-1 rounded">Kembali</button></div><form id="formSejarah"><input type="text" id="inSejarahJudul" class="w-full px-3 py-2 border rounded mb-4" placeholder="Misal: Sejarah Singkat" required><textarea id="inSejarahIsi" rows="8" class="w-full px-3 py-2 border rounded mb-4" required></textarea><button type="submit" id="btnSejarah" class="bg-slate-800 hover:bg-slate-900 text-white font-bold py-2 px-6 rounded">Simpan Sejarah</button></form></div>
+        <div id="view-kontak" class="bg-white p-6 rounded-xl shadow-sm border hidden"><div class="flex justify-between items-center border-b pb-4 mb-4"><h2 class="text-xl font-bold">Kontak</h2><button onclick="showMenu('dashboard')" class="text-xs bg-slate-100 px-3 py-1 rounded">Kembali</button></div><form id="formKontak"><input type="text" id="inAlamat" class="w-full px-3 py-2 border rounded mb-3" placeholder="Alamat"><input type="email" id="inEmail" class="w-full px-3 py-2 border rounded mb-3" placeholder="Email"><input type="text" id="inTelepon" class="w-full px-3 py-2 border rounded mb-3" placeholder="Telepon"><input type="text" id="inPeta" class="w-full px-3 py-2 border rounded mb-3" placeholder="Link Embed Maps"><button type="submit" id="btnKontak" class="bg-blue-600 text-white font-bold py-2 px-6 rounded">Simpan</button></form></div>
 
-        <div id="view-visimisi" class="bg-white p-6 rounded-xl shadow-sm border hidden">
-            <div class="flex justify-between items-center border-b pb-4 mb-4"><h2 class="text-xl font-bold">Visi Misi</h2><button onclick="showMenu('dashboard')" class="text-xs bg-slate-100 px-3 py-1 rounded">Kembali</button></div>
-            <form id="formVM"><textarea id="inVisi" rows="3" class="w-full px-3 py-2 border rounded mb-3" required></textarea><textarea id="inMisi" rows="5" class="w-full px-3 py-2 border rounded mb-3" required></textarea><button type="submit" id="btnVM" class="bg-blue-600 text-white font-bold py-2 px-6 rounded">Simpan</button></form>
-        </div>
-        
-        <div id="view-sejarah" class="bg-white p-6 rounded-xl shadow-sm border hidden">
-            <div class="flex justify-between items-center border-b pb-4 mb-4"><h2 class="text-xl font-bold">Sejarah Sekolah</h2><button onclick="showMenu('dashboard')" class="text-xs bg-slate-100 px-3 py-1 rounded">Kembali</button></div>
-            <form id="formSejarah"><input type="text" id="inSejarahJudul" class="w-full px-3 py-2 border rounded mb-4" placeholder="Misal: Sejarah Singkat" required><textarea id="inSejarahIsi" rows="8" class="w-full px-3 py-2 border rounded mb-4" placeholder="Tuliskan sejarah sekolah di sini..." required></textarea><button type="submit" id="btnSejarah" class="bg-slate-800 hover:bg-slate-900 text-white font-bold py-2 px-6 rounded">Simpan Sejarah</button></form>
-        </div>
-
-        <div id="view-kontak" class="bg-white p-6 rounded-xl shadow-sm border hidden">
-            <div class="flex justify-between items-center border-b pb-4 mb-4"><h2 class="text-xl font-bold">Kontak</h2><button onclick="showMenu('dashboard')" class="text-xs bg-slate-100 px-3 py-1 rounded">Kembali</button></div>
-            <form id="formKontak"><input type="text" id="inAlamat" class="w-full px-3 py-2 border rounded mb-3" placeholder="Alamat"><input type="email" id="inEmail" class="w-full px-3 py-2 border rounded mb-3" placeholder="Email"><input type="text" id="inTelepon" class="w-full px-3 py-2 border rounded mb-3" placeholder="Telepon"><input type="text" id="inPeta" class="w-full px-3 py-2 border rounded mb-3" placeholder="Link Embed Maps"><button type="submit" id="btnKontak" class="bg-blue-600 text-white font-bold py-2 px-6 rounded">Simpan</button></form>
+        <!-- FORM KEGIATAN BARU -->
+        <div id="view-kegiatan" class="bg-white p-6 rounded-xl shadow-sm border hidden">
+            <div class="flex justify-between items-center border-b pb-4 mb-4"><h2 class="text-xl font-bold">Riwayat Kegiatan</h2><button onclick="showMenu('dashboard')" class="text-xs bg-slate-100 px-3 py-1 rounded">Kembali</button></div>
+            <form id="formKegiatan"><div id="cont-in-kegiatan"></div><button type="button" onclick="addKegiatanRow()" class="bg-slate-200 px-4 py-2 rounded text-sm font-semibold mb-6">+ Tambah Kegiatan</button><br><button type="submit" id="btnKegiatan" class="bg-emerald-600 text-white font-bold py-2 px-6 rounded">Simpan Semua Kegiatan</button></form>
         </div>
 
         <div id="view-fasilitas" class="bg-white p-6 rounded-xl shadow-sm border hidden"><div class="flex justify-between items-center border-b pb-4 mb-4"><h2 class="text-xl font-bold">Fasilitas Sekolah</h2><button onclick="showMenu('dashboard')" class="text-xs bg-slate-100 px-3 py-1 rounded">Kembali</button></div><form id="formFasilitas"><div id="cont-in-fasilitas"></div><button type="button" onclick="addFasilitasRow()" class="bg-slate-200 px-4 py-2 rounded text-sm font-semibold mb-6">+ Tambah Fasilitas</button><br><button type="submit" id="btnFasilitas" class="bg-cyan-600 text-white font-bold py-2 px-6 rounded">Simpan Semua Fasilitas</button></form></div>
@@ -76,52 +63,38 @@
 
     <script>
         // ==========================================
-        // GANTI DENGAN URL API BARU ANDA (VERSI 9)
+        // GANTI DENGAN URL API BARU ANDA (VERSI 10)
         // ==========================================
-        const scriptURL = 'https://script.google.com/macros/s/AKfycby3soJAJGULEZciPfG0RPiUm_S_B9r_TmWnHsCvAtyj5b8UHMjvj-JB-p8lo0WFAAQX/exec'; 
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxKhyp_Iq2VM48NIVJNITT5xBmOf9f7pahE9KqWyZz5vvDamFBmTHDQs0wFU5YSHW6s/exec'; 
 
         function showMenu(id) {
-            ['dashboard', 'profil', 'visimisi', 'sejarah', 'fasilitas', 'jurusan', 'guru', 'pengumuman', 'galeri', 'kontak', 'admin'].forEach(m => document.getElementById('view-'+m).classList.add('hidden'));
+            ['dashboard', 'profil', 'visimisi', 'sejarah', 'kegiatan', 'fasilitas', 'jurusan', 'guru', 'pengumuman', 'galeri', 'kontak', 'admin'].forEach(m => document.getElementById('view-'+m).classList.add('hidden'));
             document.getElementById('view-'+id).classList.remove('hidden');
         }
         function logout() { window.location.replace('index.html'); }
 
-        function addFasilitasRow(nama='', des='', foto='') {
-            const div = document.createElement('div'); div.className = 'mb-4 p-4 border rounded bg-cyan-50/30 fasilitas-item relative';
-            div.innerHTML = `<button type="button" onclick="this.parentElement.remove()" class="absolute top-2 right-2 bg-red-100 text-red-600 px-2 py-1 rounded text-xs font-bold">X</button><div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-2"><div class="pr-8"><label class="block text-xs mb-1">Nama Fasilitas</label><input type="text" class="i-nama w-full px-2 py-1 border rounded text-sm" value="${nama}" required></div><div><label class="block text-xs mb-1">Link Foto (URL)</label><input type="text" class="i-foto w-full px-2 py-1 border rounded text-sm" value="${foto}" required></div></div><div><label class="block text-xs mb-1">Deskripsi Singkat</label><input type="text" class="i-des w-full px-2 py-1 border rounded text-sm" value="${des}" required></div>`;
-            document.getElementById('cont-in-fasilitas').appendChild(div);
+        // Fungsi Tambah Row Kegiatan
+        function addKegiatanRow(nama='', des='', foto='') {
+            const div = document.createElement('div'); div.className = 'mb-4 p-4 border rounded bg-emerald-50/30 kegiatan-item relative';
+            div.innerHTML = `<button type="button" onclick="this.parentElement.remove()" class="absolute top-2 right-2 bg-red-100 text-red-600 px-2 py-1 rounded text-xs font-bold">X</button><div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-2"><div class="pr-8"><label class="block text-xs mb-1">Nama Kegiatan/Prestasi</label><input type="text" class="i-nama w-full px-2 py-1 border rounded text-sm" value="${nama}" required></div><div><label class="block text-xs mb-1">Link Foto Kegiatan (contoh: k1.jpg)</label><input type="text" class="i-foto w-full px-2 py-1 border rounded text-sm" value="${foto}" required></div></div><div><label class="block text-xs mb-1">Keterangan Singkat</label><input type="text" class="i-des w-full px-2 py-1 border rounded text-sm" value="${des}" required></div>`;
+            document.getElementById('cont-in-kegiatan').appendChild(div);
         }
-        function addGuruRow(nama='', mapel='', foto='') {
-            const div = document.createElement('div'); div.className = 'mb-4 p-4 border rounded bg-purple-50/30 guru-item relative';
-            div.innerHTML = `<button type="button" onclick="this.parentElement.remove()" class="absolute top-2 right-2 bg-red-100 text-red-600 px-2 py-1 rounded text-xs font-bold">X</button><div class="grid grid-cols-1 md:grid-cols-3 gap-3 pr-8"><div><label class="block text-xs mb-1">Nama Guru & Gelar</label><input type="text" class="i-nama w-full px-2 py-1 border rounded text-sm" value="${nama}" required></div><div><label class="block text-xs mb-1">Jabatan / Mapel</label><input type="text" class="i-mapel w-full px-2 py-1 border rounded text-sm" value="${mapel}" required></div><div><label class="block text-xs mb-1">Link Foto (URL)</label><input type="text" class="i-foto w-full px-2 py-1 border rounded text-sm" value="${foto}" required></div></div>`;
-            document.getElementById('cont-in-guru').appendChild(div);
-        }
-        function addJurusanRow(singkatan='', nama='') {
-            const div = document.createElement('div'); div.className = 'mb-4 p-3 border rounded bg-yellow-50/30 jurusan-item flex gap-3 items-end';
-            div.innerHTML = `<div class="w-1/4"><label class="block text-xs mb-1">Singkatan</label><input type="text" class="i-singkatan w-full px-2 py-1 border rounded text-sm" value="${singkatan}" required></div><div class="w-3/4"><label class="block text-xs mb-1">Nama Jurusan</label><input type="text" class="i-nama w-full px-2 py-1 border rounded text-sm" value="${nama}" required></div><button type="button" onclick="this.parentElement.remove()" class="bg-red-100 text-red-600 px-2 py-1 rounded text-xs font-bold h-fit">X</button>`;
-            document.getElementById('cont-in-jurusan').appendChild(div);
-        }
-        function addPengumumanRow(tgl='', jdl='', isi='') {
-            const div = document.createElement('div'); div.className = 'mb-4 p-4 border rounded bg-orange-50/30 pengumuman-item relative';
-            div.innerHTML = `<button type="button" onclick="this.parentElement.remove()" class="absolute top-2 right-2 bg-red-100 text-red-600 px-2 py-1 rounded text-xs font-bold">X</button><div class="grid grid-cols-2 gap-3 mb-2"><div class="pr-8"><label class="block text-xs mb-1">Tanggal</label><input type="text" class="i-tgl w-full px-2 py-1 border rounded text-sm" value="${tgl}" required></div><div><label class="block text-xs mb-1">Judul</label><input type="text" class="i-judul w-full px-2 py-1 border rounded text-sm" value="${jdl}" required></div></div><div><label class="block text-xs mb-1">Isi</label><textarea class="i-isi w-full px-2 py-1 border rounded text-sm" rows="2" required>${isi}</textarea></div>`;
-            document.getElementById('cont-in-pengumuman').appendChild(div);
-        }
-        function addGaleriRow(jdl='', link='') {
-            const div = document.createElement('div'); div.className = 'mb-3 p-3 border rounded bg-pink-50/30 galeri-item flex gap-3 items-end';
-            div.innerHTML = `<div class="w-1/3"><label class="block text-xs mb-1">Judul Foto</label><input type="text" class="i-judul w-full px-2 py-1 border rounded text-sm" value="${jdl}" required></div><div class="w-2/3"><label class="block text-xs mb-1">URL Foto</label><input type="text" class="i-link w-full px-2 py-1 border rounded text-sm" value="${link}" required></div><button type="button" onclick="this.parentElement.remove()" class="bg-red-100 text-red-600 px-2 py-1 rounded text-xs font-bold h-fit">X</button>`;
-            document.getElementById('cont-in-galeri').appendChild(div);
-        }
+
+        function addFasilitasRow(nama='', des='', foto='') { const div = document.createElement('div'); div.className = 'mb-4 p-4 border rounded bg-cyan-50/30 fasilitas-item relative'; div.innerHTML = `<button type="button" onclick="this.parentElement.remove()" class="absolute top-2 right-2 bg-red-100 text-red-600 px-2 py-1 rounded text-xs font-bold">X</button><div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-2"><div class="pr-8"><label class="block text-xs mb-1">Nama Fasilitas</label><input type="text" class="i-nama w-full px-2 py-1 border rounded text-sm" value="${nama}" required></div><div><label class="block text-xs mb-1">Link Foto (URL)</label><input type="text" class="i-foto w-full px-2 py-1 border rounded text-sm" value="${foto}" required></div></div><div><label class="block text-xs mb-1">Deskripsi Singkat</label><input type="text" class="i-des w-full px-2 py-1 border rounded text-sm" value="${des}" required></div>`; document.getElementById('cont-in-fasilitas').appendChild(div); }
+        function addGuruRow(nama='', mapel='', foto='') { const div = document.createElement('div'); div.className = 'mb-4 p-4 border rounded bg-purple-50/30 guru-item relative'; div.innerHTML = `<button type="button" onclick="this.parentElement.remove()" class="absolute top-2 right-2 bg-red-100 text-red-600 px-2 py-1 rounded text-xs font-bold">X</button><div class="grid grid-cols-1 md:grid-cols-3 gap-3 pr-8"><div><label class="block text-xs mb-1">Nama Guru & Gelar</label><input type="text" class="i-nama w-full px-2 py-1 border rounded text-sm" value="${nama}" required></div><div><label class="block text-xs mb-1">Jabatan / Mapel</label><input type="text" class="i-mapel w-full px-2 py-1 border rounded text-sm" value="${mapel}" required></div><div><label class="block text-xs mb-1">Link Foto (URL)</label><input type="text" class="i-foto w-full px-2 py-1 border rounded text-sm" value="${foto}" required></div></div>`; document.getElementById('cont-in-guru').appendChild(div); }
+        function addJurusanRow(singkatan='', nama='') { const div = document.createElement('div'); div.className = 'mb-4 p-3 border rounded bg-yellow-50/30 jurusan-item flex gap-3 items-end'; div.innerHTML = `<div class="w-1/4"><label class="block text-xs mb-1">Singkatan</label><input type="text" class="i-singkatan w-full px-2 py-1 border rounded text-sm" value="${singkatan}" required></div><div class="w-3/4"><label class="block text-xs mb-1">Nama Jurusan</label><input type="text" class="i-nama w-full px-2 py-1 border rounded text-sm" value="${nama}" required></div><button type="button" onclick="this.parentElement.remove()" class="bg-red-100 text-red-600 px-2 py-1 rounded text-xs font-bold h-fit">X</button>`; document.getElementById('cont-in-jurusan').appendChild(div); }
+        function addPengumumanRow(tgl='', jdl='', isi='') { const div = document.createElement('div'); div.className = 'mb-4 p-4 border rounded bg-orange-50/30 pengumuman-item relative'; div.innerHTML = `<button type="button" onclick="this.parentElement.remove()" class="absolute top-2 right-2 bg-red-100 text-red-600 px-2 py-1 rounded text-xs font-bold">X</button><div class="grid grid-cols-2 gap-3 mb-2"><div class="pr-8"><label class="block text-xs mb-1">Tanggal</label><input type="text" class="i-tgl w-full px-2 py-1 border rounded text-sm" value="${tgl}" required></div><div><label class="block text-xs mb-1">Judul</label><input type="text" class="i-judul w-full px-2 py-1 border rounded text-sm" value="${jdl}" required></div></div><div><label class="block text-xs mb-1">Isi</label><textarea class="i-isi w-full px-2 py-1 border rounded text-sm" rows="2" required>${isi}</textarea></div>`; document.getElementById('cont-in-pengumuman').appendChild(div); }
+        function addGaleriRow(jdl='', link='') { const div = document.createElement('div'); div.className = 'mb-3 p-3 border rounded bg-pink-50/30 galeri-item flex gap-3 items-end'; div.innerHTML = `<div class="w-1/3"><label class="block text-xs mb-1">Judul Foto</label><input type="text" class="i-judul w-full px-2 py-1 border rounded text-sm" value="${jdl}" required></div><div class="w-2/3"><label class="block text-xs mb-1">URL Foto</label><input type="text" class="i-link w-full px-2 py-1 border rounded text-sm" value="${link}" required></div><button type="button" onclick="this.parentElement.remove()" class="bg-red-100 text-red-600 px-2 py-1 rounded text-xs font-bold h-fit">X</button>`; document.getElementById('cont-in-galeri').appendChild(div); }
 
         function loadAllData() {
             fetch(scriptURL).then(res => res.json()).then(data => {
                 if(data.status === 'success') {
-                    document.getElementById('inKepsek').value = data.profil.namaKepsek || ''; 
-                    document.getElementById('inSambutan').value = data.profil.sambutan || '';
-                    document.getElementById('inFotoKepsek').value = data.profil.fotoKepsek || '';
+                    document.getElementById('inKepsek').value = data.profil.namaKepsek || ''; document.getElementById('inSambutan').value = data.profil.sambutan || ''; document.getElementById('inFotoKepsek').value = data.profil.fotoKepsek || '';
                     document.getElementById('inVisi').value = data.visimisi.visi || ''; document.getElementById('inMisi').value = data.visimisi.misi || '';
                     document.getElementById('inSejarahJudul').value = data.sejarah.judul || ''; document.getElementById('inSejarahIsi').value = data.sejarah.isi || '';
                     document.getElementById('inAlamat').value = data.kontak.alamat || ''; document.getElementById('inEmail').value = data.kontak.email || ''; document.getElementById('inTelepon').value = data.kontak.telepon || ''; document.getElementById('inPeta').value = data.kontak.peta || '';
                     
+                    document.getElementById('cont-in-kegiatan').innerHTML = ''; data.kegiatan.forEach(i => addKegiatanRow(i.nama, i.deskripsi, i.foto));
                     document.getElementById('cont-in-fasilitas').innerHTML = ''; data.fasilitas.forEach(i => addFasilitasRow(i.nama, i.deskripsi, i.foto));
                     document.getElementById('cont-in-jurusan').innerHTML = ''; data.jurusan.forEach(i => addJurusanRow(i.singkatan, i.nama));
                     document.getElementById('cont-in-guru').innerHTML = ''; data.guru.forEach(i => addGuruRow(i.nama, i.mapel, i.foto));
@@ -154,6 +127,10 @@
                 fetch(scriptURL, { method: 'POST', body: JSON.stringify(payload) }).then(res => res.json()).then(data => { alert('Tersimpan!'); showMenu('dashboard'); btn.innerHTML = txt; btn.disabled = false; });
             });
         }
+        
+        // Simpan Kegiatan
+        submitListForm('formKegiatan', 'btnKegiatan', 'updateKegiatan', '.kegiatan-item', el => ({ nama: el.querySelector('.i-nama').value, deskripsi: el.querySelector('.i-des').value, foto: el.querySelector('.i-foto').value }));
+        
         submitListForm('formFasilitas', 'btnFasilitas', 'updateFasilitas', '.fasilitas-item', el => ({ nama: el.querySelector('.i-nama').value, deskripsi: el.querySelector('.i-des').value, foto: el.querySelector('.i-foto').value }));
         submitListForm('formJurusan', 'btnJurusan', 'updateJurusan', '.jurusan-item', el => ({ singkatan: el.querySelector('.i-singkatan').value, nama: el.querySelector('.i-nama').value }));
         submitListForm('formGuru', 'btnGuru', 'updateGuru', '.guru-item', el => ({ nama: el.querySelector('.i-nama').value, mapel: el.querySelector('.i-mapel').value, foto: el.querySelector('.i-foto').value }));

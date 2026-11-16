@@ -17,9 +17,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20">
                 <div class="flex items-center gap-3">
-                    <div class="<!-- KODE BARU (Masukkan ini) -->
-<!-- KODE BARU (Masukkan ini) -->
-<img src="LINK_GAMBAR_LOGO_ANDA_DISINI" alt="Logo SMK" class="w-10 h-10 md:w-12 md:h-12 object-contain">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-xl flex items-center justify-center font-poppins font-bold text-xl md:text-2xl shadow-lg">S</div>
                     <div class="flex flex-col">
                         <span class="font-poppins font-bold text-lg md:text-xl leading-tight tracking-tight">SMK N 1 HALTIM</span>
                         <span class="text-[10px] font-semibold text-slate-500 uppercase tracking-wider">Maluku Utara</span>
@@ -28,11 +26,11 @@
                 <div class="hidden lg:flex items-center space-x-4 xl:space-x-5">
                     <a href="#" class="text-sm font-semibold text-slate-600 hover:text-blue-700">Beranda</a>
                     <a href="#profil" class="text-sm font-semibold text-slate-600 hover:text-blue-700">Profil</a>
+                    <a href="#sejarah" class="text-sm font-semibold text-slate-600 hover:text-blue-700">Sejarah</a>
                     <a href="#fasilitas" class="text-sm font-semibold text-slate-600 hover:text-blue-700">Fasilitas</a>
                     <a href="#jurusan" class="text-sm font-semibold text-slate-600 hover:text-blue-700">Jurusan</a>
                     <a href="#guru" class="text-sm font-semibold text-slate-600 hover:text-blue-700">Guru</a>
                     <a href="#pengumuman" class="text-sm font-semibold text-slate-600 hover:text-blue-700">Info</a>
-                    <a href="#kontak" class="text-sm font-semibold text-slate-600 hover:text-blue-700">Kontak</a>
                     <button onclick="openModal()" class="bg-slate-900 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-semibold shadow-md transition-all">
                         Login Admin
                     </button>
@@ -52,6 +50,7 @@
         </div>
     </div>
 
+    <!-- PROFIL & VISI MISI -->
     <section id="profil" class="py-20 bg-white border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row items-center gap-12">
@@ -83,6 +82,20 @@
         </div>
     </section>
 
+    <!-- SEJARAH SEKOLAH BARU -->
+    <section id="sejarah" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 id="tampil-sejarah-judul" class="text-3xl md:text-4xl font-poppins font-bold mb-4">Sejarah Sekolah</h2>
+                <div class="w-24 h-1 bg-blue-500 mx-auto rounded-full"></div>
+            </div>
+            <div class="max-w-4xl mx-auto bg-slate-800/50 backdrop-blur-sm p-8 md:p-12 rounded-3xl shadow-2xl border border-slate-700">
+                <p id="tampil-sejarah-isi" class="text-slate-300 leading-relaxed text-lg whitespace-pre-wrap text-justify">Memuat data sejarah dari server...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FASILITAS -->
     <section id="fasilitas" class="py-20 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl md:text-4xl font-poppins font-bold text-slate-800 mb-4">Fasilitas Sekolah</h2>
@@ -93,6 +106,7 @@
         </div>
     </section>
 
+    <!-- JURUSAN -->
     <section id="jurusan" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl md:text-4xl font-poppins font-bold text-slate-800 mb-12">Program Keahlian</h2>
@@ -102,17 +116,19 @@
         </div>
     </section>
 
-    <section id="guru" class="py-20 bg-slate-900 text-white">
+    <!-- GURU -->
+    <section id="guru" class="py-20 bg-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-poppins font-bold mb-4">Tenaga Pendidik</h2>
-            <p class="text-blue-200 mb-12 max-w-2xl mx-auto">Dibimbing oleh guru dan praktisi profesional di bidangnya.</p>
+            <h2 class="text-3xl md:text-4xl font-poppins font-bold mb-4 text-slate-800">Tenaga Pendidik</h2>
+            <p class="text-slate-500 mb-12 max-w-2xl mx-auto">Dibimbing oleh guru dan praktisi profesional di bidangnya.</p>
             <div id="container-guru" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
-                <p class="col-span-full text-slate-400 text-center">Memuat data guru...</p>
+                <p class="col-span-full text-slate-500 text-center">Memuat data guru...</p>
             </div>
         </div>
     </section>
 
-    <section id="pengumuman" class="py-20 bg-slate-50">
+    <!-- PENGUMUMAN -->
+    <section id="pengumuman" class="py-20 bg-white border-t border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-end mb-10 border-b border-slate-200 pb-4">
                 <h2 class="text-3xl font-poppins font-bold text-slate-800">Papan Pengumuman</h2>
@@ -123,7 +139,8 @@
         </div>
     </section>
 
-    <section id="galeri" class="py-20 bg-white border-t border-slate-100">
+    <!-- GALERI -->
+    <section id="galeri" class="py-20 bg-slate-50 border-t border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-poppins font-bold text-slate-800 mb-10 text-center">Galeri Kegiatan</h2>
             <div id="container-galeri" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
@@ -132,6 +149,7 @@
         </div>
     </section>
 
+    <!-- KONTAK -->
     <section id="kontak" class="py-20 bg-slate-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -190,7 +208,7 @@
         // ==========================================
         // GANTI DENGAN URL API BARU ANDA
         // ==========================================
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbyB53n1XkReKOtfoEQ2uuFDxaoY-QXRJSKylm4aGV0uC6p2DtMNGfWNrapDNye2Pgw_/exec'; 
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbz725IzQRVod2zxJ2DbIv9-L0XMZIxUEyMkVHt4mK5rubQ0RhcKUjLELrrz8zILIgiT/exec'; 
 
         function openModal() { document.getElementById('loginModal').classList.remove('hidden'); }
         function closeModal() { document.getElementById('loginModal').classList.add('hidden'); }
@@ -198,11 +216,15 @@
         document.addEventListener("DOMContentLoaded", function() {
             fetch(scriptURL).then(res => res.json()).then(data => {
                 if(data.status === 'success') {
-                    // Profil & Visi Misi & Kontak
+                    // Profil & Visi Misi & Kontak & Sejarah
                     document.getElementById('tampil-kepsek').innerText = data.profil.namaKepsek; document.getElementById('tampil-sambutan').innerText = data.profil.sambutan;
                     document.getElementById('tampil-visi').innerText = data.visimisi.visi; document.getElementById('tampil-misi').innerText = data.visimisi.misi;
                     document.getElementById('tampil-alamat').innerText = data.kontak.alamat; document.getElementById('tampil-email').innerText = data.kontak.email;
                     document.getElementById('tampil-telepon').innerText = data.kontak.telepon; document.getElementById('tampil-peta').src = data.kontak.peta;
+                    
+                    // Sejarah Baru
+                    document.getElementById('tampil-sejarah-judul').innerText = data.sejarah.judul || 'Sejarah Singkat';
+                    document.getElementById('tampil-sejarah-isi').innerText = data.sejarah.isi || 'Data sejarah belum tersedia.';
 
                     // Jurusan
                     const contJ = document.getElementById('container-jurusan'); contJ.innerHTML = ''; 
@@ -221,7 +243,7 @@
                     const contG = document.getElementById('container-guru'); contG.innerHTML = '';
                     if(data.guru.length === 0) contG.innerHTML = '<p class="col-span-full text-center text-slate-400">Belum ada data guru.</p>';
                     data.guru.forEach(item => {
-                        contG.innerHTML += `<div class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-blue-500 transition group"><div class="aspect-square bg-slate-700 overflow-hidden"><img src="${item.foto}" alt="${item.nama}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><div class="p-5 text-center"><h3 class="font-poppins font-bold text-white mb-1 truncate">${item.nama}</h3><p class="text-blue-400 text-xs font-semibold uppercase tracking-wider truncate">${item.mapel}</p></div></div>`;
+                        contG.innerHTML += `<div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:border-blue-500 transition group"><div class="aspect-square bg-slate-200 overflow-hidden"><img src="${item.foto}" alt="${item.nama}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><div class="p-5 text-center"><h3 class="font-poppins font-bold text-slate-800 mb-1 truncate">${item.nama}</h3><p class="text-blue-600 text-xs font-bold uppercase tracking-wider truncate">${item.mapel}</p></div></div>`;
                     });
 
                     // Pengumuman

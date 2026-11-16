@@ -13,7 +13,7 @@
     <nav class="bg-slate-900 text-white shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
             <div class="font-poppins font-bold text-xl cursor-pointer flex items-center gap-2" onclick="showMenu('dashboard')">
-                <img src="LINK_GAMBAR_LOGO_ANDA_DISINI" alt="Logo SMK" class="w-8 h-8 object-contain">
+                <div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-sm">S</div> CMS Panel
             </div>
             <button onclick="logout()" class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded-lg text-sm font-semibold transition">Logout</button>
         </div>
@@ -28,18 +28,19 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-center">
                 <div onclick="showMenu('profil')" class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 cursor-pointer hover:border-blue-400"><h2 class="text-sm font-bold">👤 Profil & Sambutan</h2></div>
                 <div onclick="showMenu('visimisi')" class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 cursor-pointer hover:border-indigo-400"><h2 class="text-sm font-bold">🎯 Visi & Misi</h2></div>
+                <div onclick="showMenu('sejarah')" class="bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-700 cursor-pointer hover:border-slate-400"><h2 class="text-sm font-bold text-white">📜 Sejarah Sekolah</h2></div>
                 <div onclick="showMenu('kontak')" class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 cursor-pointer hover:border-green-400"><h2 class="text-sm font-bold">📞 Kontak & Lokasi</h2></div>
-                <div onclick="showMenu('admin')" class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 cursor-pointer hover:border-red-400"><h2 class="text-sm font-bold">🔐 Kelola Admin</h2></div>
                 
                 <div onclick="showMenu('fasilitas')" class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 cursor-pointer hover:border-cyan-400 bg-cyan-50/30"><h2 class="text-sm font-bold text-cyan-800">🏢 Fasilitas</h2></div>
                 <div onclick="showMenu('jurusan')" class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 cursor-pointer hover:border-yellow-400 bg-yellow-50/30"><h2 class="text-sm font-bold text-yellow-800">🎓 Jurusan</h2></div>
                 <div onclick="showMenu('guru')" class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 cursor-pointer hover:border-purple-400 bg-purple-50/30"><h2 class="text-sm font-bold text-purple-800">👨‍🏫 Tenaga Pendidik</h2></div>
                 <div onclick="showMenu('pengumuman')" class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 cursor-pointer hover:border-orange-400 bg-orange-50/30"><h2 class="text-sm font-bold text-orange-800">📢 Pengumuman</h2></div>
                 <div onclick="showMenu('galeri')" class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 cursor-pointer hover:border-pink-400 bg-pink-50/30"><h2 class="text-sm font-bold text-pink-800">🖼️ Galeri Foto</h2></div>
+                <div onclick="showMenu('admin')" class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 cursor-pointer hover:border-red-400"><h2 class="text-sm font-bold">🔐 Kelola Admin</h2></div>
             </div>
         </div>
 
-        <!-- FORM SINGLE DATA (Sama seperti sebelumnya) -->
+        <!-- FORM SINGLE DATA -->
         <div id="view-profil" class="bg-white p-6 rounded-xl shadow-sm border hidden">
             <div class="flex justify-between items-center border-b pb-4 mb-4"><h2 class="text-xl font-bold">Profil</h2><button onclick="showMenu('dashboard')" class="text-xs bg-slate-100 px-3 py-1 rounded">Kembali</button></div>
             <form id="formProfil"><input type="text" id="inKepsek" class="w-full px-3 py-2 border rounded mb-3" placeholder="Nama Kepsek" required><textarea id="inSambutan" rows="5" class="w-full px-3 py-2 border rounded mb-3" required></textarea><button type="submit" id="btnProfil" class="bg-blue-600 text-white font-bold py-2 px-6 rounded">Simpan</button></form>
@@ -48,6 +49,19 @@
             <div class="flex justify-between items-center border-b pb-4 mb-4"><h2 class="text-xl font-bold">Visi Misi</h2><button onclick="showMenu('dashboard')" class="text-xs bg-slate-100 px-3 py-1 rounded">Kembali</button></div>
             <form id="formVM"><textarea id="inVisi" rows="3" class="w-full px-3 py-2 border rounded mb-3" required></textarea><textarea id="inMisi" rows="5" class="w-full px-3 py-2 border rounded mb-3" required></textarea><button type="submit" id="btnVM" class="bg-blue-600 text-white font-bold py-2 px-6 rounded">Simpan</button></form>
         </div>
+        
+        <!-- FORM SEJARAH BARU -->
+        <div id="view-sejarah" class="bg-white p-6 rounded-xl shadow-sm border hidden">
+            <div class="flex justify-between items-center border-b pb-4 mb-4"><h2 class="text-xl font-bold">Sejarah Sekolah</h2><button onclick="showMenu('dashboard')" class="text-xs bg-slate-100 px-3 py-1 rounded">Kembali</button></div>
+            <form id="formSejarah">
+                <label class="block text-sm font-semibold mb-1">Judul Bagian</label>
+                <input type="text" id="inSejarahJudul" class="w-full px-3 py-2 border rounded mb-4" placeholder="Misal: Sejarah Singkat" required>
+                <label class="block text-sm font-semibold mb-1">Isi Cerita / Sejarah (Gunakan Enter untuk paragraf baru)</label>
+                <textarea id="inSejarahIsi" rows="8" class="w-full px-3 py-2 border rounded mb-4" placeholder="Tuliskan sejarah sekolah di sini..." required></textarea>
+                <button type="submit" id="btnSejarah" class="bg-slate-800 hover:bg-slate-900 text-white font-bold py-2 px-6 rounded">Simpan Sejarah</button>
+            </form>
+        </div>
+
         <div id="view-kontak" class="bg-white p-6 rounded-xl shadow-sm border hidden">
             <div class="flex justify-between items-center border-b pb-4 mb-4"><h2 class="text-xl font-bold">Kontak</h2><button onclick="showMenu('dashboard')" class="text-xs bg-slate-100 px-3 py-1 rounded">Kembali</button></div>
             <form id="formKontak"><input type="text" id="inAlamat" class="w-full px-3 py-2 border rounded mb-3" placeholder="Alamat"><input type="email" id="inEmail" class="w-full px-3 py-2 border rounded mb-3" placeholder="Email"><input type="text" id="inTelepon" class="w-full px-3 py-2 border rounded mb-3" placeholder="Telepon"><input type="text" id="inPeta" class="w-full px-3 py-2 border rounded mb-3" placeholder="Link Embed Maps"><button type="submit" id="btnKontak" class="bg-blue-600 text-white font-bold py-2 px-6 rounded">Simpan</button></form>
@@ -87,10 +101,10 @@
         // ==========================================
         // GANTI DENGAN URL API BARU ANDA DI BAWAH INI
         // ==========================================
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbyB53n1XkReKOtfoEQ2uuFDxaoY-QXRJSKylm4aGV0uC6p2DtMNGfWNrapDNye2Pgw_/exec'; 
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbz725IzQRVod2zxJ2DbIv9-L0XMZIxUEyMkVHt4mK5rubQ0RhcKUjLELrrz8zILIgiT/exec'; 
 
         function showMenu(id) {
-            ['dashboard', 'profil', 'visimisi', 'fasilitas', 'jurusan', 'guru', 'pengumuman', 'galeri', 'kontak', 'admin'].forEach(m => document.getElementById('view-'+m).classList.add('hidden'));
+            ['dashboard', 'profil', 'visimisi', 'sejarah', 'fasilitas', 'jurusan', 'guru', 'pengumuman', 'galeri', 'kontak', 'admin'].forEach(m => document.getElementById('view-'+m).classList.add('hidden'));
             document.getElementById('view-'+id).classList.remove('hidden');
         }
         function logout() { window.location.replace('index.html'); }
@@ -126,6 +140,7 @@
                 if(data.status === 'success') {
                     document.getElementById('inKepsek').value = data.profil.namaKepsek || ''; document.getElementById('inSambutan').value = data.profil.sambutan || '';
                     document.getElementById('inVisi').value = data.visimisi.visi || ''; document.getElementById('inMisi').value = data.visimisi.misi || '';
+                    document.getElementById('inSejarahJudul').value = data.sejarah.judul || ''; document.getElementById('inSejarahIsi').value = data.sejarah.isi || '';
                     document.getElementById('inAlamat').value = data.kontak.alamat || ''; document.getElementById('inEmail').value = data.kontak.email || ''; document.getElementById('inTelepon').value = data.kontak.telepon || ''; document.getElementById('inPeta').value = data.kontak.peta || '';
                     
                     document.getElementById('cont-in-fasilitas').innerHTML = ''; data.fasilitas.forEach(i => addFasilitasRow(i.nama, i.deskripsi, i.foto));
@@ -148,6 +163,7 @@
         }
         submitForm('formProfil', 'btnProfil', 'updateProfil', () => ({ action: 'updateProfil', namaKepsek: document.getElementById('inKepsek').value, sambutan: document.getElementById('inSambutan').value }));
         submitForm('formVM', 'btnVM', 'updateVisiMisi', () => ({ action: 'updateVisiMisi', visi: document.getElementById('inVisi').value, misi: document.getElementById('inMisi').value }));
+        submitForm('formSejarah', 'btnSejarah', 'updateSejarah', () => ({ action: 'updateSejarah', judul: document.getElementById('inSejarahJudul').value, isi: document.getElementById('inSejarahIsi').value }));
         submitForm('formKontak', 'btnKontak', 'updateKontak', () => ({ action: 'updateKontak', alamat: document.getElementById('inAlamat').value, email: document.getElementById('inEmail').value, telepon: document.getElementById('inTelepon').value, peta: document.getElementById('inPeta').value }));
         submitForm('formAddAdmin', 'btnAddAdmin', 'addUser', () => ({ action: 'addUser', username: document.getElementById('newAdminUser').value, password: document.getElementById('newAdminPass').value }));
 

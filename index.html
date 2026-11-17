@@ -8,13 +8,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
     <style> body { font-family: 'Inter', sans-serif; } h1, h2, h3, h4, .font-poppins { font-family: 'Poppins', sans-serif; } </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-blue-200 selection:text-blue-900">
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-blue-200 selection:text-blue-900 relative">
 
     <nav class="bg-white/90 backdrop-blur-lg border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20">
                 <div class="flex items-center gap-3">
-                    <img src="https://img.sanishtech.com/u/d5434db02736e916ac9e67ac926738e8.jpg" alt="Logo SMK N 1 Haltim" class="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover drop-shadow-md">
+                    <img src="logo.png" alt="Logo SMK N 1 Haltim" class="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover drop-shadow-md bg-white">
                     <div class="flex flex-col">
                         <span class="font-poppins font-bold text-lg md:text-xl leading-tight tracking-tight">SMK N 1 HALTIM</span>
                         <span class="text-[10px] font-semibold text-slate-500 uppercase tracking-wider">Maluku Utara</span>
@@ -26,7 +26,6 @@
                     <a href="#kegiatan" class="text-sm font-semibold text-slate-600 hover:text-blue-700">Kegiatan</a>
                     <a href="#fasilitas" class="text-sm font-semibold text-slate-600 hover:text-blue-700">Fasilitas</a>
                     <a href="#jurusan" class="text-sm font-semibold text-slate-600 hover:text-blue-700">Jurusan</a>
-                    <a href="#guru" class="text-sm font-semibold text-slate-600 hover:text-blue-700">Guru</a>
                     <button onclick="openModal()" class="bg-slate-900 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-semibold shadow-md transition-all">Login Admin</button>
                 </div>
             </div>
@@ -41,13 +40,12 @@
         </div>
     </div>
 
-    <!-- PROFIL -->
     <section id="profil" class="py-20 bg-white border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <div class="w-full md:w-1/3 flex justify-center">
                     <div class="w-64 h-64 md:w-80 md:h-80 bg-slate-100 rounded-full border-8 border-slate-50 shadow-xl flex items-center justify-center overflow-hidden">
-                        <img id="tampil-foto-kepsek" src="https://via.placeholder.com/400?text=Foto+Kepsek" alt="Foto Kepala Sekolah" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        <img id="tampil-foto-kepsek" src="https://via.placeholder.com/400?text=Foto+Kepsek" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
                     </div>
                 </div>
                 <div class="w-full md:w-2/3">
@@ -61,13 +59,12 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-20 pt-10 border-t border-slate-100">
-                <div class="bg-blue-50/50 p-8 rounded-3xl border border-blue-100"><h3 class="text-2xl font-poppins font-bold text-blue-700 mb-4 flex items-center gap-3"><span class="text-3xl">🎯</span> Visi</h3><p id="tampil-visi" class="text-slate-600 leading-relaxed italic whitespace-pre-wrap">Memuat...</p></div>
-                <div class="bg-indigo-50/50 p-8 rounded-3xl border border-indigo-100"><h3 class="text-2xl font-poppins font-bold text-indigo-700 mb-4 flex items-center gap-3"><span class="text-3xl">🚀</span> Misi</h3><p id="tampil-misi" class="text-slate-600 leading-relaxed whitespace-pre-wrap">Memuat...</p></div>
+                <div class="bg-blue-50/50 p-8 rounded-3xl border border-blue-100"><h3 class="text-2xl font-poppins font-bold text-blue-700 mb-4">🎯 Visi</h3><p id="tampil-visi" class="text-slate-600 leading-relaxed italic whitespace-pre-wrap">Memuat...</p></div>
+                <div class="bg-indigo-50/50 p-8 rounded-3xl border border-indigo-100"><h3 class="text-2xl font-poppins font-bold text-indigo-700 mb-4">🚀 Misi</h3><p id="tampil-misi" class="text-slate-600 leading-relaxed whitespace-pre-wrap">Memuat...</p></div>
             </div>
         </div>
     </section>
 
-    <!-- SEJARAH SEKOLAH -->
     <section id="sejarah" class="py-20 bg-slate-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12"><h2 id="tampil-sejarah-judul" class="text-3xl md:text-4xl font-poppins font-bold mb-4">Sejarah Sekolah</h2><div class="w-24 h-1 bg-blue-500 mx-auto rounded-full"></div></div>
@@ -75,7 +72,7 @@
         </div>
     </section>
     
-    <!-- RIWAYAT KEGIATAN (BARU) -->
+    <!-- RIWAYAT KEGIATAN KLIKABLE -->
     <section id="kegiatan" class="py-20 bg-white border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl md:text-4xl font-poppins font-bold text-slate-800 mb-4">Riwayat Kegiatan</h2>
@@ -86,76 +83,48 @@
         </div>
     </section>
 
-    <!-- FASILITAS -->
-    <section id="fasilitas" class="py-20 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-poppins font-bold text-slate-800 mb-4">Fasilitas Sekolah</h2>
-            <div id="container-fasilitas" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left mt-10"><p class="col-span-full text-slate-500 text-center">Memuat fasilitas...</p></div>
-        </div>
-    </section>
-
-    <!-- JURUSAN & GURU -->
-    <section id="jurusan" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-poppins font-bold text-slate-800 mb-12">Program Keahlian</h2>
-            <div id="container-jurusan" class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left mb-20"><p class="col-span-full text-slate-500 text-center">Memuat jurusan...</p></div>
-            <h2 id="guru" class="text-3xl md:text-4xl font-poppins font-bold text-slate-800 mb-12">Tenaga Pendidik</h2>
-            <div id="container-guru" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left"><p class="col-span-full text-slate-500 text-center">Memuat data guru...</p></div>
-        </div>
-    </section>
-
-    <!-- PENGUMUMAN & GALERI -->
-    <section id="pengumuman" class="py-20 bg-slate-50 border-t border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-end mb-10 border-b border-slate-200 pb-4"><h2 class="text-3xl font-poppins font-bold text-slate-800">Papan Pengumuman</h2></div>
-            <div id="container-pengumuman" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20"><p class="col-span-full text-slate-500">Memuat pengumuman...</p></div>
-            
-            <h2 class="text-3xl font-poppins font-bold text-slate-800 mb-10 text-center">Galeri Foto</h2>
-            <div id="container-galeri" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"><p class="col-span-full text-center text-slate-500">Memuat galeri...</p></div>
-        </div>
-    </section>
-
-    <!-- KONTAK -->
-    <section id="kontak" class="py-20 bg-slate-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                <div>
-                    <h2 class="text-3xl font-poppins font-bold mb-8">Hubungi Kami</h2>
-                    <div class="space-y-6">
-                        <div class="flex gap-4 items-center"><div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center shrink-0">📍</div><div><p class="text-sm text-slate-400 font-semibold">Alamat</p><p id="tampil-alamat" class="font-medium">Memuat...</p></div></div>
-                        <div class="flex gap-4 items-center"><div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center shrink-0">✉️</div><div><p class="text-sm text-slate-400 font-semibold">Email</p><p id="tampil-email" class="font-medium">Memuat...</p></div></div>
-                        <div class="flex gap-4 items-center"><div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center shrink-0">📞</div><div><p class="text-sm text-slate-400 font-semibold">Telepon</p><p id="tampil-telepon" class="font-medium">Memuat...</p></div></div>
-                    </div>
-                </div>
-                <div class="h-80 bg-slate-800 rounded-2xl overflow-hidden shadow-inner"><iframe id="tampil-peta" src="" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
-            </div>
-        </div>
-    </section>
-
+    <section id="fasilitas" class="py-20 bg-slate-50"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"><h2 class="text-3xl md:text-4xl font-poppins font-bold text-slate-800 mb-12">Fasilitas Sekolah</h2><div id="container-fasilitas" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left"><p class="col-span-full text-slate-500 text-center">Memuat fasilitas...</p></div></div></section>
+    <section id="jurusan" class="py-20 bg-white"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"><h2 class="text-3xl md:text-4xl font-poppins font-bold text-slate-800 mb-12">Program Keahlian</h2><div id="container-jurusan" class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left mb-20"><p class="col-span-full text-slate-500 text-center">Memuat jurusan...</p></div><h2 id="guru" class="text-3xl md:text-4xl font-poppins font-bold text-slate-800 mb-12">Tenaga Pendidik</h2><div id="container-guru" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left"><p class="col-span-full text-slate-500 text-center">Memuat data guru...</p></div></div></section>
+    <section id="pengumuman" class="py-20 bg-slate-50 border-t border-slate-100"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-end mb-10 border-b border-slate-200 pb-4"><h2 class="text-3xl font-poppins font-bold text-slate-800">Papan Pengumuman</h2></div><div id="container-pengumuman" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20"><p class="col-span-full text-slate-500">Memuat pengumuman...</p></div><h2 class="text-3xl font-poppins font-bold text-slate-800 mb-10 text-center">Galeri Foto</h2><div id="container-galeri" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"><p class="col-span-full text-center text-slate-500">Memuat galeri...</p></div></div></section>
+    <section id="kontak" class="py-20 bg-slate-900 text-white"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="grid grid-cols-1 lg:grid-cols-2 gap-16"><div><h2 class="text-3xl font-poppins font-bold mb-8">Hubungi Kami</h2><div class="space-y-6"><div class="flex gap-4 items-center"><div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center">📍</div><div><p class="text-sm text-slate-400 font-semibold">Alamat</p><p id="tampil-alamat" class="font-medium">Memuat...</p></div></div><div class="flex gap-4 items-center"><div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center">✉️</div><div><p class="text-sm text-slate-400 font-semibold">Email</p><p id="tampil-email" class="font-medium">Memuat...</p></div></div><div class="flex gap-4 items-center"><div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center">📞</div><div><p class="text-sm text-slate-400 font-semibold">Telepon</p><p id="tampil-telepon" class="font-medium">Memuat...</p></div></div></div></div><div class="h-80 bg-slate-800 rounded-2xl overflow-hidden shadow-inner"><iframe id="tampil-peta" src="" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div></div></div></section>
     <footer class="bg-black py-6 text-center text-slate-500 text-sm">© 2026 SMK Negeri 1 Halmahera Timur. All rights reserved.</footer>
 
-    <!-- MODAL LOGIN -->
-    <div id="loginModal" class="fixed inset-0 z-[100] hidden">
-        <div class="absolute inset-0 bg-slate-900/80 backdrop-blur-sm" onclick="closeModal()"></div>
-        <div class="flex items-center justify-center min-h-screen px-4">
-            <div class="relative bg-white rounded-2xl w-full max-w-md p-8 shadow-2xl">
-                <h3 class="text-2xl font-poppins font-bold text-slate-800 mb-6">Login Admin</h3>
-                <form id="formLoginBackend">
-                    <div class="mb-4"><label class="block text-sm font-semibold mb-2">Username</label><input type="text" id="username" required class="w-full px-4 py-3 border rounded-xl bg-slate-50 focus:ring-2 focus:ring-blue-600"></div>
-                    <div class="mb-6"><label class="block text-sm font-semibold mb-2">Password</label><input type="password" id="password" required class="w-full px-4 py-3 border rounded-xl bg-slate-50 focus:ring-2 focus:ring-blue-600"></div>
-                    <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 rounded-xl hover:bg-blue-700 transition">Masuk Dashboard</button>
-                </form>
-                <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-red-500 text-2xl">&times;</button>
+    <!-- MODAL LOGIN ADMIN -->
+    <div id="loginModal" class="fixed inset-0 z-[100] hidden"><div class="absolute inset-0 bg-slate-900/80 backdrop-blur-sm" onclick="closeModal()"></div><div class="flex items-center justify-center min-h-screen px-4"><div class="relative bg-white rounded-2xl w-full max-w-md p-8 shadow-2xl"><h3 class="text-2xl font-poppins font-bold text-slate-800 mb-6">Login Admin</h3><form id="formLoginBackend"><div class="mb-4"><label class="block text-sm font-semibold mb-2">Username</label><input type="text" id="username" required class="w-full px-4 py-3 border rounded-xl bg-slate-50"></div><div class="mb-6"><label class="block text-sm font-semibold mb-2">Password</label><input type="password" id="password" required class="w-full px-4 py-3 border rounded-xl bg-slate-50"></div><button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 rounded-xl hover:bg-blue-700 transition">Masuk Dashboard</button></form><button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-red-500 text-2xl">&times;</button></div></div></div>
+
+    <!-- MODAL KEGIATAN (SLIDER POP-UP) -->
+    <div id="modalKegiatan" class="fixed inset-0 z-[110] hidden flex items-center justify-center p-4 md:p-10">
+        <div class="absolute inset-0 bg-slate-900/90 backdrop-blur-sm" onclick="closeKegiatanModal()"></div>
+        <div class="relative bg-white rounded-3xl w-full max-w-5xl overflow-hidden shadow-2xl flex flex-col max-h-[95vh] animate-[fadeIn_0.3s_ease-out]">
+            <button onclick="closeKegiatanModal()" class="absolute top-4 right-4 z-30 bg-black/60 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-red-600 transition font-bold text-xl backdrop-blur-md">&times;</button>
+            
+            <!-- Area Slider -->
+            <div class="relative w-full h-64 md:h-[500px] bg-black group" id="slider-container">
+                <!-- Foto dimuat via JS -->
+            </div>
+            
+            <!-- Tombol Navigasi Slider -->
+            <button onclick="prevSlide()" class="absolute top-[120px] md:top-[250px] left-4 z-20 bg-black/50 hover:bg-black/80 text-white w-12 h-12 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100 text-2xl">&#10094;</button>
+            <button onclick="nextSlide()" class="absolute top-[120px] md:top-[250px] right-4 z-20 bg-black/50 hover:bg-black/80 text-white w-12 h-12 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100 text-2xl">&#10095;</button>
+
+            <!-- Indikator Dot -->
+            <div id="slider-dots" class="absolute top-[230px] md:top-[460px] left-0 right-0 flex justify-center gap-2 z-20"></div>
+
+            <!-- Teks Detail -->
+            <div class="p-6 md:p-8 overflow-y-auto bg-white z-20 relative">
+                <h3 id="tampil-kegiatan-judul" class="text-2xl md:text-3xl font-poppins font-bold text-slate-800 mb-3">Judul</h3>
+                <p id="tampil-kegiatan-deskripsi" class="text-slate-600 leading-relaxed text-base md:text-lg whitespace-pre-wrap">Deskripsi</p>
             </div>
         </div>
     </div>
 
-    <!-- SCRIPT GABUNGAN -->
+    <style> @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } } </style>
+
     <script>
         // ==========================================
-        // GANTI DENGAN URL API BARU ANDA (VERSI 10)
+        // GANTI DENGAN URL API BARU ANDA
         // ==========================================
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxMh405fSk2DKq_aHV-5MgUIYn1jyM-swGBUIy3Xpv3WEoOnjGjNWYwossx20MXJ1np/exec'; 
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyIkQi1bm0sH4Y903NlMaoejzCkPBfMJ3fZvj3YP2YSW6iHeV9X0qhVCl1EqceClnN1/exec'; 
 
         function openModal() { document.getElementById('loginModal').classList.remove('hidden'); }
         function closeModal() { document.getElementById('loginModal').classList.add('hidden'); }
@@ -163,51 +132,83 @@
         document.addEventListener("DOMContentLoaded", function() {
             fetch(scriptURL).then(res => res.json()).then(data => {
                 if(data.status === 'success') {
-                    document.getElementById('tampil-kepsek').innerText = data.profil.namaKepsek; 
-                    document.getElementById('tampil-sambutan').innerText = data.profil.sambutan;
-                    if(data.profil.fotoKepsek) document.getElementById('tampil-foto-kepsek').src = data.profil.fotoKepsek;
-
+                    document.getElementById('tampil-kepsek').innerText = data.profil.namaKepsek; document.getElementById('tampil-sambutan').innerText = data.profil.sambutan; if(data.profil.fotoKepsek) document.getElementById('tampil-foto-kepsek').src = data.profil.fotoKepsek;
                     document.getElementById('tampil-visi').innerText = data.visimisi.visi; document.getElementById('tampil-misi').innerText = data.visimisi.misi;
-                    document.getElementById('tampil-alamat').innerText = data.kontak.alamat; document.getElementById('tampil-email').innerText = data.kontak.email;
-                    document.getElementById('tampil-telepon').innerText = data.kontak.telepon; document.getElementById('tampil-peta').src = data.kontak.peta;
-                    
-                    document.getElementById('tampil-sejarah-judul').innerText = data.sejarah.judul || 'Sejarah Singkat';
-                    document.getElementById('tampil-sejarah-isi').innerText = data.sejarah.isi || 'Data sejarah belum tersedia.';
+                    document.getElementById('tampil-alamat').innerText = data.kontak.alamat; document.getElementById('tampil-email').innerText = data.kontak.email; document.getElementById('tampil-telepon').innerText = data.kontak.telepon; document.getElementById('tampil-peta').src = data.kontak.peta;
+                    document.getElementById('tampil-sejarah-judul').innerText = data.sejarah.judul || 'Sejarah Singkat'; document.getElementById('tampil-sejarah-isi').innerText = data.sejarah.isi || 'Data sejarah belum tersedia.';
 
+                    // RENDER KEGIATAN DENGAN KLIK MODAL
                     const contK = document.getElementById('container-kegiatan'); contK.innerHTML = '';
                     if(data.kegiatan.length === 0) contK.innerHTML = '<p class="col-span-full text-center text-slate-500">Belum ada riwayat kegiatan.</p>';
-                    data.kegiatan.forEach(item => { contK.innerHTML += `<div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition group"><div class="aspect-video bg-slate-200 overflow-hidden"><img src="${item.foto}" alt="${item.nama}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500"></div><div class="p-6"><h3 class="font-poppins font-bold text-xl text-slate-800 mb-2">${item.nama}</h3><p class="text-slate-600 text-sm leading-relaxed">${item.deskripsi}</p></div></div>`; });
+                    window.kegiatanData = data.kegiatan; // Simpan ke variabel global untuk dibaca pop-up modal
+                    
+                    data.kegiatan.forEach((item, index) => {
+                        // Pecah link foto berdasarkan koma
+                        const fotos = item.foto.split(',').map(f => f.trim()).filter(f => f !== '');
+                        const cover = fotos[0] || 'https://via.placeholder.com/400';
+                        const badge = fotos.length > 1 ? `<div class="absolute top-4 right-4 bg-black/70 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1">📸 +${fotos.length - 1} Foto</div>` : '';
+                        
+                        contK.innerHTML += `<div onclick="openKegiatanModal(${index})" class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-2xl transition-all duration-300 group cursor-pointer transform hover:-translate-y-1">
+                            <div class="aspect-video bg-slate-200 overflow-hidden relative">
+                                <img src="${cover}" alt="${item.nama}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                ${badge}
+                                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition duration-300 flex items-center justify-center"><span class="bg-blue-600 text-white font-bold px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">Lihat Detail</span></div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="font-poppins font-bold text-xl text-slate-800 mb-2 group-hover:text-blue-600 transition">${item.nama}</h3>
+                                <p class="text-slate-600 text-sm leading-relaxed line-clamp-3">${item.deskripsi}</p>
+                            </div>
+                        </div>`;
+                    });
 
-                    const contF = document.getElementById('container-fasilitas'); contF.innerHTML = '';
-                    if(data.fasilitas.length === 0) contF.innerHTML = '<p class="col-span-full text-center text-slate-500">Belum ada data fasilitas.</p>';
-                    data.fasilitas.forEach(item => { contF.innerHTML += `<div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition group"><div class="aspect-video bg-slate-200 overflow-hidden"><img src="${item.foto}" alt="${item.nama}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500"></div><div class="p-6"><h3 class="font-poppins font-bold text-xl text-slate-800 mb-2">${item.nama}</h3><p class="text-slate-600 text-sm leading-relaxed">${item.deskripsi}</p></div></div>`; });
-
-                    const contJ = document.getElementById('container-jurusan'); contJ.innerHTML = ''; 
-                    data.jurusan.forEach(item => { contJ.innerHTML += `<div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition"><h3 class="text-2xl font-poppins font-bold text-slate-800 mb-2">${item.singkatan}</h3><p class="text-slate-600">${item.nama}</p></div>`; });
-
-                    const contG = document.getElementById('container-guru'); contG.innerHTML = '';
-                    if(data.guru.length === 0) contG.innerHTML = '<p class="col-span-full text-center text-slate-400">Belum ada data guru.</p>';
-                    data.guru.forEach(item => { contG.innerHTML += `<div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:border-blue-500 transition group"><div class="aspect-square bg-slate-200 overflow-hidden"><img src="${item.foto}" alt="${item.nama}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><div class="p-5 text-center"><h3 class="font-poppins font-bold text-slate-800 mb-1 truncate">${item.nama}</h3><p class="text-blue-600 text-xs font-bold uppercase tracking-wider truncate">${item.mapel}</p></div></div>`; });
-
-                    const contP = document.getElementById('container-pengumuman'); contP.innerHTML = '';
-                    if(data.pengumuman.length === 0) contP.innerHTML = '<p class="text-slate-500">Belum ada pengumuman.</p>';
-                    data.pengumuman.forEach(item => { contP.innerHTML += `<div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition"><div class="text-xs font-bold text-blue-600 mb-2 uppercase tracking-wider">${item.tanggal}</div><h3 class="text-xl font-poppins font-bold text-slate-800 mb-3">${item.judul}</h3><p class="text-slate-600 text-sm leading-relaxed">${item.isi}</p></div>`; });
-
-                    const contGl = document.getElementById('container-galeri'); contGl.innerHTML = '';
-                    if(data.galeri.length === 0) contGl.innerHTML = '<p class="col-span-full text-center text-slate-500">Galeri belum tersedia.</p>';
-                    data.galeri.forEach(item => { contGl.innerHTML += `<div class="group relative aspect-video bg-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all"><img src="${item.link}" alt="${item.judul}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"><div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end"><div class="p-4 w-full"><p class="text-white font-semibold truncate">${item.judul}</p></div></div></div>`; });
+                    const contF = document.getElementById('container-fasilitas'); contF.innerHTML = ''; data.fasilitas.forEach(item => { contF.innerHTML += `<div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition group"><div class="aspect-video bg-slate-200 overflow-hidden"><img src="${item.foto}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500"></div><div class="p-6"><h3 class="font-poppins font-bold text-xl text-slate-800 mb-2">${item.nama}</h3><p class="text-slate-600 text-sm leading-relaxed">${item.deskripsi}</p></div></div>`; });
+                    const contJ = document.getElementById('container-jurusan'); contJ.innerHTML = ''; data.jurusan.forEach(item => { contJ.innerHTML += `<div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition"><h3 class="text-2xl font-poppins font-bold text-slate-800 mb-2">${item.singkatan}</h3><p class="text-slate-600">${item.nama}</p></div>`; });
+                    const contG = document.getElementById('container-guru'); contG.innerHTML = ''; data.guru.forEach(item => { contG.innerHTML += `<div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:border-blue-500 transition group"><div class="aspect-square bg-slate-200 overflow-hidden"><img src="${item.foto}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div><div class="p-5 text-center"><h3 class="font-poppins font-bold text-slate-800 mb-1 truncate">${item.nama}</h3><p class="text-blue-600 text-xs font-bold uppercase tracking-wider truncate">${item.mapel}</p></div></div>`; });
+                    const contP = document.getElementById('container-pengumuman'); contP.innerHTML = ''; data.pengumuman.forEach(item => { contP.innerHTML += `<div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition"><div class="text-xs font-bold text-blue-600 mb-2 uppercase tracking-wider">${item.tanggal}</div><h3 class="text-xl font-poppins font-bold text-slate-800 mb-3">${item.judul}</h3><p class="text-slate-600 text-sm leading-relaxed">${item.isi}</p></div>`; });
+                    const contGl = document.getElementById('container-galeri'); contGl.innerHTML = ''; data.galeri.forEach(item => { contGl.innerHTML += `<div class="group relative aspect-video bg-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all"><img src="${item.link}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"><div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end"><div class="p-4 w-full"><p class="text-white font-semibold truncate">${item.judul}</p></div></div></div>`; });
                 }
             });
         });
 
-        const loginForm = document.getElementById('formLoginBackend');
-        if(loginForm) {
-            loginForm.addEventListener('submit', function(e) {
-                e.preventDefault(); const btn = loginForm.querySelector('button[type="submit"]'); btn.innerHTML = 'Memeriksa...'; btn.disabled = true;
-                fetch(scriptURL, { method: 'POST', body: JSON.stringify({ action: 'login', username: username.value, password: password.value }) })
-                .then(res => res.json()).then(data => { if (data.status === 'success') { window.location.href = 'dashboard.html'; } else { alert('Login Gagal! Periksa Kredensial.'); btn.innerHTML = 'Masuk Dashboard'; btn.disabled = false; } });
-            });
+        // LOGIKA SLIDER MODAL KEGIATAN
+        let curSlide = 0; let slideTimer; let fotosArr = [];
+
+        function openKegiatanModal(idx) {
+            const item = window.kegiatanData[idx];
+            fotosArr = item.foto.split(',').map(f => f.trim()).filter(f => f !== '');
+            document.getElementById('tampil-kegiatan-judul').innerText = item.nama;
+            document.getElementById('tampil-kegiatan-deskripsi').innerText = item.deskripsi;
+            curSlide = 0; renderSlider();
+            document.getElementById('modalKegiatan').classList.remove('hidden');
+            startTimer();
         }
+
+        function closeKegiatanModal() { document.getElementById('modalKegiatan').classList.add('hidden'); clearInterval(slideTimer); }
+
+        function renderSlider() {
+            const cont = document.getElementById('slider-container'); const dots = document.getElementById('slider-dots');
+            if(fotosArr.length === 0) { cont.innerHTML = '<div class="w-full h-full flex items-center justify-center text-slate-500">Tidak ada foto</div>'; dots.innerHTML = ''; return; }
+            
+            // Gunakan object-contain agar foto utuh tidak terpotong
+            cont.innerHTML = fotosArr.map((f, i) => `<img src="${f}" class="absolute inset-0 w-full h-full object-contain transition-opacity duration-700 ${i === curSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}" id="slide-${i}">`).join('');
+            if(fotosArr.length > 1) { dots.innerHTML = fotosArr.map((_, i) => `<div class="w-2.5 h-2.5 rounded-full cursor-pointer transition-all duration-300 ${i === curSlide ? 'bg-blue-500 scale-125' : 'bg-white/50 hover:bg-white'}" onclick="goToSlide(${i})"></div>`).join(''); } 
+            else { dots.innerHTML = ''; }
+        }
+
+        function goToSlide(n) {
+            if(fotosArr.length <= 1) return;
+            document.getElementById(`slide-${curSlide}`).classList.replace('opacity-100', 'opacity-0'); document.getElementById(`slide-${curSlide}`).classList.replace('z-10', 'z-0');
+            curSlide = (n + fotosArr.length) % fotosArr.length;
+            document.getElementById(`slide-${curSlide}`).classList.replace('opacity-0', 'opacity-100'); document.getElementById(`slide-${curSlide}`).classList.replace('z-0', 'z-10');
+            const dots = document.getElementById('slider-dots').children;
+            for(let i=0; i<dots.length; i++) { dots[i].className = `w-2.5 h-2.5 rounded-full cursor-pointer transition-all duration-300 ${i === curSlide ? 'bg-blue-500 scale-125' : 'bg-white/50 hover:bg-white'}`; }
+            startTimer();
+        }
+        function nextSlide() { goToSlide(curSlide + 1); } function prevSlide() { goToSlide(curSlide - 1); }
+        function startTimer() { clearInterval(slideTimer); if(fotosArr.length > 1) slideTimer = setInterval(nextSlide, 3500); } // Pindah foto otomatis tiap 3.5 detik
+
+        const loginForm = document.getElementById('formLoginBackend');
+        if(loginForm) { loginForm.addEventListener('submit', function(e) { e.preventDefault(); const btn = loginForm.querySelector('button[type="submit"]'); btn.innerHTML = 'Memeriksa...'; btn.disabled = true; fetch(scriptURL, { method: 'POST', body: JSON.stringify({ action: 'login', username: username.value, password: password.value }) }).then(res => res.json()).then(data => { if (data.status === 'success') { window.location.href = 'dashboard.html'; } else { alert('Login Gagal! Periksa Kredensial.'); btn.innerHTML = 'Masuk Dashboard'; btn.disabled = false; } }); }); }
     </script>
 </body>
 </html>

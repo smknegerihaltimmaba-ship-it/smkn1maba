@@ -57,7 +57,7 @@
         // ==========================================
         // GANTI DENGAN URL API BARU ANDA (VERSI 10)
         // ==========================================
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbyIkQi1bm0sH4Y903NlMaoejzCkPBfMJ3fZvj3YP2YSW6iHeV9X0qhVCl1EqceClnN1/exec'; 
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyIkQi1bm0sH4Y903NlMaoejzCkPBfMJ3fZvj3YP2YSW6iHeV9X0qhVCl1EqceClnN1/exechttps://script.google.com/macros/s/AKfycbyp_2YhIbGx3wD9elmC8Ku5GNdHKl6_5IGagFN4eGluz-BVMOGkHUO0hool2xYbDe1D/exec'; 
 
         function showMenu(id) {
             ['dashboard', 'profil', 'visimisi', 'sejarah', 'kegiatan', 'fasilitas', 'jurusan', 'guru', 'pengumuman', 'galeri', 'kontak', 'admin'].forEach(m => document.getElementById('view-'+m).classList.add('hidden'));
@@ -74,7 +74,19 @@
 
         function addFasilitasRow(nama='', des='', foto='') { const div = document.createElement('div'); div.className = 'mb-4 p-4 border rounded bg-cyan-50/30 fasilitas-item relative'; div.innerHTML = `<button type="button" onclick="this.parentElement.remove()" class="absolute top-2 right-2 bg-red-100 text-red-600 px-2 py-1 rounded text-xs font-bold">X</button><div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-2"><div class="pr-8"><label class="block text-xs mb-1">Nama Fasilitas</label><input type="text" class="i-nama w-full px-2 py-1 border rounded text-sm" value="${nama}" required></div><div><label class="block text-xs mb-1">Link Foto (URL)</label><input type="text" class="i-foto w-full px-2 py-1 border rounded text-sm" value="${foto}" required></div></div><div><label class="block text-xs mb-1">Deskripsi Singkat</label><input type="text" class="i-des w-full px-2 py-1 border rounded text-sm" value="${des}" required></div>`; document.getElementById('cont-in-fasilitas').appendChild(div); }
         function addGuruRow(nama='', mapel='', foto='') { const div = document.createElement('div'); div.className = 'mb-4 p-4 border rounded bg-purple-50/30 guru-item relative'; div.innerHTML = `<button type="button" onclick="this.parentElement.remove()" class="absolute top-2 right-2 bg-red-100 text-red-600 px-2 py-1 rounded text-xs font-bold">X</button><div class="grid grid-cols-1 md:grid-cols-3 gap-3 pr-8"><div><label class="block text-xs mb-1">Nama Guru</label><input type="text" class="i-nama w-full px-2 py-1 border rounded text-sm" value="${nama}" required></div><div><label class="block text-xs mb-1">Jabatan / Mapel</label><input type="text" class="i-mapel w-full px-2 py-1 border rounded text-sm" value="${mapel}" required></div><div><label class="block text-xs mb-1">Link Foto</label><input type="text" class="i-foto w-full px-2 py-1 border rounded text-sm" value="${foto}" required></div></div>`; document.getElementById('cont-in-guru').appendChild(div); }
-        function addJurusanRow(singkatan='', nama='') { const div = document.createElement('div'); div.className = 'mb-4 p-3 border rounded bg-yellow-50/30 jurusan-item flex gap-3 items-end'; div.innerHTML = `<div class="w-1/4"><label class="block text-xs mb-1">Singkatan</label><input type="text" class="i-singkatan w-full px-2 py-1 border rounded text-sm" value="${singkatan}" required></div><div class="w-3/4"><label class="block text-xs mb-1">Nama Jurusan</label><input type="text" class="i-nama w-full px-2 py-1 border rounded text-sm" value="${nama}" required></div><button type="button" onclick="this.parentElement.remove()" class="bg-red-100 text-red-600 px-2 py-1 rounded text-xs font-bold h-fit">X</button>`; document.getElementById('cont-in-jurusan').appendChild(div); }
+       function addJurusanRow(singkatan='', nama='', des='', gambar='') { 
+    const div = document.createElement('div'); div.className = 'mb-4 p-4 border rounded bg-yellow-50/30 jurusan-item relative'; 
+    div.innerHTML = `<button type="button" onclick="this.parentElement.remove()" class="absolute top-2 right-2 bg-red-100 text-red-600 px-2 py-1 rounded text-xs font-bold">X</button>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-2 pr-8">
+        <div><label class="block text-xs mb-1">Singkatan (Misal: TKJ)</label><input type="text" class="i-singkatan w-full px-2 py-1 border rounded text-sm" value="${singkatan}" required></div>
+        <div><label class="block text-xs mb-1">Nama Lengkap Jurusan</label><input type="text" class="i-nama w-full px-2 py-1 border rounded text-sm" value="${nama}" required></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div><label class="block text-xs mb-1">Deskripsi Singkat</label><textarea class="i-des w-full px-2 py-1 border rounded text-sm" rows="2" required>${des}</textarea></div>
+        <div><label class="block text-xs mb-1">Link Gambar Background</label><textarea class="i-gambar w-full px-2 py-1 border rounded text-sm" rows="2" placeholder="Gunakan Direct Link gambar" required>${gambar}</textarea></div>
+    </div>`; 
+    document.getElementById('cont-in-jurusan').appendChild(div); 
+}
         function addPengumumanRow(tgl='', jdl='', isi='') { const div = document.createElement('div'); div.className = 'mb-4 p-4 border rounded bg-orange-50/30 pengumuman-item relative'; div.innerHTML = `<button type="button" onclick="this.parentElement.remove()" class="absolute top-2 right-2 bg-red-100 text-red-600 px-2 py-1 rounded text-xs font-bold">X</button><div class="grid grid-cols-2 gap-3 mb-2"><div class="pr-8"><label class="block text-xs mb-1">Tanggal</label><input type="text" class="i-tgl w-full px-2 py-1 border rounded text-sm" value="${tgl}" required></div><div><label class="block text-xs mb-1">Judul</label><input type="text" class="i-judul w-full px-2 py-1 border rounded text-sm" value="${jdl}" required></div></div><div><label class="block text-xs mb-1">Isi</label><textarea class="i-isi w-full px-2 py-1 border rounded text-sm" rows="2" required>${isi}</textarea></div>`; document.getElementById('cont-in-pengumuman').appendChild(div); }
         function addGaleriRow(jdl='', link='') { const div = document.createElement('div'); div.className = 'mb-3 p-3 border rounded bg-pink-50/30 galeri-item flex gap-3 items-end'; div.innerHTML = `<div class="w-1/3"><label class="block text-xs mb-1">Judul Foto</label><input type="text" class="i-judul w-full px-2 py-1 border rounded text-sm" value="${jdl}" required></div><div class="w-2/3"><label class="block text-xs mb-1">URL Foto</label><input type="text" class="i-link w-full px-2 py-1 border rounded text-sm" value="${link}" required></div><button type="button" onclick="this.parentElement.remove()" class="bg-red-100 text-red-600 px-2 py-1 rounded text-xs font-bold h-fit">X</button>`; document.getElementById('cont-in-galeri').appendChild(div); }
 
@@ -88,7 +100,7 @@
                     
                     document.getElementById('cont-in-kegiatan').innerHTML = ''; data.kegiatan.forEach(i => addKegiatanRow(i.nama, i.deskripsi, i.foto));
                     document.getElementById('cont-in-fasilitas').innerHTML = ''; data.fasilitas.forEach(i => addFasilitasRow(i.nama, i.deskripsi, i.foto));
-                    document.getElementById('cont-in-jurusan').innerHTML = ''; data.jurusan.forEach(i => addJurusanRow(i.singkatan, i.nama));
+                   document.getElementById('cont-in-jurusan').innerHTML = ''; data.jurusan.forEach(i => addJurusanRow(i.singkatan, i.nama, i.deskripsi, i.gambar));
                     document.getElementById('cont-in-guru').innerHTML = ''; data.guru.forEach(i => addGuruRow(i.nama, i.mapel, i.foto));
                     document.getElementById('cont-in-pengumuman').innerHTML = ''; data.pengumuman.forEach(i => addPengumumanRow(i.tanggal, i.judul, i.isi));
                     document.getElementById('cont-in-galeri').innerHTML = ''; data.galeri.forEach(i => addGaleriRow(i.judul, i.link));
@@ -121,7 +133,7 @@
         
         submitListForm('formKegiatan', 'btnKegiatan', 'updateKegiatan', '.kegiatan-item', el => ({ nama: el.querySelector('.i-nama').value, deskripsi: el.querySelector('.i-des').value, foto: el.querySelector('.i-foto').value }));
         submitListForm('formFasilitas', 'btnFasilitas', 'updateFasilitas', '.fasilitas-item', el => ({ nama: el.querySelector('.i-nama').value, deskripsi: el.querySelector('.i-des').value, foto: el.querySelector('.i-foto').value }));
-        submitListForm('formJurusan', 'btnJurusan', 'updateJurusan', '.jurusan-item', el => ({ singkatan: el.querySelector('.i-singkatan').value, nama: el.querySelector('.i-nama').value }));
+       submitListForm('formJurusan', 'btnJurusan', 'updateJurusan', '.jurusan-item', el => ({ singkatan: el.querySelector('.i-singkatan').value, nama: el.querySelector('.i-nama').value, deskripsi: el.querySelector('.i-des').value, gambar: el.querySelector('.i-gambar').value }));
         submitListForm('formGuru', 'btnGuru', 'updateGuru', '.guru-item', el => ({ nama: el.querySelector('.i-nama').value, mapel: el.querySelector('.i-mapel').value, foto: el.querySelector('.i-foto').value }));
         submitListForm('formPengumuman', 'btnPengumuman', 'updatePengumuman', '.pengumuman-item', el => ({ tanggal: el.querySelector('.i-tgl').value, judul: el.querySelector('.i-judul').value, isi: el.querySelector('.i-isi').value }));
         submitListForm('formGaleri', 'btnGaleri', 'updateGaleri', '.galeri-item', el => ({ judul: el.querySelector('.i-judul').value, link: el.querySelector('.i-link').value }));

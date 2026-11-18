@@ -20,7 +20,7 @@
 <body class="bg-slate-100 text-slate-800 min-h-screen flex flex-col">
 
     <!-- ===================================================================== -->
-    <!-- 1. LAYAR LOGIN WAJIB SEBELUM MASUK KE DASHBOARD                       -->
+    <!-- 1. LAYAR LOGIN WAJIB (ANTI-AUTOFILL & ANTI-SIMPAN SANDI OTOMATIS)     -->
     <!-- ===================================================================== -->
     <div id="login-gate" class="fixed inset-0 z-[100] login-gate-bg flex items-center justify-center p-4 overflow-y-auto">
         <div class="bg-white rounded-3xl max-w-md w-full p-8 shadow-2xl border border-slate-200 relative">
@@ -36,18 +36,28 @@
                 <span id="login-error-msg">Username atau Password salah!</span>
             </div>
 
-            <form id="formGateLogin" class="space-y-4">
+            <form id="formGateLogin" class="space-y-4" autocomplete="off">
+                <!-- Dummy Hidden Inputs untuk Mencegah Popup Sandi Chrome -->
+                <input type="text" style="display:none" aria-hidden="true">
+                <input type="password" style="display:none" aria-hidden="true">
+
                 <div>
                     <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Username Admin</label>
                     <div class="relative">
-                        <input type="text" id="gateUser" required placeholder="Masukkan Username" class="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600">
+                        <input type="text" id="gateUser" name="cms_usr_field_haltim" required placeholder="Masukkan Username"
+                            autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+                            readonly onfocus="this.removeAttribute('readonly');"
+                            class="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600">
                         <i class="fa-solid fa-user text-slate-400 absolute left-3.5 top-3.5"></i>
                     </div>
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Password</label>
                     <div class="relative">
-                        <input type="password" id="gatePass" required placeholder="••••••••" class="w-full pl-10 pr-10 py-3 rounded-xl bg-slate-50 border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600">
+                        <input type="password" id="gatePass" name="cms_pwd_field_haltim" required placeholder="••••••••"
+                            autocomplete="new-password"
+                            readonly onfocus="this.removeAttribute('readonly');"
+                            class="w-full pl-10 pr-10 py-3 rounded-xl bg-slate-50 border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600">
                         <i class="fa-solid fa-lock text-slate-400 absolute left-3.5 top-3.5"></i>
                         <button type="button" onclick="togglePassVisibility()" class="absolute right-3.5 top-3 text-slate-400 hover:text-slate-600">
                             <i id="eyeIcon" class="fa-regular fa-eye"></i>
@@ -170,7 +180,6 @@
                 </div>
 
                 <form id="formPKL" class="space-y-6">
-                    <!-- Bagian 1: Pengaturan Informasi Kiri & Kartu Highlight Mitra -->
                     <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
                         <h3 class="text-sm font-poppins font-bold text-slate-800 border-b pb-2">1. Pengaturan Judul, Deskripsi & Kartu Highlight Mitra (Kolom Kiri)</h3>
                         <div class="grid sm:grid-cols-3 gap-3 text-xs">
@@ -212,7 +221,6 @@
                         </div>
                     </div>
 
-                    <!-- Bagian 2: Tabel Direktori Penempatan PKL Siswa & Mitra Aktif -->
                     <div class="space-y-4">
                         <div class="flex flex-wrap justify-between items-center gap-2">
                             <div>
@@ -328,10 +336,7 @@
             <!-- ==================== 5. RIWAYAT KEGIATAN ==================== -->
             <div id="view-kegiatan" class="bg-white p-6 rounded-2xl shadow-sm border hidden">
                 <div class="flex justify-between items-center border-b pb-4 mb-4">
-                    <div>
-                        <h2 class="text-xl font-poppins font-bold">🏃 Riwayat Kegiatan Siswa & Sekolah</h2>
-                        <p class="text-xs text-slate-500">Mendukung banyak foto sekaligus (pisahkan link foto dengan tanda koma) untuk fitur Pop-up Slider.</p>
-                    </div>
+                    <h2 class="text-xl font-poppins font-bold">🏃 Riwayat Kegiatan Siswa & Sekolah</h2>
                     <button onclick="showMenu('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 font-semibold px-3.5 py-1.5 rounded-lg">Kembali</button>
                 </div>
                 <form id="formKegiatan">
@@ -357,10 +362,7 @@
             <!-- ==================== 7. KOMPETENSI KEAHLIAN (JURUSAN) ==================== -->
             <div id="view-jurusan" class="bg-white p-6 rounded-2xl shadow-sm border hidden">
                 <div class="flex justify-between items-center border-b pb-4 mb-4">
-                    <div>
-                        <h2 class="text-xl font-poppins font-bold">🎓 Kompetensi Keahlian (Jurusan)</h2>
-                        <p class="text-xs text-slate-500">Anda dapat memasukkan beberapa Link Gambar Background (pisahkan dengan koma) untuk fitur Pop-up Slider Jurusan.</p>
-                    </div>
+                    <h2 class="text-xl font-poppins font-bold">🎓 Kompetensi Keahlian (Jurusan)</h2>
                     <button onclick="showMenu('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 font-semibold px-3.5 py-1.5 rounded-lg">Kembali</button>
                 </div>
                 <form id="formJurusan">
@@ -416,10 +418,10 @@
                     <button onclick="showMenu('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 font-semibold px-3.5 py-1.5 rounded-lg">Kembali</button>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <form id="formAddAdmin" class="bg-slate-50 p-5 border rounded-2xl">
+                    <form id="formAddAdmin" class="bg-slate-50 p-5 border rounded-2xl" autocomplete="off">
                         <h3 class="font-bold mb-3 text-sm">Tambah Admin Baru</h3>
-                        <input type="text" id="newAdminUser" placeholder="Username Baru" class="w-full px-3.5 py-2.5 border rounded-xl mb-3 text-sm" required>
-                        <input type="text" id="newAdminPass" placeholder="Password Baru" class="w-full px-3.5 py-2.5 border rounded-xl mb-4 text-sm" required>
+                        <input type="text" id="newAdminUser" placeholder="Username Baru" autocomplete="off" class="w-full px-3.5 py-2.5 border rounded-xl mb-3 text-sm" required>
+                        <input type="text" id="newAdminPass" placeholder="Password Baru" autocomplete="off" class="w-full px-3.5 py-2.5 border rounded-xl mb-4 text-sm" required>
                         <button type="submit" id="btnAddAdmin" class="w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-2.5 rounded-xl text-sm">Tambah Admin</button>
                     </form>
                     <div>
@@ -526,7 +528,12 @@
             sessionStorage.removeItem('smkn1haltim_cms_auth');
             document.getElementById('dashboard-app').classList.add('hidden');
             document.getElementById('login-gate').classList.remove('hidden');
-            document.getElementById('gatePass').value = '';
+            const uEl = document.getElementById('gateUser');
+            const pEl = document.getElementById('gatePass');
+            uEl.value = '';
+            pEl.value = '';
+            uEl.setAttribute('readonly', true);
+            pEl.setAttribute('readonly', true);
         }
 
         document.getElementById('formGateLogin').addEventListener('submit', function(e) {
@@ -564,7 +571,6 @@
             });
         });
 
-        // BARIS DIREKTORI MONITORING PKL & BKK
         function addPKLRow(item = {}) {
             const st = item.status || 'Penempatan Aktif';
             const div = document.createElement('div');
@@ -802,7 +808,6 @@
                     document.getElementById('inTelepon').value = kt.telepon || '';
                     document.getElementById('inPeta').value = kt.peta || '';
 
-                    // Load Pengaturan Teks Monitoring PKL & BKK
                     if (data.infoPKL) {
                         const ip = data.infoPKL;
                         if (ip.badge) document.getElementById('pkl-info-badge').value = ip.badge;
@@ -892,7 +897,6 @@
         submitForm('formKontak', 'btnKontak', () => ({ action: 'updateKontak', alamat: document.getElementById('inAlamat').value, email: document.getElementById('inEmail').value, telepon: document.getElementById('inTelepon').value, peta: document.getElementById('inPeta').value }));
         submitForm('formAddAdmin', 'btnAddAdmin', () => ({ action: 'addUser', username: document.getElementById('newAdminUser').value, password: document.getElementById('newAdminPass').value }));
 
-        // Submit Khusus Sistem Monitoring PKL & BKK (Teks Info + Tabel Direktori)
         document.getElementById('formPKL').addEventListener('submit', function(e) {
             e.preventDefault();
             const btn = document.getElementById('btnPKL');
@@ -1019,7 +1023,10 @@
             }
         }
 
+        // Kosongkan paksa input saat halaman dibuka agar tidak pernah terisi otomatis oleh browser
         document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById('gateUser').value = '';
+            document.getElementById('gatePass').value = '';
             const activeUser = sessionStorage.getItem('smkn1haltim_cms_auth');
             if (activeUser) {
                 unlockDashboard(activeUser);

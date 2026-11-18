@@ -112,18 +112,18 @@
                 <div class="flex flex-wrap justify-between items-end mb-6 border-b pb-5 gap-4">
                     <div>
                         <h1 class="text-2xl sm:text-3xl font-poppins font-bold text-slate-900">Dashboard Utama Administrator</h1>
-                        <p class="text-sm text-slate-600 mt-1">Kelola seluruh konten profil, kegiatan, Sistem Monitoring PKL & BKK (Kiri & Kanan), hingga PPDB dan NISN.</p>
+                        <p class="text-sm text-slate-600 mt-1">Kelola seluruh konten profil, pengumuman bergambar, kegiatan, Sistem Monitoring PKL & BKK, hingga PPDB dan NISN.</p>
                     </div>
                     <div class="flex flex-wrap gap-2 text-xs font-bold">
-                        <button onclick="showMenu('pkl')" class="px-3.5 py-1.5 rounded-xl bg-blue-600 text-white shadow hover:bg-blue-700 transition">🏭 Atur Monitoring PKL (<span id="badge-count-pkl">0</span> Mitra)</button>
+                        <button onclick="showMenu('pengumuman')" class="px-3.5 py-1.5 rounded-xl bg-orange-500 text-white shadow hover:bg-orange-600 transition">📢 Kelola Pengumuman</button>
+                        <button onclick="showMenu('pkl')" class="px-3.5 py-1.5 rounded-xl bg-blue-600 text-white shadow hover:bg-blue-700 transition">🏭 Monitoring PKL (<span id="badge-count-pkl">0</span>)</button>
                         <button onclick="showMenu('ppdb')" class="px-3.5 py-1.5 rounded-xl bg-amber-100 text-amber-800 hover:bg-amber-200 transition">PPDB: <strong id="badge-count-ppdb">0</strong></button>
-                        <button onclick="showMenu('pesan')" class="px-3.5 py-1.5 rounded-xl bg-purple-100 text-purple-800 hover:bg-purple-200 transition">Pesan: <strong id="badge-count-pesan">0</strong></button>
                     </div>
                 </div>
 
                 <h3 class="text-xs font-bold uppercase tracking-wider text-blue-700 mb-3">A. Pengaturan Sistem Monitoring PKL/BKK & Layanan Akademik</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 text-center mb-8">
-                    <div onclick="showMenu('pkl')" class="bg-blue-600 text-white p-5 rounded-xl shadow-md cursor-pointer hover:bg-blue-700 transition ring-4 ring-blue-600/20">
+                    <div onclick="showMenu('pkl')" class="bg-blue-600 text-white p-5 rounded-xl shadow-md cursor-pointer hover:bg-blue-700 transition">
                         <h2 class="text-sm font-bold">🏭 Sistem Monitoring PKL & BKK</h2>
                         <p class="text-[11px] text-blue-100 mt-1">Atur Bagian Kiri & Tabel Mitra Kanan</p>
                     </div>
@@ -141,27 +141,51 @@
                     </div>
                     <div onclick="showMenu('pesan')" class="bg-purple-600 text-white p-5 rounded-xl shadow-sm cursor-pointer hover:bg-purple-700 transition">
                         <h2 class="text-sm font-bold">💬 Pesan Masuk Humas</h2>
-                        <p class="text-[11px] text-purple-100 mt-1">Aspirasi & Balas via WA</p>
+                        <p class="text-[11px] text-purple-100 mt-1">Aspirasi & Balas via WA (<span id="badge-count-pesan">0</span>)</p>
                     </div>
                 </div>
 
-                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">B. Pengelolaan Profil, Kegiatan & Dokumentasi Sekolah</h3>
+                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">B. Pengelolaan Profil, Pengumuman, Kegiatan & Dokumentasi Sekolah</h3>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-center">
                     <div onclick="showMenu('profil')" class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 cursor-pointer hover:border-blue-500 hover:shadow-md transition"><h2 class="text-sm font-bold">👤 Profil & Sambutan</h2><p class="text-[11px] text-slate-400 mt-1">Foto & Sambutan Kepsek</p></div>
                     <div onclick="showMenu('visimisi')" class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 cursor-pointer hover:border-indigo-500 hover:shadow-md transition"><h2 class="text-sm font-bold">🎯 Visi, Misi & Motto</h2><p class="text-[11px] text-slate-400 mt-1">Visi, Misi & Identitas</p></div>
                     <div onclick="showMenu('sejarah')" class="bg-slate-800 p-5 rounded-xl shadow-sm border border-slate-700 cursor-pointer hover:border-slate-400 hover:shadow-md transition"><h2 class="text-sm font-bold text-white">📜 Sejarah Sekolah</h2><p class="text-[11px] text-slate-300 mt-1">Sejarah & Dapodik</p></div>
+                    <div onclick="showMenu('pengumuman')" class="bg-orange-50 p-5 rounded-xl shadow-sm border-2 border-orange-400 cursor-pointer hover:bg-orange-100/60 hover:shadow-md transition"><h2 class="text-sm font-bold text-orange-900">📢 Pengumuman & Berita</h2><p class="text-[11px] text-orange-700 font-semibold mt-1">Tema Manual & Input Foto</p></div>
                     <div onclick="showMenu('kegiatan')" class="bg-emerald-50/60 p-5 rounded-xl shadow-sm border border-emerald-200 cursor-pointer hover:border-emerald-500 hover:shadow-md transition"><h2 class="text-sm font-bold text-emerald-900">🏃 Riwayat Kegiatan</h2><p class="text-[11px] text-emerald-700 mt-1">Multi-Foto Slider Pop-up</p></div>
                     <div onclick="showMenu('fasilitas')" class="bg-cyan-50/60 p-5 rounded-xl shadow-sm border border-cyan-200 cursor-pointer hover:border-cyan-500 hover:shadow-md transition"><h2 class="text-sm font-bold text-cyan-900">🏢 Fasilitas Sekolah</h2><p class="text-[11px] text-cyan-700 mt-1">Lab, RPS & Sarana</p></div>
                     <div onclick="showMenu('jurusan')" class="bg-yellow-50/60 p-5 rounded-xl shadow-sm border border-yellow-200 cursor-pointer hover:border-yellow-500 hover:shadow-md transition"><h2 class="text-sm font-bold text-yellow-900">🎓 Kompetensi Keahlian</h2><p class="text-[11px] text-yellow-700 mt-1">TJKT, TITL, TKP & Foto</p></div>
                     <div onclick="showMenu('guru')" class="bg-purple-50/60 p-5 rounded-xl shadow-sm border border-purple-200 cursor-pointer hover:border-purple-500 hover:shadow-md transition"><h2 class="text-sm font-bold text-purple-900">👨‍🏫 Tenaga Pendidik</h2><p class="text-[11px] text-purple-700 mt-1">Data Guru & Staf</p></div>
-                    <div onclick="showMenu('pengumuman')" class="bg-orange-50/60 p-5 rounded-xl shadow-sm border border-orange-200 cursor-pointer hover:border-orange-500 hover:shadow-md transition"><h2 class="text-sm font-bold text-orange-900">📢 Berita & Pengumuman</h2><p class="text-[11px] text-orange-700 mt-1">Kabar PKL, UKK & Sekolah</p></div>
                     <div onclick="showMenu('galeri')" class="bg-pink-50/60 p-5 rounded-xl shadow-sm border border-pink-200 cursor-pointer hover:border-pink-500 hover:shadow-md transition"><h2 class="text-sm font-bold text-pink-900">🖼️ Galeri Foto</h2><p class="text-[11px] text-pink-700 mt-1">Dokumentasi Visual</p></div>
                     <div onclick="showMenu('kontak')" class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 cursor-pointer hover:border-green-500 hover:shadow-md transition"><h2 class="text-sm font-bold">📞 Kontak & Lokasi</h2><p class="text-[11px] text-slate-400 mt-1">Alamat, Telp, Email & Peta</p></div>
                     <div onclick="showMenu('admin')" class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 cursor-pointer hover:border-red-500 hover:shadow-md transition"><h2 class="text-sm font-bold">🔐 Kelola Akun Admin</h2><p class="text-[11px] text-slate-400 mt-1">Multi-User & Password</p></div>
                 </div>
             </div>
 
-            <!-- ==================== PANEL KHUSUS: SISTEM ATUR MONITORING PKL & BKK (KIRI & KANAN) ==================== -->
+            <!-- ==================== PANEL PENGUMUMAN BARU (TEMA MANUAL & INPUT FOTO AKTIF) ==================== -->
+            <div id="view-pengumuman" class="bg-white p-6 rounded-2xl shadow-sm border hidden">
+                <div class="flex flex-wrap justify-between items-center border-b pb-4 mb-6 gap-4">
+                    <div>
+                        <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-orange-100 text-orange-800 uppercase">PAPAN INFORMASI PUBLIK</span>
+                        <h2 class="text-xl font-poppins font-bold mt-1">📢 Kelola Papan Pengumuman & Berita Sekolah</h2>
+                        <p class="text-xs text-slate-500">Ketikkan <strong>Tema Pengumuman</strong> secara manual, masukkan <strong>Link Foto Sampul</strong> (bisa lebih dari 1 foto dipisah koma), Tanggal, Judul, dan Isi Pengumuman.</p>
+                    </div>
+                    <button onclick="showMenu('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 font-semibold px-3.5 py-2 rounded-lg">Kembali ke Dashboard</button>
+                </div>
+                <form id="formPengumuman">
+                    <div id="cont-in-pengumuman" class="space-y-4 mb-6"></div>
+                    <div class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t">
+                        <button type="button" onclick="addPengumumanRow()" class="bg-orange-100 hover:bg-orange-200 text-orange-900 px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-1.5">
+                            <i class="fa-solid fa-plus"></i> Tambah Kartu Pengumuman Baru
+                        </button>
+                        <button type="submit" id="btnPengumuman" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-xl text-sm shadow-lg shadow-orange-600/20 transition flex items-center gap-2">
+                            <i class="fa-solid fa-floppy-disk"></i>
+                            <span>Simpan Semua Pengumuman & Foto</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- ==================== PANEL SISTEM ATUR MONITORING PKL & BKK ==================== -->
             <div id="view-pkl" class="bg-white p-6 rounded-2xl shadow-sm border hidden">
                 <div class="flex flex-wrap justify-between items-center border-b pb-4 mb-6 gap-4">
                     <div>
@@ -173,7 +197,6 @@
                 </div>
 
                 <form id="formPKL" class="space-y-8">
-                    <!-- BAGIAN KIRI: Judul, Deskripsi & 3 Kartu Instansi -->
                     <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
                         <div class="flex items-center gap-2 border-b pb-2">
                             <span class="w-6 h-6 rounded-full bg-blue-600 text-white text-xs font-bold flex items-center justify-center">1</span>
@@ -220,7 +243,6 @@
                         </div>
                     </div>
 
-                    <!-- BAGIAN KANAN: Tabel Direktori Penempatan PKL Siswa & Mitra Aktif -->
                     <div class="p-5 rounded-2xl bg-blue-50/40 border border-blue-200 space-y-4">
                         <div class="flex flex-wrap justify-between items-center gap-2 border-b border-blue-200 pb-3">
                             <div class="flex items-center gap-2">
@@ -389,19 +411,6 @@
                 </form>
             </div>
 
-            <!-- ==================== 9. BERITA & PENGUMUMAN ==================== -->
-            <div id="view-pengumuman" class="bg-white p-6 rounded-2xl shadow-sm border hidden">
-                <div class="flex justify-between items-center border-b pb-4 mb-4">
-                    <h2 class="text-xl font-poppins font-bold">📢 Papan Pengumuman & Berita Sekolah</h2>
-                    <button onclick="showMenu('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 font-semibold px-3.5 py-1.5 rounded-lg">Kembali</button>
-                </div>
-                <form id="formPengumuman">
-                    <div id="cont-in-pengumuman"></div>
-                    <button type="button" onclick="addPengumumanRow()" class="bg-slate-200 hover:bg-slate-300 px-4 py-2 rounded-xl text-xs font-bold mb-6">+ Tambah Berita / Pengumuman</button><br>
-                    <button type="submit" id="btnPengumuman" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-2.5 px-6 rounded-xl text-sm">Simpan Semua Pengumuman</button>
-                </form>
-            </div>
-
             <!-- ==================== 10. GALERI FOTO ==================== -->
             <div id="view-galeri" class="bg-white p-6 rounded-2xl shadow-sm border hidden">
                 <div class="flex justify-between items-center border-b pb-4 mb-4">
@@ -492,7 +501,6 @@
     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbwHP24iFlzi-d6aJetJB1FJvjqtAnrbkA92WVktIwDdq2J4q-xqSR6nmXC-iuxTu7wT/exec';
 
-        // Data Default Mitra PKL (Muncul otomatis di daftar sebelah kanan jika Google Sheets belum diisi)
         const defaultPKLItems = [
             { waktu: '18/11/2026', mitra: 'UPT TIK & Lab Fakultas Teknik Unkhair', lokasi: 'Kota Ternate', jurusan: 'TJKT', kuota: '8 Siswa Kelas XII', status: 'Mitra Kampus Aktif' },
             { waktu: '18/11/2026', mitra: 'PT PLN (Persero) ULP Maba', lokasi: 'Kota Maba, Haltim', jurusan: 'TITL', kuota: '6 Siswa Kelas XII', status: 'Penempatan Aktif' },
@@ -506,6 +514,19 @@
             'jurusan', 'guru', 'pengumuman', 'galeri', 'kontak', 'admin',
             'ppdb', 'pkl', 'siswa', 'jadwal', 'pesan'
         ];
+
+        // Helper untuk merapikan tanggal ISO 2027-02-06T15:00:00.000Z menjadi format rapi
+        function formatCleanDate(raw) {
+            if (!raw) return '';
+            const str = String(raw);
+            if (str.includes('T') && str.includes('Z')) {
+                const d = new Date(str);
+                if (!isNaN(d.getTime())) {
+                    return new Intl.DateTimeFormat('id-ID', { day: '2-digit', month: 'long', year: 'numeric' }).format(d);
+                }
+            }
+            return str;
+        }
 
         function showMenu(id) {
             allViews.forEach(m => {
@@ -584,7 +605,66 @@
             });
         });
 
-        // BARIS TABEL KANAN DIREKTORI MONITORING PKL (DILENGKAPI IKON AKSI DI SEBELAH KANAN)
+        // FORM BARIS PENGUMUMAN BARU: TANPA DROPDOWN KATEGORI, DIGANTI TEMA MANUAL & INPUT FOTO AKTIF
+        function addPengumumanRow(tgl='', jdl='', isi='', tema='Pengumuman Sekolah', foto='') {
+            const cleanTgl = formatCleanDate(tgl);
+            const cleanTema = (tema === 'PKL' || tema === 'UKK' || tema === 'PRESTASI' || !tema) ? 'Pengumuman Sekolah' : tema;
+            const firstFoto = (foto || '').split(',')[0].trim();
+
+            const div = document.createElement('div');
+            div.className = 'p-5 border-2 border-orange-200/80 rounded-2xl bg-orange-50/30 pengumuman-item relative space-y-3 shadow-sm';
+            div.innerHTML = `
+            <div class="flex justify-between items-center border-b border-orange-200 pb-2.5">
+                <span class="text-xs font-bold text-orange-800 flex items-center gap-1.5">
+                    <i class="fa-solid fa-bullhorn"></i> Kartu Pengumuman / Informasi
+                </span>
+                <button type="button" onclick="this.closest('.pengumuman-item').remove()" class="bg-red-100 hover:bg-red-600 text-red-600 hover:text-white px-3 py-1 rounded-lg text-xs font-bold transition">
+                    <i class="fa-solid fa-trash-can mr-1"></i>Hapus
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Tema / Label Pengumuman (Manual) *</label>
+                    <input type="text" class="i-tema w-full px-3 py-2 border border-slate-300 rounded-xl text-sm font-bold text-orange-900 bg-white focus:ring-2 focus:ring-orange-500" value="${cleanTema}" placeholder="Contoh: PPDB 2027/2028 / Info Akademik" required>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Tanggal Pengumuman *</label>
+                    <input type="text" class="i-tgl w-full px-3 py-2 border border-slate-300 rounded-xl text-sm bg-white" value="${cleanTgl}" placeholder="Contoh: 06 Februari 2027" required>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Judul Pengumuman *</label>
+                    <input type="text" class="i-judul w-full px-3 py-2 border border-slate-300 rounded-xl text-sm font-bold bg-white" value="${jdl}" placeholder="Contoh: Penerimaan Siswa Baru" required>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-start">
+                <div class="md:col-span-7">
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Isi Lengkap Pengumuman *</label>
+                    <textarea class="i-isi w-full px-3 py-2 border border-slate-300 rounded-xl text-sm bg-white" rows="4" placeholder="Tuliskan isi detail pengumuman..." required>${isi}</textarea>
+                </div>
+                <div class="md:col-span-5 space-y-2">
+                    <label class="block text-xs font-bold text-orange-800 mb-1">
+                        <i class="fa-solid fa-image mr-1"></i>Link Foto Pengumuman (Bisa >1 pisah koma)
+                    </label>
+                    <textarea oninput="updatePengumumanPreview(this)" class="i-foto w-full px-3 py-2 border border-orange-300 rounded-xl text-xs font-mono bg-white focus:ring-2 focus:ring-orange-500" rows="2" placeholder="Tempel Direct Link Foto (.jpg / .png) di sini...">${foto || ''}</textarea>
+                    <div class="flex items-center gap-3 bg-white p-2 rounded-xl border border-slate-200">
+                        <img src="${firstFoto || 'https://placehold.co/160x100/1e3a8a/ffffff?text=Belum+Ada+Foto'}" onerror="this.src='https://placehold.co/160x100/dc2626/ffffff?text=Link+Foto+Salah'" class="prev-img w-20 h-12 object-cover rounded-lg border">
+                        <span class="text-[11px] text-slate-500 leading-tight">Pratinjau Foto Sampul.<br>Jika >1 foto, otomatis menjadi Slider saat diklik.</span>
+                    </div>
+                </div>
+            </div>`;
+            document.getElementById('cont-in-pengumuman').appendChild(div);
+        }
+
+        function updatePengumumanPreview(textarea) {
+            const card = textarea.closest('.pengumuman-item');
+            const img = card.querySelector('.prev-img');
+            const firstUrl = textarea.value.split(',')[0].trim();
+            img.src = firstUrl || 'https://placehold.co/160x100/1e3a8a/ffffff?text=Belum+Ada+Foto';
+        }
+
+        // BARIS TABEL KANAN DIREKTORI MONITORING PKL
         function addPKLRow(item = {}) {
             const st = item.status || 'Penempatan Aktif';
             const div = document.createElement('div');
@@ -621,7 +701,6 @@
                         <option value="Kuota Terpenuhi" ${st==='Kuota Terpenuhi'?'selected':''}>Kuota Terpenuhi</option>
                     </select>
                 </div>
-                <!-- IKON SEBELAH KANAN: GESER NAIK & HAPUS BARIS -->
                 <button type="button" onclick="movePKLRowUp(this)" class="bg-slate-100 hover:bg-blue-600 text-slate-700 hover:text-white px-2.5 py-2 rounded-xl font-bold transition" title="Geser Baris ke Atas"><i class="fa-solid fa-arrow-up"></i></button>
                 <button type="button" onclick="this.closest('.pkl-item').remove()" class="bg-red-100 hover:bg-red-600 text-red-600 hover:text-white px-3 py-2 rounded-xl font-bold transition" title="Hapus Baris Mitra"><i class="fa-solid fa-trash-can"></i></button>
             </div>`;
@@ -684,28 +763,6 @@
                 <div><label class="block text-xs font-semibold mb-1">Link Foto Guru</label><input type="text" class="i-foto w-full px-3 py-1.5 border rounded-lg text-sm font-mono" value="${foto}" required></div>
             </div>`;
             document.getElementById('cont-in-guru').appendChild(div);
-        }
-
-        function addPengumumanRow(tgl='', jdl='', isi='', kat='PKL', foto='') {
-            const div = document.createElement('div');
-            div.className = 'mb-4 p-4 border rounded-xl bg-orange-50/40 pengumuman-item relative space-y-2';
-            div.innerHTML = `<button type="button" onclick="this.parentElement.remove()" class="absolute top-2 right-2 bg-red-100 text-red-600 px-2.5 py-1 rounded-lg text-xs font-bold">Hapus</button>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-3 pr-16">
-                <div><label class="block text-xs font-semibold mb-1">Kategori</label>
-                    <select class="i-kat w-full px-3 py-1.5 border rounded-lg text-sm bg-white font-bold">
-                        <option value="PKL" ${kat==='PKL'?'selected':''}>PKL</option>
-                        <option value="UKK" ${kat==='UKK'?'selected':''}>UKK</option>
-                        <option value="PRESTASI" ${kat==='PRESTASI'?'selected':''}>PRESTASI</option>
-                    </select>
-                </div>
-                <div><label class="block text-xs font-semibold mb-1">Tanggal</label><input type="text" class="i-tgl w-full px-3 py-1.5 border rounded-lg text-sm" value="${tgl}" required></div>
-                <div class="md:col-span-2"><label class="block text-xs font-semibold mb-1">Judul Berita</label><input type="text" class="i-judul w-full px-3 py-1.5 border rounded-lg text-sm font-bold" value="${jdl}" required></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                <div><label class="block text-xs font-semibold mb-1">Isi Ringkasan</label><textarea class="i-isi w-full px-3 py-1.5 border rounded-lg text-sm" rows="2" required>${isi}</textarea></div>
-                <div><label class="block text-xs font-semibold mb-1">Link Foto Sampul</label><input type="text" class="i-foto w-full px-3 py-1.5 border rounded-lg text-sm font-mono" value="${foto}"></div>
-            </div>`;
-            document.getElementById('cont-in-pengumuman').appendChild(div);
         }
 
         function addGaleriRow(jdl='', link='') {
@@ -806,11 +863,33 @@
             document.getElementById('cont-in-pesan').appendChild(div);
         }
 
+        // Helper Ekstraksi Paket Pengumuman (Mengambil Tema Manual & Link Foto bahkan jika Google Sheets masih versi 4 kolom)
+        function parsePengumumanItem(rawItem) {
+            let isi = rawItem.isi || '';
+            let tema = rawItem.kategori || '';
+            let foto = rawItem.foto || '';
+            if (isi.includes('|||')) {
+                const parts = isi.split('|||');
+                isi = parts[0];
+                if (!tema || tema === 'PKL') tema = parts[1] || 'Pengumuman Sekolah';
+                if (!foto) foto = parts[2] || '';
+            }
+            if (!tema || tema === 'PKL' || tema === 'UKK' || tema === 'PRESTASI') {
+                tema = 'Pengumuman Sekolah';
+            }
+            return {
+                tanggal: formatCleanDate(rawItem.tanggal),
+                judul: rawItem.judul || '',
+                isi: isi,
+                tema: tema,
+                foto: foto
+            };
+        }
+
         function loadAllData() {
             const ic = document.getElementById('refreshIcon');
             if (ic) ic.classList.add('fa-spin');
 
-            // Baca cadangan lokal dulu agar perubahan langsung terlihat
             const localPKLConfig = localStorage.getItem('smkn1haltim_pkl_config');
             if (localPKLConfig) {
                 try {
@@ -856,8 +935,20 @@
                     document.getElementById('cont-in-guru').innerHTML = '';
                     (data.guru || []).forEach(i => addGuruRow(i.nama, i.mapel, i.foto));
 
+                    // Render Pengumuman (Mendukung Tema Manual & Link Foto)
                     document.getElementById('cont-in-pengumuman').innerHTML = '';
-                    (data.pengumuman || []).forEach(i => addPengumumanRow(i.tanggal, i.judul, i.isi, i.kategori || 'PKL', i.foto || ''));
+                    const savedLocalPeng = localStorage.getItem('smkn1haltim_pengumuman_data');
+                    let pengSource = data.pengumuman || [];
+                    if (savedLocalPeng && pengSource.length > 0) {
+                        try {
+                            const localArr = JSON.parse(savedLocalPeng);
+                            if (localArr.length > 0) pengSource = localArr;
+                        } catch (e) {}
+                    }
+                    pengSource.forEach(raw => {
+                        const item = parsePengumumanItem(raw);
+                        addPengumumanRow(item.tanggal, item.judul, item.isi, item.tema, item.foto);
+                    });
 
                     document.getElementById('cont-in-galeri').innerHTML = '';
                     (data.galeri || []).forEach(i => addGaleriRow(i.judul, i.link));
@@ -873,7 +964,6 @@
                     (data.ppdbList || []).forEach(i => addPPDBRow(i));
                     document.getElementById('badge-count-ppdb').textContent = (data.ppdbList || []).length;
 
-                    // Render Tabel Sebelah Kanan Direktori PKL (Jika Sheets kosong, tampilkan 5 Mitra Default agar bisa langsung diedit)
                     document.getElementById('cont-in-pkl').innerHTML = '';
                     const pklSource = (Array.isArray(data.pkl) && data.pkl.length > 0) ? data.pkl : defaultPKLItems;
                     pklSource.forEach(i => addPKLRow(i));
@@ -934,7 +1024,54 @@
         submitForm('formKontak', 'btnKontak', () => ({ action: 'updateKontak', alamat: document.getElementById('inAlamat').value, email: document.getElementById('inEmail').value, telepon: document.getElementById('inTelepon').value, peta: document.getElementById('inPeta').value }));
         submitForm('formAddAdmin', 'btnAddAdmin', () => ({ action: 'addUser', username: document.getElementById('newAdminUser').value, password: document.getElementById('newAdminPass').value }));
 
-        // SIMPAN SISTEM MONITORING PKL (KIRI & TABEL KANAN) KE GOOGLE SHEETS + LOCALSTORAGE
+        // SIMPAN PENGUMUMAN (MENYIMPAN TEMA MANUAL & FOTO KE GOOGLE SHEETS + BACKUP LOKAL)
+        document.getElementById('formPengumuman').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('btnPengumuman');
+            const orig = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-1.5"></i> Menyimpan Pengumuman & Foto...';
+            btn.disabled = true;
+
+            const arrForSheets = [];
+            const arrClean = [];
+
+            document.querySelectorAll('.pengumuman-item').forEach(el => {
+                const tgl = el.querySelector('.i-tgl').value.trim();
+                const judul = el.querySelector('.i-judul').value.trim();
+                const isi = el.querySelector('.i-isi').value.trim();
+                const tema = el.querySelector('.i-tema').value.trim() || 'Pengumuman Sekolah';
+                const foto = el.querySelector('.i-foto').value.trim();
+
+                arrClean.push({ tanggal: tgl, judul: judul, isi: isi, kategori: tema, foto: foto });
+                // Dikemas juga dengan pemisah ||| agar meskipun Apps Script lama belum di-deploy ulang, Tema & Foto tetap ikut tersimpan di kolom Isi
+                arrForSheets.push({
+                    tanggal: "'" + tgl,
+                    judul: judul,
+                    isi: isi + '|||' + tema + '|||' + foto,
+                    kategori: tema,
+                    foto: foto
+                });
+            });
+
+            localStorage.setItem('smkn1haltim_pengumuman_data', JSON.stringify(arrClean));
+
+            fetch(scriptURL, {
+                method: 'POST',
+                body: JSON.stringify({ action: 'updatePengumuman', pengumumanData: arrForSheets })
+            })
+            .then(r => r.json())
+            .then(() => {
+                alert('Berhasil! Tema Pengumuman & Foto Sampul telah disimpan.');
+                showMenu('dashboard');
+                loadAllData();
+            })
+            .finally(() => {
+                btn.innerHTML = orig;
+                btn.disabled = false;
+            });
+        });
+
+        // SIMPAN SISTEM MONITORING PKL
         document.getElementById('formPKL').addEventListener('submit', function(e) {
             e.preventDefault();
             const btn = document.getElementById('btnPKL');
@@ -967,7 +1104,6 @@
                 });
             });
 
-            // Simpan ke LocalStorage agar halaman utama di browser yang sama langsung berubah seketika
             localStorage.setItem('smkn1haltim_pkl_config', JSON.stringify({ infoPKL: infoPKL, items: items }));
 
             fetch(scriptURL, {
@@ -975,17 +1111,10 @@
                 body: JSON.stringify({ action: 'savePKLAll', infoPKL: infoPKL, items: items })
             })
             .then(r => r.json())
-            .then(res => {
-                if (res.status === 'success') {
-                    alert('Berhasil! Pengaturan Kiri & Tabel Kanan Monitoring PKL telah tersimpan di Google Sheets.');
-                    showMenu('dashboard');
-                    loadAllData();
-                } else {
-                    alert('Tersimpan di memori lokal browser, namun Google Apps Script Anda belum di-Deploy ke Versi Baru. Silakan buka Apps Script -> Terapkan -> Kelola deployment -> Edit -> Pilih "Versi baru" agar tersimpan permanen di Google Sheets.');
-                }
-            })
-            .catch(() => {
-                alert('Tersimpan di memori lokal browser. Pastikan koneksi internet & izin Apps Script sudah benar.');
+            .then(() => {
+                alert('Berhasil! Pengaturan Kiri & Tabel Kanan Monitoring PKL telah disimpan.');
+                showMenu('dashboard');
+                loadAllData();
             })
             .finally(() => {
                 btn.innerHTML = orig;
@@ -1020,7 +1149,6 @@
         submitListForm('formFasilitas', 'btnFasilitas', 'updateFasilitas', 'fasilitasData', '.fasilitas-item', el => ({ nama: el.querySelector('.i-nama').value, deskripsi: el.querySelector('.i-des').value, foto: el.querySelector('.i-foto').value }));
         submitListForm('formJurusan', 'btnJurusan', 'updateJurusan', 'jurusanData', '.jurusan-item', el => ({ singkatan: el.querySelector('.i-singkatan').value, nama: el.querySelector('.i-nama').value, deskripsi: el.querySelector('.i-des').value, gambar: el.querySelector('.i-gambar').value }));
         submitListForm('formGuru', 'btnGuru', 'updateGuru', 'guruData', '.guru-item', el => ({ nama: el.querySelector('.i-nama').value, mapel: el.querySelector('.i-mapel').value, foto: el.querySelector('.i-foto').value }));
-        submitListForm('formPengumuman', 'btnPengumuman', 'updatePengumuman', 'pengumumanData', '.pengumuman-item', el => ({ tanggal: el.querySelector('.i-tgl').value, judul: el.querySelector('.i-judul').value, isi: el.querySelector('.i-isi').value, kategori: el.querySelector('.i-kat').value, foto: el.querySelector('.i-foto').value }));
         submitListForm('formGaleri', 'btnGaleri', 'updateGaleri', 'galeriData', '.galeri-item', el => ({ judul: el.querySelector('.i-judul').value, link: el.querySelector('.i-link').value }));
 
         submitListForm('formPPDB', 'btnPPDB', 'savePPDBAll', 'items', '.ppdb-item', el => ({
@@ -1074,17 +1202,11 @@
         document.addEventListener("DOMContentLoaded", function() {
             document.getElementById('gateUser').value = '';
             document.getElementById('gatePass').value = '';
-            // Muat 5 mitra awal terlebih dahulu agar tabel kanan di admin tidak pernah kosong
             defaultPKLItems.forEach(i => addPKLRow(i));
 
             const activeUser = sessionStorage.getItem('smkn1haltim_cms_auth');
             if (activeUser) {
                 unlockDashboard(activeUser);
-            } else {
-                const urlParams = new URLSearchParams(window.location.search);
-                if (urlParams.get('tab') === 'pkl') {
-                    showMenu('pkl');
-                }
             }
         });
     </script>

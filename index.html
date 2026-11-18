@@ -119,7 +119,7 @@
                     <a href="#jurusan" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-amber-400 transition">Jurusan & Guru</a>
                     <a href="#pkl-bkk" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-amber-400 transition">PKL & BKK</a>
                     <a href="#akademik" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-amber-400 transition">PPDB & NISN</a>
-                    <a href="#berita" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-amber-400 transition">Berita</a>
+                    <a href="#berita" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-amber-400 transition">Pengumuman</a>
                     <a href="#kontak" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-amber-400 transition">Kontak</a>
                 </nav>
 
@@ -149,7 +149,7 @@
             <a href="#jurusan" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Jurusan & Tenaga Pendidik</a>
             <a href="#pkl-bkk" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Sistem PKL & BKK Industri</a>
             <a href="#akademik" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">PPDB, Cek NISN & Jadwal</a>
-            <a href="#berita" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Berita & Galeri Foto</a>
+            <a href="#berita" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Pengumuman & Galeri Foto</a>
             <a href="#kontak" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Hubungi Kami</a>
             <div class="pt-2">
                 <button onclick="openLoginModal(); toggleMobileMenu();" class="w-full flex items-center justify-center gap-2 bg-brand-600 text-white font-semibold py-3 rounded-xl shadow">
@@ -186,8 +186,8 @@
                             <i class="fa-solid fa-magnifying-glass-chart text-amber-400"></i>
                             <span>Cek Kelulusan / NISN</span>
                         </a>
-                        <a href="#kegiatan" class="inline-flex items-center gap-2 text-slate-200 hover:text-amber-300 font-medium px-4 py-3.5 transition">
-                            <span>Lihat Kegiatan Siswa</span>
+                        <a href="#berita" class="inline-flex items-center gap-2 text-slate-200 hover:text-amber-300 font-medium px-4 py-3.5 transition">
+                            <span>Lihat Pengumuman</span>
                             <i class="fa-solid fa-arrow-right text-sm"></i>
                         </a>
                     </div>
@@ -411,7 +411,6 @@
     <!-- ==================== 5. SISTEM MONITORING PKL & BURSA KERJA KHUSUS (BKK) ==================== -->
     <section id="pkl-bkk" class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-12 gap-8 items-start">
-            <!-- KOLOM KIRI: Judul, Deskripsi & 3 Kartu Mitra Instansi -->
             <div class="lg:col-span-4 space-y-6">
                 <div>
                     <span id="ui-pkl-badge" class="text-brand-600 dark:text-amber-400 font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-brand-50 dark:bg-slate-800 border border-brand-200 dark:border-slate-700">LINK & MATCH DUDIKA</span>
@@ -421,7 +420,6 @@
                     </p>
                 </div>
 
-                <!-- 3 Kartu Highlight Mitra (Dapat Diatur dari Admin) -->
                 <div class="space-y-3">
                     <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center gap-3.5">
                         <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
@@ -458,7 +456,6 @@
                 </button>
             </div>
 
-            <!-- KOLOM KANAN: Tabel Direktori Penempatan PKL Siswa & Mitra Aktif -->
             <div class="lg:col-span-8 bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80 dark:border-slate-800">
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
                     <div>
@@ -644,19 +641,12 @@
         </div>
     </section>
 
-    <!-- ==================== 7. BERITA, PENGUMUMAN & GALERI FOTO ==================== -->
+    <!-- ==================== 7. PAPAN PENGUMUMAN (TANPA FILTER KATEGORI, TEMA MANUAL & FOTO AKTIF) ==================== -->
     <section id="berita" class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
-            <div>
-                <span class="text-brand-600 dark:text-amber-400 font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-brand-50 dark:bg-slate-800 border border-brand-200 dark:border-slate-700">Kabar SMKN 1 Maba</span>
-                <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white mt-3">Papan Pengumuman & Berita Kegiatan</h2>
-            </div>
-            <div class="flex flex-wrap gap-2">
-                <button onclick="filterNews('ALL')" class="news-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-brand-600 text-white" data-cat="ALL">Semua</button>
-                <button onclick="filterNews('PKL')" class="news-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 border" data-cat="PKL">Kegiatan PKL</button>
-                <button onclick="filterNews('UKK')" class="news-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 border" data-cat="UKK">Uji Kompetensi</button>
-                <button onclick="filterNews('PRESTASI')" class="news-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 border" data-cat="PRESTASI">Pengumuman Sekolah</button>
-            </div>
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="text-brand-600 dark:text-amber-400 font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-brand-50 dark:bg-slate-800 border border-brand-200 dark:border-slate-700">Kabar & Informasi Resmi</span>
+            <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white mt-3">Papan Pengumuman & Informasi Sekolah</h2>
+            <p class="text-slate-500 dark:text-slate-400 mt-2 text-sm">Klik pada kartu pengumuman untuk melihat foto dokumentasi secara penuh.</p>
         </div>
 
         <div id="news-grid" class="grid md:grid-cols-3 gap-8 mb-20"></div>
@@ -744,7 +734,7 @@
         </div>
     </footer>
 
-    <!-- ==================== MODAL SLIDER POP-UP (UNTUK KEGIATAN & JURUSAN) ==================== -->
+    <!-- ==================== MODAL SLIDER POP-UP (UNTUK KEGIATAN, JURUSAN & PENGUMUMAN) ==================== -->
     <div id="modalSlider" class="fixed inset-0 z-[110] hidden flex items-center justify-center p-4 md:p-10">
         <div class="absolute inset-0 bg-slate-950/90 backdrop-blur-sm" onclick="closeSliderModal()"></div>
         <div class="relative bg-white dark:bg-slate-900 rounded-3xl w-full max-w-4xl overflow-hidden shadow-2xl flex flex-col max-h-[92vh] z-10">
@@ -838,6 +828,19 @@
     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbwHP24iFlzi-d6aJetJB1FJvjqtAnrbkA92WVktIwDdq2J4q-xqSR6nmXC-iuxTu7wT/exec';
 
+        // Helper untuk mengubah tanggal ISO 2027-02-06T15:00:00.000Z menjadi "06 Februari 2027"
+        function formatCleanDate(raw) {
+            if (!raw) return '';
+            const str = String(raw);
+            if (str.includes('T') && str.includes('Z')) {
+                const d = new Date(str);
+                if (!isNaN(d.getTime())) {
+                    return new Intl.DateTimeFormat('id-ID', { day: '2-digit', month: 'long', year: 'numeric' }).format(d);
+                }
+            }
+            return str;
+        }
+
         // Jam WIT Live
         function updateWITClock() {
             const el = document.getElementById('live-clock');
@@ -914,7 +917,7 @@
             });
         }
 
-        // Slider Modal Universal (Kegiatan & Jurusan)
+        // Slider Modal Universal (Kegiatan, Jurusan & Pengumuman)
         let curSlide = 0; let slideTimer; let fotosArr = [];
         function openSliderModal(title, subtitle, desc, rawFotos) {
             fotosArr = (rawFotos || '').split(',').map(f => f.trim()).filter(Boolean);
@@ -935,6 +938,10 @@
             const item = window.jurusanList[idx];
             openSliderModal(`${item.singkatan} — ${item.nama}`, 'Program Kompetensi Keahlian', item.deskripsi, item.gambar);
         }
+        function openSliderFromPengumuman(idx) {
+            const item = newsArticles[idx];
+            openSliderModal(item.title, `${item.badge} • ${item.date}`, item.excerpt, item.img);
+        }
         function closeSliderModal() {
             document.getElementById('modalSlider').classList.add('hidden');
             clearInterval(slideTimer);
@@ -954,7 +961,7 @@
         function nextSlide() { goToSlide(curSlide + 1); }
         function prevSlide() { goToSlide(curSlide - 1); }
 
-        // Direktori Monitoring PKL (Otomatis sinkron dengan LocalStorage Admin & Google Sheets)
+        // Direktori Monitoring PKL
         const pklData = [
             { mitra: 'UPT TIK & Lab Fakultas Teknik Unkhair', lokasi: 'Kota Ternate', jurusan: 'TJKT', kuota: '8 Siswa Kelas XII', status: 'Mitra Kampus Aktif' },
             { mitra: 'PT PLN (Persero) ULP Maba', lokasi: 'Kota Maba, Haltim', jurusan: 'TITL', kuota: '6 Siswa Kelas XII', status: 'Penempatan Aktif' },
@@ -1139,27 +1146,69 @@
                 </div>`).join('');
         }
 
-        // Berita & Pengumuman
+        // RENDER KARTU PENGUMUMAN (TANPA FILTER KATEGORI, TEMA MANUAL & FOTO AKTIF)
         let newsArticles = [
-            { cat: 'PKL', badge: 'Kegiatan PKL', date: '15 Oktober 2026', title: 'Evaluasi Siswa PKL SMKN 1 Maba di Instansi & Kampus Maluku Utara', excerpt: 'Siswa kelas XII sukses menyelesaikan program Praktik Kerja Lapangan (PKL).', img: 'https://placehold.co/600x360/1e3a8a/ffffff?text=Kegiatan+PKL+SMKN+1+Haltim' },
-            { cat: 'UKK', badge: 'Uji Kompetensi', date: '02 November 2026', title: 'Pelaksanaan Uji Kompetensi Keahlian (UKK) Bersama DUDIKA', excerpt: 'Ujian praktik konfigurasi jaringan Fiber Optik, panel PLC 3 fasa, dan konstruksi bangunan.', img: 'https://placehold.co/600x360/0f766e/ffffff?text=UKK+SMKN+1+Haltim' }
+            { badge: 'PPDB 2027/2028', date: '06 Februari 2027', title: 'Penerimaan Siswa Baru SMKN 1 Halmahera Timur', excerpt: 'Diberitahukan kepada seluruh masyarakat dan calon peserta didik baru bahwa SMK NEGERI 1 HALMAHERA TIMUR secara resmi membuka Penerimaan Peserta Didik Baru (PPDB).', img: 'https://placehold.co/600x360/1e3a8a/ffffff?text=PPDB+SMKN+1+Haltim' }
         ];
-        function filterNews(cat) {
-            const list = cat === 'ALL' ? newsArticles : newsArticles.filter(n => n.cat === cat);
-            document.getElementById('news-grid').innerHTML = list.map(i => `
-                <article class="bg-white dark:bg-slate-900 rounded-3xl overflow-hidden shadow-sm border border-slate-200/80 dark:border-slate-800 flex flex-col justify-between">
+
+        function parseRawPengumuman(p) {
+            let isi = p.isi || '';
+            let tema = p.kategori || '';
+            let foto = p.foto || '';
+            if (isi.includes('|||')) {
+                const parts = isi.split('|||');
+                isi = parts[0];
+                if (!tema || tema === 'PKL') tema = parts[1] || 'Pengumuman Sekolah';
+                if (!foto) foto = parts[2] || '';
+            }
+            if (!tema || tema === 'PKL' || tema === 'UKK' || tema === 'PRESTASI') {
+                tema = 'Pengumuman Sekolah';
+            }
+            return {
+                badge: tema,
+                date: formatCleanDate(p.tanggal),
+                title: p.judul || '',
+                excerpt: isi,
+                img: foto
+            };
+        }
+
+        function renderNews() {
+            const savedLocalPeng = localStorage.getItem('smkn1haltim_pengumuman_data');
+            if (savedLocalPeng && !window._localPengLoaded) {
+                try {
+                    const localArr = JSON.parse(savedLocalPeng);
+                    if (Array.isArray(localArr) && localArr.length > 0) {
+                        newsArticles = localArr.map(parseRawPengumuman);
+                    }
+                    window._localPengLoaded = true;
+                } catch (e) {}
+            }
+
+            const grid = document.getElementById('news-grid');
+            if (!grid) return;
+            grid.innerHTML = newsArticles.map((i, idx) => {
+                const fotos = (i.img || '').split(',').map(f => f.trim()).filter(Boolean);
+                const cover = fotos[0] || 'https://placehold.co/600x360/1e3a8a/ffffff?text=SMKN+1+Haltim';
+                const extraBadge = fotos.length > 1 ? `<div class="absolute top-3 right-3 bg-black/75 text-white text-[11px] font-bold px-2.5 py-1 rounded-full">📸 +${fotos.length - 1} Foto</div>` : '';
+                return `
+                <article onclick="openSliderFromPengumuman(${idx})" class="cursor-pointer group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-slate-200/80 dark:border-slate-800 flex flex-col justify-between transition transform hover:-translate-y-1">
                     <div>
-                        <div class="relative h-48 bg-slate-200">
-                            <img src="${i.img || 'https://placehold.co/600x360/1e3a8a/ffffff?text=Pengumuman+Sekolah'}" class="w-full h-full object-cover">
-                            <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-bold bg-slate-900/80 text-amber-400">${i.badge}</span>
+                        <div class="relative h-52 bg-slate-200 overflow-hidden">
+                            <img src="${cover}" alt="${i.title}" onerror="this.src='https://placehold.co/600x360/1e3a8a/ffffff?text=SMKN+1+Haltim'" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 px-3.5 py-1 rounded-full text-xs font-bold bg-slate-900/85 text-amber-400 backdrop-blur-sm shadow">${i.badge}</span>
+                            ${extraBadge}
                         </div>
                         <div class="p-6">
-                            <div class="text-xs text-slate-400 mb-1">${i.date}</div>
-                            <h3 class="font-display font-bold text-lg mb-2">${i.title}</h3>
+                            <div class="text-xs font-medium text-slate-400 mb-1.5 flex items-center gap-1.5">
+                                <i class="fa-regular fa-calendar text-brand-500"></i> ${i.date}
+                            </div>
+                            <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-amber-400 transition mb-2">${i.title}</h3>
                             <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed whitespace-pre-wrap">${i.excerpt}</p>
                         </div>
                     </div>
-                </article>`).join('');
+                </article>`;
+            }).join('');
         }
 
         // Kontak & Login Modal
@@ -1243,12 +1292,10 @@
                         if (data.kontak.peta) document.getElementById('tampil-peta').src = data.kontak.peta;
                     }
 
-                    // Sinkronisasi Bagian Kiri Sistem Monitoring PKL & BKK
                     if (data.infoPKL && Object.keys(data.infoPKL).length > 0) {
                         applyPKLInfoUI(data.infoPKL);
                     }
 
-                    // Sinkronisasi Tabel Kanan Direktori PKL
                     if (Array.isArray(data.pkl) && data.pkl.length > 0) {
                         pklData.length = 0;
                         data.pkl.forEach(i => pklData.push(i));
@@ -1310,17 +1357,10 @@
                         });
                     }
 
-                    // Pengumuman / Berita
+                    // Pengumuman / Berita (Mengekstrak Tema Manual & Foto Sampul)
                     if (Array.isArray(data.pengumuman) && data.pengumuman.length > 0) {
-                        newsArticles = data.pengumuman.map(p => ({
-                            cat: p.kategori || 'PRESTASI',
-                            badge: p.kategori === 'PKL' ? 'Kegiatan PKL' : (p.kategori === 'UKK' ? 'Uji Kompetensi' : 'Pengumuman'),
-                            date: p.tanggal,
-                            title: p.judul,
-                            excerpt: p.isi,
-                            img: p.foto || 'https://placehold.co/600x360/1e3a8a/ffffff?text=SMKN+1+Haltim'
-                        }));
-                        filterNews('ALL');
+                        newsArticles = data.pengumuman.map(parseRawPengumuman);
+                        renderNews();
                     }
 
                     // Galeri Foto
@@ -1353,7 +1393,7 @@
             renderPKLTable();
             lookupNISN('0067891234');
             filterSchedule('TJKT');
-            filterNews('ALL');
+            renderNews();
             syncAllFromSheets();
         };
     </script>

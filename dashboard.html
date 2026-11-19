@@ -93,6 +93,10 @@
                         <i id="refreshIcon" class="fa-solid fa-arrows-rotate text-amber-400"></i>
                         <span class="hidden sm:inline">Muat Ulang</span>
                     </button>
+                    <a href="ppdb.html" target="_blank" class="bg-amber-500 hover:bg-amber-400 text-slate-950 px-3 py-2 rounded-lg text-xs font-bold transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-user-plus"></i>
+                        <span class="hidden sm:inline">Portal PPDB</span>
+                    </a>
                     <a href="index.html" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 px-3 py-2 rounded-lg text-xs font-semibold transition flex items-center gap-1.5">
                         <i class="fa-solid fa-globe"></i>
                         <span class="hidden sm:inline">Lihat Web</span>
@@ -112,24 +116,24 @@
                 <div class="flex flex-wrap justify-between items-end mb-6 border-b pb-5 gap-4">
                     <div>
                         <h1 class="text-2xl sm:text-3xl font-poppins font-bold text-slate-900">Dashboard Utama Administrator</h1>
-                        <p class="text-sm text-slate-600 mt-1">Kelola seluruh konten profil, pengumuman bergambar, kegiatan, Sistem Monitoring PKL & BKK, hingga PPDB dan NISN.</p>
+                        <p class="text-sm text-slate-600 mt-1">Kelola seluruh konten website profil & verifikasi pendaftar dari Portal PPDB terpisah (ppdb.html).</p>
                     </div>
                     <div class="flex flex-wrap gap-2 text-xs font-bold">
-                        <button onclick="showMenu('pengumuman')" class="px-3.5 py-1.5 rounded-xl bg-orange-500 text-white shadow hover:bg-orange-600 transition">📢 Kelola Pengumuman</button>
+                        <button onclick="showMenu('ppdb')" class="px-3.5 py-1.5 rounded-xl bg-amber-500 text-slate-950 shadow hover:bg-amber-400 transition">📝 Data PPDB (<strong id="badge-count-ppdb">0</strong>)</button>
                         <button onclick="showMenu('pkl')" class="px-3.5 py-1.5 rounded-xl bg-blue-600 text-white shadow hover:bg-blue-700 transition">🏭 Monitoring PKL (<span id="badge-count-pkl">0</span>)</button>
-                        <button onclick="showMenu('ppdb')" class="px-3.5 py-1.5 rounded-xl bg-amber-100 text-amber-800 hover:bg-amber-200 transition">PPDB: <strong id="badge-count-ppdb">0</strong></button>
+                        <button onclick="showMenu('pengumuman')" class="px-3.5 py-1.5 rounded-xl bg-orange-500 text-white shadow hover:bg-orange-600 transition">📢 Pengumuman</button>
                     </div>
                 </div>
 
-                <h3 class="text-xs font-bold uppercase tracking-wider text-blue-700 mb-3">A. Pengaturan Sistem Monitoring PKL/BKK & Layanan Akademik</h3>
+                <h3 class="text-xs font-bold uppercase tracking-wider text-blue-700 mb-3">A. Portal PPDB Terpisah, Monitoring PKL/BKK & Layanan Akademik</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 text-center mb-8">
-                    <div onclick="showMenu('pkl')" class="bg-blue-600 text-white p-5 rounded-xl shadow-md cursor-pointer hover:bg-blue-700 transition">
+                    <div onclick="showMenu('ppdb')" class="bg-amber-500 text-slate-950 p-5 rounded-xl shadow-md cursor-pointer hover:bg-amber-400 transition ring-4 ring-amber-500/20">
+                        <h2 class="text-sm font-bold">📝 Data PPDB Online</h2>
+                        <p class="text-[11px] font-medium mt-1">Pendaftar dari Portal ppdb.html</p>
+                    </div>
+                    <div onclick="showMenu('pkl')" class="bg-blue-600 text-white p-5 rounded-xl shadow-sm cursor-pointer hover:bg-blue-700 transition">
                         <h2 class="text-sm font-bold">🏭 Sistem Monitoring PKL & BKK</h2>
                         <p class="text-[11px] text-blue-100 mt-1">Atur Bagian Kiri & Tabel Mitra Kanan</p>
-                    </div>
-                    <div onclick="showMenu('ppdb')" class="bg-amber-500 text-slate-950 p-5 rounded-xl shadow-sm cursor-pointer hover:bg-amber-400 transition">
-                        <h2 class="text-sm font-bold">📝 Data PPDB Online</h2>
-                        <p class="text-[11px] font-medium mt-1">Verifikasi Pendaftar Baru</p>
                     </div>
                     <div onclick="showMenu('siswa')" class="bg-emerald-600 text-white p-5 rounded-xl shadow-sm cursor-pointer hover:bg-emerald-700 transition">
                         <h2 class="text-sm font-bold">🎓 Data Siswa (Cek NISN)</h2>
@@ -150,7 +154,7 @@
                     <div onclick="showMenu('profil')" class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 cursor-pointer hover:border-blue-500 hover:shadow-md transition"><h2 class="text-sm font-bold">👤 Profil & Sambutan</h2><p class="text-[11px] text-slate-400 mt-1">Foto & Sambutan Kepsek</p></div>
                     <div onclick="showMenu('visimisi')" class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 cursor-pointer hover:border-indigo-500 hover:shadow-md transition"><h2 class="text-sm font-bold">🎯 Visi, Misi & Motto</h2><p class="text-[11px] text-slate-400 mt-1">Visi, Misi & Identitas</p></div>
                     <div onclick="showMenu('sejarah')" class="bg-slate-800 p-5 rounded-xl shadow-sm border border-slate-700 cursor-pointer hover:border-slate-400 hover:shadow-md transition"><h2 class="text-sm font-bold text-white">📜 Sejarah Sekolah</h2><p class="text-[11px] text-slate-300 mt-1">Sejarah & Dapodik</p></div>
-                    <div onclick="showMenu('pengumuman')" class="bg-orange-50 p-5 rounded-xl shadow-sm border-2 border-orange-400 cursor-pointer hover:bg-orange-100/60 hover:shadow-md transition"><h2 class="text-sm font-bold text-orange-900">📢 Pengumuman & Berita</h2><p class="text-[11px] text-orange-700 font-semibold mt-1">Tema Manual & Input Foto</p></div>
+                    <div onclick="showMenu('pengumuman')" class="bg-orange-50 p-5 rounded-xl shadow-sm border border-orange-300 cursor-pointer hover:bg-orange-100/60 hover:shadow-md transition"><h2 class="text-sm font-bold text-orange-900">📢 Pengumuman & Berita</h2><p class="text-[11px] text-orange-700 font-semibold mt-1">Tema Manual & Input Foto</p></div>
                     <div onclick="showMenu('kegiatan')" class="bg-emerald-50/60 p-5 rounded-xl shadow-sm border border-emerald-200 cursor-pointer hover:border-emerald-500 hover:shadow-md transition"><h2 class="text-sm font-bold text-emerald-900">🏃 Riwayat Kegiatan</h2><p class="text-[11px] text-emerald-700 mt-1">Multi-Foto Slider Pop-up</p></div>
                     <div onclick="showMenu('fasilitas')" class="bg-cyan-50/60 p-5 rounded-xl shadow-sm border border-cyan-200 cursor-pointer hover:border-cyan-500 hover:shadow-md transition"><h2 class="text-sm font-bold text-cyan-900">🏢 Fasilitas Sekolah</h2><p class="text-[11px] text-cyan-700 mt-1">Lab, RPS & Sarana</p></div>
                     <div onclick="showMenu('jurusan')" class="bg-yellow-50/60 p-5 rounded-xl shadow-sm border border-yellow-200 cursor-pointer hover:border-yellow-500 hover:shadow-md transition"><h2 class="text-sm font-bold text-yellow-900">🎓 Kompetensi Keahlian</h2><p class="text-[11px] text-yellow-700 mt-1">TJKT, TITL, TKP & Foto</p></div>
@@ -161,13 +165,35 @@
                 </div>
             </div>
 
-            <!-- ==================== PANEL PENGUMUMAN BARU (TEMA MANUAL & INPUT FOTO AKTIF) ==================== -->
+            <!-- ==================== PANEL KELOLA PPDB ONLINE (TERHUBUNG KE PORTAL PPDB.HTML) ==================== -->
+            <div id="view-ppdb" class="bg-white p-6 rounded-2xl shadow-sm border hidden">
+                <div class="flex flex-wrap justify-between items-center border-b pb-4 mb-6 gap-4">
+                    <div>
+                        <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800 uppercase">DATABASE PENDAFTAR PPDB</span>
+                        <h2 class="text-xl font-poppins font-bold mt-1">📝 Manajemen Data Pendaftar PPDB Online (ppdb.html)</h2>
+                        <p class="text-xs text-slate-500">Seluruh calon siswa yang mendaftar melalui portal terpisah <strong>ppdb.html</strong> otomatis masuk ke tabel ini.</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <a href="ppdb.html" target="_blank" class="text-xs bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-3.5 py-2 rounded-lg flex items-center gap-1.5">
+                            <i class="fa-solid fa-up-right-from-square"></i> Buka Portal PPDB
+                        </a>
+                        <button onclick="showMenu('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 font-semibold px-3.5 py-2 rounded-lg">Kembali</button>
+                    </div>
+                </div>
+                <form id="formPPDB">
+                    <div id="cont-in-ppdb" class="space-y-4 mb-6"></div>
+                    <button type="button" onclick="addPPDBRow()" class="bg-slate-200 hover:bg-slate-300 px-4 py-2 rounded-xl text-xs font-bold mb-6">+ Tambah Calon Siswa Manual</button><br>
+                    <button type="submit" id="btnPPDB" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-2.5 px-6 rounded-xl text-sm shadow">Simpan Semua Data PPDB</button>
+                </form>
+            </div>
+
+            <!-- ==================== PANEL PENGUMUMAN ==================== -->
             <div id="view-pengumuman" class="bg-white p-6 rounded-2xl shadow-sm border hidden">
                 <div class="flex flex-wrap justify-between items-center border-b pb-4 mb-6 gap-4">
                     <div>
                         <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-orange-100 text-orange-800 uppercase">PAPAN INFORMASI PUBLIK</span>
                         <h2 class="text-xl font-poppins font-bold mt-1">📢 Kelola Papan Pengumuman & Berita Sekolah</h2>
-                        <p class="text-xs text-slate-500">Ketikkan <strong>Tema Pengumuman</strong> secara manual, masukkan <strong>Link Foto Sampul</strong> (bisa lebih dari 1 foto dipisah koma), Tanggal, Judul, dan Isi Pengumuman.</p>
+                        <p class="text-xs text-slate-500">Ketikkan <strong>Tema Pengumuman</strong> secara manual, masukkan <strong>Link Foto Sampul</strong>, Tanggal, Judul, dan Isi Pengumuman.</p>
                     </div>
                     <button onclick="showMenu('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 font-semibold px-3.5 py-2 rounded-lg">Kembali ke Dashboard</button>
                 </div>
@@ -444,19 +470,6 @@
                 </div>
             </div>
 
-            <!-- ==================== 12. KELOLA PENDAFTAR PPDB ONLINE ==================== -->
-            <div id="view-ppdb" class="bg-white p-6 rounded-2xl shadow-sm border hidden">
-                <div class="flex justify-between items-center border-b pb-4 mb-4">
-                    <h2 class="text-xl font-poppins font-bold">📝 Manajemen Data Pendaftar PPDB Online</h2>
-                    <button onclick="showMenu('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 font-semibold px-3.5 py-1.5 rounded-lg">Kembali</button>
-                </div>
-                <form id="formPPDB">
-                    <div id="cont-in-ppdb" class="space-y-4 mb-6"></div>
-                    <button type="button" onclick="addPPDBRow()" class="bg-slate-200 hover:bg-slate-300 px-4 py-2 rounded-xl text-xs font-bold mb-6">+ Tambah Calon Siswa Manual</button><br>
-                    <button type="submit" id="btnPPDB" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-2.5 px-6 rounded-xl text-sm">Simpan Semua Data PPDB</button>
-                </form>
-            </div>
-
             <!-- ==================== 14. KELOLA DATA SISWA & KELULUSAN (CEK NISN) ==================== -->
             <div id="view-siswa" class="bg-white p-6 rounded-2xl shadow-sm border hidden">
                 <div class="flex justify-between items-center border-b pb-4 mb-4">
@@ -515,7 +528,6 @@
             'ppdb', 'pkl', 'siswa', 'jadwal', 'pesan'
         ];
 
-        // Helper untuk merapikan tanggal ISO 2027-02-06T15:00:00.000Z menjadi format rapi
         function formatCleanDate(raw) {
             if (!raw) return '';
             const str = String(raw);
@@ -605,7 +617,6 @@
             });
         });
 
-        // FORM BARIS PENGUMUMAN BARU: TANPA DROPDOWN KATEGORI, DIGANTI TEMA MANUAL & INPUT FOTO AKTIF
         function addPengumumanRow(tgl='', jdl='', isi='', tema='Pengumuman Sekolah', foto='') {
             const cleanTgl = formatCleanDate(tgl);
             const cleanTema = (tema === 'PKL' || tema === 'UKK' || tema === 'PRESTASI' || !tema) ? 'Pengumuman Sekolah' : tema;
@@ -664,7 +675,6 @@
             img.src = firstUrl || 'https://placehold.co/160x100/1e3a8a/ffffff?text=Belum+Ada+Foto';
         }
 
-        // BARIS TABEL KANAN DIREKTORI MONITORING PKL
         function addPKLRow(item = {}) {
             const st = item.status || 'Penempatan Aktif';
             const div = document.createElement('div');
@@ -672,7 +682,7 @@
             div.innerHTML = `<input type="hidden" class="i-waktu" value="${item.waktu || ''}">
             <div class="sm:col-span-3">
                 <label class="block font-bold text-slate-700 mb-1"><i class="fa-solid fa-building text-blue-600 mr-1"></i>Mitra DUDIKA / Instansi</label>
-                <input type="text" class="i-mitra w-full px-3 py-2 border rounded-xl font-semibold bg-slate-50 focus:bg-white" value="${item.mitra || ''}" placeholder="Nama Instansi / DUDIKA" required>
+                <input type="text" class="i-mitra w-full px-3 py-2 border rounded-xl font-semibold bg-slate-50 focus:bg-white" value="${item.mitra || ''}" required>
             </div>
             <div class="sm:col-span-2">
                 <label class="block font-bold text-slate-700 mb-1"><i class="fa-solid fa-location-dot text-rose-500 mr-1"></i>Lokasi</label>
@@ -863,7 +873,6 @@
             document.getElementById('cont-in-pesan').appendChild(div);
         }
 
-        // Helper Ekstraksi Paket Pengumuman (Mengambil Tema Manual & Link Foto bahkan jika Google Sheets masih versi 4 kolom)
         function parsePengumumanItem(rawItem) {
             let isi = rawItem.isi || '';
             let tema = rawItem.kategori || '';
@@ -935,7 +944,6 @@
                     document.getElementById('cont-in-guru').innerHTML = '';
                     (data.guru || []).forEach(i => addGuruRow(i.nama, i.mapel, i.foto));
 
-                    // Render Pengumuman (Mendukung Tema Manual & Link Foto)
                     document.getElementById('cont-in-pengumuman').innerHTML = '';
                     const savedLocalPeng = localStorage.getItem('smkn1haltim_pengumuman_data');
                     let pengSource = data.pengumuman || [];
@@ -1024,7 +1032,6 @@
         submitForm('formKontak', 'btnKontak', () => ({ action: 'updateKontak', alamat: document.getElementById('inAlamat').value, email: document.getElementById('inEmail').value, telepon: document.getElementById('inTelepon').value, peta: document.getElementById('inPeta').value }));
         submitForm('formAddAdmin', 'btnAddAdmin', () => ({ action: 'addUser', username: document.getElementById('newAdminUser').value, password: document.getElementById('newAdminPass').value }));
 
-        // SIMPAN PENGUMUMAN (MENYIMPAN TEMA MANUAL & FOTO KE GOOGLE SHEETS + BACKUP LOKAL)
         document.getElementById('formPengumuman').addEventListener('submit', function(e) {
             e.preventDefault();
             const btn = document.getElementById('btnPengumuman');
@@ -1043,7 +1050,6 @@
                 const foto = el.querySelector('.i-foto').value.trim();
 
                 arrClean.push({ tanggal: tgl, judul: judul, isi: isi, kategori: tema, foto: foto });
-                // Dikemas juga dengan pemisah ||| agar meskipun Apps Script lama belum di-deploy ulang, Tema & Foto tetap ikut tersimpan di kolom Isi
                 arrForSheets.push({
                     tanggal: "'" + tgl,
                     judul: judul,
@@ -1071,7 +1077,6 @@
             });
         });
 
-        // SIMPAN SISTEM MONITORING PKL
         document.getElementById('formPKL').addEventListener('submit', function(e) {
             e.preventDefault();
             const btn = document.getElementById('btnPKL');

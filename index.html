@@ -1173,141 +1173,172 @@
         }
 
         // =========================================================================
-        // SINKRONISASI PENUH DARI GOOGLE SHEETS
+        // RENDER DATA & CACHE INSTAN + TIMEOUT ANTI-LOADING LAMA
         // =========================================================================
-        function syncAllFromSheets() {
-            fetch(scriptURL).then(res => res.json()).then(data => {
-                if (data.status === 'success') {
-                    if (data.profil) {
-                        if (data.profil.namaKepsek) document.getElementById('tampil-kepsek').innerText = data.profil.namaKepsek;
-                        if (data.profil.sambutan) document.getElementById('tampil-sambutan').innerText = data.profil.sambutan;
-                        if (data.profil.fotoKepsek) {
-                            document.getElementById('tampil-foto-kepsek').src = fixImgUrl(data.profil.fotoKepsek, 'Kepala Sekolah', 'kepsek.png');
-                        }
-                        if (data.profil.logoWeb) {
-                            document.querySelectorAll('.site-logo').forEach(el => el.src = fixImgUrl(data.profil.logoWeb, 'SMKN 1', 'logo.jpg'));
-                        }
-                    }
-                    if (data.visimisi) {
-                        if (data.visimisi.visi) document.getElementById('tampil-visi').innerText = data.visimisi.visi;
-                        if (data.visimisi.misi) document.getElementById('tampil-misi').innerText = data.visimisi.misi;
-                    }
-                    if (data.sejarah) {
-                        if (data.sejarah.judul) document.getElementById('tampil-sejarah-judul').innerText = data.sejarah.judul;
-                        if (data.sejarah.isi) document.getElementById('tampil-sejarah-isi').innerText = data.sejarah.isi;
-                    }
-                    if (data.kontak) {
-                        if (data.kontak.alamat) {
-                            document.getElementById('tampil-alamat').innerText = data.kontak.alamat;
-                            document.getElementById('dapodik-alamat').innerText = data.kontak.alamat;
-                        }
-                        if (data.kontak.email) {
-                            document.getElementById('tampil-email').innerText = data.kontak.email;
-                            document.getElementById('top-email-text').innerText = data.kontak.email;
-                        }
-                        if (data.kontak.telepon) {
-                            document.getElementById('tampil-telepon').innerText = data.kontak.telepon;
-                            document.getElementById('hero-telp').innerText = data.kontak.telepon;
-                        }
-                        document.getElementById('tampil-peta').src = sanitizeMapURL(data.kontak.peta);
-
-                        if (data.kontak.tiktok) document.getElementById('link-medsos-tiktok').href = data.kontak.tiktok;
-                        if (data.kontak.ig) document.getElementById('link-medsos-ig').href = data.kontak.ig;
-                        if (data.kontak.fb) document.getElementById('link-medsos-fb').href = data.kontak.fb;
-                    }
-
-                    if (data.infoPKL && Object.keys(data.infoPKL).length > 0) {
-                        applyPKLInfoUI(data.infoPKL);
-                    }
-
-                    if (Array.isArray(data.pkl) && data.pkl.length > 0) {
-                        pklData.length = 0;
-                        data.pkl.forEach(i => pklData.push(i));
-                        renderPKLTable();
-                    }
-
-                    if (Array.isArray(data.kegiatan)) {
-                        window.kegiatanData = data.kegiatan;
-                        const contK = document.getElementById('container-kegiatan');
-                        contK.innerHTML = data.kegiatan.length === 0 ? '<p class="col-span-full text-center text-slate-400">Belum ada riwayat kegiatan.</p>' : '';
-                        data.kegiatan.forEach((item, idx) => {
-                            const fotos = (item.foto || '').split(',').map(f => fixImgUrl(f, item.nama)).filter(Boolean);
-                            const cover = fotos[0];
-                            const badge = fotos.length > 1 ? `<div class="absolute top-3 right-3 bg-black/75 text-white text-xs font-bold px-3 py-1 rounded-full">📸 +${fotos.length - 1} Foto</div>` : '';
-                            contK.innerHTML += `
-                            <div onclick="openSliderFromKegiatan(${idx})" class="bg-slate-50 dark:bg-slate-800 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-slate-200/80 dark:border-slate-700 cursor-pointer group transition transform hover:-translate-y-1">
-                                <div class="aspect-video bg-slate-200 relative overflow-hidden">
-                                    <img referrerpolicy="no-referrer" src="${cover}" onerror="this.src='https://placehold.co/600x400/1e3a8a/fbbf24?text=${encodeURIComponent(item.nama)}'" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                                    ${badge}
-                                </div>
-                                <div class="p-6">
-                                    <h3 class="font-display font-bold text-lg mb-2 group-hover:text-brand-600 transition">${item.nama}</h3>
-                                    <p class="text-slate-600 dark:text-slate-300 text-xs leading-relaxed line-clamp-3">${item.deskripsi}</p>
-                                </div>
-                            </div>`;
-                        });
-                    }
-
-                    if (Array.isArray(data.fasilitas)) {
-                        const contF = document.getElementById('container-fasilitas');
-                        contF.innerHTML = data.fasilitas.length === 0 ? '<p class="col-span-full text-center text-slate-400">Belum ada data fasilitas.</p>' : '';
-                        data.fasilitas.forEach(item => {
-                            const imgF = fixImgUrl(item.foto, item.nama);
-                            contF.innerHTML += `
-                            <div class="bg-slate-50 dark:bg-slate-800 rounded-3xl overflow-hidden shadow-sm border border-slate-200/80 dark:border-slate-700 group">
-                                <div class="aspect-video bg-slate-200 overflow-hidden"><img referrerpolicy="no-referrer" src="${imgF}" onerror="this.src='https://placehold.co/600x400/0f766e/ffffff?text=${encodeURIComponent(item.nama)}'" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
-                                <div class="p-6"><h3 class="font-display font-bold text-lg mb-1">${item.nama}</h3><p class="text-slate-600 dark:text-slate-300 text-xs leading-relaxed">${item.deskripsi}</p></div>
-                            </div>`;
-                        });
-                    }
-
-                    if (Array.isArray(data.jurusan) && data.jurusan.length > 0) {
-                        window.jurusanList = data.jurusan;
-                        renderJurusanCards();
-                    }
-
-                    if (Array.isArray(data.guru)) {
-                        const contG = document.getElementById('container-guru');
-                        contG.innerHTML = data.guru.length === 0 ? '<p class="col-span-full text-center text-slate-400">Belum ada data guru.</p>' : '';
-                        data.guru.forEach(item => {
-                            const imgG = fixImgUrl(item.foto, item.nama);
-                            contG.innerHTML += `
-                            <div class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm text-center group">
-                                <div class="aspect-square bg-slate-200 overflow-hidden"><img referrerpolicy="no-referrer" src="${imgG}" onerror="this.src='https://placehold.co/400x400/334155/fbbf24?text=${encodeURIComponent(item.nama)}'" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
-                                <div class="p-4"><h3 class="font-display font-bold text-sm truncate">${item.nama}</h3><p class="text-brand-600 dark:text-amber-400 text-xs font-bold uppercase mt-1 truncate">${item.mapel}</p></div>
-                            </div>`;
-                        });
-                    }
-
-                    if (Array.isArray(data.pengumuman) && data.pengumuman.length > 0) {
-                        newsArticles = data.pengumuman.map(parseRawPengumuman);
-                        renderNews();
-                    }
-
-                    if (Array.isArray(data.galeri)) {
-                        const contGl = document.getElementById('container-galeri');
-                        contGl.innerHTML = data.galeri.map(item => {
-                            const imgGl = fixImgUrl(item.link, item.judul);
-                            return `
-                            <div class="group relative aspect-video bg-slate-200 rounded-2xl overflow-hidden shadow-sm">
-                                <img referrerpolicy="no-referrer" src="${imgGl}" onerror="this.src='https://placehold.co/600x400/1e3a8a/ffffff?text=${encodeURIComponent(item.judul)}'" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
-                                    <p class="text-white text-xs font-semibold truncate">${item.judul}</p>
-                                </div>
-                            </div>`;
-                        }).join('');
-                    }
-
-                    if (data.siswa && Object.keys(data.siswa).length > 0) {
-                        Object.assign(sampleStudents, data.siswa);
-                        lookupNISN(document.getElementById('nisn-search-input').value || '0067891234');
-                    }
-                    if (data.jadwal && Object.keys(data.jadwal).length > 0) {
-                        Object.assign(scheduleData, data.jadwal);
-                        filterSchedule('TJKT');
-                    }
+        function applyAllDataToUI(data) {
+            if (!data || data.status !== 'success') return;
+            if (data.profil) {
+                if (data.profil.namaKepsek) document.getElementById('tampil-kepsek').innerText = data.profil.namaKepsek;
+                if (data.profil.sambutan) document.getElementById('tampil-sambutan').innerText = data.profil.sambutan;
+                if (data.profil.fotoKepsek) {
+                    document.getElementById('tampil-foto-kepsek').src = fixImgUrl(data.profil.fotoKepsek, 'Kepala Sekolah', 'kepsek.png');
                 }
-            });
+                if (data.profil.logoWeb) {
+                    document.querySelectorAll('.site-logo').forEach(el => el.src = fixImgUrl(data.profil.logoWeb, 'SMKN 1', 'logo.jpg'));
+                }
+            }
+            if (data.visimisi) {
+                if (data.visimisi.visi) document.getElementById('tampil-visi').innerText = data.visimisi.visi;
+                if (data.visimisi.misi) document.getElementById('tampil-misi').innerText = data.visimisi.misi;
+            }
+            if (data.sejarah) {
+                if (data.sejarah.judul) document.getElementById('tampil-sejarah-judul').innerText = data.sejarah.judul;
+                if (data.sejarah.isi) document.getElementById('tampil-sejarah-isi').innerText = data.sejarah.isi;
+            }
+            if (data.kontak) {
+                if (data.kontak.alamat) {
+                    document.getElementById('tampil-alamat').innerText = data.kontak.alamat;
+                    document.getElementById('dapodik-alamat').innerText = data.kontak.alamat;
+                }
+                if (data.kontak.email) {
+                    document.getElementById('tampil-email').innerText = data.kontak.email;
+                    document.getElementById('top-email-text').innerText = data.kontak.email;
+                }
+                if (data.kontak.telepon) {
+                    document.getElementById('tampil-telepon').innerText = data.kontak.telepon;
+                    document.getElementById('hero-telp').innerText = data.kontak.telepon;
+                }
+                document.getElementById('tampil-peta').src = sanitizeMapURL(data.kontak.peta);
+
+                if (data.kontak.tiktok) document.getElementById('link-medsos-tiktok').href = data.kontak.tiktok;
+                if (data.kontak.ig) document.getElementById('link-medsos-ig').href = data.kontak.ig;
+                if (data.kontak.fb) document.getElementById('link-medsos-fb').href = data.kontak.fb;
+            }
+
+            if (data.infoPKL && Object.keys(data.infoPKL).length > 0) {
+                applyPKLInfoUI(data.infoPKL);
+            }
+
+            if (Array.isArray(data.pkl) && data.pkl.length > 0) {
+                pklData.length = 0;
+                data.pkl.forEach(i => pklData.push(i));
+                renderPKLTable();
+            }
+
+            if (Array.isArray(data.kegiatan)) {
+                window.kegiatanData = data.kegiatan;
+                const contK = document.getElementById('container-kegiatan');
+                contK.innerHTML = data.kegiatan.length === 0 ? '<p class="col-span-full text-center text-slate-400">Belum ada riwayat kegiatan.</p>' : '';
+                data.kegiatan.forEach((item, idx) => {
+                    const fotos = (item.foto || '').split(',').map(f => fixImgUrl(f, item.nama)).filter(Boolean);
+                    const cover = fotos[0];
+                    const badge = fotos.length > 1 ? `<div class="absolute top-3 right-3 bg-black/75 text-white text-xs font-bold px-3 py-1 rounded-full">📸 +${fotos.length - 1} Foto</div>` : '';
+                    contK.innerHTML += `
+                    <div onclick="openSliderFromKegiatan(${idx})" class="bg-slate-50 dark:bg-slate-800 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-slate-200/80 dark:border-slate-700 cursor-pointer group transition transform hover:-translate-y-1">
+                        <div class="aspect-video bg-slate-200 relative overflow-hidden">
+                            <img referrerpolicy="no-referrer" src="${cover}" onerror="this.src='https://placehold.co/600x400/1e3a8a/fbbf24?text=${encodeURIComponent(item.nama)}'" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            ${badge}
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-display font-bold text-lg mb-2 group-hover:text-brand-600 transition">${item.nama}</h3>
+                            <p class="text-slate-600 dark:text-slate-300 text-xs leading-relaxed line-clamp-3">${item.deskripsi}</p>
+                        </div>
+                    </div>`;
+                });
+            }
+
+            if (Array.isArray(data.fasilitas)) {
+                const contF = document.getElementById('container-fasilitas');
+                contF.innerHTML = data.fasilitas.length === 0 ? '<p class="col-span-full text-center text-slate-400">Belum ada data fasilitas.</p>' : '';
+                data.fasilitas.forEach(item => {
+                    const imgF = fixImgUrl(item.foto, item.nama);
+                    contF.innerHTML += `
+                    <div class="bg-slate-50 dark:bg-slate-800 rounded-3xl overflow-hidden shadow-sm border border-slate-200/80 dark:border-slate-700 group">
+                        <div class="aspect-video bg-slate-200 overflow-hidden"><img referrerpolicy="no-referrer" src="${imgF}" onerror="this.src='https://placehold.co/600x400/0f766e/ffffff?text=${encodeURIComponent(item.nama)}'" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
+                        <div class="p-6"><h3 class="font-display font-bold text-lg mb-1">${item.nama}</h3><p class="text-slate-600 dark:text-slate-300 text-xs leading-relaxed">${item.deskripsi}</p></div>
+                    </div>`;
+                });
+            }
+
+            if (Array.isArray(data.jurusan) && data.jurusan.length > 0) {
+                window.jurusanList = data.jurusan;
+                renderJurusanCards();
+            }
+
+            if (Array.isArray(data.guru)) {
+                const contG = document.getElementById('container-guru');
+                contG.innerHTML = data.guru.length === 0 ? '<p class="col-span-full text-center text-slate-400">Belum ada data guru.</p>' : '';
+                data.guru.forEach(item => {
+                    const imgG = fixImgUrl(item.foto, item.nama);
+                    contG.innerHTML += `
+                    <div class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm text-center group">
+                        <div class="aspect-square bg-slate-200 overflow-hidden"><img referrerpolicy="no-referrer" src="${imgG}" onerror="this.src='https://placehold.co/400x400/334155/fbbf24?text=${encodeURIComponent(item.nama)}'" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
+                        <div class="p-4"><h3 class="font-display font-bold text-sm truncate">${item.nama}</h3><p class="text-brand-600 dark:text-amber-400 text-xs font-bold uppercase mt-1 truncate">${item.mapel}</p></div>
+                    </div>`;
+                });
+            }
+
+            if (Array.isArray(data.pengumuman) && data.pengumuman.length > 0) {
+                newsArticles = data.pengumuman.map(parseRawPengumuman);
+                renderNews();
+            }
+
+            if (Array.isArray(data.galeri)) {
+                const contGl = document.getElementById('container-galeri');
+                contGl.innerHTML = data.galeri.map(item => {
+                    const imgGl = fixImgUrl(item.link, item.judul);
+                    return `
+                    <div class="group relative aspect-video bg-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                        <img referrerpolicy="no-referrer" src="${imgGl}" onerror="this.src='https://placehold.co/600x400/1e3a8a/ffffff?text=${encodeURIComponent(item.judul)}'" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+                            <p class="text-white text-xs font-semibold truncate">${item.judul}</p>
+                        </div>
+                    </div>`;
+                }).join('');
+            }
+
+            if (data.siswa && Object.keys(data.siswa).length > 0) {
+                Object.assign(sampleStudents, data.siswa);
+                lookupNISN(document.getElementById('nisn-search-input').value || '0067891234');
+            }
+            if (data.jadwal && Object.keys(data.jadwal).length > 0) {
+                Object.assign(scheduleData, data.jadwal);
+                filterSchedule('TJKT');
+            }
+        }
+
+        function syncAllFromSheets() {
+            // 1. Tampilkan cache instan jika sudah pernah dibuka sebelumnya (0 detik)
+            try {
+                const cached = localStorage.getItem('smkn1haltim_web_cache_v1');
+                if (cached) applyAllDataToUI(JSON.parse(cached));
+            } catch (e) {}
+
+            // 2. Ambil data terbaru dengan batas waktu 10 detik agar tidak menggantung
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 10000);
+
+            fetch(scriptURL, { signal: controller.signal })
+                .then(res => res.json())
+                .then(data => {
+                    clearTimeout(timeoutId);
+                    if (data.status === 'success') {
+                        applyAllDataToUI(data);
+                        try { localStorage.setItem('smkn1haltim_web_cache_v1', JSON.stringify(data)); } catch (e) {}
+                    }
+                })
+                .catch(() => {
+                    clearTimeout(timeoutId);
+                    const contK = document.getElementById('container-kegiatan');
+                    if (contK && contK.innerText.includes('Memuat')) {
+                        contK.innerHTML = `<div class="col-span-full text-center py-8 space-y-3">
+                            <p class="text-slate-500 text-sm">Koneksi ke Google Sheets sedang lambat atau terputus.</p>
+                            <button onclick="syncAllFromSheets()" class="px-5 py-2.5 rounded-xl bg-brand-600 text-white text-xs font-bold shadow">Muat Ulang Data</button>
+                        </div>`;
+                        document.getElementById('container-fasilitas').innerHTML = '';
+                        document.getElementById('container-guru').innerHTML = '';
+                    }
+                });
         }
 
         window.onload = function () {

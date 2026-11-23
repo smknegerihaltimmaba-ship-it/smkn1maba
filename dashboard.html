@@ -23,7 +23,7 @@
     <div id="login-gate" class="fixed inset-0 z-[100] login-gate-bg flex items-center justify-center p-4 overflow-y-auto">
         <div class="bg-white rounded-3xl max-w-md w-full p-8 shadow-2xl border border-slate-200 relative">
             <div class="text-center mb-6">
-                <img src="logo.png" onerror="this.onerror=null; this.src='https://placehold.co/120x120/1e3a8a/fbbf24?text=SMKN+1';" alt="Logo SMK N 1 Haltim" class="cms-logo w-20 h-20 rounded-full object-cover mx-auto mb-3 shadow-lg border-2 border-amber-400 bg-white p-0.5">
+                <img src="logo.jpg" onerror="this.onerror=null; this.src='https://placehold.co/120x120/1e3a8a/fbbf24?text=SMKN+1';" alt="Logo SMK N 1 Haltim" class="cms-logo w-20 h-20 rounded-full object-cover mx-auto mb-3 shadow-lg border-2 border-amber-400 bg-white p-0.5">
                 <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-amber-100 text-amber-800 uppercase tracking-wider">Portal Administrator</span>
                 <h1 class="text-2xl font-poppins font-bold text-slate-900 mt-2">Login CMS Dashboard</h1>
                 <p class="text-xs text-slate-500 mt-1">SMK Negeri 1 Halmahera Timur (SMKN 1 Maba)</p>
@@ -82,7 +82,7 @@
         <nav class="bg-slate-900 text-white shadow-lg sticky top-0 z-50">
             <div class="max-w-7xl mx-auto px-4 py-3.5 flex justify-between items-center">
                 <div class="font-poppins font-bold text-lg sm:text-xl cursor-pointer flex items-center gap-3" onclick="showMenu('dashboard')">
-                    <img src="logo.png" onerror="this.onerror=null; this.src='https://placehold.co/120x120/1e3a8a/fbbf24?text=SMKN+1';" alt="Logo SMK N 1 Haltim" class="cms-logo w-9 h-9 rounded-full object-cover bg-white p-0.5">
+                    <img src="logo.jpg" onerror="this.onerror=null; this.src='https://placehold.co/120x120/1e3a8a/fbbf24?text=SMKN+1';" alt="Logo SMK N 1 Haltim" class="cms-logo w-9 h-9 rounded-full object-cover bg-white p-0.5">
                     <div>
                         <span>CMS Panel SMKN 1 Haltim</span>
                         <span id="admin-active-label" class="hidden sm:inline-block ml-2 text-[10px] bg-emerald-500 text-slate-950 font-bold px-2 py-0.5 rounded-full">Admin Aktif</span>
@@ -116,7 +116,7 @@
                 <div class="flex flex-wrap justify-between items-end mb-6 border-b pb-5 gap-4">
                     <div>
                         <h1 class="text-2xl sm:text-3xl font-poppins font-bold text-slate-900">Dashboard Utama Administrator</h1>
-                        <p class="text-sm text-slate-600 mt-1">Pilih file foto langsung dari HP/Komputer untuk Logo, Pengumuman, Kegiatan, Guru & Jurusan — tanpa perlu Google Drive.</p>
+                        <p class="text-sm text-slate-600 mt-1">Pilih file foto langsung dari HP/Komputer untuk Logo, Pengumuman, Kegiatan, Guru & Jurusan — otomatis tersimpan ke Google Drive & Sheets.</p>
                     </div>
                     <div class="flex flex-wrap gap-2 text-xs font-bold">
                         <button onclick="showMenu('ppdb')" class="px-3.5 py-1.5 rounded-xl bg-amber-500 text-slate-950 shadow hover:bg-amber-400 transition">📝 Data PPDB (<strong id="badge-count-ppdb">0</strong>)</button>
@@ -172,14 +172,13 @@
                     <button onclick="showMenu('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 font-semibold px-3.5 py-1.5 rounded-lg">Kembali</button>
                 </div>
                 <form id="formProfil" class="space-y-5">
-                    <!-- UPLOAD LOGO SEKOLAH LANGSUNG -->
                     <div class="p-4 rounded-2xl bg-amber-50/70 border border-amber-300 flex flex-col sm:flex-row items-center gap-4">
-                        <img id="prevLogoWeb" src="logo.png" onerror="this.onerror=null; this.src='https://placehold.co/120x120/1e3a8a/fbbf24?text=SMKN+1';" class="w-20 h-20 rounded-full object-cover border-2 border-amber-400 bg-white shadow">
+                        <img id="prevLogoWeb" src="logo.jpg" onerror="this.onerror=null; this.src='https://placehold.co/120x120/1e3a8a/fbbf24?text=SMKN+1';" class="w-20 h-20 rounded-full object-cover border-2 border-amber-400 bg-white shadow">
                         <div class="flex-1 space-y-1.5">
                             <label class="block text-xs font-bold text-amber-900 uppercase">Upload Logo Resmi SMK (Muncul di Atas & Bawah Website)</label>
-                            <input type="file" accept="image/*" onchange="handleSingleImageUpload(this, 'inLogoWeb', 'prevLogoWeb', 250)" class="block w-full text-xs text-slate-600 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-amber-500 file:text-slate-950 hover:file:bg-amber-400 cursor-pointer">
+                            <input type="file" accept="image/*" onchange="handleSingleImageUpload(this, 'inLogoWeb', 'prevLogoWeb', 300)" class="block w-full text-xs text-slate-600 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-amber-500 file:text-slate-950 hover:file:bg-amber-400 cursor-pointer">
                             <input type="hidden" id="inLogoWeb">
-                            <p class="text-[11px] text-slate-500">Pilih file gambar logo (.png / .jpg) dari komputer/HP Anda. Otomatis tersimpan ke database.</p>
+                            <p class="text-[11px] text-slate-500">Pilih file gambar logo (.png / .jpg) dari komputer/HP Anda. Otomatis tersimpan ke Google Drive.</p>
                         </div>
                     </div>
 
@@ -188,13 +187,12 @@
                         <input type="text" id="inKepsek" class="w-full px-3.5 py-2.5 border rounded-xl text-sm" required>
                     </div>
 
-                    <!-- UPLOAD FOTO KEPALA SEKOLAH LANGSUNG -->
                     <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-center gap-4">
-                        <img id="prevFotoKepsek" src="https://placehold.co/160x200/1e3a8a/fbbf24?text=Foto+Kepsek" class="w-20 h-24 rounded-xl object-cover border bg-white shadow-sm">
+                        <img id="prevFotoKepsek" src="kepsek.png" onerror="this.onerror=null; this.src='https://placehold.co/160x200/1e3a8a/fbbf24?text=Foto+Kepsek';" class="w-20 h-24 rounded-xl object-cover border bg-white shadow-sm">
                         <div class="flex-1 space-y-1.5">
                             <label class="block text-xs font-bold text-slate-700">Upload Foto Kepala Sekolah (Pilih File Gambar)</label>
-                            <input type="file" accept="image/*" onchange="handleSingleImageUpload(this, 'inFotoKepsek', 'prevFotoKepsek', 450)" class="block w-full text-xs text-slate-600 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-blue-600 file:text-white hover:file:bg-blue-700 cursor-pointer">
-                            <input type="text" id="inFotoKepsek" placeholder="Atau tempel link foto jika ada..." class="w-full px-3 py-1.5 border rounded-lg text-xs font-mono bg-white mt-1">
+                            <input type="file" accept="image/*" onchange="handleSingleImageUpload(this, 'inFotoKepsek', 'prevFotoKepsek', 500)" class="block w-full text-xs text-slate-600 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-blue-600 file:text-white hover:file:bg-blue-700 cursor-pointer">
+                            <input type="hidden" id="inFotoKepsek">
                         </div>
                     </div>
 
@@ -564,10 +562,10 @@
     </div>
 
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxqYthWvc9JglBAJTOWOFPSRxXUdYZPc3me_5kRT_idkCKf6tnjk45NcxF6EHbzy0LA/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwIF4kkqFxzxrkcW7h62J8j05wXdyfZS2WId-4Ax34aR16Tn4TIrWYIATcra2TP3IpG/exec';
 
         // =========================================================================
-        // ENGINE KOMPRESI & UPLOAD GAMBAR LANGSUNG DARI KOMPUTER/HP (TANPA DRIVE)
+        // ENGINE KOMPRESI & UPLOAD GAMBAR LANGSUNG DARI KOMPUTER/HP
         // =========================================================================
         function compressImageFile(file, maxWidth = 550, quality = 0.65) {
             return new Promise((resolve) => {
@@ -732,7 +730,6 @@
             });
         });
 
-        // BARIS PENGUMUMAN (DENGAN TOMBOL UPLOAD FILE FOTO LANGSUNG)
         function addPengumumanRow(tgl='', jdl='', isi='', tema='Pengumuman Sekolah', foto='') {
             const cleanTgl = formatCleanDate(tgl);
             const cleanTema = (tema === 'PKL' || tema === 'UKK' || tema === 'PRESTASI' || !tema) ? 'Pengumuman Sekolah' : tema;
@@ -834,7 +831,6 @@
             }
         }
 
-        // KEGIATAN (UPLOAD MULTI-FOTO LANGSUNG)
         function addKegiatanRow(nama='', des='', foto='') {
             const firstFoto = (foto || '').split(',')[0].trim();
             const div = document.createElement('div');
@@ -858,7 +854,6 @@
             document.getElementById('cont-in-kegiatan').appendChild(div);
         }
 
-        // FASILITAS (UPLOAD FOTO LANGSUNG)
         function addFasilitasRow(nama='', des='', foto='') {
             const div = document.createElement('div');
             div.className = 'mb-4 p-4 border rounded-2xl bg-cyan-50/40 fasilitas-item relative space-y-2';
@@ -878,7 +873,6 @@
             document.getElementById('cont-in-fasilitas').appendChild(div);
         }
 
-        // JURUSAN (UPLOAD FOTO LANGSUNG)
         function addJurusanRow(singkatan='', nama='', des='', gambar='') {
             const firstImg = (gambar || '').split(',')[0].trim();
             const div = document.createElement('div');
@@ -902,7 +896,6 @@
             document.getElementById('cont-in-jurusan').appendChild(div);
         }
 
-        // GURU / TENAGA PENDIDIK (UPLOAD FOTO LANGSUNG)
         function addGuruRow(nama='', mapel='', foto='') {
             const div = document.createElement('div');
             div.className = 'mb-4 p-4 border rounded-2xl bg-purple-50/40 guru-item relative';
@@ -922,7 +915,6 @@
             document.getElementById('cont-in-guru').appendChild(div);
         }
 
-        // GALERI FOTO (UPLOAD FOTO LANGSUNG)
         function addGaleriRow(jdl='', link='') {
             const div = document.createElement('div');
             div.className = 'mb-3 p-4 border rounded-2xl bg-pink-50/40 galeri-item flex flex-col sm:flex-row gap-4 items-center';
@@ -1066,7 +1058,7 @@
                     document.getElementById('inKepsek').value = p.namaKepsek || '';
                     document.getElementById('inSambutan').value = p.sambutan || '';
                     document.getElementById('inFotoKepsek').value = p.fotoKepsek || '';
-                    if (p.fotoKepsek) document.getElementById('prevFotoKepsek').src = p.fotoKepsek;
+                    if (p.fotoKepsek && !p.fotoKepsek.includes('sanishtech')) document.getElementById('prevFotoKepsek').src = p.fotoKepsek;
                     if (p.logoWeb) {
                         document.getElementById('inLogoWeb').value = p.logoWeb;
                         document.getElementById('prevLogoWeb').src = p.logoWeb;

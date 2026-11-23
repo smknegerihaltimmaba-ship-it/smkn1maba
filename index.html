@@ -173,7 +173,6 @@
                         Selamat datang di portal resmi <strong>SMK Negeri 1 Halmahera Timur (SMKN 1 Maba)</strong>. Berlokasi di Desa Soa Gimalaha, Kec. Kota Maba, kami berkomitmen menyelenggarakan pendidikan kejuruan berbasis <em>Kurikulum Merdeka</em> yang selaras dengan kebutuhan dunia industri, pertambangan, kelistrikan, konstruksi, dan teknologi informasi di Maluku Utara.
                     </p>
 
-                    <!-- TOMBOL MENUJU PORTAL PPDB TERPISAH -->
                     <div class="flex flex-wrap gap-3.5 pt-2">
                         <a href="ppdb.html" class="inline-flex items-center gap-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-amber-500/25 transition transform hover:-translate-y-0.5">
                             <i class="fa-solid fa-user-plus"></i>
@@ -568,11 +567,11 @@
                 <div class="lg:col-span-6 space-y-6">
                     <div>
                         <h2 class="font-display font-extrabold text-3xl text-slate-900 dark:text-white">Hubungi SMK Negeri 1 Halmahera Timur</h2>
-                        <p class="text-slate-600 dark:text-slate-400 mt-2 text-sm">Kunjungi Sekolah kami atau kirimkan pesan terkait layanan akademik dan kerja sama industri.</p>
+                        <p class="text-slate-600 dark:text-slate-400 mt-2 text-sm">Kunjungi kampus kami atau kirimkan pesan terkait layanan akademik dan kerja sama industri.</p>
                     </div>
                     <div class="grid sm:grid-cols-2 gap-4">
                         <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border">
-                            <h3 class="font-bold text-sm mb-1">📍 Alamat Sekolah</h3>
+                            <h3 class="font-bold text-sm mb-1">📍 Alamat Kampus</h3>
                             <p id="tampil-alamat" class="text-xs text-slate-500 leading-relaxed">Jl. Poros Soagimalaha, Desa Soa Gimalaha, Kec. Kota Maba, Kab. Halmahera Timur, Maluku Utara 97862</p>
                         </div>
                         <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border">
@@ -584,7 +583,7 @@
                         </div>
                     </div>
                     <div class="h-64 bg-slate-800 rounded-3xl overflow-hidden shadow-inner border border-slate-300 dark:border-slate-700">
-                        <iframe id="tampil-peta" src="https://www.google.com/maps?q=SMK+Negeri+1+Halmahera+Timur+Maba&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe id="tampil-peta" src="https://maps.google.com/maps?q=SMK%20Negeri%201%20Halmahera%20Timur,%20Kota%20Maba&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
 
@@ -626,14 +625,39 @@
         </div>
     </section>
 
-    <!-- ==================== FOOTER ==================== -->
-    <footer class="bg-slate-950 text-slate-400 py-10 border-t border-slate-800 text-center text-xs">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div class="flex items-center gap-3">
-                <img src="https://img.sanishtech.com/u/0f05f5fd2f07f7eea84d736986066cc2.jpg" alt="Logo" class="w-8 h-8 rounded-full object-cover bg-white p-0.5">
-                <span class="font-bold text-white">SMK Negeri 1 Halmahera Timur (SMKN 1 Maba)</span>
+    <!-- ==================== FOOTER & MEDIA SOSIAL (TIKTOK, IG, FACEBOOK) ==================== -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex flex-col items-center md:items-start text-center md:text-left space-y-3">
+                <div class="flex items-center gap-3.5">
+                    <img src="https://img.sanishtech.com/u/0f05f5fd2f07f7eea84d736986066cc2.jpg" alt="Logo SMKN 1 Haltim" class="w-12 h-12 rounded-full object-cover bg-white p-0.5 shadow-md">
+                    <div>
+                        <span class="font-display font-bold text-white text-base sm:text-lg block">SMK Negeri 1 Halmahera Timur</span>
+                        <span class="text-xs text-slate-400">SMKN 1 Maba • Kab. Halmahera Timur, Maluku Utara</span>
+                    </div>
+                </div>
+
+                <!-- Tombol Bulat Media Sosial -->
+                <div class="pt-1">
+                    <span class="text-[11px] uppercase tracking-wider font-semibold text-slate-500 block mb-2">Kunjungi Media Sosial Resmi SMK:</span>
+                    <div class="flex items-center justify-center md:justify-start gap-3">
+                        <a id="link-medsos-tiktok" href="https://www.tiktok.com/" target="_blank" rel="noopener" title="TikTok SMKN 1 Halmahera Timur" class="w-11 h-11 rounded-full bg-slate-800/90 hover:bg-white text-white hover:text-slate-950 flex items-center justify-center transition transform hover:-translate-y-1 shadow-md border border-slate-700">
+                            <i class="fa-brands fa-tiktok text-base"></i>
+                        </a>
+                        <a id="link-medsos-ig" href="https://www.instagram.com/" target="_blank" rel="noopener" title="Instagram SMKN 1 Halmahera Timur" class="w-11 h-11 rounded-full bg-slate-800/90 hover:bg-gradient-to-tr hover:from-amber-500 hover:via-pink-600 hover:to-purple-600 text-white flex items-center justify-center transition transform hover:-translate-y-1 shadow-md border border-slate-700">
+                            <i class="fa-brands fa-instagram text-lg"></i>
+                        </a>
+                        <a id="link-medsos-fb" href="https://www.facebook.com/" target="_blank" rel="noopener" title="Facebook SMKN 1 Halmahera Timur" class="w-11 h-11 rounded-full bg-slate-800/90 hover:bg-blue-600 text-white flex items-center justify-center transition transform hover:-translate-y-1 shadow-md border border-slate-700">
+                            <i class="fa-brands fa-facebook-f text-base"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div>© 2026 SMK Negeri 1 Halmahera Timur • NPSN: 60200659. All rights reserved.</div>
+
+            <div class="text-center md:text-right text-xs space-y-1.5">
+                <div class="text-slate-300 font-semibold">© 2026 SMK Negeri 1 Halmahera Timur • NPSN: 60200659.</div>
+                <div>Desa Soa Gimalaha, Kec. Kota Maba, Kab. Halmahera Timur. All rights reserved.</div>
+            </div>
         </div>
     </footer>
 
@@ -729,7 +753,7 @@
 
     <!-- ==================== JAVASCRIPT LOGIC ==================== -->
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxKRXSNSIZ89FnUGs7GrCyh1suHLc25IGX_79OCgN_ooe8pGK17zPuDmEcApEdUzem1/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwHP24iFlzi-d6aJetJB1FJvjqtAnrbkA92WVktIwDdq2J4q-xqSR6nmXC-iuxTu7wT/exec';
 
         function formatCleanDate(raw) {
             if (!raw) return '';
@@ -741,6 +765,19 @@
                 }
             }
             return str;
+        }
+
+        function sanitizeMapURL(raw) {
+            if (!raw) return 'https://maps.google.com/maps?q=SMK%20Negeri%201%20Halmahera%20Timur,%20Kota%20Maba&t=&z=16&ie=UTF8&iwloc=&output=embed';
+            let url = String(raw).trim();
+            if (url.includes('<iframe')) {
+                const match = url.match(/src=["']([^"']+)["']/);
+                if (match && match[1]) url = match[1];
+            }
+            if (url.includes('google.com/search') || url.includes('maps.app.goo.gl') || url.includes('goo.gl/maps')) {
+                return 'https://maps.google.com/maps?q=SMK%20Negeri%201%20Halmahera%20Timur,%20Kota%20Maba&t=&z=16&ie=UTF8&iwloc=&output=embed';
+            }
+            return url;
         }
 
         function updateWITClock() {
@@ -1150,7 +1187,11 @@
                             document.getElementById('tampil-telepon').innerText = data.kontak.telepon;
                             document.getElementById('hero-telp').innerText = data.kontak.telepon;
                         }
-                        if (data.kontak.peta) document.getElementById('tampil-peta').src = data.kontak.peta;
+                        document.getElementById('tampil-peta').src = sanitizeMapURL(data.kontak.peta);
+
+                        if (data.kontak.tiktok) document.getElementById('link-medsos-tiktok').href = data.kontak.tiktok;
+                        if (data.kontak.ig) document.getElementById('link-medsos-ig').href = data.kontak.ig;
+                        if (data.kontak.fb) document.getElementById('link-medsos-fb').href = data.kontak.fb;
                     }
 
                     if (data.infoPKL && Object.keys(data.infoPKL).length > 0) {

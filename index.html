@@ -754,7 +754,7 @@
 
     <!-- ==================== JAVASCRIPT LOGIC ==================== -->
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbw-4Y5BsYYgUlGSwHYHH1-zhaBTwZpfInvPaCcvP_RyI0FTn-yLrlzL7kKRomBVmBQJ/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwicmAHbYUO1b1HHF2suu_T52j-7M__o2VGpdrJL2aDdz8XYqVToWaBXLlC93OPMMmt/exec';
 
         // Penstabil Link Gambar (Otomatis memperbaiki Google Drive & link lama yang mati)
         function fixImgUrl(rawUrl, fallbackText = 'SMKN+1+Haltim') {
@@ -1181,6 +1181,7 @@
                 if (data.status === 'success') {
                     if (data.profil) {
                         if (data.profil.namaKepsek) document.getElementById('tampil-kepsek').innerText = data.profil.namaKepsek;
+                        if (data.profil.logoWeb) document.querySelectorAll('.site-logo').forEach(el => el.src = data.profil.logoWeb);
                         if (data.profil.sambutan) document.getElementById('tampil-sambutan').innerText = data.profil.sambutan;
                         if (data.profil.fotoKepsek) document.getElementById('tampil-foto-kepsek').src = fixImgUrl(data.profil.fotoKepsek, 'Kepala Sekolah');
                     }

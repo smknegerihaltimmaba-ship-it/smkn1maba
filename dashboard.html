@@ -1040,110 +1040,121 @@
             };
         }
 
+        function applyDashboardData(data) {
+            if (!data || data.status !== 'success') return;
+            const p = data.profil || {};
+            document.getElementById('inKepsek').value = p.namaKepsek || '';
+            document.getElementById('inSambutan').value = p.sambutan || '';
+            document.getElementById('inFotoKepsek').value = p.fotoKepsek || '';
+            if (p.fotoKepsek && !p.fotoKepsek.includes('sanishtech')) document.getElementById('prevFotoKepsek').src = p.fotoKepsek;
+            if (p.logoWeb) {
+                document.getElementById('inLogoWeb').value = p.logoWeb;
+                document.getElementById('prevLogoWeb').src = p.logoWeb;
+                document.querySelectorAll('.cms-logo').forEach(el => el.src = p.logoWeb);
+            }
+
+            const vm = data.visimisi || {};
+            document.getElementById('inVisi').value = vm.visi || '';
+            document.getElementById('inMisi').value = vm.misi || '';
+
+            const sj = data.sejarah || {};
+            document.getElementById('inSejarahJudul').value = sj.judul || '';
+            document.getElementById('inSejarahIsi').value = sj.isi || '';
+
+            const kt = data.kontak || {};
+            document.getElementById('inAlamat').value = kt.alamat || '';
+            document.getElementById('inEmail').value = kt.email || '';
+            document.getElementById('inTelepon').value = kt.telepon || '';
+            document.getElementById('inPeta').value = kt.peta || '';
+            document.getElementById('inTiktok').value = kt.tiktok || '';
+            document.getElementById('inIG').value = kt.ig || '';
+            document.getElementById('inFB').value = kt.fb || '';
+
+            if (data.infoPKL && Object.keys(data.infoPKL).length > 0) {
+                applyInfoPKLToForm(data.infoPKL);
+            }
+
+            document.getElementById('cont-in-kegiatan').innerHTML = '';
+            (data.kegiatan || []).forEach(i => addKegiatanRow(i.nama, i.deskripsi, i.foto));
+
+            document.getElementById('cont-in-fasilitas').innerHTML = '';
+            (data.fasilitas || []).forEach(i => addFasilitasRow(i.nama, i.deskripsi, i.foto));
+
+            document.getElementById('cont-in-jurusan').innerHTML = '';
+            (data.jurusan || []).forEach(i => addJurusanRow(i.singkatan, i.nama, i.deskripsi, i.gambar));
+
+            document.getElementById('cont-in-guru').innerHTML = '';
+            (data.guru || []).forEach(i => addGuruRow(i.nama, i.mapel, i.foto));
+
+            document.getElementById('cont-in-pengumuman').innerHTML = '';
+            const savedLocalPeng = localStorage.getItem('smkn1haltim_pengumuman_data');
+            let pengSource = data.pengumuman || [];
+            if (savedLocalPeng && pengSource.length > 0) {
+                try {
+                    const localArr = JSON.parse(savedLocalPeng);
+                    if (localArr.length > 0) pengSource = localArr;
+                } catch (e) {}
+            }
+            pengSource.forEach(raw => {
+                const item = parsePengumumanItem(raw);
+                addPengumumanRow(item.tanggal, item.judul, item.isi, item.tema, item.foto);
+            });
+
+            document.getElementById('cont-in-galeri').innerHTML = '';
+            (data.galeri || []).forEach(i => addGaleriRow(i.judul, i.link));
+
+            document.getElementById('list-admin').innerHTML = (data.users || []).map(u => `
+                <div class="p-3 border-b flex justify-between items-center">
+                    <span class="font-semibold">${u.username}</span>
+                    <button onclick="deleteUser('${u.username}')" class="text-xs text-red-600 border border-red-200 hover:bg-red-50 px-2.5 py-1 rounded-lg font-bold">Hapus</button>
+                </div>
+            `).join('');
+
+            document.getElementById('cont-in-ppdb').innerHTML = '';
+            (data.ppdbList || []).forEach(i => addPPDBRow(i));
+            document.getElementById('badge-count-ppdb').textContent = (data.ppdbList || []).length;
+
+            document.getElementById('cont-in-pkl').innerHTML = '';
+            const pklSource = (Array.isArray(data.pkl) && data.pkl.length > 0) ? data.pkl : defaultPKLItems;
+            pklSource.forEach(i => addPKLRow(i));
+            document.getElementById('badge-count-pkl').textContent = pklSource.length;
+
+            document.getElementById('cont-in-siswa').innerHTML = '';
+            (data.siswaList || []).forEach(i => addSiswaRow(i));
+
+            document.getElementById('cont-in-jadwal').innerHTML = '';
+            (data.jadwalList || []).forEach(i => addJadwalRow(i));
+
+            document.getElementById('cont-in-pesan').innerHTML = '';
+            (data.pesanList || []).forEach(i => addPesanRow(i));
+            document.getElementById('badge-count-pesan').textContent = (data.pesanList || []).length;
+        }
+
         function loadAllData() {
             const ic = document.getElementById('refreshIcon');
             if (ic) ic.classList.add('fa-spin');
 
-            const localPKLConfig = localStorage.getItem('smkn1haltim_pkl_config');
-            if (localPKLConfig) {
-                try {
-                    const parsed = JSON.parse(localPKLConfig);
-                    if (parsed.infoPKL) applyInfoPKLToForm(parsed.infoPKL);
-                } catch (e) {}
-            }
+            try {
+                const cached = localStorage.getItem('smkn1haltim_web_cache_v1');
+                if (cached) applyDashboardData(JSON.parse(cached));
+            } catch (e) {}
 
-            fetch(scriptURL).then(res => res.json()).then(data => {
-                if (data.status === 'success') {
-                    const p = data.profil || {};
-                    document.getElementById('inKepsek').value = p.namaKepsek || '';
-                    document.getElementById('inSambutan').value = p.sambutan || '';
-                    document.getElementById('inFotoKepsek').value = p.fotoKepsek || '';
-                    if (p.fotoKepsek && !p.fotoKepsek.includes('sanishtech')) document.getElementById('prevFotoKepsek').src = p.fotoKepsek;
-                    if (p.logoWeb) {
-                        document.getElementById('inLogoWeb').value = p.logoWeb;
-                        document.getElementById('prevLogoWeb').src = p.logoWeb;
-                        document.querySelectorAll('.cms-logo').forEach(el => el.src = p.logoWeb);
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 12000);
+
+            fetch(scriptURL, { signal: controller.signal })
+                .then(res => res.json())
+                .then(data => {
+                    clearTimeout(timeoutId);
+                    if (data.status === 'success') {
+                        applyDashboardData(data);
+                        try { localStorage.setItem('smkn1haltim_web_cache_v1', JSON.stringify(data)); } catch (e) {}
                     }
-
-                    const vm = data.visimisi || {};
-                    document.getElementById('inVisi').value = vm.visi || '';
-                    document.getElementById('inMisi').value = vm.misi || '';
-
-                    const sj = data.sejarah || {};
-                    document.getElementById('inSejarahJudul').value = sj.judul || '';
-                    document.getElementById('inSejarahIsi').value = sj.isi || '';
-
-                    const kt = data.kontak || {};
-                    document.getElementById('inAlamat').value = kt.alamat || '';
-                    document.getElementById('inEmail').value = kt.email || '';
-                    document.getElementById('inTelepon').value = kt.telepon || '';
-                    document.getElementById('inPeta').value = kt.peta || '';
-                    document.getElementById('inTiktok').value = kt.tiktok || '';
-                    document.getElementById('inIG').value = kt.ig || '';
-                    document.getElementById('inFB').value = kt.fb || '';
-
-                    if (data.infoPKL && Object.keys(data.infoPKL).length > 0) {
-                        applyInfoPKLToForm(data.infoPKL);
-                    }
-
-                    document.getElementById('cont-in-kegiatan').innerHTML = '';
-                    (data.kegiatan || []).forEach(i => addKegiatanRow(i.nama, i.deskripsi, i.foto));
-
-                    document.getElementById('cont-in-fasilitas').innerHTML = '';
-                    (data.fasilitas || []).forEach(i => addFasilitasRow(i.nama, i.deskripsi, i.foto));
-
-                    document.getElementById('cont-in-jurusan').innerHTML = '';
-                    (data.jurusan || []).forEach(i => addJurusanRow(i.singkatan, i.nama, i.deskripsi, i.gambar));
-
-                    document.getElementById('cont-in-guru').innerHTML = '';
-                    (data.guru || []).forEach(i => addGuruRow(i.nama, i.mapel, i.foto));
-
-                    document.getElementById('cont-in-pengumuman').innerHTML = '';
-                    const savedLocalPeng = localStorage.getItem('smkn1haltim_pengumuman_data');
-                    let pengSource = data.pengumuman || [];
-                    if (savedLocalPeng && pengSource.length > 0) {
-                        try {
-                            const localArr = JSON.parse(savedLocalPeng);
-                            if (localArr.length > 0) pengSource = localArr;
-                        } catch (e) {}
-                    }
-                    pengSource.forEach(raw => {
-                        const item = parsePengumumanItem(raw);
-                        addPengumumanRow(item.tanggal, item.judul, item.isi, item.tema, item.foto);
-                    });
-
-                    document.getElementById('cont-in-galeri').innerHTML = '';
-                    (data.galeri || []).forEach(i => addGaleriRow(i.judul, i.link));
-
-                    document.getElementById('list-admin').innerHTML = (data.users || []).map(u => `
-                        <div class="p-3 border-b flex justify-between items-center">
-                            <span class="font-semibold">${u.username}</span>
-                            <button onclick="deleteUser('${u.username}')" class="text-xs text-red-600 border border-red-200 hover:bg-red-50 px-2.5 py-1 rounded-lg font-bold">Hapus</button>
-                        </div>
-                    `).join('');
-
-                    document.getElementById('cont-in-ppdb').innerHTML = '';
-                    (data.ppdbList || []).forEach(i => addPPDBRow(i));
-                    document.getElementById('badge-count-ppdb').textContent = (data.ppdbList || []).length;
-
-                    document.getElementById('cont-in-pkl').innerHTML = '';
-                    const pklSource = (Array.isArray(data.pkl) && data.pkl.length > 0) ? data.pkl : defaultPKLItems;
-                    pklSource.forEach(i => addPKLRow(i));
-                    document.getElementById('badge-count-pkl').textContent = pklSource.length;
-
-                    document.getElementById('cont-in-siswa').innerHTML = '';
-                    (data.siswaList || []).forEach(i => addSiswaRow(i));
-
-                    document.getElementById('cont-in-jadwal').innerHTML = '';
-                    (data.jadwalList || []).forEach(i => addJadwalRow(i));
-
-                    document.getElementById('cont-in-pesan').innerHTML = '';
-                    (data.pesanList || []).forEach(i => addPesanRow(i));
-                    document.getElementById('badge-count-pesan').textContent = (data.pesanList || []).length;
-                }
-            }).finally(() => {
-                if (ic) ic.classList.remove('fa-spin');
-            });
+                })
+                .finally(() => {
+                    clearTimeout(timeoutId);
+                    if (ic) ic.classList.remove('fa-spin');
+                });
         }
 
         function applyInfoPKLToForm(ip) {
@@ -1169,6 +1180,7 @@
                 fetch(scriptURL, { method: 'POST', body: JSON.stringify(payloadBuilder()) })
                     .then(res => res.json())
                     .then(() => {
+                        localStorage.removeItem('smkn1haltim_web_cache_v1');
                         alert('Data berhasil disimpan ke Google Sheets!');
                         showMenu('dashboard');
                         loadAllData();
@@ -1240,6 +1252,7 @@
             })
             .then(r => r.json())
             .then(() => {
+                localStorage.removeItem('smkn1haltim_web_cache_v1');
                 alert('Berhasil! Tema Pengumuman & Foto Sampul telah disimpan.');
                 showMenu('dashboard');
                 loadAllData();
@@ -1290,6 +1303,7 @@
             })
             .then(r => r.json())
             .then(() => {
+                localStorage.removeItem('smkn1haltim_web_cache_v1');
                 alert('Berhasil! Pengaturan Kiri & Tabel Kanan Monitoring PKL telah disimpan.');
                 showMenu('dashboard');
                 loadAllData();
@@ -1312,6 +1326,7 @@
                 fetch(scriptURL, { method: 'POST', body: JSON.stringify({ action: action, [keyName]: arr }) })
                     .then(res => res.json())
                     .then(() => {
+                        localStorage.removeItem('smkn1haltim_web_cache_v1');
                         alert('Seluruh foto dan data berhasil disimpan ke Google Sheets!');
                         showMenu('dashboard');
                         loadAllData();
@@ -1373,7 +1388,10 @@
             if (confirm(`Hapus admin ${u}?`)) {
                 fetch(scriptURL, { method: 'POST', body: JSON.stringify({ action: 'deleteUser', username: u }) })
                     .then(res => res.json())
-                    .then(() => loadAllData());
+                    .then(() => {
+                        localStorage.removeItem('smkn1haltim_web_cache_v1');
+                        loadAllData();
+                    });
             }
         }
 

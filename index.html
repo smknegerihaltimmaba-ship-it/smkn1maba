@@ -268,7 +268,7 @@
             </button>
         </div>
 
-        <!-- Tab 1: Sambutan & Sejarah (Sinkron dengan Dashboard) -->
+        <!-- Tab 1: Sambutan & Sejarah -->
         <div id="profile-tab-sambutan" class="profile-tab-content space-y-8">
             <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-10 shadow-sm border border-slate-200/80 dark:border-slate-800">
                 <div class="grid lg:grid-cols-12 gap-8 items-center">
@@ -350,7 +350,7 @@
         </div>
     </section>
 
-    <!-- ==================== 3B. RIWAYAT KEGIATAN & FASILITAS SEKOLAH (DARI DASHBOARD) ==================== -->
+    <!-- ==================== 3B. RIWAYAT KEGIATAN & FASILITAS SEKOLAH ==================== -->
     <section id="kegiatan" class="py-16 lg:py-24 bg-white dark:bg-slate-900 border-t border-slate-200/80 dark:border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12">
@@ -383,7 +383,7 @@
                     <span class="text-brand-600 dark:text-amber-400 font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">Program Keahlian Vokasi</span>
                     <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white mt-3">Kompetensi Keahlian Unggulan</h2>
                     <p class="text-slate-600 dark:text-slate-400 mt-2 max-w-2xl text-sm">
-                        Klik pada kartu jurusan untuk melihat galeri foto bengkel/RPS serta detail kurikulum & prospek kerjanya.
+                        Klik pada kartu jurusan untuk melihat galeri foto bengkel/RPS serta detail kompetensinya.
                     </p>
                 </div>
                 <a href="#akademik" onclick="switchAcademicTab('ppdb')" class="inline-flex items-center gap-2 text-sm font-bold text-brand-600 dark:text-amber-400 hover:underline">
@@ -408,16 +408,47 @@
         </div>
     </section>
 
-    <!-- ==================== 5. SISTEM INFORMASI PKL / PRAKERIN & BKK ==================== -->
+    <!-- ==================== 5. SISTEM MONITORING PKL & BURSA KERJA KHUSUS (BKK) ==================== -->
     <section id="pkl-bkk" class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-12 gap-8 items-start">
             <div class="lg:col-span-4 space-y-6">
                 <div>
-                    <span class="text-brand-600 dark:text-amber-400 font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-brand-50 dark:bg-slate-800 border border-brand-200 dark:border-slate-700">Link & Match DUDIKA</span>
-                    <h2 class="font-display font-extrabold text-3xl text-slate-900 dark:text-white mt-3">Sistem Monitoring PKL & Bursa Kerja Khusus (BKK)</h2>
-                    <p class="text-slate-600 dark:text-slate-400 mt-3 text-sm leading-relaxed">
-                        Siswa kelas XII SMK Negeri 1 Halmahera Timur melaksanakan <strong>Praktik Kerja Lapangan (PKL / Prakerin)</strong> pada berbagai instansi pemerintah daerah, BUMN, perusahaan industri pertambangan, serta perguruan tinggi mitra di Maluku Utara.
+                    <span id="ui-pkl-badge" class="text-brand-600 dark:text-amber-400 font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-brand-50 dark:bg-slate-800 border border-brand-200 dark:border-slate-700">LINK & MATCH DUDIKA</span>
+                    <h2 id="ui-pkl-judul" class="font-display font-extrabold text-3xl text-slate-900 dark:text-white mt-3">Sistem Monitoring PKL & Bursa Kerja Khusus (BKK)</h2>
+                    <p id="ui-pkl-deskripsi" class="text-slate-600 dark:text-slate-400 mt-3 text-sm leading-relaxed">
+                        Siswa kelas XII SMK Negeri 1 Halmahera Timur melaksanakan Praktik Kerja Lapangan (PKL / Prakerin) pada berbagai instansi pemerintah daerah, BUMN, perusahaan industri pertambangan, serta perguruan tinggi mitra di Maluku Utara.
                     </p>
+                </div>
+
+                <!-- 3 Kartu Highlight Mitra (Dapat Diatur dari Admin) -->
+                <div class="space-y-3">
+                    <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center gap-3.5">
+                        <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-building-flag"></i>
+                        </div>
+                        <div>
+                            <h4 id="ui-pkl-m1-judul" class="font-bold text-sm text-slate-900 dark:text-white">Instansi Pemkab Halmahera Timur</h4>
+                            <p id="ui-pkl-m1-sub" class="text-xs text-slate-500 dark:text-slate-400">Dinas Kominfo, Dinas PUPR, Sekretariat Daerah Kota Maba</p>
+                        </div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center gap-3.5">
+                        <div class="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-950 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-industry"></i>
+                        </div>
+                        <div>
+                            <h4 id="ui-pkl-m2-judul" class="font-bold text-sm text-slate-900 dark:text-white">BUMN & Industri Energi/Pertambangan</h4>
+                            <p id="ui-pkl-m2-sub" class="text-xs text-slate-500 dark:text-slate-400">PT PLN (Persero) ULP Maba, PT Aneka Tambang Tbk (ANTAM) Haltim, Telkom</p>
+                        </div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center gap-3.5">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <h4 id="ui-pkl-m3-judul" class="font-bold text-sm text-slate-900 dark:text-white">Perguruan Tinggi di Maluku Utara</h4>
+                            <p id="ui-pkl-m3-sub" class="text-xs text-slate-500 dark:text-slate-400">UPT TIK & Fakultas Teknik Universitas Khairun (Unkhair) Ternate</p>
+                        </div>
+                    </div>
                 </div>
 
                 <button onclick="openPKLModal()" class="w-full py-3.5 px-5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-lg shadow-brand-600/20 transition flex items-center justify-center gap-2">
@@ -459,7 +490,7 @@
                 </div>
 
                 <div class="mt-6 p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/70 dark:border-slate-700 flex justify-between items-center text-xs">
-                    <span><strong>Info BKK SMKN 1 Maba:</strong> Data dikelola langsung dari CMS Dashboard Admin.</span>
+                    <span id="ui-pkl-footer"><strong>Info BKK SMKN 1 Maba:</strong> Data dikelola langsung dari CMS Dashboard Admin.</span>
                     <span id="pkl-count-badge" class="font-bold text-brand-600 dark:text-amber-400">Menampilkan Mitra</span>
                 </div>
             </div>
@@ -628,7 +659,7 @@
 
         <div id="news-grid" class="grid md:grid-cols-3 gap-8 mb-20"></div>
 
-        <!-- Galeri Foto Dokumentasi (Dari Dashboard) -->
+        <!-- Galeri Foto Dokumentasi -->
         <div id="galeri" class="pt-12 border-t border-slate-200 dark:border-slate-800">
             <h2 class="font-display font-extrabold text-3xl text-slate-900 dark:text-white text-center mb-10">Galeri Dokumentasi Sekolah</h2>
             <div id="container-galeri" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
@@ -795,7 +826,7 @@
 
     <!-- ==================== JAVASCRIPT LOGIC ==================== -->
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbw41JdoS1DxfpfMljWbZrJbt0xJQ_beGKCPUNRA47V0mS9MLjG8jGtkCiOxqqp7-Y4P/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxTMQDfvW8n9Gp1KN64Qge-RYISt1eTRGR7FC2BGCxnsTqPGaP7nmia1qaD2heQLz1Z/exec';
 
         // Jam WIT Live
         function updateWITClock() {
@@ -1119,7 +1150,7 @@
         }
 
         // =========================================================================
-        // SINKRONISASI PENUH DARI GOOGLE SHEETS (16 MODUL)
+        // SINKRONISASI PENUH DARI GOOGLE SHEETS (TERMASUK SISTEM MONITORING PKL)
         // =========================================================================
         function syncAllFromSheets() {
             fetch(scriptURL).then(res => res.json()).then(data => {
@@ -1151,6 +1182,21 @@
                             document.getElementById('hero-telp').innerText = data.kontak.telepon;
                         }
                         if (data.kontak.peta) document.getElementById('tampil-peta').src = data.kontak.peta;
+                    }
+
+                    // Sinkronisasi Pengaturan Teks Sistem Monitoring PKL & BKK
+                    if (data.infoPKL) {
+                        const ip = data.infoPKL;
+                        if (ip.badge && document.getElementById('ui-pkl-badge')) document.getElementById('ui-pkl-badge').innerText = ip.badge;
+                        if (ip.judul && document.getElementById('ui-pkl-judul')) document.getElementById('ui-pkl-judul').innerText = ip.judul;
+                        if (ip.deskripsi && document.getElementById('ui-pkl-deskripsi')) document.getElementById('ui-pkl-deskripsi').innerText = ip.deskripsi;
+                        if (ip.mitra1Judul && document.getElementById('ui-pkl-m1-judul')) document.getElementById('ui-pkl-m1-judul').innerText = ip.mitra1Judul;
+                        if (ip.mitra1Sub && document.getElementById('ui-pkl-m1-sub')) document.getElementById('ui-pkl-m1-sub').innerText = ip.mitra1Sub;
+                        if (ip.mitra2Judul && document.getElementById('ui-pkl-m2-judul')) document.getElementById('ui-pkl-m2-judul').innerText = ip.mitra2Judul;
+                        if (ip.mitra2Sub && document.getElementById('ui-pkl-m2-sub')) document.getElementById('ui-pkl-m2-sub').innerText = ip.mitra2Sub;
+                        if (ip.mitra3Judul && document.getElementById('ui-pkl-m3-judul')) document.getElementById('ui-pkl-m3-judul').innerText = ip.mitra3Judul;
+                        if (ip.mitra3Sub && document.getElementById('ui-pkl-m3-sub')) document.getElementById('ui-pkl-m3-sub').innerText = ip.mitra3Sub;
+                        if (ip.infoFooter && document.getElementById('ui-pkl-footer')) document.getElementById('ui-pkl-footer').innerText = ip.infoFooter;
                     }
 
                     // Riwayat Kegiatan

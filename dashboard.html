@@ -19,9 +19,7 @@
 </head>
 <body class="bg-slate-100 text-slate-800 min-h-screen flex flex-col">
 
-    <!-- ===================================================================== -->
-    <!-- 1. LAYAR LOGIN WAJIB SEBELUM MASUK KE DASHBOARD                       -->
-    <!-- ===================================================================== -->
+    <!-- ==================== 1. LAYAR LOGIN WAJIB (ANTI-AUTOFILL) ==================== -->
     <div id="login-gate" class="fixed inset-0 z-[100] login-gate-bg flex items-center justify-center p-4 overflow-y-auto">
         <div class="bg-white rounded-3xl max-w-md w-full p-8 shadow-2xl border border-slate-200 relative">
             <div class="text-center mb-6">
@@ -36,18 +34,27 @@
                 <span id="login-error-msg">Username atau Password salah!</span>
             </div>
 
-            <form id="formGateLogin" class="space-y-4">
+            <form id="formGateLogin" class="space-y-4" autocomplete="off">
+                <input type="text" style="display:none" aria-hidden="true">
+                <input type="password" style="display:none" aria-hidden="true">
+
                 <div>
                     <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Username Admin</label>
                     <div class="relative">
-                        <input type="text" id="gateUser" required placeholder="Masukkan Username" class="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600">
+                        <input type="text" id="gateUser" name="cms_usr_field_haltim" required placeholder="Masukkan Username"
+                            autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+                            readonly onfocus="this.removeAttribute('readonly');"
+                            class="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600">
                         <i class="fa-solid fa-user text-slate-400 absolute left-3.5 top-3.5"></i>
                     </div>
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Password</label>
                     <div class="relative">
-                        <input type="password" id="gatePass" required placeholder="••••••••" class="w-full pl-10 pr-10 py-3 rounded-xl bg-slate-50 border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600">
+                        <input type="password" id="gatePass" name="cms_pwd_field_haltim" required placeholder="••••••••"
+                            autocomplete="new-password"
+                            readonly onfocus="this.removeAttribute('readonly');"
+                            class="w-full pl-10 pr-10 py-3 rounded-xl bg-slate-50 border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600">
                         <i class="fa-solid fa-lock text-slate-400 absolute left-3.5 top-3.5"></i>
                         <button type="button" onclick="togglePassVisibility()" class="absolute right-3.5 top-3 text-slate-400 hover:text-slate-600">
                             <i id="eyeIcon" class="fa-regular fa-eye"></i>
@@ -69,9 +76,7 @@
         </div>
     </div>
 
-    <!-- ===================================================================== -->
-    <!-- 2. AREA UTAMA CMS DASHBOARD (TERBUKA SETELAH LOGIN BERHASIL)          -->
-    <!-- ===================================================================== -->
+    <!-- ==================== 2. AREA UTAMA CMS DASHBOARD ==================== -->
     <div id="dashboard-app" class="hidden flex-1 flex flex-col">
 
         <nav class="bg-slate-900 text-white shadow-lg sticky top-0 z-50">
@@ -102,12 +107,12 @@
 
         <main class="max-w-7xl mx-auto px-4 py-8 flex-1 w-full">
 
-            <!-- MENU UTAMA DASHBOARD (16 MODUL LENGKAP) -->
+            <!-- MENU UTAMA DASHBOARD -->
             <div id="view-dashboard" class="block">
                 <div class="flex flex-wrap justify-between items-end mb-6 border-b pb-5 gap-4">
                     <div>
                         <h1 class="text-2xl sm:text-3xl font-poppins font-bold text-slate-900">Dashboard Utama Administrator</h1>
-                        <p class="text-sm text-slate-600 mt-1">Kelola seluruh konten profil, kegiatan, Sistem Monitoring PKL & BKK, hingga PPDB dan NISN dari satu panel ini.</p>
+                        <p class="text-sm text-slate-600 mt-1">Kelola seluruh konten profil, kegiatan, Sistem Monitoring PKL & BKK (Kiri & Kanan), hingga PPDB dan NISN.</p>
                     </div>
                     <div class="flex flex-wrap gap-2 text-xs font-bold">
                         <button onclick="showMenu('pkl')" class="px-3.5 py-1.5 rounded-xl bg-blue-600 text-white shadow hover:bg-blue-700 transition">🏭 Atur Monitoring PKL (<span id="badge-count-pkl">0</span> Mitra)</button>
@@ -116,12 +121,11 @@
                     </div>
                 </div>
 
-                <!-- Kelompok 1: Layanan Akademik, Monitoring PKL/BKK & Interaksi Publik -->
-                <h3 class="text-xs font-bold uppercase tracking-wider text-blue-700 mb-3">A. Pengaturan Sistem Monitoring PKL/BKK & Layanan Akademik (Sesuai Halaman Index)</h3>
+                <h3 class="text-xs font-bold uppercase tracking-wider text-blue-700 mb-3">A. Pengaturan Sistem Monitoring PKL/BKK & Layanan Akademik</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 text-center mb-8">
                     <div onclick="showMenu('pkl')" class="bg-blue-600 text-white p-5 rounded-xl shadow-md cursor-pointer hover:bg-blue-700 transition ring-4 ring-blue-600/20">
                         <h2 class="text-sm font-bold">🏭 Sistem Monitoring PKL & BKK</h2>
-                        <p class="text-[11px] text-blue-100 mt-1">Atur Direktori Mitra, Kuota & Info BKK</p>
+                        <p class="text-[11px] text-blue-100 mt-1">Atur Bagian Kiri & Tabel Mitra Kanan</p>
                     </div>
                     <div onclick="showMenu('ppdb')" class="bg-amber-500 text-slate-950 p-5 rounded-xl shadow-sm cursor-pointer hover:bg-amber-400 transition">
                         <h2 class="text-sm font-bold">📝 Data PPDB Online</h2>
@@ -141,7 +145,6 @@
                     </div>
                 </div>
 
-                <!-- Kelompok 2: Konten Profil & Informasi Sekolah (11 Menu Asli Anda) -->
                 <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">B. Pengelolaan Profil, Kegiatan & Dokumentasi Sekolah</h3>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-center">
                     <div onclick="showMenu('profil')" class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 cursor-pointer hover:border-blue-500 hover:shadow-md transition"><h2 class="text-sm font-bold">👤 Profil & Sambutan</h2><p class="text-[11px] text-slate-400 mt-1">Foto & Sambutan Kepsek</p></div>
@@ -158,78 +161,87 @@
                 </div>
             </div>
 
-            <!-- ==================== PANEL KHUSUS: SISTEM ATUR MONITORING PKL & BKK ==================== -->
+            <!-- ==================== PANEL KHUSUS: SISTEM ATUR MONITORING PKL & BKK (KIRI & KANAN) ==================== -->
             <div id="view-pkl" class="bg-white p-6 rounded-2xl shadow-sm border hidden">
                 <div class="flex flex-wrap justify-between items-center border-b pb-4 mb-6 gap-4">
                     <div>
                         <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-blue-100 text-blue-800 uppercase">LINK & MATCH DUDIKA</span>
                         <h2 class="text-xl font-poppins font-bold mt-1">🏭 Pengaturan Sistem Monitoring PKL & Bursa Kerja Khusus (BKK)</h2>
-                        <p class="text-xs text-slate-500">Atur teks informasi BKK, kartu highlight mitra, serta tabel Direktori Penempatan PKL Siswa & Mitra Aktif.</p>
+                        <p class="text-xs text-slate-500">Kelola Bagian Kiri (Judul, Deskripsi, 3 Kartu Mitra) & Bagian Kanan (Tabel Direktori Penempatan PKL Siswa).</p>
                     </div>
                     <button onclick="showMenu('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 font-semibold px-3.5 py-2 rounded-lg">Kembali ke Dashboard</button>
                 </div>
 
-                <form id="formPKL" class="space-y-6">
-                    <!-- Bagian 1: Pengaturan Informasi Kiri & Kartu Highlight Mitra -->
+                <form id="formPKL" class="space-y-8">
+                    <!-- BAGIAN KIRI: Judul, Deskripsi & 3 Kartu Instansi -->
                     <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
-                        <h3 class="text-sm font-poppins font-bold text-slate-800 border-b pb-2">1. Pengaturan Judul, Deskripsi & Kartu Highlight Mitra (Kolom Kiri)</h3>
+                        <div class="flex items-center gap-2 border-b pb-2">
+                            <span class="w-6 h-6 rounded-full bg-blue-600 text-white text-xs font-bold flex items-center justify-center">1</span>
+                            <h3 class="text-sm font-poppins font-bold text-slate-800">Pengaturan Kolom Sebelah Kiri (Judul, Deskripsi & 3 Kartu Ikon Mitra)</h3>
+                        </div>
+
                         <div class="grid sm:grid-cols-3 gap-3 text-xs">
                             <div>
                                 <label class="block font-semibold text-slate-600 mb-1">Label Badge Atas</label>
-                                <input type="text" id="pkl-info-badge" class="w-full px-3 py-2 border rounded-xl font-bold" value="LINK & MATCH DUDIKA">
+                                <input type="text" id="pkl-info-badge" class="w-full px-3 py-2 border rounded-xl font-bold bg-white" value="LINK & MATCH DUDIKA">
                             </div>
                             <div class="sm:col-span-2">
                                 <label class="block font-semibold text-slate-600 mb-1">Judul Utama Seksi Monitoring PKL</label>
-                                <input type="text" id="pkl-info-judul" class="w-full px-3 py-2 border rounded-xl font-bold" value="Sistem Monitoring PKL & Bursa Kerja Khusus (BKK)">
+                                <input type="text" id="pkl-info-judul" class="w-full px-3 py-2 border rounded-xl font-bold bg-white" value="Sistem Monitoring PKL & Bursa Kerja Khusus (BKK)">
                             </div>
                         </div>
+
                         <div class="text-xs">
                             <label class="block font-semibold text-slate-600 mb-1">Deskripsi Penjelasan PKL / Prakerin</label>
-                            <textarea id="pkl-info-deskripsi" rows="2" class="w-full px-3 py-2 border rounded-xl">Siswa kelas XII SMK Negeri 1 Halmahera Timur melaksanakan Praktik Kerja Lapangan (PKL / Prakerin) pada berbagai instansi pemerintah daerah, BUMN, perusahaan industri pertambangan, serta perguruan tinggi mitra di Maluku Utara.</textarea>
+                            <textarea id="pkl-info-deskripsi" rows="2" class="w-full px-3 py-2 border rounded-xl bg-white">Siswa kelas XII SMK Negeri 1 Halmahera Timur melaksanakan Praktik Kerja Lapangan (PKL / Prakerin) pada berbagai instansi pemerintah daerah, BUMN, perusahaan industri pertambangan, serta perguruan tinggi mitra di Maluku Utara.</textarea>
                         </div>
 
                         <div class="grid sm:grid-cols-3 gap-3 text-xs pt-2">
-                            <div class="p-3 bg-white rounded-xl border">
-                                <label class="block font-bold text-blue-700 mb-1">Kartu Mitra 1 (Pemda)</label>
+                            <div class="p-3.5 bg-white rounded-xl border border-blue-200 shadow-sm">
+                                <label class="block font-bold text-blue-700 mb-1.5"><i class="fa-solid fa-building-flag mr-1"></i> Kartu Kiri 1 (Pemda)</label>
                                 <input type="text" id="pkl-mitra1-judul" class="w-full px-2.5 py-1.5 border rounded-lg mb-1.5 font-semibold" value="Instansi Pemkab Halmahera Timur">
-                                <input type="text" id="pkl-mitra1-sub" class="w-full px-2.5 py-1.5 border rounded-lg text-slate-500" value="Dinas Kominfo, Dinas PUPR, Sekretariat Daerah Kota Maba">
+                                <input type="text" id="pkl-mitra1-sub" class="w-full px-2.5 py-1.5 border rounded-lg text-slate-600" value="Dinas Kominfo, Dinas PUPR, Sekretariat Daerah Kota Maba">
                             </div>
-                            <div class="p-3 bg-white rounded-xl border">
-                                <label class="block font-bold text-amber-600 mb-1">Kartu Mitra 2 (BUMN/Industri)</label>
+                            <div class="p-3.5 bg-white rounded-xl border border-amber-200 shadow-sm">
+                                <label class="block font-bold text-amber-600 mb-1.5"><i class="fa-solid fa-industry mr-1"></i> Kartu Kiri 2 (BUMN/Industri)</label>
                                 <input type="text" id="pkl-mitra2-judul" class="w-full px-2.5 py-1.5 border rounded-lg mb-1.5 font-semibold" value="BUMN & Industri Energi/Pertambangan">
-                                <input type="text" id="pkl-mitra2-sub" class="w-full px-2.5 py-1.5 border rounded-lg text-slate-500" value="PT PLN (Persero) ULP Maba, PT Aneka Tambang Tbk (ANTAM) Haltim, Telkom">
+                                <input type="text" id="pkl-mitra2-sub" class="w-full px-2.5 py-1.5 border rounded-lg text-slate-600" value="PT PLN (Persero) ULP Maba, PT Aneka Tambang Tbk (ANTAM) Haltim, Telkom">
                             </div>
-                            <div class="p-3 bg-white rounded-xl border">
-                                <label class="block font-bold text-emerald-700 mb-1">Kartu Mitra 3 (Perguruan Tinggi)</label>
+                            <div class="p-3.5 bg-white rounded-xl border border-emerald-200 shadow-sm">
+                                <label class="block font-bold text-emerald-700 mb-1.5"><i class="fa-solid fa-graduation-cap mr-1"></i> Kartu Kiri 3 (Perguruan Tinggi)</label>
                                 <input type="text" id="pkl-mitra3-judul" class="w-full px-2.5 py-1.5 border rounded-lg mb-1.5 font-semibold" value="Perguruan Tinggi di Maluku Utara">
-                                <input type="text" id="pkl-mitra3-sub" class="w-full px-2.5 py-1.5 border rounded-lg text-slate-500" value="UPT TIK & Fakultas Teknik Universitas Khairun (Unkhair) Ternate">
+                                <input type="text" id="pkl-mitra3-sub" class="w-full px-2.5 py-1.5 border rounded-lg text-slate-600" value="UPT TIK & Fakultas Teknik Universitas Khairun (Unkhair) Ternate">
                             </div>
                         </div>
 
                         <div class="text-xs">
-                            <label class="block font-semibold text-slate-600 mb-1">Catatan Kaki / Info BKK di Bawah Tabel Direktori</label>
-                            <input type="text" id="pkl-info-footer" class="w-full px-3 py-2 border rounded-xl" value="Info BKK SMKN 1 Maba: Pembekalan & Pelepasan PKL dilaksanakan setiap semester ganjil/genap.">
+                            <label class="block font-semibold text-slate-600 mb-1">Catatan Kaki / Info BKK di Bawah Tabel Kanan</label>
+                            <input type="text" id="pkl-info-footer" class="w-full px-3 py-2 border rounded-xl bg-white" value="Info BKK SMKN 1 Maba: Data dikelola langsung dari CMS Dashboard Admin.">
                         </div>
                     </div>
 
-                    <!-- Bagian 2: Tabel Direktori Penempatan PKL Siswa & Mitra Aktif -->
-                    <div class="space-y-4">
-                        <div class="flex flex-wrap justify-between items-center gap-2">
-                            <div>
-                                <h3 class="text-sm font-poppins font-bold text-slate-800">2. Daftar Tabel Direktori Penempatan PKL Siswa & Mitra Aktif (Kolom Kanan)</h3>
-                                <p class="text-xs text-slate-500">Tambah instansi mitra baru, sesuaikan kuota siswa, atau ubah status verifikasi penempatan.</p>
+                    <!-- BAGIAN KANAN: Tabel Direktori Penempatan PKL Siswa & Mitra Aktif -->
+                    <div class="p-5 rounded-2xl bg-blue-50/40 border border-blue-200 space-y-4">
+                        <div class="flex flex-wrap justify-between items-center gap-2 border-b border-blue-200 pb-3">
+                            <div class="flex items-center gap-2">
+                                <span class="w-6 h-6 rounded-full bg-blue-600 text-white text-xs font-bold flex items-center justify-center">2</span>
+                                <div>
+                                    <h3 class="text-sm font-poppins font-bold text-slate-800">Pengaturan Tabel Sebelah Kanan (Direktori Penempatan PKL Siswa & Mitra Aktif)</h3>
+                                    <p class="text-xs text-slate-500">Edit langsung setiap baris instansi di bawah ini, gunakan ikon di sebelah kanan untuk menggeser/menghapus baris, atau tambah mitra baru.</p>
+                                </div>
                             </div>
-                            <button type="button" onclick="addPKLRow()" class="bg-blue-100 hover:bg-blue-200 text-blue-800 px-4 py-2 rounded-xl text-xs font-bold transition">
-                                + Tambah Baris Mitra PKL
+                            <button type="button" onclick="addPKLRow()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-xs font-bold shadow transition flex items-center gap-1.5">
+                                <i class="fa-solid fa-plus"></i> Tambah Baris Mitra Kanan
                             </button>
                         </div>
 
                         <div id="cont-in-pkl" class="space-y-3"></div>
                     </div>
 
-                    <div class="pt-4 border-t flex justify-end">
-                        <button type="submit" id="btnPKL" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl text-sm shadow-lg shadow-blue-600/20 transition">
-                            <i class="fa-solid fa-floppy-disk mr-1.5"></i> Simpan Seluruh Pengaturan & Direktori Monitoring PKL
+                    <div class="pt-2 flex justify-end gap-3">
+                        <button type="submit" id="btnPKL" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 px-8 rounded-xl text-sm shadow-lg shadow-emerald-600/20 transition flex items-center gap-2">
+                            <i class="fa-solid fa-floppy-disk"></i>
+                            <span>Simpan Perubahan Kiri & Tabel Kanan ke Google Sheets</span>
                         </button>
                     </div>
                 </form>
@@ -244,15 +256,15 @@
                 <form id="formProfil" class="space-y-4">
                     <div>
                         <label class="block text-xs font-bold text-slate-600 mb-1">Nama & Gelar Kepala Sekolah</label>
-                        <input type="text" id="inKepsek" class="w-full px-3.5 py-2.5 border rounded-xl text-sm" placeholder="Nama Kepala Sekolah" required>
+                        <input type="text" id="inKepsek" class="w-full px-3.5 py-2.5 border rounded-xl text-sm" required>
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-600 mb-1">Direct Link Foto Kepala Sekolah (.jpg / .png)</label>
-                        <input type="text" id="inFotoKepsek" class="w-full px-3.5 py-2.5 border rounded-xl text-sm font-mono" placeholder="https://...">
+                        <input type="text" id="inFotoKepsek" class="w-full px-3.5 py-2.5 border rounded-xl text-sm font-mono">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-600 mb-1">Isi Sambutan Kepala Sekolah</label>
-                        <textarea id="inSambutan" rows="6" class="w-full px-3.5 py-2.5 border rounded-xl text-sm" placeholder="Sambutan Kepala Sekolah" required></textarea>
+                        <textarea id="inSambutan" rows="6" class="w-full px-3.5 py-2.5 border rounded-xl text-sm" required></textarea>
                     </div>
                     <button type="submit" id="btnProfil" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 px-6 rounded-xl text-sm">Simpan Profil</button>
                 </form>
@@ -305,21 +317,21 @@
                 <form id="formKontak" class="space-y-4">
                     <div>
                         <label class="block text-xs font-bold text-slate-600 mb-1">Alamat Lengkap Kampus</label>
-                        <input type="text" id="inAlamat" class="w-full px-3.5 py-2.5 border rounded-xl text-sm" placeholder="Alamat">
+                        <input type="text" id="inAlamat" class="w-full px-3.5 py-2.5 border rounded-xl text-sm">
                     </div>
                     <div class="grid sm:grid-cols-2 gap-4">
                         <div>
                             <label class="block text-xs font-bold text-slate-600 mb-1">Email Resmi</label>
-                            <input type="email" id="inEmail" class="w-full px-3.5 py-2.5 border rounded-xl text-sm" placeholder="Email">
+                            <input type="email" id="inEmail" class="w-full px-3.5 py-2.5 border rounded-xl text-sm">
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-slate-600 mb-1">Nomor Telepon / WhatsApp</label>
-                            <input type="text" id="inTelepon" class="w-full px-3.5 py-2.5 border rounded-xl text-sm" placeholder="Telepon">
+                            <input type="text" id="inTelepon" class="w-full px-3.5 py-2.5 border rounded-xl text-sm">
                         </div>
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-600 mb-1">Link Embed Google Maps (src iframe)</label>
-                        <input type="text" id="inPeta" class="w-full px-3.5 py-2.5 border rounded-xl text-sm font-mono" placeholder="https://www.google.com/maps/embed?...">
+                        <input type="text" id="inPeta" class="w-full px-3.5 py-2.5 border rounded-xl text-sm font-mono">
                     </div>
                     <button type="submit" id="btnKontak" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 px-6 rounded-xl text-sm">Simpan Kontak</button>
                 </form>
@@ -328,10 +340,7 @@
             <!-- ==================== 5. RIWAYAT KEGIATAN ==================== -->
             <div id="view-kegiatan" class="bg-white p-6 rounded-2xl shadow-sm border hidden">
                 <div class="flex justify-between items-center border-b pb-4 mb-4">
-                    <div>
-                        <h2 class="text-xl font-poppins font-bold">🏃 Riwayat Kegiatan Siswa & Sekolah</h2>
-                        <p class="text-xs text-slate-500">Mendukung banyak foto sekaligus (pisahkan link foto dengan tanda koma) untuk fitur Pop-up Slider.</p>
-                    </div>
+                    <h2 class="text-xl font-poppins font-bold">🏃 Riwayat Kegiatan Siswa & Sekolah</h2>
                     <button onclick="showMenu('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 font-semibold px-3.5 py-1.5 rounded-lg">Kembali</button>
                 </div>
                 <form id="formKegiatan">
@@ -357,10 +366,7 @@
             <!-- ==================== 7. KOMPETENSI KEAHLIAN (JURUSAN) ==================== -->
             <div id="view-jurusan" class="bg-white p-6 rounded-2xl shadow-sm border hidden">
                 <div class="flex justify-between items-center border-b pb-4 mb-4">
-                    <div>
-                        <h2 class="text-xl font-poppins font-bold">🎓 Kompetensi Keahlian (Jurusan)</h2>
-                        <p class="text-xs text-slate-500">Anda dapat memasukkan beberapa Link Gambar Background (pisahkan dengan koma) untuk fitur Pop-up Slider Jurusan.</p>
-                    </div>
+                    <h2 class="text-xl font-poppins font-bold">🎓 Kompetensi Keahlian (Jurusan)</h2>
                     <button onclick="showMenu('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 font-semibold px-3.5 py-1.5 rounded-lg">Kembali</button>
                 </div>
                 <form id="formJurusan">
@@ -416,10 +422,10 @@
                     <button onclick="showMenu('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 font-semibold px-3.5 py-1.5 rounded-lg">Kembali</button>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <form id="formAddAdmin" class="bg-slate-50 p-5 border rounded-2xl">
+                    <form id="formAddAdmin" class="bg-slate-50 p-5 border rounded-2xl" autocomplete="off">
                         <h3 class="font-bold mb-3 text-sm">Tambah Admin Baru</h3>
-                        <input type="text" id="newAdminUser" placeholder="Username Baru" class="w-full px-3.5 py-2.5 border rounded-xl mb-3 text-sm" required>
-                        <input type="text" id="newAdminPass" placeholder="Password Baru" class="w-full px-3.5 py-2.5 border rounded-xl mb-4 text-sm" required>
+                        <input type="text" id="newAdminUser" placeholder="Username Baru" autocomplete="off" class="w-full px-3.5 py-2.5 border rounded-xl mb-3 text-sm" required>
+                        <input type="text" id="newAdminPass" placeholder="Password Baru" autocomplete="off" class="w-full px-3.5 py-2.5 border rounded-xl mb-4 text-sm" required>
                         <button type="submit" id="btnAddAdmin" class="w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-2.5 rounded-xl text-sm">Tambah Admin</button>
                     </form>
                     <div>
@@ -486,6 +492,15 @@
     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbxTMQDfvW8n9Gp1KN64Qge-RYISt1eTRGR7FC2BGCxnsTqPGaP7nmia1qaD2heQLz1Z/exec';
 
+        // Data Default Mitra PKL (Muncul otomatis di daftar sebelah kanan jika Google Sheets belum diisi)
+        const defaultPKLItems = [
+            { waktu: '18/11/2026', mitra: 'UPT TIK & Lab Fakultas Teknik Unkhair', lokasi: 'Kota Ternate', jurusan: 'TJKT', kuota: '8 Siswa Kelas XII', status: 'Mitra Kampus Aktif' },
+            { waktu: '18/11/2026', mitra: 'PT PLN (Persero) ULP Maba', lokasi: 'Kota Maba, Haltim', jurusan: 'TITL', kuota: '6 Siswa Kelas XII', status: 'Penempatan Aktif' },
+            { waktu: '18/11/2026', mitra: 'Dinas Kominfo & Persandian Kab. Haltim', lokasi: 'Kota Maba, Haltim', jurusan: 'TJKT', kuota: '6 Siswa Kelas XII', status: 'Penempatan Aktif' },
+            { waktu: '18/11/2026', mitra: 'Dinas PUPR Kabupaten Halmahera Timur', lokasi: 'Kota Maba, Haltim', jurusan: 'TKP', kuota: '7 Siswa Kelas XII', status: 'Penempatan Aktif' },
+            { waktu: '18/11/2026', mitra: 'PT Aneka Tambang Tbk (ANTAM) UBPN Malut', lokasi: 'Buli / Maba, Haltim', jurusan: 'TITL', kuota: '5 Siswa Kelas XII', status: 'Mitra Industri DUDIKA' }
+        ];
+
         const allViews = [
             'dashboard', 'profil', 'visimisi', 'sejarah', 'kegiatan', 'fasilitas',
             'jurusan', 'guru', 'pengumuman', 'galeri', 'kontak', 'admin',
@@ -526,7 +541,12 @@
             sessionStorage.removeItem('smkn1haltim_cms_auth');
             document.getElementById('dashboard-app').classList.add('hidden');
             document.getElementById('login-gate').classList.remove('hidden');
-            document.getElementById('gatePass').value = '';
+            const uEl = document.getElementById('gateUser');
+            const pEl = document.getElementById('gatePass');
+            uEl.value = '';
+            pEl.value = '';
+            uEl.setAttribute('readonly', true);
+            pEl.setAttribute('readonly', true);
         }
 
         document.getElementById('formGateLogin').addEventListener('submit', function(e) {
@@ -564,23 +584,23 @@
             });
         });
 
-        // BARIS DIREKTORI MONITORING PKL & BKK
+        // BARIS TABEL KANAN DIREKTORI MONITORING PKL (DILENGKAPI IKON AKSI DI SEBELAH KANAN)
         function addPKLRow(item = {}) {
             const st = item.status || 'Penempatan Aktif';
             const div = document.createElement('div');
-            div.className = 'p-4 border rounded-2xl bg-blue-50/40 pkl-item grid sm:grid-cols-12 gap-3 items-end text-xs shadow-sm';
+            div.className = 'p-4 border border-slate-200 rounded-2xl bg-white pkl-item grid sm:grid-cols-12 gap-3 items-end text-xs shadow-sm hover:border-blue-400 transition';
             div.innerHTML = `<input type="hidden" class="i-waktu" value="${item.waktu || ''}">
-            <div class="sm:col-span-4">
-                <label class="block font-bold text-slate-700 mb-1">Mitra DUDIKA / Instansi</label>
-                <input type="text" class="i-mitra w-full px-3 py-2 border rounded-xl font-semibold bg-white" value="${item.mitra || ''}" placeholder="Contoh: PT PLN (Persero) ULP Maba" required>
+            <div class="sm:col-span-3">
+                <label class="block font-bold text-slate-700 mb-1"><i class="fa-solid fa-building text-blue-600 mr-1"></i>Mitra DUDIKA / Instansi</label>
+                <input type="text" class="i-mitra w-full px-3 py-2 border rounded-xl font-semibold bg-slate-50 focus:bg-white" value="${item.mitra || ''}" placeholder="Nama Instansi / DUDIKA" required>
             </div>
             <div class="sm:col-span-2">
-                <label class="block font-bold text-slate-700 mb-1">Lokasi</label>
-                <input type="text" class="i-lokasi w-full px-3 py-2 border rounded-xl bg-white" value="${item.lokasi || 'Kota Maba, Haltim'}" required>
+                <label class="block font-bold text-slate-700 mb-1"><i class="fa-solid fa-location-dot text-rose-500 mr-1"></i>Lokasi</label>
+                <input type="text" class="i-lokasi w-full px-3 py-2 border rounded-xl bg-slate-50 focus:bg-white" value="${item.lokasi || 'Kota Maba, Haltim'}" required>
             </div>
             <div class="sm:col-span-2">
                 <label class="block font-bold text-slate-700 mb-1">Jurusan</label>
-                <select class="i-jurusan w-full px-3 py-2 border rounded-xl bg-white font-bold text-blue-800">
+                <select class="i-jurusan w-full px-3 py-2 border rounded-xl bg-slate-50 font-bold text-blue-800">
                     <option value="TJKT" ${item.jurusan==='TJKT'?'selected':''}>TJKT / TKJ</option>
                     <option value="TITL" ${item.jurusan==='TITL'?'selected':''}>TITL (Listrik)</option>
                     <option value="TKP" ${item.jurusan==='TKP'?'selected':''}>TKP (Konstruksi)</option>
@@ -588,12 +608,12 @@
             </div>
             <div class="sm:col-span-2">
                 <label class="block font-bold text-slate-700 mb-1">Kuota / Siswa</label>
-                <input type="text" class="i-kuota w-full px-3 py-2 border rounded-xl bg-white" value="${item.kuota || '6 Siswa Kelas XII'}" required>
+                <input type="text" class="i-kuota w-full px-3 py-2 border rounded-xl bg-slate-50 focus:bg-white" value="${item.kuota || '6 Siswa Kelas XII'}" required>
             </div>
-            <div class="sm:col-span-2 flex gap-2">
+            <div class="sm:col-span-3 flex gap-1.5 items-end">
                 <div class="flex-1">
                     <label class="block font-bold text-slate-700 mb-1">Status Monitoring</label>
-                    <select class="i-status w-full px-2.5 py-2 border rounded-xl bg-white text-emerald-700 font-bold">
+                    <select class="i-status w-full px-2.5 py-2 border rounded-xl bg-emerald-50 text-emerald-800 font-bold">
                         <option value="Penempatan Aktif" ${st==='Penempatan Aktif'?'selected':''}>Penempatan Aktif</option>
                         <option value="Mitra Kampus Aktif" ${st==='Mitra Kampus Aktif'?'selected':''}>Mitra Kampus Aktif</option>
                         <option value="Mitra Industri DUDIKA" ${st==='Mitra Industri DUDIKA'?'selected':''}>Mitra Industri DUDIKA</option>
@@ -601,9 +621,18 @@
                         <option value="Kuota Terpenuhi" ${st==='Kuota Terpenuhi'?'selected':''}>Kuota Terpenuhi</option>
                     </select>
                 </div>
-                <button type="button" onclick="this.closest('.pkl-item').remove()" class="bg-red-100 hover:bg-red-600 text-red-600 hover:text-white px-3 py-2 rounded-xl font-bold self-end transition" title="Hapus Mitra"><i class="fa-solid fa-trash-can"></i></button>
+                <!-- IKON SEBELAH KANAN: GESER NAIK & HAPUS BARIS -->
+                <button type="button" onclick="movePKLRowUp(this)" class="bg-slate-100 hover:bg-blue-600 text-slate-700 hover:text-white px-2.5 py-2 rounded-xl font-bold transition" title="Geser Baris ke Atas"><i class="fa-solid fa-arrow-up"></i></button>
+                <button type="button" onclick="this.closest('.pkl-item').remove()" class="bg-red-100 hover:bg-red-600 text-red-600 hover:text-white px-3 py-2 rounded-xl font-bold transition" title="Hapus Baris Mitra"><i class="fa-solid fa-trash-can"></i></button>
             </div>`;
             document.getElementById('cont-in-pkl').appendChild(div);
+        }
+
+        function movePKLRowUp(btn) {
+            const row = btn.closest('.pkl-item');
+            if (row && row.previousElementSibling) {
+                row.parentNode.insertBefore(row, row.previousElementSibling);
+            }
         }
 
         function addKegiatanRow(nama='', des='', foto='') {
@@ -781,6 +810,15 @@
             const ic = document.getElementById('refreshIcon');
             if (ic) ic.classList.add('fa-spin');
 
+            // Baca cadangan lokal dulu agar perubahan langsung terlihat
+            const localPKLConfig = localStorage.getItem('smkn1haltim_pkl_config');
+            if (localPKLConfig) {
+                try {
+                    const parsed = JSON.parse(localPKLConfig);
+                    if (parsed.infoPKL) applyInfoPKLToForm(parsed.infoPKL);
+                } catch (e) {}
+            }
+
             fetch(scriptURL).then(res => res.json()).then(data => {
                 if (data.status === 'success') {
                     const p = data.profil || {};
@@ -802,19 +840,8 @@
                     document.getElementById('inTelepon').value = kt.telepon || '';
                     document.getElementById('inPeta').value = kt.peta || '';
 
-                    // Load Pengaturan Teks Monitoring PKL & BKK
-                    if (data.infoPKL) {
-                        const ip = data.infoPKL;
-                        if (ip.badge) document.getElementById('pkl-info-badge').value = ip.badge;
-                        if (ip.judul) document.getElementById('pkl-info-judul').value = ip.judul;
-                        if (ip.deskripsi) document.getElementById('pkl-info-deskripsi').value = ip.deskripsi;
-                        if (ip.mitra1Judul) document.getElementById('pkl-mitra1-judul').value = ip.mitra1Judul;
-                        if (ip.mitra1Sub) document.getElementById('pkl-mitra1-sub').value = ip.mitra1Sub;
-                        if (ip.mitra2Judul) document.getElementById('pkl-mitra2-judul').value = ip.mitra2Judul;
-                        if (ip.mitra2Sub) document.getElementById('pkl-mitra2-sub').value = ip.mitra2Sub;
-                        if (ip.mitra3Judul) document.getElementById('pkl-mitra3-judul').value = ip.mitra3Judul;
-                        if (ip.mitra3Sub) document.getElementById('pkl-mitra3-sub').value = ip.mitra3Sub;
-                        if (ip.infoFooter) document.getElementById('pkl-info-footer').value = ip.infoFooter;
+                    if (data.infoPKL && Object.keys(data.infoPKL).length > 0) {
+                        applyInfoPKLToForm(data.infoPKL);
                     }
 
                     document.getElementById('cont-in-kegiatan').innerHTML = '';
@@ -846,9 +873,11 @@
                     (data.ppdbList || []).forEach(i => addPPDBRow(i));
                     document.getElementById('badge-count-ppdb').textContent = (data.ppdbList || []).length;
 
+                    // Render Tabel Sebelah Kanan Direktori PKL (Jika Sheets kosong, tampilkan 5 Mitra Default agar bisa langsung diedit)
                     document.getElementById('cont-in-pkl').innerHTML = '';
-                    (data.pkl || []).forEach(i => addPKLRow(i));
-                    document.getElementById('badge-count-pkl').textContent = (data.pkl || []).length;
+                    const pklSource = (Array.isArray(data.pkl) && data.pkl.length > 0) ? data.pkl : defaultPKLItems;
+                    pklSource.forEach(i => addPKLRow(i));
+                    document.getElementById('badge-count-pkl').textContent = pklSource.length;
 
                     document.getElementById('cont-in-siswa').innerHTML = '';
                     (data.siswaList || []).forEach(i => addSiswaRow(i));
@@ -863,6 +892,19 @@
             }).finally(() => {
                 if (ic) ic.classList.remove('fa-spin');
             });
+        }
+
+        function applyInfoPKLToForm(ip) {
+            if (ip.badge) document.getElementById('pkl-info-badge').value = ip.badge;
+            if (ip.judul) document.getElementById('pkl-info-judul').value = ip.judul;
+            if (ip.deskripsi) document.getElementById('pkl-info-deskripsi').value = ip.deskripsi;
+            if (ip.mitra1Judul) document.getElementById('pkl-mitra1-judul').value = ip.mitra1Judul;
+            if (ip.mitra1Sub) document.getElementById('pkl-mitra1-sub').value = ip.mitra1Sub;
+            if (ip.mitra2Judul) document.getElementById('pkl-mitra2-judul').value = ip.mitra2Judul;
+            if (ip.mitra2Sub) document.getElementById('pkl-mitra2-sub').value = ip.mitra2Sub;
+            if (ip.mitra3Judul) document.getElementById('pkl-mitra3-judul').value = ip.mitra3Judul;
+            if (ip.mitra3Sub) document.getElementById('pkl-mitra3-sub').value = ip.mitra3Sub;
+            if (ip.infoFooter) document.getElementById('pkl-info-footer').value = ip.infoFooter;
         }
 
         function submitForm(formId, btnId, payloadBuilder) {
@@ -892,12 +934,12 @@
         submitForm('formKontak', 'btnKontak', () => ({ action: 'updateKontak', alamat: document.getElementById('inAlamat').value, email: document.getElementById('inEmail').value, telepon: document.getElementById('inTelepon').value, peta: document.getElementById('inPeta').value }));
         submitForm('formAddAdmin', 'btnAddAdmin', () => ({ action: 'addUser', username: document.getElementById('newAdminUser').value, password: document.getElementById('newAdminPass').value }));
 
-        // Submit Khusus Sistem Monitoring PKL & BKK (Teks Info + Tabel Direktori)
+        // SIMPAN SISTEM MONITORING PKL (KIRI & TABEL KANAN) KE GOOGLE SHEETS + LOCALSTORAGE
         document.getElementById('formPKL').addEventListener('submit', function(e) {
             e.preventDefault();
             const btn = document.getElementById('btnPKL');
             const orig = btn.innerHTML;
-            btn.innerHTML = 'Menyimpan ke Google Sheets...';
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-1.5"></i> Menyimpan ke Google Sheets...';
             btn.disabled = true;
 
             const infoPKL = {
@@ -925,15 +967,25 @@
                 });
             });
 
+            // Simpan ke LocalStorage agar halaman utama di browser yang sama langsung berubah seketika
+            localStorage.setItem('smkn1haltim_pkl_config', JSON.stringify({ infoPKL: infoPKL, items: items }));
+
             fetch(scriptURL, {
                 method: 'POST',
                 body: JSON.stringify({ action: 'savePKLAll', infoPKL: infoPKL, items: items })
             })
             .then(r => r.json())
-            .then(() => {
-                alert('Pengaturan Sistem Monitoring PKL & BKK berhasil disimpan!');
-                showMenu('dashboard');
-                loadAllData();
+            .then(res => {
+                if (res.status === 'success') {
+                    alert('Berhasil! Pengaturan Kiri & Tabel Kanan Monitoring PKL telah tersimpan di Google Sheets.');
+                    showMenu('dashboard');
+                    loadAllData();
+                } else {
+                    alert('Tersimpan di memori lokal browser, namun Google Apps Script Anda belum di-Deploy ke Versi Baru. Silakan buka Apps Script -> Terapkan -> Kelola deployment -> Edit -> Pilih "Versi baru" agar tersimpan permanen di Google Sheets.');
+                }
+            })
+            .catch(() => {
+                alert('Tersimpan di memori lokal browser. Pastikan koneksi internet & izin Apps Script sudah benar.');
             })
             .finally(() => {
                 btn.innerHTML = orig;
@@ -1020,9 +1072,19 @@
         }
 
         document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById('gateUser').value = '';
+            document.getElementById('gatePass').value = '';
+            // Muat 5 mitra awal terlebih dahulu agar tabel kanan di admin tidak pernah kosong
+            defaultPKLItems.forEach(i => addPKLRow(i));
+
             const activeUser = sessionStorage.getItem('smkn1haltim_cms_auth');
             if (activeUser) {
                 unlockDashboard(activeUser);
+            } else {
+                const urlParams = new URLSearchParams(window.location.search);
+                if (urlParams.get('tab') === 'pkl') {
+                    showMenu('pkl');
+                }
             }
         });
     </script>

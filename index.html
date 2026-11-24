@@ -4,13 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SMK Negeri 1 Halmahera Timur (SMKN 1 Maba) | Portal Resmi Sekolah Vokasi</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome 6 Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <script>
@@ -99,7 +96,6 @@
     <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-sm border-b border-slate-200/80 dark:border-slate-800 transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Brand Logo -->
                 <a href="#beranda" class="flex items-center gap-3.5 group">
                     <img src="https://img.sanishtech.com/u/0f05f5fd2f07f7eea84d736986066cc2.jpg" alt="Logo SMKN 1 Haltim" class="w-12 h-12 rounded-full object-cover shadow-md border border-slate-200 bg-white group-hover:scale-105 transition">
                     <div>
@@ -111,19 +107,18 @@
                     </div>
                 </a>
 
-                <!-- Desktop Nav Links -->
                 <nav class="hidden lg:flex items-center gap-1 xl:gap-2 text-sm font-medium">
                     <a href="#beranda" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-amber-400 transition">Beranda</a>
                     <a href="#profil" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-amber-400 transition">Profil</a>
                     <a href="#kegiatan" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-amber-400 transition">Kegiatan & Fasilitas</a>
                     <a href="#jurusan" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-amber-400 transition">Jurusan & Guru</a>
                     <a href="#pkl-bkk" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-amber-400 transition">PKL & BKK</a>
-                    <a href="#akademik" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-amber-400 transition">PPDB & NISN</a>
+                    <a href="ppdb.html" class="px-3 py-2 rounded-lg font-bold text-amber-600 dark:text-amber-400 hover:bg-amber-50 dark:hover:bg-slate-800 transition">PPDB Online</a>
+                    <a href="#akademik" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-amber-400 transition">Cek NISN</a>
                     <a href="#berita" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-amber-400 transition">Pengumuman</a>
                     <a href="#kontak" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-amber-400 transition">Kontak</a>
                 </nav>
 
-                <!-- Action Buttons -->
                 <div class="flex items-center gap-2.5">
                     <button id="theme-toggle" onclick="toggleDarkMode()" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-amber-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition" aria-label="Ganti Tema">
                         <i id="theme-icon" class="fa-solid fa-moon text-base"></i>
@@ -148,7 +143,8 @@
             <a href="#kegiatan" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Riwayat Kegiatan & Fasilitas</a>
             <a href="#jurusan" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Jurusan & Tenaga Pendidik</a>
             <a href="#pkl-bkk" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Sistem PKL & BKK Industri</a>
-            <a href="#akademik" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">PPDB, Cek NISN & Jadwal</a>
+            <a href="ppdb.html" class="block px-3 py-2.5 rounded-xl font-bold text-amber-600 bg-amber-50 dark:bg-amber-950/40">Portal Pendaftaran PPDB Online</a>
+            <a href="#akademik" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Cek NISN & Jadwal Praktik</a>
             <a href="#berita" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Pengumuman & Galeri Foto</a>
             <a href="#kontak" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Hubungi Kami</a>
             <div class="pt-2">
@@ -159,7 +155,7 @@
         </div>
     </header>
 
-    <!-- ==================== 2. HERO SECTION & QUICK STATS ==================== -->
+    <!-- ==================== 2. HERO SECTION ==================== -->
     <section id="beranda" class="hero-pattern relative overflow-hidden text-white pt-12 pb-20 lg:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-12 gap-12 items-center">
@@ -177,12 +173,14 @@
                         Selamat datang di portal resmi <strong>SMK Negeri 1 Halmahera Timur (SMKN 1 Maba)</strong>. Berlokasi di Desa Soa Gimalaha, Kec. Kota Maba, kami berkomitmen menyelenggarakan pendidikan kejuruan berbasis <em>Kurikulum Merdeka</em> yang selaras dengan kebutuhan dunia industri, pertambangan, kelistrikan, konstruksi, dan teknologi informasi di Maluku Utara.
                     </p>
 
+                    <!-- TOMBOL MENUJU PORTAL PPDB TERPISAH -->
                     <div class="flex flex-wrap gap-3.5 pt-2">
-                        <a href="#akademik" onclick="switchAcademicTab('ppdb')" class="inline-flex items-center gap-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-amber-500/25 transition transform hover:-translate-y-0.5">
+                        <a href="ppdb.html" class="inline-flex items-center gap-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-amber-500/25 transition transform hover:-translate-y-0.5">
                             <i class="fa-solid fa-user-plus"></i>
                             <span>Daftar PPDB Online</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
                         </a>
-                        <a href="#akademik" onclick="switchAcademicTab('nisn')" class="inline-flex items-center gap-2.5 glass-card hover:bg-white/15 text-white font-semibold px-6 py-3.5 rounded-xl transition">
+                        <a href="#akademik" class="inline-flex items-center gap-2.5 glass-card hover:bg-white/15 text-white font-semibold px-6 py-3.5 rounded-xl transition">
                             <i class="fa-solid fa-magnifying-glass-chart text-amber-400"></i>
                             <span>Cek Kelulusan / NISN</span>
                         </a>
@@ -235,8 +233,8 @@
                         </div>
 
                         <div class="mt-6 grid grid-cols-2 gap-3">
-                            <a href="#profil" onclick="switchProfileTab('identitas')" class="text-center py-2.5 px-4 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-semibold text-white transition">
-                                <i class="fa-solid fa-id-card mr-1.5 text-amber-300"></i> Detail Dapodik
+                            <a href="ppdb.html" class="text-center py-2.5 px-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-xs font-bold text-slate-950 transition">
+                                <i class="fa-solid fa-user-plus mr-1"></i> Portal PPDB Baru
                             </a>
                             <a href="#pkl-bkk" class="text-center py-2.5 px-4 rounded-xl bg-brand-500 hover:bg-brand-400 text-xs font-semibold text-white transition">
                                 <i class="fa-solid fa-briefcase mr-1.5"></i> Data PKL & Mitra
@@ -255,7 +253,6 @@
             <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white mt-3">Profil, Sejarah & Visi Misi Sekolah</h2>
         </div>
 
-        <!-- Profile Navigation Tabs -->
         <div class="flex flex-wrap justify-center gap-2 mb-8">
             <button onclick="switchProfileTab('sambutan')" id="tab-btn-sambutan" class="profile-tab-btn px-5 py-3 rounded-xl font-semibold text-sm transition flex items-center gap-2 bg-brand-600 text-white shadow-md shadow-brand-600/20">
                 <i class="fa-solid fa-user-tie"></i> Sambutan & Sejarah
@@ -268,7 +265,6 @@
             </button>
         </div>
 
-        <!-- Tab 1: Sambutan & Sejarah -->
         <div id="profile-tab-sambutan" class="profile-tab-content space-y-8">
             <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-10 shadow-sm border border-slate-200/80 dark:border-slate-800">
                 <div class="grid lg:grid-cols-12 gap-8 items-center">
@@ -293,7 +289,6 @@
                 </div>
             </div>
 
-            <!-- Kartu Sejarah Sekolah -->
             <div class="bg-slate-900 text-white rounded-3xl p-6 sm:p-10 shadow-lg border border-slate-800">
                 <div class="flex items-center gap-3 mb-4">
                     <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center">
@@ -307,7 +302,6 @@
             </div>
         </div>
 
-        <!-- Tab 2: Visi, Misi & Motto -->
         <div id="profile-tab-visimisi" class="profile-tab-content hidden bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-10 shadow-sm border border-slate-200/80 dark:border-slate-800">
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="space-y-6">
@@ -335,7 +329,6 @@
             </div>
         </div>
 
-        <!-- Tab 3: Data Identitas Resmi Kemendikdasmen -->
         <div id="profile-tab-identitas" class="profile-tab-content hidden bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-10 shadow-sm border border-slate-200/80 dark:border-slate-800">
             <div class="overflow-x-auto">
                 <table class="w-full text-left border-collapse text-sm">
@@ -386,16 +379,14 @@
                         Klik pada kartu jurusan untuk melihat galeri foto bengkel/RPS serta detail kompetensinya.
                     </p>
                 </div>
-                <a href="#akademik" onclick="switchAcademicTab('ppdb')" class="inline-flex items-center gap-2 text-sm font-bold text-brand-600 dark:text-amber-400 hover:underline">
-                    <span>Pilih Jurusan di PPDB Online</span>
-                    <i class="fa-solid fa-arrow-right"></i>
+                <a href="ppdb.html" class="inline-flex items-center gap-2 text-sm font-bold text-brand-600 dark:text-amber-400 hover:underline">
+                    <span>Daftar Jurusan Ini di Portal PPDB</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
             </div>
 
-            <!-- Dynamic Jurusan Cards Grid -->
             <div id="container-jurusan" class="grid md:grid-cols-3 gap-8 mb-20"></div>
 
-            <!-- Tenaga Pendidik / Guru Section -->
             <div id="guru" class="pt-12 border-t border-slate-200 dark:border-slate-800">
                 <div class="text-center max-w-3xl mx-auto mb-12">
                     <h2 class="font-display font-extrabold text-3xl text-slate-900 dark:text-white">Tenaga Pendidik & Kependidikan</h2>
@@ -496,116 +487,30 @@
         </div>
     </section>
 
-    <!-- ==================== 6. FITUR LAYANAN AKADEMIK TERPADU ==================== -->
+    <!-- ==================== 6. LAYANAN AKADEMIK (CEK NISN, JADWAL & TAUTAN PORTAL PPDB) ==================== -->
     <section id="akademik" class="py-16 lg:py-24 bg-slate-900 text-white relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center max-w-3xl mx-auto mb-10">
                 <span class="text-amber-400 font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-white/10 border border-white/15">Digitalisasi Layanan Sekolah</span>
                 <h2 class="font-display font-extrabold text-3xl sm:text-4xl mt-3">Pusat Layanan Akademik Terpadu</h2>
+                <p class="text-slate-300 text-sm mt-2">Pendaftaran peserta didik baru kini tersedia pada portal khusus terpisah agar lebih cepat dan terfokus.</p>
             </div>
 
             <div class="flex flex-wrap justify-center gap-2.5 mb-10">
-                <button onclick="switchAcademicTab('ppdb')" id="acad-btn-ppdb" class="acad-tab-btn px-5 py-3 rounded-xl font-bold text-sm transition flex items-center gap-2 bg-amber-500 text-slate-950 shadow-lg">
-                    <i class="fa-solid fa-user-plus"></i> 1. Pendaftaran PPDB Online
-                </button>
-                <button onclick="switchAcademicTab('nisn')" id="acad-btn-nisn" class="acad-tab-btn px-5 py-3 rounded-xl font-bold text-sm transition flex items-center gap-2 bg-white/10 text-white hover:bg-white/20">
-                    <i class="fa-solid fa-id-card-clip"></i> 2. Cek Data Siswa & Kelulusan (NISN)
+                <button onclick="switchAcademicTab('nisn')" id="acad-btn-nisn" class="acad-tab-btn px-5 py-3 rounded-xl font-bold text-sm transition flex items-center gap-2 bg-amber-500 text-slate-950 shadow-lg">
+                    <i class="fa-solid fa-id-card-clip"></i> 1. Cek Data Siswa & Kelulusan (NISN)
                 </button>
                 <button onclick="switchAcademicTab('jadwal')" id="acad-btn-jadwal" class="acad-tab-btn px-5 py-3 rounded-xl font-bold text-sm transition flex items-center gap-2 bg-white/10 text-white hover:bg-white/20">
-                    <i class="fa-solid fa-calendar-days"></i> 3. Jadwal Blok Praktik & Agenda
+                    <i class="fa-solid fa-calendar-days"></i> 2. Jadwal Blok Praktik & Agenda
                 </button>
+                <!-- LINK LANGSUNG KE PORTAL PPDB TERPISAH -->
+                <a href="ppdb.html" class="px-5 py-3 rounded-xl font-bold text-sm transition flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow-lg">
+                    <i class="fa-solid fa-user-plus"></i> 3. Buka Portal Pendaftaran PPDB Baru <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </a>
             </div>
 
-            <!-- WIDGET A: PPDB ONLINE -->
-            <div id="acad-content-ppdb" class="acad-tab-content">
-                <div class="grid lg:grid-cols-12 gap-8 items-start">
-                    <div class="lg:col-span-7 bg-slate-800/90 border border-slate-700 rounded-3xl p-6 sm:p-8">
-                        <h3 class="font-display font-bold text-xl text-white mb-4">Formulir Pendaftaran PPDB Online</h3>
-                        <form id="ppdb-form" onsubmit="handlePPDBSubmit(event)" class="space-y-4">
-                            <div class="grid sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">Nama Lengkap Calon Siswa *</label>
-                                    <input type="text" id="ppdb-nama" required placeholder="Contoh: Rian Saputra" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">Nomor Induk Siswa Nasional (NISN) *</label>
-                                    <input type="text" id="ppdb-nisn" required maxlength="10" placeholder="10 Digit NISN" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm font-mono">
-                                </div>
-                            </div>
-                            <div class="grid sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">Sekolah Asal (SMP / MTs) *</label>
-                                    <input type="text" id="ppdb-smp" required placeholder="Contoh: SMP Negeri 1 Maba" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">Jalur Pendaftaran *</label>
-                                    <select id="ppdb-jalur" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm">
-                                        <option value="Reguler / Umum">Jalur Reguler / Umum</option>
-                                        <option value="Prestasi Akademik / Non-Akademik">Jalur Prestasi</option>
-                                        <option value="Afirmasi (KIP / PIP)">Jalur Afirmasi (KIP / PIP)</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="grid sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">Pilihan Kompetensi Keahlian 1 *</label>
-                                    <select id="ppdb-jurusan1" required class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm">
-                                        <option value="Teknik Jaringan Komputer & Telekomunikasi (TJKT)">Teknik Jaringan Komputer & Telekomunikasi (TJKT)</option>
-                                        <option value="Teknik Instalasi Tenaga Listrik (TITL)">Teknik Instalasi Tenaga Listrik (TITL)</option>
-                                        <option value="Teknik Konstruksi dan Perumahan (TKP)">Teknik Konstruksi dan Perumahan (TKP)</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">Pilihan Kompetensi Keahlian 2</label>
-                                    <select id="ppdb-jurusan2" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm">
-                                        <option value="Teknik Instalasi Tenaga Listrik (TITL)">Teknik Instalasi Tenaga Listrik (TITL)</option>
-                                        <option value="Teknik Konstruksi dan Perumahan (TKP)">Teknik Konstruksi dan Perumahan (TKP)</option>
-                                        <option value="Teknik Jaringan Komputer & Telekomunikasi (TJKT)">Teknik Jaringan Komputer & Telekomunikasi (TJKT)</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="grid sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">Nomor WhatsApp Aktif *</label>
-                                    <input type="tel" id="ppdb-wa" required placeholder="0853..." class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">Alamat Domisili *</label>
-                                    <input type="text" id="ppdb-alamat" required placeholder="Desa Soa Gimalaha, Kota Maba" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm">
-                                </div>
-                            </div>
-                            <button type="submit" id="btn-submit-ppdb" class="w-full py-3.5 px-6 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm shadow-lg transition flex items-center justify-center gap-2">
-                                <i class="fa-solid fa-paper-plane"></i>
-                                <span>Kirim Pendaftaran ke Database Google Sheets</span>
-                            </button>
-                        </form>
-                    </div>
-
-                    <!-- Kartu Bukti PPDB -->
-                    <div class="lg:col-span-5 bg-slate-800/60 border border-slate-700 rounded-3xl p-6 sm:p-8">
-                        <div class="flex items-center justify-between mb-4">
-                            <h4 class="font-display font-bold text-base text-amber-400">Kartu Bukti Pendaftaran PPDB</h4>
-                            <span id="ppdb-status-pill" class="text-[11px] px-2.5 py-0.5 rounded-full bg-slate-700 text-slate-300">Menunggu Input</span>
-                        </div>
-                        <div id="ppdb-receipt-card" class="bg-white text-slate-900 rounded-2xl p-5 space-y-3 border-t-8 border-brand-600 text-xs">
-                            <div class="font-display font-extrabold text-sm text-brand-800 border-b pb-2">PANITIA PPDB SMKN 1 HALTIM</div>
-                            <div class="flex justify-between"><span>No. Registrasi:</span><strong id="rec-noreg" class="font-mono text-brand-700">PPDB-HALTIM-2026-001</strong></div>
-                            <div class="flex justify-between"><span>Nama Siswa:</span><strong id="rec-nama">Belum Diisi</strong></div>
-                            <div class="flex justify-between"><span>NISN / Asal:</span><strong id="rec-nisn">-</strong></div>
-                            <div class="flex justify-between"><span>Jalur:</span><strong id="rec-jalur">Reguler / Umum</strong></div>
-                            <div class="pt-2 border-t"><span class="text-slate-500 block">Pilihan 1:</span><strong id="rec-jurusan1" class="text-brand-700">Teknik Jaringan Komputer & Telekomunikasi (TJKT)</strong></div>
-                            <div><span class="text-slate-500 block">Pilihan 2:</span><strong id="rec-jurusan2">Teknik Instalasi Tenaga Listrik (TITL)</strong></div>
-                        </div>
-                        <div class="mt-4 flex gap-3">
-                            <button onclick="fillDemoPPDB()" class="flex-1 py-2.5 px-3 rounded-xl bg-slate-700 hover:bg-slate-600 text-xs font-semibold text-slate-200">Isi Contoh</button>
-                            <button onclick="printPPDBCard()" class="flex-1 py-2.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-xs font-bold text-white">Cetak Kartu</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- WIDGET B: CEK NISN -->
-            <div id="acad-content-nisn" class="acad-tab-content hidden">
+            <!-- WIDGET: CEK NISN -->
+            <div id="acad-content-nisn" class="acad-tab-content">
                 <div class="max-w-4xl mx-auto bg-slate-800/90 border border-slate-700 rounded-3xl p-6 sm:p-10">
                     <div class="text-center max-w-2xl mx-auto mb-6">
                         <h3 class="font-display font-bold text-2xl text-white">Pengecekan Status Akademik, PKL & Kelulusan Siswa</h3>
@@ -624,7 +529,7 @@
                 </div>
             </div>
 
-            <!-- WIDGET C: JADWAL PRAKTIK RPS -->
+            <!-- WIDGET: JADWAL PRAKTIK RPS -->
             <div id="acad-content-jadwal" class="acad-tab-content hidden">
                 <div class="bg-slate-800/90 border border-slate-700 rounded-3xl p-6 sm:p-8">
                     <div class="flex flex-wrap justify-between items-center gap-4 mb-6">
@@ -641,7 +546,7 @@
         </div>
     </section>
 
-    <!-- ==================== 7. PAPAN PENGUMUMAN (TANPA FILTER KATEGORI, TEMA MANUAL & FOTO AKTIF) ==================== -->
+    <!-- ==================== 7. PAPAN PENGUMUMAN & GALERI FOTO ==================== -->
     <section id="berita" class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-3xl mx-auto mb-12">
             <span class="text-brand-600 dark:text-amber-400 font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-brand-50 dark:bg-slate-800 border border-brand-200 dark:border-slate-700">Kabar & Informasi Resmi</span>
@@ -651,7 +556,6 @@
 
         <div id="news-grid" class="grid md:grid-cols-3 gap-8 mb-20"></div>
 
-        <!-- Galeri Foto Dokumentasi -->
         <div id="galeri" class="pt-12 border-t border-slate-200 dark:border-slate-800">
             <h2 class="font-display font-extrabold text-3xl text-slate-900 dark:text-white text-center mb-10">Galeri Dokumentasi Sekolah</h2>
             <div id="container-galeri" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
@@ -734,7 +638,7 @@
         </div>
     </footer>
 
-    <!-- ==================== MODAL SLIDER POP-UP (UNTUK KEGIATAN, JURUSAN & PENGUMUMAN) ==================== -->
+    <!-- ==================== MODAL SLIDER POP-UP ==================== -->
     <div id="modalSlider" class="fixed inset-0 z-[110] hidden flex items-center justify-center p-4 md:p-10">
         <div class="absolute inset-0 bg-slate-950/90 backdrop-blur-sm" onclick="closeSliderModal()"></div>
         <div class="relative bg-white dark:bg-slate-900 rounded-3xl w-full max-w-4xl overflow-hidden shadow-2xl flex flex-col max-h-[92vh] z-10">
@@ -751,7 +655,7 @@
         </div>
     </div>
 
-    <!-- ==================== MODAL LOGIN ADMIN & SIAKAD (ANTI-AUTOFILL) ==================== -->
+    <!-- ==================== MODAL LOGIN ADMIN & SIAKAD ==================== -->
     <div id="login-modal" class="fixed inset-0 z-50 hidden bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-md w-full shadow-2xl border p-6 sm:p-8 relative">
             <button onclick="closeLoginModal()" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-rose-500 hover:text-white flex items-center justify-center absolute top-5 right-5">&times;</button>
@@ -828,7 +732,6 @@
     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbxTMQDfvW8n9Gp1KN64Qge-RYISt1eTRGR7FC2BGCxnsTqPGaP7nmia1qaD2heQLz1Z/exec';
 
-        // Helper untuk mengubah tanggal ISO 2027-02-06T15:00:00.000Z menjadi "06 Februari 2027"
         function formatCleanDate(raw) {
             if (!raw) return '';
             const str = String(raw);
@@ -841,7 +744,6 @@
             return str;
         }
 
-        // Jam WIT Live
         function updateWITClock() {
             const el = document.getElementById('live-clock');
             if (!el) return;
@@ -881,7 +783,7 @@
         }
 
         function switchAcademicTab(tab) {
-            ['ppdb', 'nisn', 'jadwal'].forEach(t => {
+            ['nisn', 'jadwal'].forEach(t => {
                 document.getElementById(`acad-content-${t}`).classList.toggle('hidden', t !== tab);
                 document.getElementById(`acad-btn-${t}`).className = t === tab
                     ? 'acad-tab-btn px-5 py-3 rounded-xl font-bold text-sm transition flex items-center gap-2 bg-amber-500 text-slate-950 shadow-lg'
@@ -917,7 +819,7 @@
             });
         }
 
-        // Slider Modal Universal (Kegiatan, Jurusan & Pengumuman)
+        // Slider Modal Universal
         let curSlide = 0; let slideTimer; let fotosArr = [];
         function openSliderModal(title, subtitle, desc, rawFotos) {
             fotosArr = (rawFotos || '').split(',').map(f => f.trim()).filter(Boolean);
@@ -1046,46 +948,6 @@
             showToast('Tersimpan!', 'Usulan tempat PKL berhasil dikirim ke Google Sheets.');
         }
 
-        // PPDB Submit
-        function handlePPDBSubmit(e) {
-            e.preventDefault();
-            const payload = {
-                action: 'addPPDB',
-                noReg: 'PPDB-SMKN1MABA-' + Math.floor(1000 + Math.random() * 9000),
-                nama: document.getElementById('ppdb-nama').value,
-                nisn: document.getElementById('ppdb-nisn').value.trim(),
-                smp: document.getElementById('ppdb-smp').value,
-                jalur: document.getElementById('ppdb-jalur').value,
-                jurusan1: document.getElementById('ppdb-jurusan1').value,
-                jurusan2: document.getElementById('ppdb-jurusan2').value,
-                wa: document.getElementById('ppdb-wa').value,
-                alamat: document.getElementById('ppdb-alamat').value
-            };
-            fetch(scriptURL, { method: 'POST', body: JSON.stringify(payload) });
-            sampleStudents[payload.nisn] = {
-                nama: payload.nama, nisn: payload.nisn, kelas: 'Calon Siswa Baru (PPDB)',
-                jurusan: payload.jurusan1, statusAkademik: `TERDAFTAR PPDB (${payload.noReg})`,
-                tempatPKL: 'Menunggu Penempatan', nilaiUKK: `Jalur: ${payload.jalur}`, waliKelas: 'Panitia PPDB'
-            };
-            document.getElementById('rec-noreg').textContent = payload.noReg;
-            document.getElementById('rec-nama').textContent = payload.nama;
-            document.getElementById('rec-nisn').textContent = `${payload.nisn} (${payload.smp})`;
-            document.getElementById('rec-jalur').textContent = payload.jalur;
-            document.getElementById('rec-jurusan1').textContent = payload.jurusan1;
-            document.getElementById('rec-jurusan2').textContent = payload.jurusan2;
-            document.getElementById('ppdb-status-pill').textContent = 'Tersimpan di Sheets';
-            showToast('Pendaftaran Berhasil!', `Data PPDB ${payload.nama} telah disimpan ke Google Sheets.`);
-        }
-        function fillDemoPPDB() {
-            document.getElementById('ppdb-nama').value = 'Alfian Ramadhan';
-            document.getElementById('ppdb-nisn').value = '0094827165';
-            document.getElementById('ppdb-smp').value = 'SMP Negeri 1 Maba';
-            document.getElementById('ppdb-wa').value = '085311884115';
-            document.getElementById('ppdb-alamat').value = 'Desa Soa Gimalaha, Kota Maba';
-            handlePPDBSubmit(new Event('submit'));
-        }
-        function printPPDBCard() { window.print(); }
-
         // Cek NISN
         const sampleStudents = {
             '0067891234': { nama: 'Fikri Haikal Tidore', nisn: '0067891234', kelas: 'XII TJKT 1', jurusan: 'Teknik Jaringan Komputer & Telekomunikasi (TJKT)', statusAkademik: 'AKTIF / LULUS UKK', tempatPKL: 'UPT TIK Universitas Khairun Ternate', nilaiUKK: '92.50 (Sangat Kompeten)', waliKelas: 'Bpk. Hendra Wijaya, S.Kom.' },
@@ -1146,7 +1008,7 @@
                 </div>`).join('');
         }
 
-        // RENDER KARTU PENGUMUMAN (TANPA FILTER KATEGORI, TEMA MANUAL & FOTO AKTIF)
+        // RENDER KARTU PENGUMUMAN (TEMA MANUAL & FOTO AKTIF)
         let newsArticles = [
             { badge: 'PPDB 2027/2028', date: '06 Februari 2027', title: 'Penerimaan Siswa Baru SMKN 1 Halmahera Timur', excerpt: 'Diberitahukan kepada seluruh masyarakat dan calon peserta didik baru bahwa SMK NEGERI 1 HALMAHERA TIMUR secara resmi membuka Penerimaan Peserta Didik Baru (PPDB).', img: 'https://placehold.co/600x360/1e3a8a/ffffff?text=PPDB+SMKN+1+Haltim' }
         ];
@@ -1302,7 +1164,6 @@
                         renderPKLTable();
                     }
 
-                    // Riwayat Kegiatan
                     if (Array.isArray(data.kegiatan)) {
                         window.kegiatanData = data.kegiatan;
                         const contK = document.getElementById('container-kegiatan');
@@ -1325,7 +1186,6 @@
                         });
                     }
 
-                    // Fasilitas Sekolah
                     if (Array.isArray(data.fasilitas)) {
                         const contF = document.getElementById('container-fasilitas');
                         contF.innerHTML = data.fasilitas.length === 0 ? '<p class="col-span-full text-center text-slate-400">Belum ada data fasilitas.</p>' : '';
@@ -1338,13 +1198,11 @@
                         });
                     }
 
-                    // Jurusan
                     if (Array.isArray(data.jurusan) && data.jurusan.length > 0) {
                         window.jurusanList = data.jurusan;
                         renderJurusanCards();
                     }
 
-                    // Guru
                     if (Array.isArray(data.guru)) {
                         const contG = document.getElementById('container-guru');
                         contG.innerHTML = data.guru.length === 0 ? '<p class="col-span-full text-center text-slate-400">Belum ada data guru.</p>' : '';
@@ -1357,13 +1215,11 @@
                         });
                     }
 
-                    // Pengumuman / Berita (Mengekstrak Tema Manual & Foto Sampul)
                     if (Array.isArray(data.pengumuman) && data.pengumuman.length > 0) {
                         newsArticles = data.pengumuman.map(parseRawPengumuman);
                         renderNews();
                     }
 
-                    // Galeri Foto
                     if (Array.isArray(data.galeri)) {
                         const contGl = document.getElementById('container-galeri');
                         contGl.innerHTML = data.galeri.map(item => `
@@ -1375,7 +1231,6 @@
                             </div>`).join('');
                     }
 
-                    // Siswa (NISN) & Jadwal
                     if (data.siswa && Object.keys(data.siswa).length > 0) {
                         Object.assign(sampleStudents, data.siswa);
                         lookupNISN(document.getElementById('nisn-search-input').value || '0067891234');

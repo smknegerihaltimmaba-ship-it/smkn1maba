@@ -411,6 +411,7 @@
     <!-- ==================== 5. SISTEM MONITORING PKL & BURSA KERJA KHUSUS (BKK) ==================== -->
     <section id="pkl-bkk" class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-12 gap-8 items-start">
+            <!-- KOLOM KIRI: Judul, Deskripsi & 3 Kartu Mitra Instansi -->
             <div class="lg:col-span-4 space-y-6">
                 <div>
                     <span id="ui-pkl-badge" class="text-brand-600 dark:text-amber-400 font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-brand-50 dark:bg-slate-800 border border-brand-200 dark:border-slate-700">LINK & MATCH DUDIKA</span>
@@ -457,6 +458,7 @@
                 </button>
             </div>
 
+            <!-- KOLOM KANAN: Tabel Direktori Penempatan PKL Siswa & Mitra Aktif -->
             <div class="lg:col-span-8 bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80 dark:border-slate-800">
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
                     <div>
@@ -482,14 +484,14 @@
                                 <th class="py-3 px-3 font-semibold">Lokasi</th>
                                 <th class="py-3 px-3 font-semibold">Jurusan</th>
                                 <th class="py-3 px-3 font-semibold">Kuota / Siswa</th>
-                                <th class="py-3 px-3 font-semibold">Status</th>
+                                <th class="py-3 px-3 font-semibold text-right">Status & Aksi</th>
                             </tr>
                         </thead>
                         <tbody id="pkl-table-body" class="divide-y divide-slate-200/70 dark:divide-slate-800"></tbody>
                     </table>
                 </div>
 
-                <div class="mt-6 p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/70 dark:border-slate-700 flex justify-between items-center text-xs">
+                <div class="mt-6 p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/70 dark:border-slate-700 flex flex-wrap justify-between items-center gap-2 text-xs">
                     <span id="ui-pkl-footer"><strong>Info BKK SMKN 1 Maba:</strong> Data dikelola langsung dari CMS Dashboard Admin.</span>
                     <span id="pkl-count-badge" class="font-bold text-brand-600 dark:text-amber-400">Menampilkan Mitra</span>
                 </div>
@@ -759,7 +761,7 @@
         </div>
     </div>
 
-    <!-- ==================== MODAL LOGIN ADMIN & SIAKAD ==================== -->
+    <!-- ==================== MODAL LOGIN ADMIN & SIAKAD (ANTI-AUTOFILL) ==================== -->
     <div id="login-modal" class="fixed inset-0 z-50 hidden bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-md w-full shadow-2xl border p-6 sm:p-8 relative">
             <button onclick="closeLoginModal()" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-rose-500 hover:text-white flex items-center justify-center absolute top-5 right-5">&times;</button>
@@ -770,14 +772,22 @@
                     <p class="text-xs text-slate-500">SMK Negeri 1 Halmahera Timur</p>
                 </div>
             </div>
-            <form onsubmit="handleLoginSubmit(event)" class="space-y-4">
+            <form onsubmit="handleLoginSubmit(event)" class="space-y-4" autocomplete="off">
+                <input type="text" style="display:none" aria-hidden="true">
+                <input type="password" style="display:none" aria-hidden="true">
                 <div>
                     <label class="block text-xs font-semibold mb-1">Username</label>
-                    <input type="text" id="login-user" required placeholder="Username Admin" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border text-sm">
+                    <input type="text" id="login-user" name="idx_usr_haltim" required placeholder="Username Admin"
+                        autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+                        readonly onfocus="this.removeAttribute('readonly');"
+                        class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border text-sm">
                 </div>
                 <div>
                     <label class="block text-xs font-semibold mb-1">Password</label>
-                    <input type="password" id="login-pass" required placeholder="••••••••" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border text-sm">
+                    <input type="password" id="login-pass" name="idx_pwd_haltim" required placeholder="••••••••"
+                        autocomplete="new-password"
+                        readonly onfocus="this.removeAttribute('readonly');"
+                        class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border text-sm">
                 </div>
                 <button type="submit" id="btn-submit-login" class="w-full py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-lg transition">
                     Masuk ke CMS Dashboard
@@ -944,7 +954,7 @@
         function nextSlide() { goToSlide(curSlide + 1); }
         function prevSlide() { goToSlide(curSlide - 1); }
 
-        // Direktori PKL
+        // Direktori Monitoring PKL (Otomatis sinkron dengan LocalStorage Admin & Google Sheets)
         const pklData = [
             { mitra: 'UPT TIK & Lab Fakultas Teknik Unkhair', lokasi: 'Kota Ternate', jurusan: 'TJKT', kuota: '8 Siswa Kelas XII', status: 'Mitra Kampus Aktif' },
             { mitra: 'PT PLN (Persero) ULP Maba', lokasi: 'Kota Maba, Haltim', jurusan: 'TITL', kuota: '6 Siswa Kelas XII', status: 'Penempatan Aktif' },
@@ -952,21 +962,64 @@
             { mitra: 'Dinas PUPR Kabupaten Halmahera Timur', lokasi: 'Kota Maba, Haltim', jurusan: 'TKP', kuota: '7 Siswa Kelas XII', status: 'Penempatan Aktif' },
             { mitra: 'PT Aneka Tambang Tbk (ANTAM) UBPN Malut', lokasi: 'Buli / Maba, Haltim', jurusan: 'TITL', kuota: '5 Siswa Kelas XII', status: 'Mitra Industri DUDIKA' }
         ];
+
+        function applyPKLInfoUI(ip) {
+            if (!ip) return;
+            if (ip.badge && document.getElementById('ui-pkl-badge')) document.getElementById('ui-pkl-badge').innerText = ip.badge;
+            if (ip.judul && document.getElementById('ui-pkl-judul')) document.getElementById('ui-pkl-judul').innerText = ip.judul;
+            if (ip.deskripsi && document.getElementById('ui-pkl-deskripsi')) document.getElementById('ui-pkl-deskripsi').innerText = ip.deskripsi;
+            if (ip.mitra1Judul && document.getElementById('ui-pkl-m1-judul')) document.getElementById('ui-pkl-m1-judul').innerText = ip.mitra1Judul;
+            if (ip.mitra1Sub && document.getElementById('ui-pkl-m1-sub')) document.getElementById('ui-pkl-m1-sub').innerText = ip.mitra1Sub;
+            if (ip.mitra2Judul && document.getElementById('ui-pkl-m2-judul')) document.getElementById('ui-pkl-m2-judul').innerText = ip.mitra2Judul;
+            if (ip.mitra2Sub && document.getElementById('ui-pkl-m2-sub')) document.getElementById('ui-pkl-m2-sub').innerText = ip.mitra2Sub;
+            if (ip.mitra3Judul && document.getElementById('ui-pkl-m3-judul')) document.getElementById('ui-pkl-m3-judul').innerText = ip.mitra3Judul;
+            if (ip.mitra3Sub && document.getElementById('ui-pkl-m3-sub')) document.getElementById('ui-pkl-m3-sub').innerText = ip.mitra3Sub;
+            if (ip.infoFooter && document.getElementById('ui-pkl-footer')) document.getElementById('ui-pkl-footer').innerText = ip.infoFooter;
+        }
+
         function renderPKLTable() {
+            const savedLocal = localStorage.getItem('smkn1haltim_pkl_config');
+            if (savedLocal && !window._localPKLLoaded) {
+                try {
+                    const parsed = JSON.parse(savedLocal);
+                    if (parsed.infoPKL) applyPKLInfoUI(parsed.infoPKL);
+                    if (Array.isArray(parsed.items) && parsed.items.length > 0) {
+                        pklData.length = 0;
+                        parsed.items.forEach(it => pklData.push(it));
+                    }
+                    window._localPKLLoaded = true;
+                } catch (e) {}
+            }
+
             const fj = document.getElementById('pkl-filter-jurusan').value;
             const sq = document.getElementById('pkl-search-input').value.toLowerCase();
             const filtered = pklData.filter(i => (fj === 'ALL' || i.jurusan === fj) && (i.mitra.toLowerCase().includes(sq) || i.lokasi.toLowerCase().includes(sq)));
             document.getElementById('pkl-count-badge').textContent = `Menampilkan ${filtered.length} Mitra PKL`;
             document.getElementById('pkl-table-body').innerHTML = filtered.map(i => `
-                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40">
-                    <td class="py-3 px-3 font-semibold">${i.mitra}</td>
-                    <td class="py-3 px-3">${i.lokasi}</td>
-                    <td class="py-3 px-3"><span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 text-xs font-bold">${i.jurusan}</span></td>
-                    <td class="py-3 px-3">${i.kuota}</td>
-                    <td class="py-3 px-3 text-emerald-600 font-semibold text-xs">${i.status}</td>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40 transition">
+                    <td class="py-3.5 px-3 font-semibold">
+                        <span class="inline-flex items-center gap-2">
+                            <i class="fa-solid fa-building-circle-check text-brand-600 dark:text-amber-400"></i>
+                            <span>${i.mitra}</span>
+                        </span>
+                    </td>
+                    <td class="py-3.5 px-3"><i class="fa-solid fa-location-dot text-rose-500 mr-1.5"></i>${i.lokasi}</td>
+                    <td class="py-3.5 px-3"><span class="px-2.5 py-0.5 rounded-md bg-blue-100 text-blue-800 text-xs font-bold">${i.jurusan}</span></td>
+                    <td class="py-3.5 px-3"><i class="fa-solid fa-users text-slate-400 mr-1.5"></i>${i.kuota}</td>
+                    <td class="py-3.5 px-3 text-right">
+                        <div class="inline-flex items-center justify-end gap-2">
+                            <span class="inline-flex items-center gap-1 text-emerald-600 font-semibold text-xs">
+                                <i class="fa-solid fa-circle-check"></i> ${i.status}
+                            </span>
+                            <a href="dashboard.html?tab=pkl" title="Edit Mitra Ini di Dashboard Admin" class="w-7 h-7 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-brand-600 hover:text-white text-slate-600 dark:text-slate-300 flex items-center justify-center transition shadow-sm">
+                                <i class="fa-solid fa-pen-to-square text-xs"></i>
+                            </a>
+                        </div>
+                    </td>
                 </tr>
             `).join('');
         }
+
         function openPKLModal() { document.getElementById('pkl-modal').classList.remove('hidden'); }
         function closePKLModal() { document.getElementById('pkl-modal').classList.add('hidden'); }
         function handleAddPKLSubmit(e) {
@@ -1124,7 +1177,13 @@
             showToast('Pesan Terkirim!', 'Terima kasih, pesan Anda telah masuk ke Google Sheets Humas Sekolah.');
         }
 
-        function openLoginModal() { document.getElementById('login-modal').classList.remove('hidden'); }
+        function openLoginModal() {
+            const u = document.getElementById('login-user');
+            const p = document.getElementById('login-pass');
+            u.value = ''; p.value = '';
+            u.setAttribute('readonly', true); p.setAttribute('readonly', true);
+            document.getElementById('login-modal').classList.remove('hidden');
+        }
         function closeLoginModal() { document.getElementById('login-modal').classList.add('hidden'); }
         function handleLoginSubmit(e) {
             e.preventDefault();
@@ -1150,7 +1209,7 @@
         }
 
         // =========================================================================
-        // SINKRONISASI PENUH DARI GOOGLE SHEETS (TERMASUK SISTEM MONITORING PKL)
+        // SINKRONISASI PENUH DARI GOOGLE SHEETS
         // =========================================================================
         function syncAllFromSheets() {
             fetch(scriptURL).then(res => res.json()).then(data => {
@@ -1184,19 +1243,16 @@
                         if (data.kontak.peta) document.getElementById('tampil-peta').src = data.kontak.peta;
                     }
 
-                    // Sinkronisasi Pengaturan Teks Sistem Monitoring PKL & BKK
-                    if (data.infoPKL) {
-                        const ip = data.infoPKL;
-                        if (ip.badge && document.getElementById('ui-pkl-badge')) document.getElementById('ui-pkl-badge').innerText = ip.badge;
-                        if (ip.judul && document.getElementById('ui-pkl-judul')) document.getElementById('ui-pkl-judul').innerText = ip.judul;
-                        if (ip.deskripsi && document.getElementById('ui-pkl-deskripsi')) document.getElementById('ui-pkl-deskripsi').innerText = ip.deskripsi;
-                        if (ip.mitra1Judul && document.getElementById('ui-pkl-m1-judul')) document.getElementById('ui-pkl-m1-judul').innerText = ip.mitra1Judul;
-                        if (ip.mitra1Sub && document.getElementById('ui-pkl-m1-sub')) document.getElementById('ui-pkl-m1-sub').innerText = ip.mitra1Sub;
-                        if (ip.mitra2Judul && document.getElementById('ui-pkl-m2-judul')) document.getElementById('ui-pkl-m2-judul').innerText = ip.mitra2Judul;
-                        if (ip.mitra2Sub && document.getElementById('ui-pkl-m2-sub')) document.getElementById('ui-pkl-m2-sub').innerText = ip.mitra2Sub;
-                        if (ip.mitra3Judul && document.getElementById('ui-pkl-m3-judul')) document.getElementById('ui-pkl-m3-judul').innerText = ip.mitra3Judul;
-                        if (ip.mitra3Sub && document.getElementById('ui-pkl-m3-sub')) document.getElementById('ui-pkl-m3-sub').innerText = ip.mitra3Sub;
-                        if (ip.infoFooter && document.getElementById('ui-pkl-footer')) document.getElementById('ui-pkl-footer').innerText = ip.infoFooter;
+                    // Sinkronisasi Bagian Kiri Sistem Monitoring PKL & BKK
+                    if (data.infoPKL && Object.keys(data.infoPKL).length > 0) {
+                        applyPKLInfoUI(data.infoPKL);
+                    }
+
+                    // Sinkronisasi Tabel Kanan Direktori PKL
+                    if (Array.isArray(data.pkl) && data.pkl.length > 0) {
+                        pklData.length = 0;
+                        data.pkl.forEach(i => pklData.push(i));
+                        renderPKLTable();
                     }
 
                     // Riwayat Kegiatan
@@ -1279,12 +1335,7 @@
                             </div>`).join('');
                     }
 
-                    // PKL, Siswa (NISN) & Jadwal
-                    if (Array.isArray(data.pkl) && data.pkl.length > 0) {
-                        pklData.length = 0;
-                        data.pkl.forEach(i => pklData.push(i));
-                        renderPKLTable();
-                    }
+                    // Siswa (NISN) & Jadwal
                     if (data.siswa && Object.keys(data.siswa).length > 0) {
                         Object.assign(sampleStudents, data.siswa);
                         lookupNISN(document.getElementById('nisn-search-input').value || '0067891234');

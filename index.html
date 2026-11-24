@@ -44,24 +44,11 @@
     </script>
 
     <style>
-        /* Custom Utilities & Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f5f9;
-        }
-        .dark ::-webkit-scrollbar-track {
-            background: #0f172a;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #94a3b8;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #64748b;
-        }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        .dark ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #64748b; }
         .hero-pattern {
             background-color: #172554;
             background-image: radial-gradient(at 15% 15%, rgba(37, 99, 235, 0.35) 0px, transparent 50%),
@@ -77,9 +64,7 @@
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.03); }
         }
-        .animate-float {
-            animation: pulse-subtle 4s infinite ease-in-out;
-        }
+        .animate-float { animation: pulse-subtle 4s infinite ease-in-out; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 font-sans antialiased transition-colors duration-300 selection:bg-brand-600 selection:text-white">
@@ -89,17 +74,14 @@
         <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
             <div class="flex flex-wrap items-center gap-4">
                 <span class="flex items-center gap-1.5 font-medium text-amber-400">
-                    <i class="fa-solid fa-certificate"></i> NPSN: <span id="top-npsn">60200659</span> (<span id="top-akreditasi">Terakreditasi B</span>)
+                    <i class="fa-solid fa-certificate"></i> NPSN: 60200659 (Terakreditasi B)
                 </span>
                 <span class="hidden md:flex items-center gap-1.5">
-                    <i class="fa-solid fa-location-dot text-sky-400"></i> <span id="top-alamat-short">Desa Soa Gimalaha, Kec. Kota Maba, Kab. Halmahera Timur</span>
+                    <i class="fa-solid fa-location-dot text-sky-400"></i> <span id="top-alamat-text">Desa Soa Gimalaha, Kec. Kota Maba, Kab. Halmahera Timur</span>
                 </span>
-                <a id="top-email-link" href="mailto:smkn1maba@gmail.com" class="hidden lg:flex items-center gap-1.5 hover:text-white transition">
+                <a id="top-email-href" href="mailto:smkn1maba@gmail.com" class="hidden lg:flex items-center gap-1.5 hover:text-white transition">
                     <i class="fa-solid fa-envelope text-emerald-400"></i> <span id="top-email-text">smkn1maba@gmail.com</span>
                 </a>
-                <span class="hidden xl:inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-brand-800 text-[10px] text-emerald-300 border border-emerald-500/30">
-                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> Cloud Sheets Sync
-                </span>
             </div>
             <div class="flex items-center gap-4 ml-auto">
                 <div class="flex items-center gap-1.5 bg-brand-800/90 px-2.5 py-1 rounded-full border border-brand-700">
@@ -119,10 +101,7 @@
             <div class="flex justify-between items-center h-20">
                 <!-- Brand Logo -->
                 <a href="#beranda" class="flex items-center gap-3.5 group">
-                    <img src="logo.png" onerror="this.style.display='none'; document.getElementById('fallback-logo-icon').classList.remove('hidden');" alt="Logo SMKN 1 Haltim" class="w-12 h-12 rounded-full object-cover shadow-md border border-slate-200 bg-white group-hover:scale-105 transition">
-                    <div id="fallback-logo-icon" class="hidden w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-600 to-brand-900 flex items-center justify-center text-white shadow-md shadow-brand-600/25 group-hover:scale-105 transition">
-                        <i class="fa-solid fa-graduation-cap text-2xl text-amber-400"></i>
-                    </div>
+                    <img src="https://img.sanishtech.com/u/0f05f5fd2f07f7eea84d736986066cc2.jpg" alt="Logo SMKN 1 Haltim" class="w-12 h-12 rounded-full object-cover shadow-md border border-slate-200 bg-white group-hover:scale-105 transition">
                     <div>
                         <div class="flex items-center gap-2">
                             <span class="font-display font-extrabold text-lg sm:text-xl tracking-tight text-slate-900 dark:text-white">SMKN 1 HALTIM</span>
@@ -136,27 +115,25 @@
                 <nav class="hidden lg:flex items-center gap-1 xl:gap-2 text-sm font-medium">
                     <a href="#beranda" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-amber-400 transition">Beranda</a>
                     <a href="#profil" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-amber-400 transition">Profil</a>
-                    <a href="#jurusan" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-amber-400 transition">Kompetensi Keahlian</a>
+                    <a href="#kegiatan" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-amber-400 transition">Kegiatan & Fasilitas</a>
+                    <a href="#jurusan" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-amber-400 transition">Jurusan & Guru</a>
                     <a href="#pkl-bkk" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-amber-400 transition">PKL & BKK</a>
-                    <a href="#akademik" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-amber-400 transition">Layanan Akademik</a>
+                    <a href="#akademik" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-amber-400 transition">PPDB & NISN</a>
                     <a href="#berita" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-amber-400 transition">Berita</a>
                     <a href="#kontak" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-amber-400 transition">Kontak</a>
                 </nav>
 
                 <!-- Action Buttons -->
                 <div class="flex items-center gap-2.5">
-                    <!-- Dark Mode Toggle -->
                     <button id="theme-toggle" onclick="toggleDarkMode()" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-amber-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition" aria-label="Ganti Tema">
                         <i id="theme-icon" class="fa-solid fa-moon text-base"></i>
                     </button>
 
-                    <!-- SIAKAD & Admin Portal Button -->
                     <button onclick="openLoginModal()" class="hidden sm:inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm px-4 py-2.5 rounded-xl shadow-md shadow-brand-600/20 transition active:scale-95">
                         <i class="fa-solid fa-user-shield"></i>
-                        <span>Portal SIAKAD / Admin</span>
+                        <span>Login Admin / SIAKAD</span>
                     </button>
 
-                    <!-- Mobile Hamburger Button -->
                     <button onclick="toggleMobileMenu()" class="lg:hidden p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200">
                         <i id="mobile-menu-icon" class="fa-solid fa-bars text-lg"></i>
                     </button>
@@ -167,15 +144,16 @@
         <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 pt-2 pb-5 space-y-2">
             <a href="#beranda" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Beranda</a>
-            <a href="#profil" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Profil & Identitas</a>
-            <a href="#jurusan" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Kompetensi Keahlian (Jurusan)</a>
+            <a href="#profil" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Profil, Sejarah & Visi Misi</a>
+            <a href="#kegiatan" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Riwayat Kegiatan & Fasilitas</a>
+            <a href="#jurusan" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Jurusan & Tenaga Pendidik</a>
             <a href="#pkl-bkk" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Sistem PKL & BKK Industri</a>
             <a href="#akademik" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">PPDB, Cek NISN & Jadwal</a>
-            <a href="#berita" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Berita & Galeri Praktik</a>
+            <a href="#berita" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Berita & Galeri Foto</a>
             <a href="#kontak" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Hubungi Kami</a>
             <div class="pt-2">
                 <button onclick="openLoginModal(); toggleMobileMenu();" class="w-full flex items-center justify-center gap-2 bg-brand-600 text-white font-semibold py-3 rounded-xl shadow">
-                    <i class="fa-solid fa-right-to-bracket"></i> Login SIAKAD / Admin CMS
+                    <i class="fa-solid fa-right-to-bracket"></i> Login Admin / Portal SIAKAD
                 </button>
             </div>
         </div>
@@ -185,7 +163,6 @@
     <section id="beranda" class="hero-pattern relative overflow-hidden text-white pt-12 pb-20 lg:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-12 gap-12 items-center">
-                <!-- Left Column: Hero Copy -->
                 <div class="lg:col-span-7 space-y-6">
                     <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full glass-card text-amber-300 text-xs sm:text-sm font-semibold">
                         <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
@@ -200,7 +177,6 @@
                         Selamat datang di portal resmi <strong>SMK Negeri 1 Halmahera Timur (SMKN 1 Maba)</strong>. Berlokasi di Desa Soa Gimalaha, Kec. Kota Maba, kami berkomitmen menyelenggarakan pendidikan kejuruan berbasis <em>Kurikulum Merdeka</em> yang selaras dengan kebutuhan dunia industri, pertambangan, kelistrikan, konstruksi, dan teknologi informasi di Maluku Utara.
                     </p>
 
-                    <!-- CTA Buttons -->
                     <div class="flex flex-wrap gap-3.5 pt-2">
                         <a href="#akademik" onclick="switchAcademicTab('ppdb')" class="inline-flex items-center gap-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-amber-500/25 transition transform hover:-translate-y-0.5">
                             <i class="fa-solid fa-user-plus"></i>
@@ -210,37 +186,19 @@
                             <i class="fa-solid fa-magnifying-glass-chart text-amber-400"></i>
                             <span>Cek Kelulusan / NISN</span>
                         </a>
-                        <a href="#jurusan" class="inline-flex items-center gap-2 text-slate-200 hover:text-amber-300 font-medium px-4 py-3.5 transition">
-                            <span>Jelajahi Jurusan</span>
+                        <a href="#kegiatan" class="inline-flex items-center gap-2 text-slate-200 hover:text-amber-300 font-medium px-4 py-3.5 transition">
+                            <span>Lihat Kegiatan Siswa</span>
                             <i class="fa-solid fa-arrow-right text-sm"></i>
                         </a>
                     </div>
-
-                    <!-- Quick Badges -->
-                    <div class="pt-4 flex flex-wrap items-center gap-6 text-xs sm:text-sm text-slate-300 border-t border-white/10">
-                        <div class="flex items-center gap-2">
-                            <i class="fa-solid fa-circle-check text-emerald-400"></i>
-                            <span>Kurikulum SMK Merdeka</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <i class="fa-solid fa-circle-check text-emerald-400"></i>
-                            <span>Sertifikasi Kompetensi BNSP / LSP</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <i class="fa-solid fa-circle-check text-emerald-400"></i>
-                            <span>Kemitraan DUDIKA & Perguruan Tinggi</span>
-                        </div>
-                    </div>
                 </div>
 
-                <!-- Right Column: Interactive Showcase Card -->
+                <!-- Right Column: Identitas Showcase Card -->
                 <div class="lg:col-span-5">
                     <div class="glass-card rounded-3xl p-6 sm:p-8 shadow-2xl relative animate-float">
                         <div class="flex items-center justify-between border-b border-white/15 pb-4 mb-5">
                             <div class="flex items-center gap-3">
-                                <div class="w-11 h-11 rounded-xl bg-amber-400/20 border border-amber-400/40 flex items-center justify-center text-amber-300">
-                                    <i class="fa-solid fa-building-columns text-xl"></i>
-                                </div>
+                                <img src="https://img.sanishtech.com/u/0f05f5fd2f07f7eea84d736986066cc2.jpg" alt="Logo" class="w-11 h-11 rounded-full object-cover bg-white p-0.5">
                                 <div>
                                     <h2 class="font-display font-bold text-white text-base">Identitas Satuan Pendidikan</h2>
                                     <p class="text-xs text-slate-300">Kemendikdasmen RI • Provinsi Maluku Utara</p>
@@ -260,11 +218,11 @@
                             </div>
                             <div class="flex justify-between py-2 border-b border-white/10">
                                 <span class="text-slate-300">Nomor Pokok (NPSN)</span>
-                                <span id="hero-npsn" class="font-mono font-bold text-white bg-white/10 px-2.5 py-0.5 rounded">60200659</span>
+                                <span class="font-mono font-bold text-white bg-white/10 px-2.5 py-0.5 rounded">60200659</span>
                             </div>
                             <div class="flex justify-between py-2 border-b border-white/10">
                                 <span class="text-slate-300">Status / Akreditasi</span>
-                                <span id="hero-akreditasi" class="font-semibold text-white">Negeri / Terakreditasi B</span>
+                                <span class="font-semibold text-white">Negeri / Terakreditasi B</span>
                             </div>
                             <div class="flex justify-between py-2 border-b border-white/10">
                                 <span class="text-slate-300">Kecamatan / Desa</span>
@@ -272,7 +230,7 @@
                             </div>
                             <div class="flex justify-between py-2">
                                 <span class="text-slate-300">Telepon / Layanan</span>
-                                <span id="hero-telepon" class="font-semibold text-emerald-300">0853-1188-4115</span>
+                                <span id="hero-telp" class="font-semibold text-emerald-300">0853-1188-4115</span>
                             </div>
                         </div>
 
@@ -287,57 +245,14 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Quick Stats Banner -->
-            <div class="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-                <div class="glass-card rounded-2xl p-5 text-center sm:text-left flex flex-col sm:flex-row items-center gap-4">
-                    <div class="w-12 h-12 rounded-2xl bg-blue-500/20 border border-blue-400/30 flex items-center justify-center text-blue-300 text-xl shrink-0">
-                        <i class="fa-solid fa-microchip"></i>
-                    </div>
-                    <div>
-                        <div id="stat-val-program" class="text-2xl sm:text-3xl font-display font-extrabold text-white">3+ Program</div>
-                        <div class="text-xs sm:text-sm text-slate-300">Kompetensi Keahlian Unggulan</div>
-                    </div>
-                </div>
-                <div class="glass-card rounded-2xl p-5 text-center sm:text-left flex flex-col sm:flex-row items-center gap-4">
-                    <div class="w-12 h-12 rounded-2xl bg-amber-500/20 border border-amber-400/30 flex items-center justify-center text-amber-300 text-xl shrink-0">
-                        <i class="fa-solid fa-users-gear"></i>
-                    </div>
-                    <div>
-                        <div id="stat-val-siswa" class="text-2xl sm:text-3xl font-display font-extrabold text-white">420+ Siswa</div>
-                        <div class="text-xs sm:text-sm text-slate-300">Peserta Didik Vokasi Aktif</div>
-                    </div>
-                </div>
-                <div class="glass-card rounded-2xl p-5 text-center sm:text-left flex flex-col sm:flex-row items-center gap-4">
-                    <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-emerald-300 text-xl shrink-0">
-                        <i class="fa-solid fa-handshake-angle"></i>
-                    </div>
-                    <div>
-                        <div id="stat-val-mitra" class="text-2xl sm:text-3xl font-display font-extrabold text-white">25+ Mitra</div>
-                        <div class="text-xs sm:text-sm text-slate-300">DUDIKA, Pemda & Kampus PKL</div>
-                    </div>
-                </div>
-                <div class="glass-card rounded-2xl p-5 text-center sm:text-left flex flex-col sm:flex-row items-center gap-4">
-                    <div class="w-12 h-12 rounded-2xl bg-purple-500/20 border border-purple-400/30 flex items-center justify-center text-purple-300 text-xl shrink-0">
-                        <i class="fa-solid fa-award"></i>
-                    </div>
-                    <div>
-                        <div id="stat-val-akreditasi" class="text-2xl sm:text-3xl font-display font-extrabold text-white">Akreditasi B</div>
-                        <div class="text-xs sm:text-sm text-slate-300">Standar Nasional BAN-PDM</div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
-    <!-- ==================== 3. PROFIL & IDENTITAS SEKOLAH (TABS) ==================== -->
+    <!-- ==================== 3. PROFIL, SAMBUTAN, SEJARAH & VISI MISI (TABS) ==================== -->
     <section id="profil" class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-3xl mx-auto mb-12">
             <span class="text-brand-600 dark:text-amber-400 font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-brand-50 dark:bg-slate-800 border border-brand-200 dark:border-slate-700">Mengenal Lebih Dekat</span>
-            <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white mt-3">Profil & Identitas Resmi Sekolah</h2>
-            <p class="text-slate-600 dark:text-slate-400 mt-3 text-base">
-                Dedikasi SMK Negeri 1 Halmahera Timur dalam membangun generasi muda yang terampil, berkarakter mulia, dan siap bersaing di dunia kerja maupun wirausaha mandiri.
-            </p>
+            <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white mt-3">Profil, Sejarah & Visi Misi Sekolah</h2>
         </div>
 
         <!-- Profile Navigation Tabs -->
@@ -353,44 +268,42 @@
             </button>
         </div>
 
-        <!-- Tab 1: Sambutan & Sejarah -->
-        <div id="profile-tab-sambutan" class="profile-tab-content bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-10 shadow-sm border border-slate-200/80 dark:border-slate-800">
-            <div class="grid lg:grid-cols-12 gap-8 items-center">
-                <div class="lg:col-span-4 text-center">
-                    <div class="relative mx-auto w-56 h-64 rounded-2xl overflow-hidden bg-gradient-to-b from-brand-700 to-brand-950 p-1 shadow-xl">
-                        <img id="ui-foto-kepsek" src="https://placehold.co/400x480/1e3a8a/fbbf24?text=Kepala+Sekolah%0ASMKN+1+Maba" alt="Kepala Sekolah SMKN 1 Halmahera Timur" class="w-full h-full object-cover rounded-xl">
+        <!-- Tab 1: Sambutan & Sejarah (Sinkron dengan Dashboard) -->
+        <div id="profile-tab-sambutan" class="profile-tab-content space-y-8">
+            <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-10 shadow-sm border border-slate-200/80 dark:border-slate-800">
+                <div class="grid lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-4 text-center">
+                        <div class="relative mx-auto w-56 h-64 rounded-2xl overflow-hidden bg-gradient-to-b from-brand-700 to-brand-950 p-1 shadow-xl">
+                            <img id="tampil-foto-kepsek" src="https://placehold.co/400x480/1e3a8a/fbbf24?text=Kepala+Sekolah%0ASMKN+1+Maba" alt="Kepala Sekolah SMKN 1 Halmahera Timur" class="w-full h-full object-cover rounded-xl">
+                        </div>
+                        <div class="mt-4">
+                            <h3 id="tampil-kepsek" class="font-display font-bold text-lg text-slate-900 dark:text-white">Kepala SMK Negeri 1 Halmahera Timur</h3>
+                            <p class="text-xs text-brand-600 dark:text-amber-400 font-semibold">Kepala SMK Negeri 1 Halmahera Timur</p>
+                        </div>
                     </div>
-                    <div class="mt-4">
-                        <h3 id="ui-nama-kepsek" class="font-display font-bold text-lg text-slate-900 dark:text-white">Kepala SMK Negeri 1 Halmahera Timur</h3>
-                        <p id="ui-jabatan-kepsek" class="text-xs text-brand-600 dark:text-amber-400 font-semibold">Dinas Pendidikan & Kebudayaan Prov. Maluku Utara</p>
+                    <div class="lg:col-span-8 space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed">
+                        <div class="inline-flex items-center gap-2 text-amber-600 dark:text-amber-400 font-semibold text-sm">
+                            <i class="fa-solid fa-quote-left text-lg"></i>
+                            <span>Sambutan Kepala Sekolah</span>
+                        </div>
+                        <p id="tampil-sambutan" class="whitespace-pre-wrap leading-relaxed">
+                            Puji syukur kita panjatkan ke hadirat Tuhan Yang Maha Esa. Sebagai salah satu sekolah menengah kejuruan negeri rujukan di Kabupaten Halmahera Timur, SMK Negeri 1 Halmahera Timur (SMKN 1 Maba) terus bertransformasi menjawab tantangan era industri modern dan pembangunan daerah di kawasan Maluku Utara.
+                        </p>
                     </div>
                 </div>
-                <div class="lg:col-span-8 space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed">
-                    <div class="inline-flex items-center gap-2 text-amber-600 dark:text-amber-400 font-semibold text-sm">
-                        <i class="fa-solid fa-quote-left text-lg"></i>
-                        <span id="ui-salam-pembuka">Assalamu’alaikum Warahmatullahi Wabarakatuh, Salam Sejahtera & Salam Vokasi!</span>
+            </div>
+
+            <!-- Kartu Sejarah Sekolah -->
+            <div class="bg-slate-900 text-white rounded-3xl p-6 sm:p-10 shadow-lg border border-slate-800">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center">
+                        <i class="fa-solid fa-landmark"></i>
                     </div>
-                    <p id="ui-sambutan-1">
-                        Puji syukur kita panjatkan ke hadirat Tuhan Yang Maha Esa. Sebagai salah satu sekolah menengah kejuruan negeri rujukan di Kabupaten Halmahera Timur, <strong>SMK Negeri 1 Halmahera Timur (SMKN 1 Maba)</strong> terus bertransformasi menjawab tantangan era industri modern dan pembangunan daerah di kawasan Maluku Utara.
-                    </p>
-                    <p id="ui-sambutan-2">
-                        Melalui penerapan <strong>Kurikulum Merdeka</strong>, kami menitikberatkan pembelajaran pada penguatan <em>hard skills</em> di Ruang Praktik Siswa (RPS), pembinaan karakter Profil Pelajar Pancasila, serta perluasan jejaring Praktik Kerja Lapangan (PKL) bersama instansi pemerintah, BUMN, dunia usaha/industri (DUDIKA), maupun perguruan tinggi di Maluku Utara.
-                    </p>
-                    <div class="pt-3 grid sm:grid-cols-3 gap-4">
-                        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/60 dark:border-slate-700">
-                            <div class="text-brand-600 dark:text-amber-400 font-bold text-sm">70% Praktik Kejuruan</div>
-                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Pembelajaran berbasis proyek nyata & bengkel standar industri.</p>
-                        </div>
-                        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/60 dark:border-slate-700">
-                            <div class="text-brand-600 dark:text-amber-400 font-bold text-sm">Link & Match Industri</div>
-                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Penempatan PKL terarah di Halmahera Timur, Ternate & sekitarnya.</p>
-                        </div>
-                        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/60 dark:border-slate-700">
-                            <div class="text-brand-600 dark:text-amber-400 font-bold text-sm">BMW (Bekerja, Melanjutkan, Wirausaha)</div>
-                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Lulusan siap kerja, kuliah, atau membuka usaha teknik mandiri.</p>
-                        </div>
-                    </div>
+                    <h3 id="tampil-sejarah-judul" class="font-display font-bold text-2xl">Sejarah Singkat SMKN 1 Halmahera Timur</h3>
                 </div>
+                <p id="tampil-sejarah-isi" class="text-slate-300 leading-relaxed whitespace-pre-wrap text-sm sm:text-base">
+                    SMK Negeri 1 Halmahera Timur (SMKN 1 Maba) berdiri sebagai wujud komitmen pemerintah dalam menyediakan pendidikan kejuruan berkualitas di Desa Soa Gimalaha, Kecamatan Kota Maba, Kabupaten Halmahera Timur.
+                </p>
             </div>
         </div>
 
@@ -400,18 +313,13 @@
                 <div class="space-y-6">
                     <div class="p-6 rounded-2xl bg-gradient-to-br from-brand-700 to-brand-900 text-white shadow-lg">
                         <span class="text-xs font-bold uppercase tracking-widest text-amber-300">Visi Sekolah</span>
-                        <h3 id="ui-visi" class="font-display font-bold text-xl sm:text-2xl mt-2 leading-snug">
-                            "Terwujudnya Lulusan SMK Negeri 1 Halmahera Timur yang Beriman, Berkarakter, Kompeten, Mandiri, dan Mampu Bersaing di Dunia Kerja Global."
-                        </h3>
+                        <h3 id="tampil-visi" class="font-display font-bold text-xl sm:text-2xl mt-2 leading-snug whitespace-pre-wrap">"Terwujudnya Lulusan SMK Negeri 1 Halmahera Timur yang Beriman, Berkarakter, Kompeten, Mandiri, dan Mampu Bersaing di Dunia Kerja Global."</h3>
                     </div>
                     <div class="p-6 rounded-2xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/60">
                         <span class="text-xs font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400">Motto Vokasi SMKN 1 Maba</span>
-                        <div id="ui-motto" class="font-display font-extrabold text-2xl text-slate-900 dark:text-white mt-1">
+                        <div class="font-display font-extrabold text-2xl text-slate-900 dark:text-white mt-1">
                             "SMK Bisa, SMK Hebat — Kompeten, Berkarakter, Siap Kerja!"
                         </div>
-                        <p class="text-xs text-slate-600 dark:text-slate-400 mt-2">
-                            Menjunjung tinggi kearifan lokal Halmahera Timur yang berpadu dengan penguasaan sains serta teknologi terapan.
-                        </p>
                     </div>
                 </div>
 
@@ -419,90 +327,63 @@
                     <h3 class="font-display font-bold text-xl text-slate-900 dark:text-white mb-4 flex items-center gap-2">
                         <i class="fa-solid fa-list-check text-brand-600 dark:text-amber-400"></i> Misi Strategis Sekolah
                     </h3>
-                    <ul class="space-y-3.5 text-sm text-slate-600 dark:text-slate-300">
-                        <li class="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60">
-                            <span class="w-6 h-6 rounded-full bg-brand-600 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">1</span>
-                            <span id="ui-misi-1">Menyelenggarakan pendidikan kejuruan berbasis Kurikulum Merdeka yang adaptif terhadap perkembangan teknologi informasi, ketenagalistrikan, dan konstruksi.</span>
-                        </li>
-                        <li class="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60">
-                            <span class="w-6 h-6 rounded-full bg-brand-600 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">2</span>
-                            <span id="ui-misi-2">Meningkatkan kualitas sarana Ruang Praktik Siswa (RPS) dan kompetensi pendidik sesuai standar Dunia Usaha dan Dunia Industri Kerja (DUDIKA).</span>
-                        </li>
-                        <li class="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60">
-                            <span class="w-6 h-6 rounded-full bg-brand-600 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">3</span>
-                            <span id="ui-misi-3">Memperluas jejaring kerja sama Praktik Kerja Lapangan (PKL) dan penyerapan lulusan melalui Bursa Kerja Khusus (BKK) di wilayah Maluku Utara dan nasional.</span>
-                        </li>
-                        <li class="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60">
-                            <span class="w-6 h-6 rounded-full bg-brand-600 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">4</span>
-                            <span id="ui-misi-4">Menumbuhkan jiwa kewirausahaan (technopreneurship), disiplin kerja, keselamatan kerja (K3LH), dan budi pekerti luhur bagi seluruh peserta didik.</span>
-                        </li>
-                    </ul>
+                    <div id="tampil-misi" class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/60 text-sm text-slate-700 dark:text-slate-300 whitespace-pre-wrap leading-relaxed">1. Menyelenggarakan pendidikan kejuruan berbasis Kurikulum Merdeka yang adaptif terhadap perkembangan teknologi informasi, ketenagalistrikan, dan konstruksi.
+2. Meningkatkan kualitas sarana Ruang Praktik Siswa (RPS) dan kompetensi pendidik sesuai standar DUDIKA.
+3. Memperluas jejaring kerja sama Praktik Kerja Lapangan (PKL) dan penyerapan lulusan melalui Bursa Kerja Khusus (BKK).
+4. Menumbuhkan jiwa kewirausahaan, disiplin kerja, keselamatan kerja (K3LH), dan budi pekerti luhur.</div>
                 </div>
             </div>
         </div>
 
         <!-- Tab 3: Data Identitas Resmi Kemendikdasmen -->
         <div id="profile-tab-identitas" class="profile-tab-content hidden bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-10 shadow-sm border border-slate-200/80 dark:border-slate-800">
-            <div class="flex flex-wrap justify-between items-center gap-4 mb-6">
-                <div>
-                    <h3 class="font-display font-bold text-xl text-slate-900 dark:text-white">Tabel Data Pokok Pendidikan (Dapodik)</h3>
-                    <p class="text-sm text-slate-500 dark:text-slate-400">Referensi Data Satuan Pendidikan Kemendikdasmen RI</p>
-                </div>
-                <button onclick="copyOfficialInfo()" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-brand-600 hover:text-white text-xs font-semibold transition">
-                    <i class="fa-regular fa-copy"></i> Salin Data Identitas
-                </button>
-            </div>
-
             <div class="overflow-x-auto">
                 <table class="w-full text-left border-collapse text-sm">
                     <tbody class="divide-y divide-slate-200 dark:divide-slate-800">
-                        <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50">
-                            <th class="py-3.5 px-4 font-semibold text-slate-500 dark:text-slate-400 w-1/3">Nama Sekolah Resmi</th>
-                            <td class="py-3.5 px-4 font-bold text-slate-900 dark:text-white">SMK NEGERI 1 HALMAHERA TIMUR (SMKN 1 MABA)</td>
-                        </tr>
-                        <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50">
-                            <th class="py-3.5 px-4 font-semibold text-slate-500 dark:text-slate-400">NPSN</th>
-                            <td id="dapodik-npsn" class="py-3.5 px-4 font-mono font-bold text-brand-600 dark:text-amber-400">60200659</td>
-                        </tr>
-                        <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50">
-                            <th class="py-3.5 px-4 font-semibold text-slate-500 dark:text-slate-400">Jenjang / Status Sekolah</th>
-                            <td class="py-3.5 px-4">SMK (Sekolah Menengah Kejuruan) / <strong>Negeri</strong></td>
-                        </tr>
-                        <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50">
-                            <th class="py-3.5 px-4 font-semibold text-slate-500 dark:text-slate-400">Peringkat Akreditasi</th>
-                            <td class="py-3.5 px-4"><span id="dapodik-akreditasi" class="px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-800 dark:bg-emerald-500/20 dark:text-emerald-300 font-bold text-xs">Terakreditasi B</span></td>
-                        </tr>
-                        <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50">
-                            <th class="py-3.5 px-4 font-semibold text-slate-500 dark:text-slate-400">Kurikulum Digunakan</th>
-                            <td class="py-3.5 px-4 font-semibold">Kurikulum SMK Merdeka</td>
-                        </tr>
-                        <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50">
-                            <th class="py-3.5 px-4 font-semibold text-slate-500 dark:text-slate-400">Alamat Lengkap</th>
-                            <td id="dapodik-alamat" class="py-3.5 px-4">Jl. Poros Soagimalaha / Jl. Pendidikan, Desa Soa Gimalaha, Kec. Kota Maba, Kab. Halmahera Timur, Provinsi Maluku Utara 97862</td>
-                        </tr>
-                        <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50">
-                            <th class="py-3.5 px-4 font-semibold text-slate-500 dark:text-slate-400">Waktu Penyelenggaraan</th>
-                            <td class="py-3.5 px-4">Pagi / 6 Hari Kerja (Senin – Sabtu, Waktu Indonesia Timur / WIT)</td>
-                        </tr>
-                        <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50">
-                            <th class="py-3.5 px-4 font-semibold text-slate-500 dark:text-slate-400">Kontak Resmi & Pos-el</th>
-                            <td id="dapodik-kontak" class="py-3.5 px-4">Telp/WA: 0853-1188-4115 | Email: smkn1maba@gmail.com | Web: smkn1haltim.sch.id</td>
-                        </tr>
+                        <tr><th class="py-3.5 px-4 font-semibold text-slate-500 w-1/3">Nama Sekolah Resmi</th><td class="py-3.5 px-4 font-bold">SMK NEGERI 1 HALMAHERA TIMUR (SMKN 1 MABA)</td></tr>
+                        <tr><th class="py-3.5 px-4 font-semibold text-slate-500">NPSN</th><td class="py-3.5 px-4 font-mono font-bold text-brand-600 dark:text-amber-400">60200659</td></tr>
+                        <tr><th class="py-3.5 px-4 font-semibold text-slate-500">Jenjang / Status</th><td class="py-3.5 px-4">SMK / <strong>Negeri (Terakreditasi B)</strong></td></tr>
+                        <tr><th class="py-3.5 px-4 font-semibold text-slate-500">Alamat Lengkap</th><td id="dapodik-alamat" class="py-3.5 px-4">Jl. Poros Soagimalaha, Desa Soa Gimalaha, Kec. Kota Maba, Kab. Halmahera Timur, Maluku Utara 97862</td></tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </section>
 
-    <!-- ==================== 4. KOMPETENSI KEAHLIAN (JURUSAN DINAMIS) ==================== -->
+    <!-- ==================== 3B. RIWAYAT KEGIATAN & FASILITAS SEKOLAH (DARI DASHBOARD) ==================== -->
+    <section id="kegiatan" class="py-16 lg:py-24 bg-white dark:bg-slate-900 border-t border-slate-200/80 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-emerald-600 dark:text-emerald-400 font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-emerald-50 dark:bg-slate-800 border border-emerald-200 dark:border-slate-700">Aktivitas & Sarana Vokasi</span>
+                <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white mt-3">Riwayat Kegiatan Siswa</h2>
+                <p class="text-slate-500 dark:text-slate-400 mt-2 text-sm">Klik pada salah satu kartu kegiatan untuk memperbesar foto dokumentasi (mendukung fitur geser foto otomatis).</p>
+            </div>
+
+            <div id="container-kegiatan" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+                <p class="col-span-full text-center text-slate-400 py-6">Memuat riwayat kegiatan dari Google Sheets...</p>
+            </div>
+
+            <div id="fasilitas" class="pt-12 border-t border-slate-200 dark:border-slate-800">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="font-display font-extrabold text-3xl text-slate-900 dark:text-white">Fasilitas & Ruang Praktik Siswa (RPS)</h2>
+                    <p class="text-slate-500 dark:text-slate-400 mt-2 text-sm">Sarana laboratorium dan bengkel kerja berstandar industri di SMKN 1 Halmahera Timur.</p>
+                </div>
+                <div id="container-fasilitas" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <p class="col-span-full text-center text-slate-400 py-6">Memuat fasilitas sekolah...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 4. KOMPETENSI KEAHLIAN (JURUSAN) & TENAGA PENDIDIK (GURU) ==================== -->
     <section id="jurusan" class="py-16 lg:py-24 bg-slate-100/80 dark:bg-slate-900/50 border-y border-slate-200/80 dark:border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
                 <div>
                     <span class="text-brand-600 dark:text-amber-400 font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">Program Keahlian Vokasi</span>
                     <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white mt-3">Kompetensi Keahlian Unggulan</h2>
-                    <p class="text-slate-600 dark:text-slate-400 mt-2 max-w-2xl">
-                        Dirancang sesuai kebutuhan pembangunan infrastruktur, energi, pertambangan, dan transformasi digital di Kabupaten Halmahera Timur.
+                    <p class="text-slate-600 dark:text-slate-400 mt-2 max-w-2xl text-sm">
+                        Klik pada kartu jurusan untuk melihat galeri foto bengkel/RPS serta detail kurikulum & prospek kerjanya.
                     </p>
                 </div>
                 <a href="#akademik" onclick="switchAcademicTab('ppdb')" class="inline-flex items-center gap-2 text-sm font-bold text-brand-600 dark:text-amber-400 hover:underline">
@@ -511,9 +392,18 @@
                 </a>
             </div>
 
-            <!-- Dynamic Major Cards Grid -->
-            <div id="jurusan-cards-grid" class="grid md:grid-cols-3 gap-8">
-                <!-- Populated via renderMajorCards() -->
+            <!-- Dynamic Jurusan Cards Grid -->
+            <div id="container-jurusan" class="grid md:grid-cols-3 gap-8 mb-20"></div>
+
+            <!-- Tenaga Pendidik / Guru Section -->
+            <div id="guru" class="pt-12 border-t border-slate-200 dark:border-slate-800">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="font-display font-extrabold text-3xl text-slate-900 dark:text-white">Tenaga Pendidik & Kependidikan</h2>
+                    <p class="text-slate-500 dark:text-slate-400 mt-2 text-sm">Dewan guru instruktur kejuruan dan staf pengajar SMK Negeri 1 Halmahera Timur.</p>
+                </div>
+                <div id="container-guru" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <p class="col-span-full text-center text-slate-400 py-6">Memuat data tenaga pendidik...</p>
+                </div>
             </div>
         </div>
     </section>
@@ -521,47 +411,13 @@
     <!-- ==================== 5. SISTEM INFORMASI PKL / PRAKERIN & BKK ==================== -->
     <section id="pkl-bkk" class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-12 gap-8 items-start">
-            <!-- Left Info Column -->
             <div class="lg:col-span-4 space-y-6">
                 <div>
                     <span class="text-brand-600 dark:text-amber-400 font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-brand-50 dark:bg-slate-800 border border-brand-200 dark:border-slate-700">Link & Match DUDIKA</span>
                     <h2 class="font-display font-extrabold text-3xl text-slate-900 dark:text-white mt-3">Sistem Monitoring PKL & Bursa Kerja Khusus (BKK)</h2>
                     <p class="text-slate-600 dark:text-slate-400 mt-3 text-sm leading-relaxed">
-                        Siswa kelas XII SMK Negeri 1 Halmahera Timur melaksanakan <strong>Praktik Kerja Lapangan (PKL / Prakerin)</strong> pada berbagai instansi pemerintah daerah, BUMN, perusahaan industri pertambangan, serta perguruan tinggi mitra di Maluku Utara (seperti penempatan praktikum TI & jaringan di lingkungan kampus Ternate dan Kota Maba).
+                        Siswa kelas XII SMK Negeri 1 Halmahera Timur melaksanakan <strong>Praktik Kerja Lapangan (PKL / Prakerin)</strong> pada berbagai instansi pemerintah daerah, BUMN, perusahaan industri pertambangan, serta perguruan tinggi mitra di Maluku Utara.
                     </p>
-                </div>
-
-                <!-- Highlight Mitra Cards -->
-                <div class="space-y-3">
-                    <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center gap-3.5">
-                        <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
-                            <i class="fa-solid fa-building-flag"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Instansi Pemkab Halmahera Timur</h4>
-                            <p class="text-xs text-slate-500 dark:text-slate-400">Dinas Kominfo, Dinas PUPR, Sekretariat Daerah Kota Maba</p>
-                        </div>
-                    </div>
-
-                    <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center gap-3.5">
-                        <div class="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-950 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0">
-                            <i class="fa-solid fa-industry"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-sm text-slate-900 dark:text-white">BUMN & Industri Energi/Pertambangan</h4>
-                            <p class="text-xs text-slate-500 dark:text-slate-400">PT PLN (Persero) ULP Maba, PT Aneka Tambang Tbk (ANTAM) Haltim, Telkom</p>
-                        </div>
-                    </div>
-
-                    <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center gap-3.5">
-                        <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
-                            <i class="fa-solid fa-graduation-cap"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Perguruan Tinggi di Maluku Utara</h4>
-                            <p class="text-xs text-slate-500 dark:text-slate-400">UPT TIK & Fakultas Teknik Universitas Khairun (Unkhair) Ternate</p>
-                        </div>
-                    </div>
                 </div>
 
                 <button onclick="openPKLModal()" class="w-full py-3.5 px-5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-lg shadow-brand-600/20 transition flex items-center justify-center gap-2">
@@ -570,51 +426,41 @@
                 </button>
             </div>
 
-            <!-- Right Interactive Table Column -->
             <div class="lg:col-span-8 bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80 dark:border-slate-800">
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
                     <div>
                         <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white">Direktori Penempatan PKL Siswa & Mitra Aktif</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400">Tersinkronisasi langsung dengan Database Google Sheets BKK SMKN 1 Maba</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Tersinkronisasi dengan Google Sheets BKK SMKN 1 Maba</p>
                     </div>
                     <div class="flex flex-wrap gap-2">
-                        <select id="pkl-filter-jurusan" onchange="renderPKLTable()" class="px-3 py-2 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-500">
+                        <select id="pkl-filter-jurusan" onchange="renderPKLTable()" class="px-3 py-2 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
                             <option value="ALL">Semua Jurusan</option>
                             <option value="TJKT">TJKT / TKJ</option>
                             <option value="TITL">TITL (Listrik)</option>
                             <option value="TKP">TKP (Konstruksi)</option>
                         </select>
-                        <div class="relative">
-                            <input type="text" id="pkl-search-input" oninput="renderPKLTable()" placeholder="Cari instansi / lokasi..." class="pl-8 pr-3 py-2 rounded-xl text-xs bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-500 w-48 sm:w-56">
-                            <i class="fa-solid fa-magnifying-glass text-slate-400 text-xs absolute left-3 top-2.5"></i>
-                        </div>
+                        <input type="text" id="pkl-search-input" oninput="renderPKLTable()" placeholder="Cari instansi / lokasi..." class="px-3 py-2 rounded-xl text-xs bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 w-44">
                     </div>
                 </div>
 
                 <div class="overflow-x-auto">
                     <table class="w-full text-left border-collapse text-xs sm:text-sm">
                         <thead>
-                            <tr class="border-b border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-800/50">
-                                <th class="py-3 px-3 font-semibold rounded-tl-xl">Mitra DUDIKA / Instansi</th>
+                            <tr class="border-b border-slate-200 dark:border-slate-800 text-slate-500 bg-slate-50 dark:bg-slate-800/50">
+                                <th class="py-3 px-3 font-semibold">Mitra DUDIKA / Instansi</th>
                                 <th class="py-3 px-3 font-semibold">Lokasi</th>
                                 <th class="py-3 px-3 font-semibold">Jurusan</th>
                                 <th class="py-3 px-3 font-semibold">Kuota / Siswa</th>
-                                <th class="py-3 px-3 font-semibold rounded-tr-xl">Status</th>
+                                <th class="py-3 px-3 font-semibold">Status</th>
                             </tr>
                         </thead>
-                        <tbody id="pkl-table-body" class="divide-y divide-slate-200/70 dark:divide-slate-800">
-                            <!-- Populated dynamically via JS -->
-                        </tbody>
+                        <tbody id="pkl-table-body" class="divide-y divide-slate-200/70 dark:divide-slate-800"></tbody>
                     </table>
                 </div>
 
-                <!-- BKK Info Footer -->
-                <div class="mt-6 p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/70 dark:border-slate-700 flex flex-wrap items-center justify-between gap-4 text-xs">
-                    <div class="flex items-center gap-2.5">
-                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
-                        <span class="text-slate-600 dark:text-slate-300"><strong>Info BKK SMKN 1 Maba:</strong> Pembekalan & Pelepasan PKL Gelombang II dilaksanakan setiap awal semester ganjil/genap.</span>
-                    </div>
-                    <span id="pkl-count-badge" class="font-bold text-brand-600 dark:text-amber-400">Menampilkan 6 Mitra</span>
+                <div class="mt-6 p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/70 dark:border-slate-700 flex justify-between items-center text-xs">
+                    <span><strong>Info BKK SMKN 1 Maba:</strong> Data dikelola langsung dari CMS Dashboard Admin.</span>
+                    <span id="pkl-count-badge" class="font-bold text-brand-600 dark:text-amber-400">Menampilkan Mitra</span>
                 </div>
             </div>
         </div>
@@ -626,14 +472,10 @@
             <div class="text-center max-w-3xl mx-auto mb-10">
                 <span class="text-amber-400 font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-white/10 border border-white/15">Digitalisasi Layanan Sekolah</span>
                 <h2 class="font-display font-extrabold text-3xl sm:text-4xl mt-3">Pusat Layanan Akademik Terpadu</h2>
-                <p class="text-slate-300 mt-2 text-sm sm:text-base">
-                    Nikmati kemudahan pendaftaran peserta didik baru (PPDB) tersimpan ke Google Sheets, pengecekan status akademik & kelulusan via NISN, serta jadwal pelajaran aktif.
-                </p>
             </div>
 
-            <!-- Academic Switcher Pills -->
             <div class="flex flex-wrap justify-center gap-2.5 mb-10">
-                <button onclick="switchAcademicTab('ppdb')" id="acad-btn-ppdb" class="acad-tab-btn px-5 py-3 rounded-xl font-bold text-sm transition flex items-center gap-2 bg-amber-500 text-slate-950 shadow-lg shadow-amber-500/20">
+                <button onclick="switchAcademicTab('ppdb')" id="acad-btn-ppdb" class="acad-tab-btn px-5 py-3 rounded-xl font-bold text-sm transition flex items-center gap-2 bg-amber-500 text-slate-950 shadow-lg">
                     <i class="fa-solid fa-user-plus"></i> 1. Pendaftaran PPDB Online
                 </button>
                 <button onclick="switchAcademicTab('nisn')" id="acad-btn-nisn" class="acad-tab-btn px-5 py-3 rounded-xl font-bold text-sm transition flex items-center gap-2 bg-white/10 text-white hover:bg-white/20">
@@ -644,50 +486,40 @@
                 </button>
             </div>
 
-            <!-- WIDGET A: PENDAFTARAN PPDB ONLINE (TERSIMPAN DI GOOGLE SHEETS) -->
+            <!-- WIDGET A: PPDB ONLINE -->
             <div id="acad-content-ppdb" class="acad-tab-content">
                 <div class="grid lg:grid-cols-12 gap-8 items-start">
-                    <!-- PPDB Form -->
                     <div class="lg:col-span-7 bg-slate-800/90 border border-slate-700 rounded-3xl p-6 sm:p-8">
-                        <div class="flex items-center justify-between border-b border-slate-700 pb-4 mb-6">
-                            <div>
-                                <h3 class="font-display font-bold text-xl text-white">Formulir Pendaftaran PPDB Online</h3>
-                                <p class="text-xs text-slate-400">Tahun Pelajaran Baru • SMK Negeri 1 Halmahera Timur (NPSN 60200659)</p>
-                            </div>
-                            <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Gelombang Aktif</span>
-                        </div>
-
+                        <h3 class="font-display font-bold text-xl text-white mb-4">Formulir Pendaftaran PPDB Online</h3>
                         <form id="ppdb-form" onsubmit="handlePPDBSubmit(event)" class="space-y-4">
                             <div class="grid sm:grid-cols-2 gap-4">
                                 <div>
                                     <label class="block text-xs font-semibold text-slate-300 mb-1.5">Nama Lengkap Calon Siswa *</label>
-                                    <input type="text" id="ppdb-nama" required placeholder="Contoh: Rian Saputra" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-amber-400">
+                                    <input type="text" id="ppdb-nama" required placeholder="Contoh: Rian Saputra" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm">
                                 </div>
                                 <div>
                                     <label class="block text-xs font-semibold text-slate-300 mb-1.5">Nomor Induk Siswa Nasional (NISN) *</label>
-                                    <input type="text" id="ppdb-nisn" required maxlength="10" placeholder="10 Digit NISN (Contoh: 0084512390)" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm font-mono focus:outline-none focus:border-amber-400">
+                                    <input type="text" id="ppdb-nisn" required maxlength="10" placeholder="10 Digit NISN" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm font-mono">
                                 </div>
                             </div>
-
                             <div class="grid sm:grid-cols-2 gap-4">
                                 <div>
                                     <label class="block text-xs font-semibold text-slate-300 mb-1.5">Sekolah Asal (SMP / MTs) *</label>
-                                    <input type="text" id="ppdb-smp" required placeholder="Contoh: SMP Negeri 1 Maba" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-amber-400">
+                                    <input type="text" id="ppdb-smp" required placeholder="Contoh: SMP Negeri 1 Maba" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm">
                                 </div>
                                 <div>
                                     <label class="block text-xs font-semibold text-slate-300 mb-1.5">Jalur Pendaftaran *</label>
-                                    <select id="ppdb-jalur" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-amber-400">
+                                    <select id="ppdb-jalur" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm">
                                         <option value="Reguler / Umum">Jalur Reguler / Umum</option>
                                         <option value="Prestasi Akademik / Non-Akademik">Jalur Prestasi</option>
                                         <option value="Afirmasi (KIP / PIP)">Jalur Afirmasi (KIP / PIP)</option>
                                     </select>
                                 </div>
                             </div>
-
                             <div class="grid sm:grid-cols-2 gap-4">
                                 <div>
                                     <label class="block text-xs font-semibold text-slate-300 mb-1.5">Pilihan Kompetensi Keahlian 1 *</label>
-                                    <select id="ppdb-jurusan1" required class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-amber-400">
+                                    <select id="ppdb-jurusan1" required class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm">
                                         <option value="Teknik Jaringan Komputer & Telekomunikasi (TJKT)">Teknik Jaringan Komputer & Telekomunikasi (TJKT)</option>
                                         <option value="Teknik Instalasi Tenaga Listrik (TITL)">Teknik Instalasi Tenaga Listrik (TITL)</option>
                                         <option value="Teknik Konstruksi dan Perumahan (TKP)">Teknik Konstruksi dan Perumahan (TKP)</option>
@@ -695,177 +527,111 @@
                                 </div>
                                 <div>
                                     <label class="block text-xs font-semibold text-slate-300 mb-1.5">Pilihan Kompetensi Keahlian 2</label>
-                                    <select id="ppdb-jurusan2" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-amber-400">
+                                    <select id="ppdb-jurusan2" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm">
                                         <option value="Teknik Instalasi Tenaga Listrik (TITL)">Teknik Instalasi Tenaga Listrik (TITL)</option>
                                         <option value="Teknik Konstruksi dan Perumahan (TKP)">Teknik Konstruksi dan Perumahan (TKP)</option>
                                         <option value="Teknik Jaringan Komputer & Telekomunikasi (TJKT)">Teknik Jaringan Komputer & Telekomunikasi (TJKT)</option>
                                     </select>
                                 </div>
                             </div>
-
                             <div class="grid sm:grid-cols-2 gap-4">
                                 <div>
-                                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">Nomor WhatsApp Aktif Ortu/Siswa *</label>
-                                    <input type="tel" id="ppdb-wa" required placeholder="Contoh: 085311884115" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-amber-400">
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">Nomor WhatsApp Aktif *</label>
+                                    <input type="tel" id="ppdb-wa" required placeholder="0853..." class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm">
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">Alamat Domisili (Desa / Kecamatan) *</label>
-                                    <input type="text" id="ppdb-alamat" required placeholder="Contoh: Desa Soa Gimalaha, Kota Maba" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-amber-400">
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">Alamat Domisili *</label>
+                                    <input type="text" id="ppdb-alamat" required placeholder="Desa Soa Gimalaha, Kota Maba" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm">
                                 </div>
                             </div>
-
-                            <div class="pt-2">
-                                <button type="submit" id="btn-submit-ppdb" class="w-full py-3.5 px-6 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm shadow-lg shadow-amber-500/20 transition flex items-center justify-center gap-2">
-                                    <i class="fa-solid fa-paper-plane"></i>
-                                    <span>Kirim Pendaftaran ke Database & Terbitkan Kartu</span>
-                                </button>
-                            </div>
+                            <button type="submit" id="btn-submit-ppdb" class="w-full py-3.5 px-6 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm shadow-lg transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Kirim Pendaftaran ke Database Google Sheets</span>
+                            </button>
                         </form>
                     </div>
 
-                    <!-- PPDB Instant Registration Card Preview -->
+                    <!-- Kartu Bukti PPDB -->
                     <div class="lg:col-span-5 bg-slate-800/60 border border-slate-700 rounded-3xl p-6 sm:p-8">
                         <div class="flex items-center justify-between mb-4">
-                            <h4 class="font-display font-bold text-base text-amber-400 flex items-center gap-2">
-                                <i class="fa-solid fa-receipt"></i> Kartu Bukti Pendaftaran PPDB
-                            </h4>
+                            <h4 class="font-display font-bold text-base text-amber-400">Kartu Bukti Pendaftaran PPDB</h4>
                             <span id="ppdb-status-pill" class="text-[11px] px-2.5 py-0.5 rounded-full bg-slate-700 text-slate-300">Menunggu Input</span>
                         </div>
-
-                        <div id="ppdb-receipt-card" class="bg-white text-slate-900 rounded-2xl p-5 shadow-inner space-y-4 border-t-8 border-brand-600">
-                            <div class="flex items-center justify-between border-b border-slate-200 pb-3">
-                                <div>
-                                    <div class="font-display font-extrabold text-sm text-brand-800">PANITIA PPDB SMKN 1 HALTIM</div>
-                                    <div class="text-[11px] text-slate-500">Jl. Poros Soagimalaha, Kec. Kota Maba (NPSN: 60200659)</div>
-                                </div>
-                                <i class="fa-solid fa-qrcode text-3xl text-slate-700"></i>
-                            </div>
-
-                            <div class="space-y-2 text-xs">
-                                <div class="flex justify-between">
-                                    <span class="text-slate-500">No. Registrasi:</span>
-                                    <span id="rec-noreg" class="font-mono font-bold text-brand-700">PPDB-HALTIM-2026-001</span>
-                                </div>
-                                <div class="flex justify-between">
-                                    <span class="text-slate-500">Nama Calon Siswa:</span>
-                                    <span id="rec-nama" class="font-bold">Belum Diisi</span>
-                                </div>
-                                <div class="flex justify-between">
-                                    <span class="text-slate-500">NISN / Asal Sekolah:</span>
-                                    <span id="rec-nisn" class="font-semibold">-</span>
-                                </div>
-                                <div class="flex justify-between">
-                                    <span class="text-slate-500">Jalur Pilihan:</span>
-                                    <span id="rec-jalur" class="font-semibold">Reguler / Umum</span>
-                                </div>
-                                <div class="pt-2 border-t border-dashed border-slate-200">
-                                    <span class="text-slate-500 block mb-1">Pilihan Kompetensi Keahlian 1:</span>
-                                    <span id="rec-jurusan1" class="font-bold text-brand-700 block bg-blue-50 px-2.5 py-1.5 rounded-lg">Teknik Jaringan Komputer & Telekomunikasi (TJKT)</span>
-                                </div>
-                                <div>
-                                    <span class="text-slate-500 block mb-1">Pilihan Kompetensi Keahlian 2:</span>
-                                    <span id="rec-jurusan2" class="font-semibold text-slate-700 block">Teknik Instalasi Tenaga Listrik (TITL)</span>
-                                </div>
-                            </div>
-
-                            <div class="bg-amber-50 border border-amber-200 rounded-xl p-3 text-[11px] text-amber-900">
-                                <strong>Catatan Verifikasi Berkas:</strong> Silakan bawa cetak kartu ini beserta fotokopi Ijazah/SKL, Kartu Keluarga, dan Rapor ke Sekretariat PPDB SMKN 1 Maba di Desa Soa Gimalaha.
-                            </div>
+                        <div id="ppdb-receipt-card" class="bg-white text-slate-900 rounded-2xl p-5 space-y-3 border-t-8 border-brand-600 text-xs">
+                            <div class="font-display font-extrabold text-sm text-brand-800 border-b pb-2">PANITIA PPDB SMKN 1 HALTIM</div>
+                            <div class="flex justify-between"><span>No. Registrasi:</span><strong id="rec-noreg" class="font-mono text-brand-700">PPDB-HALTIM-2026-001</strong></div>
+                            <div class="flex justify-between"><span>Nama Siswa:</span><strong id="rec-nama">Belum Diisi</strong></div>
+                            <div class="flex justify-between"><span>NISN / Asal:</span><strong id="rec-nisn">-</strong></div>
+                            <div class="flex justify-between"><span>Jalur:</span><strong id="rec-jalur">Reguler / Umum</strong></div>
+                            <div class="pt-2 border-t"><span class="text-slate-500 block">Pilihan 1:</span><strong id="rec-jurusan1" class="text-brand-700">Teknik Jaringan Komputer & Telekomunikasi (TJKT)</strong></div>
+                            <div><span class="text-slate-500 block">Pilihan 2:</span><strong id="rec-jurusan2">Teknik Instalasi Tenaga Listrik (TITL)</strong></div>
                         </div>
-
                         <div class="mt-4 flex gap-3">
-                            <button onclick="fillDemoPPDB()" class="flex-1 py-2.5 px-3 rounded-xl bg-slate-700 hover:bg-slate-600 text-xs font-semibold text-slate-200 transition">
-                                <i class="fa-solid fa-wand-magic-sparkles mr-1 text-amber-400"></i> Isi Contoh Data
-                            </button>
-                            <button onclick="printPPDBCard()" class="flex-1 py-2.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-xs font-bold text-white transition">
-                                <i class="fa-solid fa-print mr-1"></i> Cetak / Simpan Bukti
-                            </button>
+                            <button onclick="fillDemoPPDB()" class="flex-1 py-2.5 px-3 rounded-xl bg-slate-700 hover:bg-slate-600 text-xs font-semibold text-slate-200">Isi Contoh</button>
+                            <button onclick="printPPDBCard()" class="flex-1 py-2.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-xs font-bold text-white">Cetak Kartu</button>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- WIDGET B: CEK DATA SISWA & KELULUSAN VIA NISN -->
+            <!-- WIDGET B: CEK NISN -->
             <div id="acad-content-nisn" class="acad-tab-content hidden">
                 <div class="max-w-4xl mx-auto bg-slate-800/90 border border-slate-700 rounded-3xl p-6 sm:p-10">
                     <div class="text-center max-w-2xl mx-auto mb-6">
                         <h3 class="font-display font-bold text-2xl text-white">Pengecekan Status Akademik, PKL & Kelulusan Siswa</h3>
-                        <p class="text-xs sm:text-sm text-slate-300 mt-1">
-                            Masukkan 10 digit NISN dari Google Sheets (termasuk NISN pendaftar PPDB baru) atau klik salah satu <strong>NISN Percontohan</strong> di bawah ini.
-                        </p>
+                        <p class="text-xs text-slate-300 mt-1">Ketik 10 digit NISN atau klik tombol NISN Demo di bawah ini.</p>
                     </div>
-
-                    <!-- Demo NISN Pills -->
-                    <div class="flex flex-wrap items-center justify-center gap-2 mb-6">
-                        <span class="text-xs text-slate-400">Klik NISN Demo:</span>
-                        <button onclick="lookupNISN('0067891234')" class="px-3 py-1.5 rounded-lg bg-slate-700 hover:bg-amber-500 hover:text-slate-950 text-xs font-mono font-bold transition">
-                            0067891234 (TJKT - Kelas XII)
-                        </button>
-                        <button onclick="lookupNISN('0061122334')" class="px-3 py-1.5 rounded-lg bg-slate-700 hover:bg-amber-500 hover:text-slate-950 text-xs font-mono font-bold transition">
-                            0061122334 (TITL - Kelas XII)
-                        </button>
-                        <button onclick="lookupNISN('0075566778')" class="px-3 py-1.5 rounded-lg bg-slate-700 hover:bg-amber-500 hover:text-slate-950 text-xs font-mono font-bold transition">
-                            0075566778 (TKP - Kelas XI)
-                        </button>
+                    <div class="flex flex-wrap justify-center gap-2 mb-6">
+                        <button onclick="lookupNISN('0067891234')" class="px-3 py-1.5 rounded-lg bg-slate-700 hover:bg-amber-500 hover:text-slate-950 text-xs font-mono font-bold">0067891234 (TJKT)</button>
+                        <button onclick="lookupNISN('0061122334')" class="px-3 py-1.5 rounded-lg bg-slate-700 hover:bg-amber-500 hover:text-slate-950 text-xs font-mono font-bold">0061122334 (TITL)</button>
+                        <button onclick="lookupNISN('0075566778')" class="px-3 py-1.5 rounded-lg bg-slate-700 hover:bg-amber-500 hover:text-slate-950 text-xs font-mono font-bold">0075566778 (TKP)</button>
                     </div>
-
-                    <!-- Search Box -->
                     <div class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto mb-8">
-                        <input type="text" id="nisn-search-input" placeholder="Ketik 10 digit NISN siswa..." class="flex-1 px-4 py-3.5 rounded-xl bg-slate-900 border border-slate-700 text-white font-mono text-sm focus:outline-none focus:border-amber-400">
-                        <button onclick="lookupNISN()" class="px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm transition flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-magnifying-glass"></i> Periksa Data
-                        </button>
+                        <input type="text" id="nisn-search-input" placeholder="Ketik 10 digit NISN siswa..." class="flex-1 px-4 py-3.5 rounded-xl bg-slate-900 border border-slate-700 text-white font-mono text-sm">
+                        <button onclick="lookupNISN()" class="px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm">Periksa Data</button>
                     </div>
-
-                    <!-- NISN Result Container -->
-                    <div id="nisn-result-box" class="bg-slate-900/90 border border-slate-700/80 rounded-2xl p-6">
-                        <!-- Default populated via JS -->
-                    </div>
+                    <div id="nisn-result-box" class="bg-slate-900/90 border border-slate-700/80 rounded-2xl p-6"></div>
                 </div>
             </div>
 
-            <!-- WIDGET C: JADWAL BLOK PRAKTIK & AGENDA AKADEMIK -->
+            <!-- WIDGET C: JADWAL PRAKTIK RPS -->
             <div id="acad-content-jadwal" class="acad-tab-content hidden">
                 <div class="bg-slate-800/90 border border-slate-700 rounded-3xl p-6 sm:p-8">
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-                        <div>
-                            <h3 class="font-display font-bold text-xl text-white">Jadwal Pembelajaran & Praktikum Bengkel (RPS)</h3>
-                            <p class="text-xs text-slate-400">Filter jadwal produktif berdasarkan Kompetensi Keahlian (Waktu Indonesia Timur / WIT)</p>
-                        </div>
+                    <div class="flex flex-wrap justify-between items-center gap-4 mb-6">
+                        <h3 class="font-display font-bold text-xl text-white">Jadwal Pembelajaran & Praktikum Bengkel (RPS)</h3>
                         <div class="flex gap-2">
                             <button onclick="filterSchedule('TJKT')" id="sched-btn-TJKT" class="sched-btn px-4 py-2 rounded-xl text-xs font-bold bg-amber-500 text-slate-950">TJKT / TKJ</button>
-                            <button onclick="filterSchedule('TITL')" id="sched-btn-TITL" class="sched-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-700 text-slate-200 hover:bg-slate-600">TITL (Listrik)</button>
-                            <button onclick="filterSchedule('TKP')" id="sched-btn-TKP" class="sched-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-700 text-slate-200 hover:bg-slate-600">TKP (Konstruksi)</button>
+                            <button onclick="filterSchedule('TITL')" id="sched-btn-TITL" class="sched-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-700 text-slate-200">TITL (Listrik)</button>
+                            <button onclick="filterSchedule('TKP')" id="sched-btn-TKP" class="sched-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-700 text-slate-200">TKP (Konstruksi)</button>
                         </div>
                     </div>
-
-                    <div id="schedule-grid" class="grid md:grid-cols-3 gap-4">
-                        <!-- Populated via JS -->
-                    </div>
+                    <div id="schedule-grid" class="grid md:grid-cols-3 gap-4"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== 7. BERITA, PENGUMUMAN & GALERI PRAKTIK ==================== -->
+    <!-- ==================== 7. BERITA, PENGUMUMAN & GALERI FOTO ==================== -->
     <section id="berita" class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
             <div>
                 <span class="text-brand-600 dark:text-amber-400 font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-brand-50 dark:bg-slate-800 border border-brand-200 dark:border-slate-700">Kabar SMKN 1 Maba</span>
-                <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white mt-3">Berita, Kegiatan PKL & Uji Kompetensi</h2>
+                <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white mt-3">Papan Pengumuman & Berita Kegiatan</h2>
             </div>
-
-            <!-- News Filter Buttons -->
             <div class="flex flex-wrap gap-2">
-                <button onclick="filterNews('ALL')" class="news-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-brand-600 text-white" data-cat="ALL">Semua Berita</button>
-                <button onclick="filterNews('PKL')" class="news-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800" data-cat="PKL">Kegiatan PKL</button>
-                <button onclick="filterNews('UKK')" class="news-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800" data-cat="UKK">Uji Kompetensi (UKK)</button>
-                <button onclick="filterNews('PRESTASI')" class="news-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800" data-cat="PRESTASI">Prestasi & Sekolah</button>
+                <button onclick="filterNews('ALL')" class="news-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-brand-600 text-white" data-cat="ALL">Semua</button>
+                <button onclick="filterNews('PKL')" class="news-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 border" data-cat="PKL">Kegiatan PKL</button>
+                <button onclick="filterNews('UKK')" class="news-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 border" data-cat="UKK">Uji Kompetensi</button>
+                <button onclick="filterNews('PRESTASI')" class="news-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 border" data-cat="PRESTASI">Pengumuman Sekolah</button>
             </div>
         </div>
 
-        <div id="news-grid" class="grid md:grid-cols-3 gap-8">
-            <!-- Populated via JS -->
+        <div id="news-grid" class="grid md:grid-cols-3 gap-8 mb-20"></div>
+
+        <!-- Galeri Foto Dokumentasi (Dari Dashboard) -->
+        <div id="galeri" class="pt-12 border-t border-slate-200 dark:border-slate-800">
+            <h2 class="font-display font-extrabold text-3xl text-slate-900 dark:text-white text-center mb-10">Galeri Dokumentasi Sekolah</h2>
+            <div id="container-galeri" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
         </div>
     </section>
 
@@ -873,99 +639,59 @@
     <section id="kontak" class="py-16 lg:py-24 bg-slate-100/90 dark:bg-slate-900/60 border-t border-slate-200 dark:border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-12 gap-10">
-                <!-- Left Contact Info & Interactive Map Card -->
                 <div class="lg:col-span-6 space-y-6">
                     <div>
-                        <span class="text-brand-600 dark:text-amber-400 font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">Layanan Informasi Publik</span>
-                        <h2 class="font-display font-extrabold text-3xl text-slate-900 dark:text-white mt-3">Hubungi SMK Negeri 1 Halmahera Timur</h2>
-                        <p class="text-slate-600 dark:text-slate-400 mt-2 text-sm">
-                            Kunjungi kampus kami di Desa Soa Gimalaha, Kecamatan Kota Maba, atau kirimkan pesan terkait layanan akademik, legalisir ijazah, maupun kerja sama industri.
-                        </p>
+                        <h2 class="font-display font-extrabold text-3xl text-slate-900 dark:text-white">Hubungi SMK Negeri 1 Halmahera Timur</h2>
+                        <p class="text-slate-600 dark:text-slate-400 mt-2 text-sm">Kunjungi kampus kami atau kirimkan pesan terkait layanan akademik dan kerja sama industri.</p>
                     </div>
-
                     <div class="grid sm:grid-cols-2 gap-4">
-                        <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800">
-                            <div class="w-10 h-10 rounded-xl bg-brand-50 dark:bg-slate-800 text-brand-600 dark:text-amber-400 flex items-center justify-center mb-3">
-                                <i class="fa-solid fa-map-location-dot text-lg"></i>
-                            </div>
-                            <h3 class="font-bold text-sm text-slate-900 dark:text-white">Alamat Kampus</h3>
-                            <p id="contact-card-alamat" class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
-                                Jl. Poros Soagimalaha / Jl. Pendidikan, Desa Soa Gimalaha, Kec. Kota Maba, Kab. Halmahera Timur, Maluku Utara 97862
-                            </p>
+                        <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border">
+                            <h3 class="font-bold text-sm mb-1">📍 Alamat Kampus</h3>
+                            <p id="tampil-alamat" class="text-xs text-slate-500 leading-relaxed">Jl. Poros Soagimalaha, Desa Soa Gimalaha, Kec. Kota Maba, Kab. Halmahera Timur, Maluku Utara 97862</p>
                         </div>
-
-                        <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800">
-                            <div class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-slate-800 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-3">
-                                <i class="fa-solid fa-phone-volume text-lg"></i>
-                            </div>
-                            <h3 class="font-bold text-sm text-slate-900 dark:text-white">Telepon & Pos-el Resmi</h3>
-                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
-                                Telp/WA: <strong id="contact-card-telp">0853-1188-4115</strong><br>
-                                Email: <span id="contact-card-email">smkn1maba@gmail.com</span><br>
-                                Web: smkn1haltim.sch.id
+                        <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border">
+                            <h3 class="font-bold text-sm mb-1">📞 Telepon & Email</h3>
+                            <p class="text-xs text-slate-500 leading-relaxed">
+                                Telp/WA: <strong id="tampil-telepon">0853-1188-4115</strong><br>
+                                Email: <span id="tampil-email">smkn1maba@gmail.com</span>
                             </p>
                         </div>
                     </div>
-
-                    <!-- Stylized Location Card for Soa Gimalaha, Kota Maba -->
-                    <div class="rounded-3xl overflow-hidden bg-gradient-to-br from-slate-800 to-slate-950 text-white p-6 border border-slate-700 relative">
-                        <div class="flex items-start justify-between gap-4 relative z-10">
-                            <div>
-                                <span class="px-2.5 py-1 rounded-md bg-amber-500/20 text-amber-300 text-[11px] font-bold">TITIK KOORDINAT KAMPUS</span>
-                                <h4 class="font-display font-bold text-lg mt-2">Desa Soa Gimalaha, Kec. Kota Maba</h4>
-                                <p class="text-xs text-slate-300 mt-1">Kabupaten Halmahera Timur • Provinsi Maluku Utara (Kode Pos 97862)</p>
-                                <div class="mt-4 flex flex-wrap gap-2">
-                                    <a href="https://www.google.com/maps/search/?api=1&query=SMK+Negeri+1+Halmahera+Timur+Maba" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs transition">
-                                        <i class="fa-solid fa-diamond-turn-right"></i> Buka di Google Maps
-                                    </a>
-                                    <button onclick="copyOfficialInfo()" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-xs transition">
-                                        <i class="fa-regular fa-copy"></i> Salin Alamat Lengkap
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-amber-400 text-2xl shrink-0">
-                                <i class="fa-solid fa-compass"></i>
-                            </div>
-                        </div>
+                    <div class="h-64 bg-slate-800 rounded-3xl overflow-hidden shadow-inner border border-slate-300 dark:border-slate-700">
+                        <iframe id="tampil-peta" src="https://www.google.com/maps?q=SMK+Negeri+1+Halmahera+Timur+Maba&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
 
-                <!-- Right Interactive Contact Form -->
                 <div class="lg:col-span-6">
-                    <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80 dark:border-slate-800">
-                        <h3 class="font-display font-bold text-xl text-slate-900 dark:text-white mb-1">Kirim Pesan / Aspirasi Layanan</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mb-6">Pesan Anda akan disimpan otomatis ke Google Sheets Tata Usaha & Humas SMKN 1 Halmahera Timur.</p>
-
+                    <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 shadow-sm border">
+                        <h3 class="font-display font-bold text-xl mb-1">Kirim Pesan / Aspirasi Layanan</h3>
+                        <p class="text-xs text-slate-500 mb-6">Pesan Anda langsung tersimpan ke Google Sheets & Kotak Masuk Dashboard Admin.</p>
                         <form onsubmit="handleContactSubmit(event)" class="space-y-4">
                             <div class="grid sm:grid-cols-2 gap-4">
                                 <div>
-                                    <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Nama Lengkap *</label>
-                                    <input type="text" id="contact-name" required placeholder="Nama Anda" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+                                    <label class="block text-xs font-semibold mb-1">Nama Lengkap *</label>
+                                    <input type="text" id="contact-name" required placeholder="Nama Anda" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border text-sm">
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Kontak WhatsApp / Email *</label>
-                                    <input type="text" id="contact-email" required placeholder="No. HP atau Email" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+                                    <label class="block text-xs font-semibold mb-1">No. WhatsApp / Email *</label>
+                                    <input type="text" id="contact-email" required placeholder="0853..." class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border text-sm">
                                 </div>
                             </div>
-
                             <div>
-                                <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Kategori Keperluan *</label>
-                                <select id="contact-subject" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+                                <label class="block text-xs font-semibold mb-1">Kategori Keperluan *</label>
+                                <select id="contact-subject" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border text-sm">
                                     <option value="Informasi PPDB Siswa Baru">Informasi PPDB Siswa Baru</option>
                                     <option value="Kerja Sama PKL / Kemitraan DUDIKA">Kerja Sama PKL / Kemitraan DUDIKA</option>
                                     <option value="Layanan Legalisir Ijazah & Alumni">Layanan Legalisir Ijazah & Alumni</option>
                                     <option value="Layanan Tata Usaha & Dapodik">Layanan Tata Usaha & Dapodik</option>
                                 </select>
                             </div>
-
                             <div>
-                                <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Isi Pesan / Pertanyaan *</label>
-                                <textarea id="contact-message" rows="4" required placeholder="Tuliskan pesan atau keperluan Anda secara jelas..." class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500"></textarea>
+                                <label class="block text-xs font-semibold mb-1">Isi Pesan *</label>
+                                <textarea id="contact-message" rows="4" required placeholder="Tuliskan pesan Anda..." class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border text-sm"></textarea>
                             </div>
-
-                            <button type="submit" id="btn-submit-contact" class="w-full py-3.5 px-6 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-lg shadow-brand-600/20 transition flex items-center justify-center gap-2">
-                                <i class="fa-solid fa-paper-plane"></i>
-                                <span>Kirim Pesan ke Humas Sekolah</span>
+                            <button type="submit" id="btn-submit-contact" class="w-full py-3.5 px-6 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-lg transition">
+                                Kirim Pesan ke Humas Sekolah
                             </button>
                         </form>
                     </div>
@@ -975,146 +701,79 @@
     </section>
 
     <!-- ==================== FOOTER ==================== -->
-    <footer class="bg-slate-950 text-slate-400 pt-14 pb-8 border-t border-slate-800 text-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-slate-800">
-                <!-- Col 1 -->
-                <div class="space-y-3">
-                    <div class="flex items-center gap-3">
-                        <img src="logo.png" onerror="this.style.display='none'; document.getElementById('footer-fallback-logo').classList.remove('hidden');" alt="Logo SMKN 1 Haltim" class="w-10 h-10 rounded-full object-cover bg-white p-0.5">
-                        <div id="footer-fallback-logo" class="hidden w-10 h-10 rounded-xl bg-brand-600 flex items-center justify-center text-amber-400 font-bold">
-                            <i class="fa-solid fa-graduation-cap text-lg"></i>
-                        </div>
-                        <span class="font-display font-extrabold text-white text-lg">SMKN 1 HALTIM</span>
-                    </div>
-                    <p class="text-xs leading-relaxed text-slate-400">
-                        SMK Negeri 1 Halmahera Timur (SMK N 1 Maba) adalah institusi pendidikan kejuruan negeri di bawah naungan Dinas Pendidikan dan Kebudayaan Provinsi Maluku Utara.
-                    </p>
-                    <div class="text-xs font-mono text-amber-400">NPSN: 60200659 • Terakreditasi B</div>
-                </div>
-
-                <!-- Col 2 -->
-                <div>
-                    <h4 class="font-display font-bold text-white text-sm mb-3">Kompetensi Keahlian</h4>
-                    <ul class="space-y-2 text-xs">
-                        <li><a href="#jurusan" onclick="openMajorModal('TJKT')" class="hover:text-amber-400 transition">• Teknik Jaringan Komputer & Telekomunikasi (TJKT)</a></li>
-                        <li><a href="#jurusan" onclick="openMajorModal('TITL')" class="hover:text-amber-400 transition">• Teknik Instalasi Tenaga Listrik (TITL)</a></li>
-                        <li><a href="#jurusan" onclick="openMajorModal('TKP')" class="hover:text-amber-400 transition">• Teknik Konstruksi dan Perumahan (TKP)</a></li>
-                        <li><a href="#pkl-bkk" class="hover:text-amber-400 transition">• Bursa Kerja Khusus (BKK) & Prakerin</a></li>
-                    </ul>
-                </div>
-
-                <!-- Col 3 -->
-                <div>
-                    <h4 class="font-display font-bold text-white text-sm mb-3">Tautan Akademik & Admin</h4>
-                    <ul class="space-y-2 text-xs">
-                        <li><a href="#akademik" onclick="switchAcademicTab('ppdb')" class="hover:text-amber-400 transition">• Pendaftaran PPDB Online</a></li>
-                        <li><a href="#akademik" onclick="switchAcademicTab('nisn')" class="hover:text-amber-400 transition">• Cek Status Siswa & Kelulusan (NISN)</a></li>
-                        <li><a href="#akademik" onclick="switchAcademicTab('jadwal')" class="hover:text-amber-400 transition">• Jadwal Praktik Ruang Praktik Siswa (RPS)</a></li>
-                        <li><a href="dashboard.html" class="hover:text-amber-400 transition font-semibold text-amber-300">• Panel CMS Administrator (Dashboard)</a></li>
-                    </ul>
-                </div>
-
-                <!-- Col 4 -->
-                <div>
-                    <h4 class="font-display font-bold text-white text-sm mb-3">Alamat & Sekretariat</h4>
-                    <p id="footer-alamat" class="text-xs leading-relaxed">
-                        Jl. Poros Soagimalaha / Jl. Pendidikan, Desa Soa Gimalaha, Kec. Kota Maba, Kab. Halmahera Timur, Maluku Utara 97862
-                    </p>
-                    <p class="text-xs mt-2 text-slate-300">
-                        <i class="fa-solid fa-phone mr-1 text-emerald-400"></i> <span id="footer-telp">0853-1188-4115</span><br>
-                        <i class="fa-solid fa-envelope mr-1 text-amber-400"></i> <span id="footer-email">smkn1maba@gmail.com</span>
-                    </p>
-                </div>
+    <footer class="bg-slate-950 text-slate-400 py-10 border-t border-slate-800 text-center text-xs">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <img src="https://img.sanishtech.com/u/0f05f5fd2f07f7eea84d736986066cc2.jpg" alt="Logo" class="w-8 h-8 rounded-full object-cover bg-white p-0.5">
+                <span class="font-bold text-white">SMK Negeri 1 Halmahera Timur (SMKN 1 Maba)</span>
             </div>
-
-            <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-                <div>© 2026 SMK Negeri 1 Halmahera Timur (SMKN 1 Maba). Hak Cipta Dilindungi.</div>
-                <div class="flex items-center gap-4">
-                    <span>Kemendikdasmen RI</span>
-                    <span>•</span>
-                    <span>Provinsi Maluku Utara</span>
-                </div>
-            </div>
+            <div>© 2026 SMK Negeri 1 Halmahera Timur • NPSN: 60200659. All rights reserved.</div>
         </div>
     </footer>
 
-    <!-- ==================== MODAL 1: DETAIL KOMPETENSI KEAHLIAN ==================== -->
-    <div id="major-modal" class="fixed inset-0 z-50 hidden bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 dark:border-slate-800 p-6 sm:p-8 relative">
-            <button onclick="closeMajorModal()" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-rose-500 hover:text-white flex items-center justify-center absolute top-5 right-5 transition">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <div id="major-modal-content">
-                <!-- Populated dynamically via JS -->
+    <!-- ==================== MODAL SLIDER POP-UP (UNTUK KEGIATAN & JURUSAN) ==================== -->
+    <div id="modalSlider" class="fixed inset-0 z-[110] hidden flex items-center justify-center p-4 md:p-10">
+        <div class="absolute inset-0 bg-slate-950/90 backdrop-blur-sm" onclick="closeSliderModal()"></div>
+        <div class="relative bg-white dark:bg-slate-900 rounded-3xl w-full max-w-4xl overflow-hidden shadow-2xl flex flex-col max-h-[92vh] z-10">
+            <button onclick="closeSliderModal()" class="absolute top-4 right-4 z-30 bg-black/60 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-red-600 transition font-bold text-xl">&times;</button>
+            <div class="relative w-full h-64 md:h-[420px] bg-black" id="slider-container"></div>
+            <button onclick="prevSlide()" class="absolute top-[120px] md:top-[200px] left-4 z-20 bg-black/50 hover:bg-black/80 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl">&#10094;</button>
+            <button onclick="nextSlide()" class="absolute top-[120px] md:top-[200px] right-4 z-20 bg-black/50 hover:bg-black/80 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl">&#10095;</button>
+            <div id="slider-dots" class="absolute top-[230px] md:top-[390px] left-0 right-0 flex justify-center gap-2 z-20"></div>
+            <div class="p-6 md:p-8 overflow-y-auto">
+                <span id="slider-subtitle" class="text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-amber-400">Dokumentasi</span>
+                <h3 id="slider-title" class="text-2xl font-display font-bold text-slate-900 dark:text-white mt-1 mb-3">Judul</h3>
+                <p id="slider-desc" class="text-slate-600 dark:text-slate-300 leading-relaxed text-sm md:text-base whitespace-pre-wrap">Deskripsi</p>
             </div>
         </div>
     </div>
 
-    <!-- ==================== MODAL 2: PORTAL LOGIN SIAKAD & ADMIN CMS ==================== -->
+    <!-- ==================== MODAL LOGIN ADMIN & SIAKAD ==================== -->
     <div id="login-modal" class="fixed inset-0 z-50 hidden bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-md w-full shadow-2xl border border-slate-200 dark:border-slate-800 p-6 sm:p-8 relative">
-            <button onclick="closeLoginModal()" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-rose-500 hover:text-white flex items-center justify-center absolute top-5 right-5 transition">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-
+        <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-md w-full shadow-2xl border p-6 sm:p-8 relative">
+            <button onclick="closeLoginModal()" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-rose-500 hover:text-white flex items-center justify-center absolute top-5 right-5">&times;</button>
             <div class="flex items-center gap-3 mb-6">
-                <div class="w-11 h-11 rounded-2xl bg-brand-600 text-amber-400 flex items-center justify-center text-xl">
-                    <i class="fa-solid fa-user-lock"></i>
-                </div>
+                <img src="https://img.sanishtech.com/u/0f05f5fd2f07f7eea84d736986066cc2.jpg" class="w-11 h-11 rounded-full object-cover">
                 <div>
-                    <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white">Portal SIAKAD & CMS Admin</h3>
-                    <p class="text-xs text-slate-500 dark:text-slate-400">SMK Negeri 1 Halmahera Timur (NPSN 60200659)</p>
+                    <h3 class="font-display font-bold text-lg">Login Admin CMS & SIAKAD</h3>
+                    <p class="text-xs text-slate-500">SMK Negeri 1 Halmahera Timur</p>
                 </div>
             </div>
-
             <form onsubmit="handleLoginSubmit(event)" class="space-y-4">
                 <div>
-                    <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Peran Pengguna (Role)</label>
-                    <select id="login-role" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm">
-                        <option value="Admin Dapodik / Operator">Admin Dapodik / Operator (Masuk CMS Dashboard)</option>
-                        <option value="Guru / Tenaga Pendidik">Guru / Tenaga Pendidik (NIP / NUPTK)</option>
-                        <option value="Siswa / Peserta Didik">Siswa / Peserta Didik (NISN)</option>
-                    </select>
+                    <label class="block text-xs font-semibold mb-1">Username</label>
+                    <input type="text" id="login-user" required placeholder="Username Admin" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border text-sm">
                 </div>
                 <div>
-                    <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">ID Pengguna (Username / NISN / NIP)</label>
-                    <input type="text" id="login-user" required placeholder="Contoh: admin atau 0067891234" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm">
+                    <label class="block text-xs font-semibold mb-1">Password</label>
+                    <input type="password" id="login-pass" required placeholder="••••••••" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border text-sm">
                 </div>
-                <div>
-                    <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Kata Sandi</label>
-                    <input type="password" id="login-pass" required placeholder="••••••••" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm">
-                </div>
-                <button type="submit" id="btn-submit-login" class="w-full py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-lg shadow-brand-600/20 transition">
-                    Masuk ke Portal
+                <button type="submit" id="btn-submit-login" class="w-full py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-lg transition">
+                    Masuk ke CMS Dashboard
                 </button>
             </form>
         </div>
     </div>
 
-    <!-- ==================== MODAL 3: AJUKAN TEMPAT PKL / MITRA DUDIKA ==================== -->
+    <!-- ==================== MODAL AJUKAN TEMPAT PKL ==================== -->
     <div id="pkl-modal" class="fixed inset-0 z-50 hidden bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-lg w-full shadow-2xl border border-slate-200 dark:border-slate-800 p-6 sm:p-8 relative">
-            <button onclick="closePKLModal()" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-rose-500 hover:text-white flex items-center justify-center absolute top-5 right-5 transition">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-
-            <h3 class="font-display font-bold text-xl text-slate-900 dark:text-white mb-1">Pengajuan Penempatan PKL / Mitra Baru</h3>
-            <p class="text-xs text-slate-500 dark:text-slate-400 mb-5">Tambahkan usulan instansi/perusahaan PKL langsung ke Google Sheets BKK SMKN 1 Maba.</p>
-
+        <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-lg w-full shadow-2xl border p-6 sm:p-8 relative">
+            <button onclick="closePKLModal()" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-rose-500 hover:text-white flex items-center justify-center absolute top-5 right-5">&times;</button>
+            <h3 class="font-display font-bold text-xl mb-1">Pengajuan Penempatan PKL / Mitra Baru</h3>
+            <p class="text-xs text-slate-500 mb-5">Tersimpan otomatis ke Google Sheets BKK SMKN 1 Maba.</p>
             <form onsubmit="handleAddPKLSubmit(event)" class="space-y-4">
                 <div>
                     <label class="block text-xs font-semibold mb-1">Nama Instansi / Perusahaan / Kampus Mitra *</label>
-                    <input type="text" id="new-pkl-mitra" required placeholder="Contoh: Dinas Lingkungan Hidup Kab. Haltim" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm">
+                    <input type="text" id="new-pkl-mitra" required class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border text-sm">
                 </div>
                 <div class="grid grid-cols-2 gap-3">
                     <div>
                         <label class="block text-xs font-semibold mb-1">Lokasi / Kota *</label>
-                        <input type="text" id="new-pkl-lokasi" required placeholder="Contoh: Kota Maba" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm">
+                        <input type="text" id="new-pkl-lokasi" required class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border text-sm">
                     </div>
                     <div>
-                        <label class="block text-xs font-semibold mb-1">Kompetensi Keahlian *</label>
-                        <select id="new-pkl-jurusan" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm">
+                        <label class="block text-xs font-semibold mb-1">Jurusan *</label>
+                        <select id="new-pkl-jurusan" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border text-sm">
                             <option value="TJKT">TJKT / TKJ</option>
                             <option value="TITL">TITL (Listrik)</option>
                             <option value="TKP">TKP (Konstruksi)</option>
@@ -1123,904 +782,482 @@
                 </div>
                 <div>
                     <label class="block text-xs font-semibold mb-1">Kuota / Nama Siswa Pengusul *</label>
-                    <input type="text" id="new-pkl-kuota" required placeholder="Contoh: 4 Siswa Kelas XII" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm">
+                    <input type="text" id="new-pkl-kuota" required class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border text-sm">
                 </div>
                 <button type="submit" id="btn-submit-pkl" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition">
-                    <i class="fa-solid fa-plus mr-1"></i> Simpan ke Direktori PKL (Google Sheets)
+                    Simpan ke Direktori PKL
                 </button>
             </form>
         </div>
     </div>
 
-    <!-- ==================== CUSTOM TOAST NOTIFICATION ==================== -->
     <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 max-w-sm w-full pointer-events-none"></div>
 
-    <!-- ==================== JAVASCRIPT APPLICATION LOGIC & GOOGLE SHEETS API ==================== -->
+    <!-- ==================== JAVASCRIPT LOGIC ==================== -->
     <script>
-        // =========================================================================
-        // KONFIGURASI URL GOOGLE APPS SCRIPT (TEMPEL URL WEB APP V12 ANDA DI SINI)
-        // =========================================================================
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyiJYcSt1GMnopzjYqOKs_07gSX9S6UG2XjoVOndMO8Du3b2HYsutYf1KQdxQE8XUz1/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwHP24iFlzi-d6aJetJB1FJvjqtAnrbkA92WVktIwDdq2J4q-xqSR6nmXC-iuxTu7wT/exec';
 
-        // Helper Pengiriman Data POST ke Google Sheets
-        async function postToSheets(payload) {
-            if (!SCRIPT_URL || SCRIPT_URL.includes('PASTE_URL')) {
-                console.warn('SCRIPT_URL belum diisi. Menyimpan di memori lokal sementara.');
-                return { status: 'local_only' };
-            }
-            const response = await fetch(SCRIPT_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-                body: JSON.stringify(payload)
-            });
-            return await response.json();
-        }
-
-        // Helper Sinkronisasi Penuh Seluruh Elemen dari Google Sheets
-        async function syncFromGoogleSheets() {
-            if (!SCRIPT_URL || SCRIPT_URL.includes('PASTE_URL')) return;
-            try {
-                const res = await fetch(SCRIPT_URL);
-                const data = await res.json();
-                if (data.status === 'success') {
-                    // 1. Update Profil, Sambutan Kepsek, Visi Misi, Dapodik & Kontak
-                    if (data.profil) {
-                        const p = data.profil;
-                        const setTxt = (id, val) => { const el = document.getElementById(id); if (el && val) el.textContent = val; };
-                        setTxt('ui-nama-kepsek', p.namaKepsek);
-                        setTxt('ui-jabatan-kepsek', p.jabatanKepsek);
-                        if (p.fotoKepsek) { const img = document.getElementById('ui-foto-kepsek'); if (img) img.src = p.fotoKepsek; }
-                        setTxt('ui-salam-pembuka', p.salamPembuka);
-                        setTxt('ui-sambutan-1', p.sambutan1);
-                        setTxt('ui-sambutan-2', p.sambutan2);
-                        setTxt('ui-visi', p.visi);
-                        setTxt('ui-motto', p.motto);
-                        setTxt('ui-misi-1', p.misi1);
-                        setTxt('ui-misi-2', p.misi2);
-                        setTxt('ui-misi-3', p.misi3);
-                        setTxt('ui-misi-4', p.misi4);
-
-                        setTxt('top-npsn', p.npsn);
-                        setTxt('hero-npsn', p.npsn);
-                        setTxt('dapodik-npsn', p.npsn);
-
-                        setTxt('top-akreditasi', p.akreditasi);
-                        setTxt('dapodik-akreditasi', p.akreditasi);
-                        if (p.akreditasi) setTxt('hero-akreditasi', 'Negeri / ' + p.akreditasi);
-
-                        setTxt('dapodik-alamat', p.alamat);
-                        setTxt('contact-card-alamat', p.alamat);
-                        setTxt('footer-alamat', p.alamat);
-
-                        setTxt('hero-telepon', p.telepon);
-                        setTxt('contact-card-telp', p.telepon);
-                        setTxt('footer-telp', p.telepon);
-
-                        setTxt('top-email-text', p.email);
-                        setTxt('contact-card-email', p.email);
-                        setTxt('footer-email', p.email);
-                        if (p.email && p.telepon) {
-                            setTxt('dapodik-kontak', `Telp/WA: ${p.telepon} | Email: ${p.email} | Web: ${p.website || 'smkn1haltim.sch.id'}`);
-                        }
-
-                        setTxt('stat-val-program', p.statProgram);
-                        setTxt('stat-val-siswa', p.statSiswa);
-                        setTxt('stat-val-mitra', p.statMitra);
-                    }
-
-                    // 2. Update Kartu & Modal Kompetensi Keahlian (Jurusan)
-                    if (Array.isArray(data.jurusanList) && data.jurusanList.length > 0) {
-                        data.jurusanList.forEach(j => {
-                            const existing = majorDetails[j.kode] || {
-                                badgeColor: 'bg-blue-600 text-white',
-                                gradient: 'from-blue-600 to-indigo-900',
-                                icon: 'fa-network-wired',
-                                bgIcon: 'fa-server',
-                                tagClass: 'bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300',
-                                btnHover: 'hover:bg-brand-600 hover:text-white'
-                            };
-                            majorDetails[j.kode] = {
-                                ...existing,
-                                code: j.labelKode || j.kode,
-                                bidang: j.bidang || existing.bidang || 'Program Vokasi',
-                                title: j.nama || existing.title,
-                                desc: j.desc || existing.desc,
-                                tags: j.tags ? j.tags.split(',').map(s => s.trim()).filter(Boolean) : (existing.tags || []),
-                                rps: j.rps || existing.rps,
-                                modules: j.modules ? j.modules.split('|').map(s => s.trim()).filter(Boolean) : (existing.modules || []),
-                                careers: j.careers ? j.careers.split('|').map(s => s.trim()).filter(Boolean) : (existing.careers || [])
-                            };
-                        });
-                        renderMajorCards();
-                    }
-
-                    // 3. Update Direktori PKL
-                    if (Array.isArray(data.pkl) && data.pkl.length > 0) {
-                        pklData.length = 0;
-                        data.pkl.forEach(item => pklData.push(item));
-                        renderPKLTable();
-                    }
-
-                    // 4. Update Data Siswa (Cek NISN)
-                    if (data.siswa && Object.keys(data.siswa).length > 0) {
-                        Object.assign(sampleStudents, data.siswa);
-                        lookupNISN(document.getElementById('nisn-search-input').value || '0067891234');
-                    }
-
-                    // 5. Update Berita & Kegiatan
-                    if (Array.isArray(data.berita) && data.berita.length > 0) {
-                        newsArticles.length = 0;
-                        data.berita.forEach(item => newsArticles.push(item));
-                        filterNews('ALL');
-                    }
-
-                    // 6. Update Jadwal Praktik RPS
-                    if (data.jadwal && Object.keys(data.jadwal).length > 0) {
-                        Object.assign(scheduleData, data.jadwal);
-                        filterSchedule('TJKT');
-                    }
-                }
-            } catch (err) {
-                console.warn('Gagal menyinkronkan data dari Google Sheets:', err);
-            }
-        }
-
-        // 1. LIVE WIT CLOCK (Waktu Indonesia Timur - UTC+9)
+        // Jam WIT Live
         function updateWITClock() {
-            const clockEl = document.getElementById('live-clock');
-            if (!clockEl) return;
+            const el = document.getElementById('live-clock');
+            if (!el) return;
             const now = new Date();
-            const optionsDate = {
-                timeZone: 'Asia/Jayapura',
-                weekday: 'short',
-                day: '2-digit',
-                month: 'short',
-                year: 'numeric'
-            };
-            const optionsTime = {
-                timeZone: 'Asia/Jayapura',
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit',
-                hour12: false
-            };
-            const dateStr = new Intl.DateTimeFormat('id-ID', optionsDate).format(now);
-            const timeStr = new Intl.DateTimeFormat('id-ID', optionsTime).format(now);
-            clockEl.textContent = `${dateStr} • ${timeStr} WIT`;
+            const d = new Intl.DateTimeFormat('id-ID', { timeZone: 'Asia/Jayapura', weekday: 'short', day: '2-digit', month: 'short', year: 'numeric' }).format(now);
+            const t = new Intl.DateTimeFormat('id-ID', { timeZone: 'Asia/Jayapura', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false }).format(now);
+            el.textContent = `${d} • ${t} WIT`;
         }
         setInterval(updateWITClock, 1000);
         updateWITClock();
 
-        // 2. TOAST NOTIFICATION HELPER
         function showToast(title, message, type = 'success') {
             const container = document.getElementById('toast-container');
             const toast = document.createElement('div');
             const bgClass = type === 'success' ? 'bg-slate-900 border-emerald-500 text-white' : 'bg-slate-900 border-amber-500 text-white';
-            const iconClass = type === 'success' ? 'fa-circle-check text-emerald-400' : 'fa-circle-info text-amber-400';
-
-            toast.className = `pointer-events-auto p-4 rounded-2xl shadow-2xl border-l-4 ${bgClass} flex items-start gap-3 transition-all duration-300 transform translate-y-0`;
-            toast.innerHTML = `
-                <i class="fa-solid ${iconClass} text-lg mt-0.5"></i>
-                <div class="flex-1 text-xs">
-                    <div class="font-bold text-sm">${title}</div>
-                    <div class="text-slate-300 mt-0.5 leading-relaxed">${message}</div>
-                </div>
-            `;
+            toast.className = `pointer-events-auto p-4 rounded-2xl shadow-2xl border-l-4 ${bgClass} flex items-start gap-3 transition-all duration-300`;
+            toast.innerHTML = `<div class="flex-1 text-xs"><div class="font-bold text-sm">${title}</div><div class="text-slate-300 mt-0.5">${message}</div></div>`;
             container.appendChild(toast);
-            setTimeout(() => {
-                toast.classList.add('opacity-0', 'translate-y-2');
-                setTimeout(() => toast.remove(), 300);
-            }, 4200);
+            setTimeout(() => { toast.remove(); }, 4000);
         }
 
-        // 3. COPY OFFICIAL SCHOOL IDENTITY
         function copyOfficialInfo() {
-            const npsn = document.getElementById('dapodik-npsn').textContent;
-            const alamat = document.getElementById('dapodik-alamat').textContent;
-            const telp = document.getElementById('contact-card-telp').textContent;
-            const email = document.getElementById('contact-card-email').textContent;
-            const infoText = `SMK Negeri 1 Halmahera Timur (SMKN 1 Maba) | NPSN: ${npsn} | Alamat: ${alamat} | Telp: ${telp} | Email: ${email}`;
-            const tempInput = document.createElement('textarea');
-            tempInput.value = infoText;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand('copy');
-            document.body.removeChild(tempInput);
-            showToast('Data Sekolah Disalin!', `Identitas NPSN ${npsn} & alamat lengkap SMKN 1 Maba berhasil disalin ke papan klip.`);
+            navigator.clipboard.writeText('SMK Negeri 1 Halmahera Timur (SMKN 1 Maba) | NPSN: 60200659 | Desa Soa Gimalaha, Kec. Kota Maba, Kab. Halmahera Timur');
+            showToast('Info Disalin!', 'Data NPSN 60200659 & alamat berhasil disalin.');
         }
 
-        // 4. DARK MODE & MOBILE MENU
-        function toggleDarkMode() {
-            const htmlEl = document.documentElement;
-            const iconEl = document.getElementById('theme-icon');
-            htmlEl.classList.toggle('dark');
-            if (htmlEl.classList.contains('dark')) {
-                iconEl.classList.replace('fa-moon', 'fa-sun');
-                showToast('Mode Gelap Aktif', 'Tampilan portal disesuaikan untuk kenyamanan mata di malam hari.', 'info');
-            } else {
-                iconEl.classList.replace('fa-sun', 'fa-moon');
-                showToast('Mode Terang Aktif', 'Tampilan portal dikembalikan ke mode terang standar.', 'info');
-            }
-        }
+        function toggleDarkMode() { document.documentElement.classList.toggle('dark'); }
+        function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('hidden'); }
 
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            const icon = document.getElementById('mobile-menu-icon');
-            menu.classList.toggle('hidden');
-            if (menu.classList.contains('hidden')) {
-                icon.classList.replace('fa-xmark', 'fa-bars');
-            } else {
-                icon.classList.replace('fa-bars', 'fa-xmark');
-            }
-        }
-
-        // 5. PROFILE TABS SWITCHER
         function switchProfileTab(tabId) {
-            const tabs = ['sambutan', 'visimisi', 'identitas'];
-            tabs.forEach(t => {
-                const contentEl = document.getElementById(`profile-tab-${t}`);
-                const btnEl = document.getElementById(`tab-btn-${t}`);
-                if (t === tabId) {
-                    contentEl.classList.remove('hidden');
-                    btnEl.className = 'profile-tab-btn px-5 py-3 rounded-xl font-semibold text-sm transition flex items-center gap-2 bg-brand-600 text-white shadow-md shadow-brand-600/20';
-                } else {
-                    contentEl.classList.add('hidden');
-                    btnEl.className = 'profile-tab-btn px-5 py-3 rounded-xl font-semibold text-sm transition flex items-center gap-2 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:bg-slate-100';
-                }
+            ['sambutan', 'visimisi', 'identitas'].forEach(t => {
+                document.getElementById(`profile-tab-${t}`).classList.toggle('hidden', t !== tabId);
+                document.getElementById(`tab-btn-${t}`).className = t === tabId
+                    ? 'profile-tab-btn px-5 py-3 rounded-xl font-semibold text-sm transition flex items-center gap-2 bg-brand-600 text-white shadow-md'
+                    : 'profile-tab-btn px-5 py-3 rounded-xl font-semibold text-sm transition flex items-center gap-2 bg-white dark:bg-slate-900 border';
             });
         }
 
-        // 6. KOMPETENSI KEAHLIAN (JURUSAN) CARDS & MODAL
-        const majorDetails = {
-            TJKT: {
-                code: 'TJKT / TKJ',
-                bidang: 'Teknologi Informasi',
-                title: 'Teknik Jaringan Komputer & Telekomunikasi',
-                badgeColor: 'bg-blue-600 text-white',
-                gradient: 'from-blue-600 to-indigo-900',
-                icon: 'fa-network-wired',
-                bgIcon: 'fa-server',
-                tagClass: 'bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300',
-                btnHover: 'hover:bg-brand-600 hover:text-white dark:hover:bg-brand-600',
-                desc: 'Mempelajari perakitan komputer, administrasi server Linux/Windows, konfigurasi routing MikroTik & Cisco, instalasi jaringan Fiber Optik (FTTH), hingga keamanan siber & sistem telekomunikasi.',
-                tags: ['MikroTik Routing', 'Splicing Fiber Optik', 'Admin Server & Cloud', 'Jaringan Wireless'],
-                rps: 'Laboratorium Komputer Terpadu, Bengkel Rak Server & MikroTik RouterOS, Alat Splicing Fiber Optik FTTH, Perangkat Access Point Outdoor.',
-                modules: [
-                    'Perakitan Komputer, Instalasi Sistem Operasi & Virtualisasi Server',
-                    'Konfigurasi Routing & Switching (MikroTik MTCNA & Cisco Packet Tracer)',
-                    'Instalasi dan Penyambungan Jaringan Kabel Fiber Optik (FTTH)',
-                    'Administrasi Sistem Jaringan, Cloud Computing & Keamanan Jaringan'
-                ],
-                careers: [
-                    'Network Administrator & IT Support di Instansi Pemda / Perusahaan Tambang',
-                    'Teknisi Jaringan Fiber Optik (ISP / Telkom / Telekomunikasi)',
-                    'System Administrator & Teknisi Komputer Mandiri',
-                    'Melanjutkan studi S1 Teknik Informatika / Sistem Informasi (Unkhair & Kampus Nasional)'
-                ]
-            },
-            TITL: {
-                code: 'TITL',
-                bidang: 'Energi & Ketenagalistrikan',
-                title: 'Teknik Instalasi Tenaga Listrik (Ketenagalistrikan)',
-                badgeColor: 'bg-amber-500 text-slate-950',
-                gradient: 'from-amber-500 to-orange-700',
-                icon: 'fa-bolt-lightning',
-                bgIcon: 'fa-plug-circle-bolt',
-                tagClass: 'bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300',
-                btnHover: 'hover:bg-amber-500 hover:text-slate-950',
-                desc: 'Membekali siswa dengan keahlian instalasi penerangan & tenaga listrik 1 fasa/3 fasa, perancangan panel distribusi, kendali motor listrik berbasis PLC (Programmable Logic Controller), serta perawatan mesin listrik industri.',
-                tags: ['Instalasi Daya 3 Fasa', 'Otomasi Industri & PLC', 'Panel Kontrol Motor', 'Standar PUIL & K3'],
-                rps: 'Bengkel Ketenagalistrikan (RPS TITL), Trainer PLC (Programmable Logic Controller), Panel Distribusi Daya 3 Fasa, Alat Ukur Listrik Digital & K3.',
-                modules: [
-                    'Instalasi Penerangan Listrik 1 Fasa dan Tenaga Listrik 3 Fasa sesuai PUIL',
-                    'Sistem Kendali Elektromekanik, Magnetik Contactor & Panel Kontrol Motor',
-                    'Sistem Kendali Otomasi Industri Berbasis PLC (Programmable Logic Controller)',
-                    'Perawatan, Perbaikan Peralatan Listrik & Keselamatan Ketenagalistrikan (K3LH)'
-                ],
-                careers: [
-                    'Teknisi Jaringan & Gardu Distribusi di PT PLN (Persero) & Mitra',
-                    'Electrical Maintenance Technician di Industri Pertambangan Halmahera Timur',
-                    'Teknisi Panel Kontrol & Otomasi Pabrik / Smelter',
-                    'Wirausaha Biro Teknik Listrik (Instalatur Bangunan) & Kuliah S1 Teknik Elektro'
-                ]
-            },
-            TKP: {
-                code: 'TKP',
-                bidang: 'Teknologi Konstruksi & Properti',
-                title: 'Teknik Konstruksi dan Perumahan',
-                badgeColor: 'bg-emerald-600 text-white',
-                gradient: 'from-emerald-600 to-teal-900',
-                icon: 'fa-helmet-safety',
-                bgIcon: 'fa-compass-drafting',
-                tagClass: 'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300',
-                btnHover: 'hover:bg-emerald-600 hover:text-white',
-                desc: 'Mempelajari perencanaan konstruksi bangunan gedung & perumahan, gambar teknik berbantuan komputer (AutoCAD 2D/3D), ilmu ukur tanah (surveying), pelaksanaan konstruksi beton/baja/kayu, serta perhitungan RAB.',
-                tags: ['Desain CAD Arsitektur', 'Estimasi Biaya (RAB)', 'Ukur Tanah / Theodolite', 'Konstruksi Bangunan'],
-                rps: 'Studio Gambar Teknik & Lab AutoCAD, Peralatan Ukur Tanah (Theodolite & Waterpass), Bengkel Kerja Batu, Beton, Baja Ringan & Perkayuan.',
-                modules: [
-                    'Menggambar Teknik Konstruksi Gedung 2D & Pemodelan 3D (AutoCAD / SketchUp)',
-                    'Ilmu Ukur Tanah (Surveying) Menggunakan Waterpass & Theodolite Digital',
-                    'Pelaksanaan Konstruksi Fondasi, Struktur Beton Bertulang, Rangka Atap & Finishing',
-                    'Perhitungan Rencana Anggaran Biaya (RAB) & Penjadwalan Proyek Konstruksi'
-                ],
-                careers: [
-                    'Drafter CAD & Estimator Biaya (Quantity Surveyor) di Konsultan/Kontraktor',
-                    'Pelaksana Lapangan (Site Supervisor) Pembangunan Infrastruktur Daerah & Perumahan',
-                    'Surveyor Pemetaan Lahan di Perusahaan Konstruksi & Pertambangan',
-                    'Melanjutkan Studi S1 Teknik Sipil / Arsitektur'
-                ]
-            }
-        };
-
-        function renderMajorCards() {
-            const grid = document.getElementById('jurusan-cards-grid');
-            if (!grid) return;
-            grid.innerHTML = Object.keys(majorDetails).map(key => {
-                const m = majorDetails[key];
-                const tagsHTML = (m.tags || []).map(t => `<span class="px-2.5 py-1 rounded-lg text-xs font-medium ${m.tagClass}">${t}</span>`).join('');
-                return `
-                    <div class="bg-white dark:bg-slate-900 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-slate-200/80 dark:border-slate-800 transition-all duration-300 flex flex-col justify-between group">
-                        <div>
-                            <div class="h-48 bg-gradient-to-br ${m.gradient} p-6 relative overflow-hidden flex flex-col justify-between">
-                                <div class="flex justify-between items-start relative z-10">
-                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-white/20 text-white backdrop-blur-sm">Kode: ${m.code}</span>
-                                    <div class="w-12 h-12 rounded-2xl bg-white/15 backdrop-blur-md flex items-center justify-center text-white text-2xl group-hover:scale-110 transition">
-                                        <i class="fa-solid ${m.icon}"></i>
-                                    </div>
-                                </div>
-                                <div class="relative z-10">
-                                    <span class="text-xs text-white/80 font-medium">${m.bidang}</span>
-                                    <h3 class="font-display font-bold text-xl text-white leading-snug">${m.title}</h3>
-                                </div>
-                                <i class="fa-solid ${m.bgIcon} text-8xl text-white/10 absolute -bottom-4 -right-4"></i>
-                            </div>
-
-                            <div class="p-6 space-y-4">
-                                <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">${m.desc}</p>
-                                <div class="space-y-2 pt-2">
-                                    <div class="text-xs font-bold uppercase tracking-wider text-slate-400">Fokus Kompetensi Praktik:</div>
-                                    <div class="flex flex-wrap gap-1.5">${tagsHTML}</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 pt-0">
-                            <button onclick="openMajorModal('${key}')" class="w-full py-3 px-4 rounded-xl bg-slate-100 dark:bg-slate-800 ${m.btnHover} font-semibold text-sm transition flex items-center justify-center gap-2">
-                                <i class="fa-solid fa-circle-info"></i>
-                                <span>Lihat Kurikulum & Prospek Kerja</span>
-                            </button>
-                        </div>
-                    </div>
-                `;
-            }).join('');
+        function switchAcademicTab(tab) {
+            ['ppdb', 'nisn', 'jadwal'].forEach(t => {
+                document.getElementById(`acad-content-${t}`).classList.toggle('hidden', t !== tab);
+                document.getElementById(`acad-btn-${t}`).className = t === tab
+                    ? 'acad-tab-btn px-5 py-3 rounded-xl font-bold text-sm transition flex items-center gap-2 bg-amber-500 text-slate-950 shadow-lg'
+                    : 'acad-tab-btn px-5 py-3 rounded-xl font-bold text-sm transition flex items-center gap-2 bg-white/10 text-white hover:bg-white/20';
+            });
         }
 
-        function openMajorModal(code) {
-            const data = majorDetails[code];
-            if (!data) return;
-            const modal = document.getElementById('major-modal');
-            const content = document.getElementById('major-modal-content');
+        // Data Default & Render Jurusan
+        window.jurusanList = [
+            { singkatan: 'TJKT / TKJ', nama: 'Teknik Jaringan Komputer & Telekomunikasi', deskripsi: 'Mempelajari perakitan komputer, administrasi server Linux/Windows, konfigurasi routing MikroTik & Cisco, serta instalasi jaringan Fiber Optik (FTTH).', gambar: 'https://placehold.co/600x400/1e3a8a/ffffff?text=Lab+TJKT+SMKN+1+Haltim' },
+            { singkatan: 'TITL', nama: 'Teknik Instalasi Tenaga Listrik', deskripsi: 'Membekali siswa dengan keahlian instalasi penerangan & tenaga listrik 1 fasa/3 fasa, panel distribusi, dan kendali motor listrik berbasis PLC.', gambar: 'https://placehold.co/600x400/b45309/ffffff?text=Bengkel+TITL+SMKN+1+Haltim' },
+            { singkatan: 'TKP / BKP', nama: 'Teknik Konstruksi dan Perumahan', deskripsi: 'Mempelajari perencanaan konstruksi bangunan gedung & perumahan, gambar teknik AutoCAD 2D/3D, ukur tanah, serta perhitungan RAB.', gambar: 'https://placehold.co/600x400/065f46/ffffff?text=Workshop+TKP+SMKN+1+Haltim' }
+        ];
 
-            content.innerHTML = `
-                <span class="px-3 py-1 rounded-full text-xs font-bold ${data.badgeColor}">${data.code}</span>
-                <h3 class="font-display font-extrabold text-2xl text-slate-900 dark:text-white mt-3">${data.title}</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">${data.desc}</p>
-
-                <div class="mt-5 p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700">
-                    <div class="text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-amber-400 mb-1">
-                        <i class="fa-solid fa-screwdriver-wrench mr-1"></i> Fasilitas Ruang Praktik Siswa (RPS):
+        function renderJurusanCards() {
+            const contJ = document.getElementById('container-jurusan');
+            contJ.innerHTML = '';
+            window.jurusanList.forEach((item, index) => {
+                const fotos = (item.gambar || '').split(',').map(f => f.trim()).filter(Boolean);
+                const cover = fotos[0] || 'https://placehold.co/600x400/1e3a8a/ffffff?text=Jurusan';
+                const badge = fotos.length > 1 ? `<div class="absolute top-4 right-4 bg-white/20 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full z-20">📸 +${fotos.length - 1} Foto</div>` : '';
+                contJ.innerHTML += `
+                <div onclick="openSliderFromJurusan(${index})" class="group relative rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 min-h-[290px] flex flex-col justify-end text-left cursor-pointer transform hover:-translate-y-1">
+                    <img src="${cover}" alt="${item.singkatan}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    ${badge}
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/80 to-transparent opacity-90"></div>
+                    <div class="relative z-20 p-7">
+                        <h3 class="text-2xl font-display font-extrabold text-white mb-1 group-hover:text-amber-400 transition">${item.singkatan}</h3>
+                        <p class="text-sky-300 font-semibold mb-2 text-xs uppercase tracking-wider">${item.nama}</p>
+                        <p class="text-slate-300 text-xs leading-relaxed line-clamp-3">${item.deskripsi || ''}</p>
                     </div>
-                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-200 font-medium">${data.rps}</p>
-                </div>
-
-                <div class="mt-5 grid sm:grid-cols-2 gap-5">
-                    <div>
-                        <h4 class="font-bold text-sm text-slate-900 dark:text-white mb-2.5 flex items-center gap-1.5">
-                            <i class="fa-solid fa-book-open-reader text-brand-600 dark:text-amber-400"></i> Materi & Kompetensi Utama
-                        </h4>
-                        <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300">
-                            ${(data.modules || []).map(m => `<li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-500 mt-0.5"></i><span>${m}</span></li>`).join('')}
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-sm text-slate-900 dark:text-white mb-2.5 flex items-center gap-1.5">
-                            <i class="fa-solid fa-briefcase text-brand-600 dark:text-amber-400"></i> Prospek Karir & Studi Lanjut
-                        </h4>
-                        <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300">
-                            ${(data.careers || []).map(c => `<li class="flex items-start gap-2"><i class="fa-solid fa-arrow-trend-up text-amber-500 mt-0.5"></i><span>${c}</span></li>`).join('')}
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800 flex justify-end gap-3">
-                    <button onclick="closeMajorModal()" class="px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-semibold">Tutup</button>
-                    <a href="#akademik" onclick="closeMajorModal(); switchAcademicTab('ppdb');" class="px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold">
-                        Daftar Jurusan Ini di PPDB
-                    </a>
-                </div>
-            `;
-            modal.classList.remove('hidden');
+                </div>`;
+            });
         }
 
-        function closeMajorModal() {
-            document.getElementById('major-modal').classList.add('hidden');
+        // Slider Modal Universal (Kegiatan & Jurusan)
+        let curSlide = 0; let slideTimer; let fotosArr = [];
+        function openSliderModal(title, subtitle, desc, rawFotos) {
+            fotosArr = (rawFotos || '').split(',').map(f => f.trim()).filter(Boolean);
+            document.getElementById('slider-title').innerText = title;
+            document.getElementById('slider-subtitle').innerText = subtitle;
+            document.getElementById('slider-desc').innerText = desc;
+            curSlide = 0;
+            renderSliderImages();
+            document.getElementById('modalSlider').classList.remove('hidden');
+            clearInterval(slideTimer);
+            if (fotosArr.length > 1) slideTimer = setInterval(nextSlide, 3500);
         }
+        function openSliderFromKegiatan(idx) {
+            const item = window.kegiatanData[idx];
+            openSliderModal(item.nama, 'Dokumentasi Riwayat Kegiatan', item.deskripsi, item.foto);
+        }
+        function openSliderFromJurusan(idx) {
+            const item = window.jurusanList[idx];
+            openSliderModal(`${item.singkatan} — ${item.nama}`, 'Program Kompetensi Keahlian', item.deskripsi, item.gambar);
+        }
+        function closeSliderModal() {
+            document.getElementById('modalSlider').classList.add('hidden');
+            clearInterval(slideTimer);
+        }
+        function renderSliderImages() {
+            const cont = document.getElementById('slider-container');
+            const dots = document.getElementById('slider-dots');
+            if (fotosArr.length === 0) { cont.innerHTML = ''; dots.innerHTML = ''; return; }
+            cont.innerHTML = fotosArr.map((f, i) => `<img src="${f}" class="absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ${i === curSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}" id="slide-img-${i}">`).join('');
+            dots.innerHTML = fotosArr.length > 1 ? fotosArr.map((_, i) => `<div onclick="goToSlide(${i})" class="w-2.5 h-2.5 rounded-full cursor-pointer ${i === curSlide ? 'bg-amber-400 scale-125' : 'bg-white/50'}"></div>`).join('') : '';
+        }
+        function goToSlide(n) {
+            if (fotosArr.length <= 1) return;
+            curSlide = (n + fotosArr.length) % fotosArr.length;
+            renderSliderImages();
+        }
+        function nextSlide() { goToSlide(curSlide + 1); }
+        function prevSlide() { goToSlide(curSlide - 1); }
 
-        // 7. SISTEM INFORMASI PKL / BKK INTERACTIVE TABLE
+        // Direktori PKL
         const pklData = [
             { mitra: 'UPT TIK & Lab Fakultas Teknik Unkhair', lokasi: 'Kota Ternate', jurusan: 'TJKT', kuota: '8 Siswa Kelas XII', status: 'Mitra Kampus Aktif' },
             { mitra: 'PT PLN (Persero) ULP Maba', lokasi: 'Kota Maba, Haltim', jurusan: 'TITL', kuota: '6 Siswa Kelas XII', status: 'Penempatan Aktif' },
             { mitra: 'Dinas Kominfo & Persandian Kab. Haltim', lokasi: 'Kota Maba, Haltim', jurusan: 'TJKT', kuota: '6 Siswa Kelas XII', status: 'Penempatan Aktif' },
             { mitra: 'Dinas PUPR Kabupaten Halmahera Timur', lokasi: 'Kota Maba, Haltim', jurusan: 'TKP', kuota: '7 Siswa Kelas XII', status: 'Penempatan Aktif' },
-            { mitra: 'PT Aneka Tambang Tbk (ANTAM) UBPN Malut', lokasi: 'Buli / Maba, Haltim', jurusan: 'TITL', kuota: '5 Siswa Kelas XII', status: 'Mitra Industri DUDIKA' },
-            { mitra: 'CV Mandiri Karya Konstruksi Haltim', lokasi: 'Soa Gimalaha, Maba', jurusan: 'TKP', kuota: '4 Siswa Kelas XII', status: 'Mitra Industri DUDIKA' }
+            { mitra: 'PT Aneka Tambang Tbk (ANTAM) UBPN Malut', lokasi: 'Buli / Maba, Haltim', jurusan: 'TITL', kuota: '5 Siswa Kelas XII', status: 'Mitra Industri DUDIKA' }
         ];
-
         function renderPKLTable() {
-            const filterJurusan = document.getElementById('pkl-filter-jurusan').value;
-            const searchQuery = document.getElementById('pkl-search-input').value.toLowerCase();
-            const tbody = document.getElementById('pkl-table-body');
-            const badge = document.getElementById('pkl-count-badge');
-
-            const filtered = pklData.filter(item => {
-                const matchJurusan = filterJurusan === 'ALL' || item.jurusan === filterJurusan;
-                const matchSearch = item.mitra.toLowerCase().includes(searchQuery) || item.lokasi.toLowerCase().includes(searchQuery);
-                return matchJurusan && matchSearch;
-            });
-
-            badge.textContent = `Menampilkan ${filtered.length} Mitra PKL`;
-
-            if (filtered.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="5" class="py-8 text-center text-slate-400">Tidak ditemukan mitra PKL yang sesuai dengan kata kunci pencarian.</td></tr>`;
-                return;
-            }
-
-            tbody.innerHTML = filtered.map(item => {
-                const badgeColor = item.jurusan === 'TJKT' ? 'bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300' :
-                                   item.jurusan === 'TITL' ? 'bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300' :
-                                   'bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300';
-                return `
-                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40 transition">
-                        <td class="py-3.5 px-3 font-semibold text-slate-900 dark:text-white">${item.mitra}</td>
-                        <td class="py-3.5 px-3 text-slate-600 dark:text-slate-300"><i class="fa-solid fa-location-dot text-brand-500 mr-1"></i>${item.lokasi}</td>
-                        <td class="py-3.5 px-3"><span class="px-2.5 py-0.5 rounded-md font-bold text-xs ${badgeColor}">${item.jurusan}</span></td>
-                        <td class="py-3.5 px-3 text-slate-600 dark:text-slate-300">${item.kuota}</td>
-                        <td class="py-3.5 px-3"><span class="inline-flex items-center gap-1 text-emerald-600 dark:text-emerald-400 font-semibold text-xs"><i class="fa-solid fa-circle-check"></i> ${item.status}</span></td>
-                    </tr>
-                `;
-            }).join('');
+            const fj = document.getElementById('pkl-filter-jurusan').value;
+            const sq = document.getElementById('pkl-search-input').value.toLowerCase();
+            const filtered = pklData.filter(i => (fj === 'ALL' || i.jurusan === fj) && (i.mitra.toLowerCase().includes(sq) || i.lokasi.toLowerCase().includes(sq)));
+            document.getElementById('pkl-count-badge').textContent = `Menampilkan ${filtered.length} Mitra PKL`;
+            document.getElementById('pkl-table-body').innerHTML = filtered.map(i => `
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40">
+                    <td class="py-3 px-3 font-semibold">${i.mitra}</td>
+                    <td class="py-3 px-3">${i.lokasi}</td>
+                    <td class="py-3 px-3"><span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 text-xs font-bold">${i.jurusan}</span></td>
+                    <td class="py-3 px-3">${i.kuota}</td>
+                    <td class="py-3 px-3 text-emerald-600 font-semibold text-xs">${i.status}</td>
+                </tr>
+            `).join('');
         }
-
-        function openPKLModal() {
-            document.getElementById('pkl-modal').classList.remove('hidden');
-        }
-        function closePKLModal() {
-            document.getElementById('pkl-modal').classList.add('hidden');
-        }
-
-        async function handleAddPKLSubmit(e) {
+        function openPKLModal() { document.getElementById('pkl-modal').classList.remove('hidden'); }
+        function closePKLModal() { document.getElementById('pkl-modal').classList.add('hidden'); }
+        function handleAddPKLSubmit(e) {
             e.preventDefault();
-            const btn = document.getElementById('btn-submit-pkl');
-            const originalHTML = btn.innerHTML;
-            btn.disabled = true;
-            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-1"></i> Menyimpan ke Google Sheets...';
-
-            const mitra = document.getElementById('new-pkl-mitra').value;
-            const lokasi = document.getElementById('new-pkl-lokasi').value;
-            const jurusan = document.getElementById('new-pkl-jurusan').value;
-            const kuota = document.getElementById('new-pkl-kuota').value;
-            const status = 'Usulan Baru Terdaftar';
-
-            try {
-                await postToSheets({
-                    action: 'addPKL',
-                    mitra,
-                    lokasi,
-                    jurusan,
-                    kuota,
-                    status
-                });
-                pklData.unshift({ mitra, lokasi, jurusan, kuota, status });
-                renderPKLTable();
-                closePKLModal();
-                e.target.reset();
-                showToast('Tersimpan di Google Sheets!', `${mitra} (${lokasi}) berhasil ditambahkan ke Database Direktori PKL SMKN 1 Halmahera Timur.`);
-            } catch (err) {
-                showToast('Gagal Menyimpan ke Cloud', 'Data ditampilkan secara lokal. Pastikan URL Google Apps Script sudah benar.', 'info');
-            } finally {
-                btn.disabled = false;
-                btn.innerHTML = originalHTML;
-            }
+            const item = {
+                mitra: document.getElementById('new-pkl-mitra').value,
+                lokasi: document.getElementById('new-pkl-lokasi').value,
+                jurusan: document.getElementById('new-pkl-jurusan').value,
+                kuota: document.getElementById('new-pkl-kuota').value,
+                status: 'Usulan Baru Terdaftar'
+            };
+            fetch(scriptURL, { method: 'POST', body: JSON.stringify({ action: 'addPKL', ...item }) });
+            pklData.unshift(item);
+            renderPKLTable();
+            closePKLModal();
+            e.target.reset();
+            showToast('Tersimpan!', 'Usulan tempat PKL berhasil dikirim ke Google Sheets.');
         }
 
-        // 8. LAYANAN AKADEMIK TABS & WIDGETS
-        function switchAcademicTab(tab) {
-            const tabs = ['ppdb', 'nisn', 'jadwal'];
-            tabs.forEach(t => {
-                const content = document.getElementById(`acad-content-${t}`);
-                const btn = document.getElementById(`acad-btn-${t}`);
-                if (t === tab) {
-                    content.classList.remove('hidden');
-                    btn.className = 'acad-tab-btn px-5 py-3 rounded-xl font-bold text-sm transition flex items-center gap-2 bg-amber-500 text-slate-950 shadow-lg shadow-amber-500/20';
-                } else {
-                    content.classList.add('hidden');
-                    btn.className = 'acad-tab-btn px-5 py-3 rounded-xl font-bold text-sm transition flex items-center gap-2 bg-white/10 text-white hover:bg-white/20';
-                }
-            });
-        }
-
-        // PPDB Form Handler -> Simpan ke Google Sheets (Tab PPDB & Siswa)
-        async function handlePPDBSubmit(e) {
+        // PPDB Submit
+        function handlePPDBSubmit(e) {
             e.preventDefault();
-            const btn = document.getElementById('btn-submit-ppdb');
-            const originalHTML = btn.innerHTML;
-            btn.disabled = true;
-            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Menyimpan Data ke Google Sheets...';
-
-            const nama = document.getElementById('ppdb-nama').value;
-            const nisn = document.getElementById('ppdb-nisn').value.trim();
-            const smp = document.getElementById('ppdb-smp').value;
-            const jalur = document.getElementById('ppdb-jalur').value;
-            const jur1 = document.getElementById('ppdb-jurusan1').value;
-            const jur2 = document.getElementById('ppdb-jurusan2').value;
-            const wa = document.getElementById('ppdb-wa').value;
-            const alamat = document.getElementById('ppdb-alamat').value;
-            const randomReg = 'PPDB-SMKN1MABA-' + Math.floor(1000 + Math.random() * 9000);
-
-            try {
-                await postToSheets({
-                    action: 'addPPDB',
-                    noReg: randomReg,
-                    nama: nama,
-                    nisn: nisn,
-                    smp: smp,
-                    jalur: jalur,
-                    jurusan1: jur1,
-                    jurusan2: jur2,
-                    wa: wa,
-                    alamat: alamat
-                });
-
-                sampleStudents[nisn] = {
-                    nama: nama,
-                    nisn: nisn,
-                    kelas: 'Calon Siswa Baru (PPDB)',
-                    jurusan: jur1,
-                    statusAkademik: `TERDAFTAR PPDB ONLINE (${randomReg})`,
-                    tempatPKL: 'Menunggu Penempatan (Siswa Baru)',
-                    nilaiUKK: `Jalur: ${jalur} | Sekolah Asal: ${smp}`,
-                    waliKelas: 'Panitia PPDB SMKN 1 Haltim'
-                };
-
-                document.getElementById('rec-noreg').textContent = randomReg;
-                document.getElementById('rec-nama').textContent = nama;
-                document.getElementById('rec-nisn').textContent = `${nisn} (${smp})`;
-                document.getElementById('rec-jalur').textContent = jalur;
-                document.getElementById('rec-jurusan1').textContent = jur1;
-                document.getElementById('rec-jurusan2').textContent = jur2;
-
-                const pill = document.getElementById('ppdb-status-pill');
-                pill.textContent = 'Tersimpan di Database';
-                pill.className = 'text-[11px] px-2.5 py-0.5 rounded-full bg-emerald-500 text-slate-950 font-bold';
-
-                showToast('Tersimpan di Google Sheets!', `Pendaftaran PPDB atas nama ${nama} (${randomReg}) berhasil masuk ke Google Sheets & fitur Cek NISN.`);
-            } catch (err) {
-                showToast('Peringatan Koneksi', 'Kartu bukti diterbitkan secara lokal. Pastikan URL Google Apps Script sudah benar.', 'info');
-            } finally {
-                btn.disabled = false;
-                btn.innerHTML = originalHTML;
-            }
+            const payload = {
+                action: 'addPPDB',
+                noReg: 'PPDB-SMKN1MABA-' + Math.floor(1000 + Math.random() * 9000),
+                nama: document.getElementById('ppdb-nama').value,
+                nisn: document.getElementById('ppdb-nisn').value.trim(),
+                smp: document.getElementById('ppdb-smp').value,
+                jalur: document.getElementById('ppdb-jalur').value,
+                jurusan1: document.getElementById('ppdb-jurusan1').value,
+                jurusan2: document.getElementById('ppdb-jurusan2').value,
+                wa: document.getElementById('ppdb-wa').value,
+                alamat: document.getElementById('ppdb-alamat').value
+            };
+            fetch(scriptURL, { method: 'POST', body: JSON.stringify(payload) });
+            sampleStudents[payload.nisn] = {
+                nama: payload.nama, nisn: payload.nisn, kelas: 'Calon Siswa Baru (PPDB)',
+                jurusan: payload.jurusan1, statusAkademik: `TERDAFTAR PPDB (${payload.noReg})`,
+                tempatPKL: 'Menunggu Penempatan', nilaiUKK: `Jalur: ${payload.jalur}`, waliKelas: 'Panitia PPDB'
+            };
+            document.getElementById('rec-noreg').textContent = payload.noReg;
+            document.getElementById('rec-nama').textContent = payload.nama;
+            document.getElementById('rec-nisn').textContent = `${payload.nisn} (${payload.smp})`;
+            document.getElementById('rec-jalur').textContent = payload.jalur;
+            document.getElementById('rec-jurusan1').textContent = payload.jurusan1;
+            document.getElementById('rec-jurusan2').textContent = payload.jurusan2;
+            document.getElementById('ppdb-status-pill').textContent = 'Tersimpan di Sheets';
+            showToast('Pendaftaran Berhasil!', `Data PPDB ${payload.nama} telah disimpan ke Google Sheets.`);
         }
-
         function fillDemoPPDB() {
             document.getElementById('ppdb-nama').value = 'Alfian Ramadhan';
             document.getElementById('ppdb-nisn').value = '0094827165';
             document.getElementById('ppdb-smp').value = 'SMP Negeri 1 Maba';
             document.getElementById('ppdb-wa').value = '085311884115';
-            document.getElementById('ppdb-alamat').value = 'Desa Soa Gimalaha, Kec. Kota Maba';
+            document.getElementById('ppdb-alamat').value = 'Desa Soa Gimalaha, Kota Maba';
             handlePPDBSubmit(new Event('submit'));
         }
+        function printPPDBCard() { window.print(); }
 
-        function printPPDBCard() {
-            const nama = document.getElementById('rec-nama').textContent;
-            if (nama === 'Belum Diisi') {
-                showToast('Data Belum Lengkap', 'Silakan isi formulir atau klik tombol "Isi Contoh Data" terlebih dahulu.', 'info');
-                return;
-            }
-            showToast('Menyiapkan Cetak Kartu PPDB', `Kartu bukti registrasi atas nama ${nama} siap dicetak atau disimpan sebagai PDF.`);
-            window.print();
-        }
-
-        // NISN Lookup Database & Handler
+        // Cek NISN
         const sampleStudents = {
-            '0067891234': {
-                nama: 'Fikri Haikal Tidore',
-                nisn: '0067891234',
-                kelas: 'XII TJKT 1',
-                jurusan: 'Teknik Jaringan Komputer & Telekomunikasi (TJKT)',
-                statusAkademik: 'AKTIF / LULUS UJI KOMPETENSI KEAHLIAN (UKK)',
-                tempatPKL: 'UPT TIK Universitas Khairun Ternate & Dinas Kominfo Haltim',
-                nilaiUKK: '92.50 (Sangat Kompeten)',
-                waliKelas: 'Bpk. Hendra Wijaya, S.Kom.'
-            },
-            '0061122334': {
-                nama: 'Yohanes Halmahera',
-                nisn: '0061122334',
-                kelas: 'XII TITL 1',
-                jurusan: 'Teknik Instalasi Tenaga Listrik (TITL)',
-                statusAkademik: 'AKTIF / LULUS UJI KOMPETENSI KEAHLIAN (UKK)',
-                tempatPKL: 'PT PLN (Persero) ULP Maba - Halmahera Timur',
-                nilaiUKK: '90.75 (Sangat Kompeten)',
-                waliKelas: 'Bpk. M. Darwis, S.T.'
-            },
-            '0075566778': {
-                nama: 'Siti Nurhaliza Maba',
-                nisn: '0075566778',
-                kelas: 'XI TKP 1',
-                jurusan: 'Teknik Konstruksi dan Perumahan (TKP)',
-                statusAkademik: 'SISWA AKTIF - PERSIAPAN PRAKERIN GELOMBANG I',
-                tempatPKL: 'Dinas PUPR Kabupaten Halmahera Timur (Terjadwal)',
-                nilaiUKK: 'Rata-Rata Rapor Semester: 88.40',
-                waliKelas: 'Ibu Rahmawati, S.Pd., M.T.'
-            }
+            '0067891234': { nama: 'Fikri Haikal Tidore', nisn: '0067891234', kelas: 'XII TJKT 1', jurusan: 'Teknik Jaringan Komputer & Telekomunikasi (TJKT)', statusAkademik: 'AKTIF / LULUS UKK', tempatPKL: 'UPT TIK Universitas Khairun Ternate', nilaiUKK: '92.50 (Sangat Kompeten)', waliKelas: 'Bpk. Hendra Wijaya, S.Kom.' },
+            '0061122334': { nama: 'Yohanes Halmahera', nisn: '0061122334', kelas: 'XII TITL 1', jurusan: 'Teknik Instalasi Tenaga Listrik (TITL)', statusAkademik: 'AKTIF / LULUS UKK', tempatPKL: 'PT PLN (Persero) ULP Maba', nilaiUKK: '90.75 (Sangat Kompeten)', waliKelas: 'Bpk. M. Darwis, S.T.' },
+            '0075566778': { nama: 'Siti Nurhaliza Maba', nisn: '0075566778', kelas: 'XI TKP 1', jurusan: 'Teknik Konstruksi dan Perumahan (TKP)', statusAkademik: 'SISWA AKTIF - PERSIAPAN PKL', tempatPKL: 'Dinas PUPR Kab. Halmahera Timur', nilaiUKK: 'Rata-Rata Rapor: 88.40', waliKelas: 'Ibu Rahmawati, S.Pd.' }
         };
-
-        function lookupNISN(presetNISN) {
-            const inputEl = document.getElementById('nisn-search-input');
-            if (presetNISN) inputEl.value = presetNISN;
-            const query = inputEl.value.trim();
+        function lookupNISN(preset) {
+            const inp = document.getElementById('nisn-search-input');
+            if (preset) inp.value = preset;
+            const s = sampleStudents[inp.value.trim()];
             const box = document.getElementById('nisn-result-box');
-
-            const student = sampleStudents[query];
-            if (!student) {
-                box.innerHTML = `
-                    <div class="text-center py-6 text-slate-300">
-                        <i class="fa-solid fa-circle-exclamation text-3xl text-amber-400 mb-2"></i>
-                        <div class="font-bold text-base">Data NISN "${query || 'Kosong'}" Tidak Ditemukan</div>
-                        <p class="text-xs text-slate-400 mt-1">Pastikan NISN terdaftar di tab "Siswa" Google Sheets atau klik tombol NISN Demo di atas.</p>
-                    </div>
-                `;
+            if (!s) {
+                box.innerHTML = `<div class="text-center py-4 text-amber-300 font-bold">NISN tidak ditemukan. Pastikan sudah diinput pada menu Data Siswa di Dashboard.</div>`;
                 return;
             }
-
             box.innerHTML = `
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-700 pb-4 mb-4">
-                    <div class="flex items-center gap-3.5">
-                        <div class="w-12 h-12 rounded-2xl bg-amber-500 text-slate-950 font-display font-extrabold text-xl flex items-center justify-center">
-                            ${student.nama.charAt(0)}
-                        </div>
-                        <div>
-                            <h4 class="font-display font-bold text-lg text-white">${student.nama}</h4>
-                            <p class="text-xs text-amber-400 font-mono">NISN: ${student.nisn} • Kelas: ${student.kelas}</p>
-                        </div>
-                    </div>
-                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-400/30">
-                        ${student.statusAkademik}
-                    </span>
+                <div class="flex flex-wrap justify-between items-center border-b border-slate-700 pb-3 mb-4 gap-2">
+                    <div><h4 class="font-bold text-lg text-white">${s.nama}</h4><p class="text-xs text-amber-400 font-mono">NISN: ${s.nisn} • Kelas: ${s.kelas}</p></div>
+                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-400/30">${s.statusAkademik}</span>
                 </div>
-                <div class="grid sm:grid-cols-2 gap-4 text-xs sm:text-sm">
-                    <div class="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700">
-                        <span class="text-slate-400 block text-xs">Kompetensi Keahlian:</span>
-                        <span class="font-bold text-white">${student.jurusan}</span>
-                    </div>
-                    <div class="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700">
-                        <span class="text-slate-400 block text-xs">Penempatan PKL / Prakerin:</span>
-                        <span class="font-bold text-amber-300">${student.tempatPKL}</span>
-                    </div>
-                    <div class="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700">
-                        <span class="text-slate-400 block text-xs">Capaian Kompetensi / UKK:</span>
-                        <span class="font-bold text-emerald-400">${student.nilaiUKK}</span>
-                    </div>
-                    <div class="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700">
-                        <span class="text-slate-400 block text-xs">Wali Kelas / Pembimbing:</span>
-                        <span class="font-bold text-white">${student.waliKelas}</span>
-                    </div>
-                </div>
-            `;
+                <div class="grid sm:grid-cols-2 gap-3 text-xs">
+                    <div class="p-3 rounded-xl bg-slate-800"><span class="text-slate-400 block">Jurusan:</span><strong class="text-white">${s.jurusan}</strong></div>
+                    <div class="p-3 rounded-xl bg-slate-800"><span class="text-slate-400 block">Tempat PKL:</span><strong class="text-amber-300">${s.tempatPKL}</strong></div>
+                    <div class="p-3 rounded-xl bg-slate-800"><span class="text-slate-400 block">Capaian UKK / Rapor:</span><strong class="text-emerald-400">${s.nilaiUKK}</strong></div>
+                    <div class="p-3 rounded-xl bg-slate-800"><span class="text-slate-400 block">Wali Kelas:</span><strong class="text-white">${s.waliKelas}</strong></div>
+                </div>`;
         }
 
-        // Schedule Filter Data & Handler
+        // Jadwal Praktik RPS
         const scheduleData = {
             TJKT: [
-                { hari: 'Senin - Selasa (07:30 - 14:00 WIT)', mapel: 'Administrasi Sistem Jaringan & Server Linux', ruang: 'Lab Komputer & Server 1' },
-                { hari: 'Rabu - Kamis (07:30 - 14:00 WIT)', mapel: 'Praktik Routing MikroTik & Splicing Fiber Optik', ruang: 'RPS Telekomunikasi TJKT' },
-                { hari: 'Jumat - Sabtu (07:30 - 12:30 WIT)', mapel: 'Projek Kreatif Kewirausahaan & Muatan Nasional', ruang: 'Ruang Teori & Bengkel IT' }
+                { hari: 'Senin - Selasa (07:30 - 14:00 WIT)', mapel: 'Administrasi Sistem Jaringan & Server', ruang: 'Lab Komputer & Server 1' },
+                { hari: 'Rabu - Kamis (07:30 - 14:00 WIT)', mapel: 'Praktik Routing MikroTik & Fiber Optik', ruang: 'RPS Telekomunikasi TJKT' },
+                { hari: 'Jumat - Sabtu (07:30 - 12:30 WIT)', mapel: 'Projek Kreatif Kewirausahaan', ruang: 'Bengkel IT' }
             ],
             TITL: [
-                { hari: 'Senin - Selasa (07:30 - 14:00 WIT)', mapel: 'Instalasi Penerangan & Tenaga Listrik 3 Fasa', ruang: 'Bengkel RPS Ketenagalistrikan' },
-                { hari: 'Rabu - Kamis (07:30 - 14:00 WIT)', mapel: 'Praktik Sistem Kendali Otomasi Berbasis PLC', ruang: 'Lab Otomasi & Panel Kontrol' },
-                { hari: 'Jumat - Sabtu (07:30 - 12:30 WIT)', mapel: 'Perawatan Mesin Listrik & Keselamatan Kerja (K3)', ruang: 'Ruang Teori & Bengkel TITL' }
+                { hari: 'Senin - Selasa (07:30 - 14:00 WIT)', mapel: 'Instalasi Tenaga Listrik 3 Fasa', ruang: 'Bengkel RPS TITL' },
+                { hari: 'Rabu - Kamis (07:30 - 14:00 WIT)', mapel: 'Sistem Kendali Otomasi Berbasis PLC', ruang: 'Lab Otomasi & PLC' },
+                { hari: 'Jumat - Sabtu (07:30 - 12:30 WIT)', mapel: 'Perawatan Mesin Listrik & K3LH', ruang: 'Ruang Praktik TITL' }
             ],
             TKP: [
-                { hari: 'Senin - Selasa (07:30 - 14:00 WIT)', mapel: 'Desain Gambar Bangunan 2D/3D (AutoCAD)', ruang: 'Studio Gambar & Lab CAD' },
-                { hari: 'Rabu - Kamis (07:30 - 14:00 WIT)', mapel: 'Praktik Ukur Tanah (Theodolite) & Konstruksi Beton', ruang: 'Workshop Konstruksi TKP' },
-                { hari: 'Jumat - Sabtu (07:30 - 12:30 WIT)', mapel: 'Perhitungan Estimasi Biaya (RAB) & Kewirausahaan', ruang: 'Ruang Kelas TKP' }
+                { hari: 'Senin - Selasa (07:30 - 14:00 WIT)', mapel: 'Desain Gambar Bangunan AutoCAD 2D/3D', ruang: 'Studio Gambar CAD' },
+                { hari: 'Rabu - Kamis (07:30 - 14:00 WIT)', mapel: 'Praktik Ukur Tanah & Konstruksi Beton', ruang: 'Workshop TKP' },
+                { hari: 'Jumat - Sabtu (07:30 - 12:30 WIT)', mapel: 'Perhitungan Estimasi Biaya (RAB)', ruang: 'Ruang Kelas TKP' }
             ]
         };
-
         function filterSchedule(major) {
             ['TJKT', 'TITL', 'TKP'].forEach(m => {
-                const btn = document.getElementById(`sched-btn-${m}`);
-                if (m === major) {
-                    btn.className = 'sched-btn px-4 py-2 rounded-xl text-xs font-bold bg-amber-500 text-slate-950';
-                } else {
-                    btn.className = 'sched-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-700 text-slate-200 hover:bg-slate-600';
-                }
+                document.getElementById(`sched-btn-${m}`).className = m === major
+                    ? 'sched-btn px-4 py-2 rounded-xl text-xs font-bold bg-amber-500 text-slate-950'
+                    : 'sched-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-700 text-slate-200';
             });
-
-            const list = scheduleData[major] || [];
-            const grid = document.getElementById('schedule-grid');
-            grid.innerHTML = list.map(item => `
-                <div class="p-5 rounded-2xl bg-slate-900 border border-slate-700 space-y-2">
-                    <span class="text-xs font-mono text-amber-400 block">${item.hari}</span>
-                    <h4 class="font-display font-bold text-base text-white">${item.mapel}</h4>
-                    <div class="text-xs text-slate-400 flex items-center gap-1.5 pt-1">
-                        <i class="fa-solid fa-door-open text-emerald-400"></i> ${item.ruang}
-                    </div>
-                </div>
-            `).join('');
+            document.getElementById('schedule-grid').innerHTML = (scheduleData[major] || []).map(i => `
+                <div class="p-5 rounded-2xl bg-slate-900 border border-slate-700 space-y-1.5">
+                    <span class="text-xs font-mono text-amber-400 block">${i.hari}</span>
+                    <h4 class="font-bold text-base text-white">${i.mapel}</h4>
+                    <div class="text-xs text-emerald-400">${i.ruang}</div>
+                </div>`).join('');
         }
 
-        // 9. BERITA & GALERI KEGIATAN FILTER
-        const newsArticles = [
-            {
-                cat: 'PKL',
-                badge: 'Kegiatan PKL',
-                date: '15 Oktober 2026',
-                title: 'Penarikan & Evaluasi Siswa PKL SMKN 1 Maba di Lingkungan Kampus Maluku Utara & Instansi Haltim',
-                excerpt: 'Puluhan siswa kelas XII kompetensi keahlian TJKT, TITL, dan TKP sukses menyelesaikan program Praktik Kerja Lapangan (PKL) selama 4 bulan di berbagai instansi mitra.',
-                img: 'https://placehold.co/600x360/1e3a8a/ffffff?text=Kegiatan+PKL+Siswa%0ASMKN+1+Halmahera+Timur'
-            },
-            {
-                cat: 'UKK',
-                badge: 'Uji Kompetensi (UKK)',
-                date: '02 November 2026',
-                title: 'Pelaksanaan Uji Kompetensi Keahlian (UKK) Mandiri Bersama Asesor Industri DUDIKA',
-                excerpt: 'Menguji kesiapan kerja lulusan melalui ujian praktik konfigurasi jaringan Fiber Optik, perakitan panel kontrol PLC 3 fasa, dan pemodelan konstruksi bangunan.',
-                img: 'https://placehold.co/600x360/0f766e/ffffff?text=Uji+Kompetensi+Keahlian%0ARuang+Praktik+Siswa'
-            },
-            {
-                cat: 'PRESTASI',
-                badge: 'Kabar Sekolah',
-                date: '08 November 2026',
-                title: 'SMKN 1 Halmahera Timur Perkuat Implementasi Kurikulum Merdeka & Budaya Kerja Industri K3LH',
-                excerpt: 'Komitmen sekolah di Desa Soa Gimalaha, Kec. Kota Maba dalam menyelaraskan kurikulum kejuruan dengan kebutuhan dunia kerja di kawasan industri Halmahera Timur.',
-                img: 'https://placehold.co/600x360/b45309/ffffff?text=Kurikulum+SMK+Merdeka%0ASMKN+1+Maba'
-            }
+        // Berita & Pengumuman
+        let newsArticles = [
+            { cat: 'PKL', badge: 'Kegiatan PKL', date: '15 Oktober 2026', title: 'Evaluasi Siswa PKL SMKN 1 Maba di Instansi & Kampus Maluku Utara', excerpt: 'Siswa kelas XII sukses menyelesaikan program Praktik Kerja Lapangan (PKL).', img: 'https://placehold.co/600x360/1e3a8a/ffffff?text=Kegiatan+PKL+SMKN+1+Haltim' },
+            { cat: 'UKK', badge: 'Uji Kompetensi', date: '02 November 2026', title: 'Pelaksanaan Uji Kompetensi Keahlian (UKK) Bersama DUDIKA', excerpt: 'Ujian praktik konfigurasi jaringan Fiber Optik, panel PLC 3 fasa, dan konstruksi bangunan.', img: 'https://placehold.co/600x360/0f766e/ffffff?text=UKK+SMKN+1+Haltim' }
         ];
-
-        function filterNews(category) {
-            document.querySelectorAll('.news-filter-btn').forEach(btn => {
-                if (btn.dataset.cat === category) {
-                    btn.className = 'news-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-brand-600 text-white';
-                } else {
-                    btn.className = 'news-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800';
-                }
-            });
-
-            const filtered = category === 'ALL' ? newsArticles : newsArticles.filter(n => n.cat === category);
-            const grid = document.getElementById('news-grid');
-
-            grid.innerHTML = filtered.map(item => `
-                <article class="bg-white dark:bg-slate-900 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-slate-200/80 dark:border-slate-800 transition flex flex-col justify-between">
+        function filterNews(cat) {
+            const list = cat === 'ALL' ? newsArticles : newsArticles.filter(n => n.cat === cat);
+            document.getElementById('news-grid').innerHTML = list.map(i => `
+                <article class="bg-white dark:bg-slate-900 rounded-3xl overflow-hidden shadow-sm border border-slate-200/80 dark:border-slate-800 flex flex-col justify-between">
                     <div>
-                        <div class="relative h-48 overflow-hidden">
-                            <img src="${item.img}" alt="${item.title}" class="w-full h-full object-cover">
-                            <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-bold bg-slate-900/80 text-amber-400 backdrop-blur-sm">${item.badge}</span>
+                        <div class="relative h-48 bg-slate-200">
+                            <img src="${i.img || 'https://placehold.co/600x360/1e3a8a/ffffff?text=Pengumuman+Sekolah'}" class="w-full h-full object-cover">
+                            <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-bold bg-slate-900/80 text-amber-400">${i.badge}</span>
                         </div>
                         <div class="p-6">
-                            <div class="text-xs text-slate-400 mb-2"><i class="fa-regular fa-calendar mr-1"></i> ${item.date}</div>
-                            <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white leading-snug mb-2">${item.title}</h3>
-                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">${item.excerpt}</p>
+                            <div class="text-xs text-slate-400 mb-1">${i.date}</div>
+                            <h3 class="font-display font-bold text-lg mb-2">${i.title}</h3>
+                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed whitespace-pre-wrap">${i.excerpt}</p>
                         </div>
                     </div>
-                    <div class="px-6 pb-6">
-                        <button onclick="showToast('${item.badge}', 'Membuka arsip berita lengkap: ${item.title}', 'info')" class="text-xs font-bold text-brand-600 dark:text-amber-400 hover:underline flex items-center gap-1.5">
-                            <span>Baca Selengkapnya</span>
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </article>
-            `).join('');
+                </article>`).join('');
         }
 
-        // 10. LOGIN MODAL & CONTACT FORM HANDLERS (TERINTEGRASI SESSION DASHBOARD)
-        function openLoginModal() {
-            document.getElementById('login-modal').classList.remove('hidden');
-        }
-        function closeLoginModal() {
-            document.getElementById('login-modal').classList.add('hidden');
-        }
-
-        async function handleLoginSubmit(e) {
+        // Kontak & Login Modal
+        function handleContactSubmit(e) {
             e.preventDefault();
+            const payload = {
+                action: 'addContact',
+                nama: document.getElementById('contact-name').value,
+                kontak: document.getElementById('contact-email').value,
+                kategori: document.getElementById('contact-subject').value,
+                pesan: document.getElementById('contact-message').value
+            };
+            fetch(scriptURL, { method: 'POST', body: JSON.stringify(payload) });
+            e.target.reset();
+            showToast('Pesan Terkirim!', 'Terima kasih, pesan Anda telah masuk ke Google Sheets Humas Sekolah.');
+        }
+
+        function openLoginModal() { document.getElementById('login-modal').classList.remove('hidden'); }
+        function closeLoginModal() { document.getElementById('login-modal').classList.add('hidden'); }
+        function handleLoginSubmit(e) {
+            e.preventDefault();
+            const u = document.getElementById('login-user').value.trim();
+            const p = document.getElementById('login-pass').value.trim();
             const btn = document.getElementById('btn-submit-login');
-            const originalHTML = btn.innerHTML;
+            btn.textContent = 'Memeriksa...';
             btn.disabled = true;
-            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-1"></i> Memverifikasi ke Sheets...';
-
-            const role = document.getElementById('login-role').value;
-            const user = document.getElementById('login-user').value.trim();
-            const pass = document.getElementById('login-pass').value.trim();
-
-            try {
-                // Mode lokal jika SCRIPT_URL belum diisi
-                if (!SCRIPT_URL || SCRIPT_URL.includes('PASTE_URL')) {
-                    if (user === 'admin' && pass === 'admin123') {
-                        sessionStorage.setItem('smkn1haltim_admin_session', JSON.stringify({ username: user, role: 'Administrator' }));
+            fetch(scriptURL, { method: 'POST', body: JSON.stringify({ action: 'login', username: u, password: p }) })
+                .then(r => r.json())
+                .then(data => {
+                    if (data.status === 'success' && (data.verified === undefined || data.verified === true)) {
+                        sessionStorage.setItem('smkn1haltim_cms_auth', u);
                         window.location.href = 'dashboard.html';
-                        return;
-                    }
-                }
-
-                const res = await postToSheets({
-                    action: 'login',
-                    role: role,
-                    username: user,
-                    password: pass
-                });
-
-                if (res && res.verified) {
-                    closeLoginModal();
-                    if (role.includes('Admin') || (res.role && res.role.includes('Admin'))) {
-                        sessionStorage.setItem('smkn1haltim_admin_session', JSON.stringify({
-                            username: user,
-                            role: res.role || role
-                        }));
-                        showToast('Login Admin Terverifikasi!', 'Mengalihkan langsung ke halaman CMS Dashboard...');
-                        setTimeout(() => { window.location.href = 'dashboard.html'; }, 900);
                     } else {
-                        showToast('Akses SIAKAD Terverifikasi', `Selamat datang, ${user} (${res.role || role}). Riwayat login Anda telah tercatat.`);
+                        showToast('Login Gagal!', 'Username atau Password tidak sesuai.', 'info');
                     }
-                } else {
-                    showToast('Login Gagal!', 'Username atau Password salah. Silakan periksa kembali kredensial Anda.', 'info');
-                }
-            } catch (err) {
-                showToast('Gagal Terhubung', 'Pastikan SCRIPT_URL Google Apps Script sudah benar.', 'info');
-            } finally {
-                btn.disabled = false;
-                btn.innerHTML = originalHTML;
-            }
-        }
-
-        async function handleContactSubmit(e) {
-            e.preventDefault();
-            const btn = document.getElementById('btn-submit-contact');
-            const originalHTML = btn.innerHTML;
-            btn.disabled = true;
-            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Mengirim ke Google Sheets...';
-
-            const name = document.getElementById('contact-name').value;
-            const email = document.getElementById('contact-email').value;
-            const subject = document.getElementById('contact-subject').value;
-            const message = document.getElementById('contact-message').value;
-
-            try {
-                await postToSheets({
-                    action: 'addContact',
-                    nama: name,
-                    kontak: email,
-                    kategori: subject,
-                    pesan: message
+                })
+                .finally(() => {
+                    btn.textContent = 'Masuk ke CMS Dashboard';
+                    btn.disabled = false;
                 });
-                e.target.reset();
-                showToast('Tersimpan di Google Sheets!', `Terima kasih ${name}, pesan Anda mengenai "${subject}" telah masuk ke Database Humas SMKN 1 Halmahera Timur.`);
-            } catch (err) {
-                showToast('Pesan Diterima', `Terima kasih ${name}, pesan Anda telah dicatat.`);
-            } finally {
-                btn.disabled = false;
-                btn.innerHTML = originalHTML;
-            }
         }
 
-        // INITIALIZE ON WINDOW LOAD
+        // =========================================================================
+        // SINKRONISASI PENUH DARI GOOGLE SHEETS (16 MODUL)
+        // =========================================================================
+        function syncAllFromSheets() {
+            fetch(scriptURL).then(res => res.json()).then(data => {
+                if (data.status === 'success') {
+                    if (data.profil) {
+                        if (data.profil.namaKepsek) document.getElementById('tampil-kepsek').innerText = data.profil.namaKepsek;
+                        if (data.profil.sambutan) document.getElementById('tampil-sambutan').innerText = data.profil.sambutan;
+                        if (data.profil.fotoKepsek) document.getElementById('tampil-foto-kepsek').src = data.profil.fotoKepsek;
+                    }
+                    if (data.visimisi) {
+                        if (data.visimisi.visi) document.getElementById('tampil-visi').innerText = data.visimisi.visi;
+                        if (data.visimisi.misi) document.getElementById('tampil-misi').innerText = data.visimisi.misi;
+                    }
+                    if (data.sejarah) {
+                        if (data.sejarah.judul) document.getElementById('tampil-sejarah-judul').innerText = data.sejarah.judul;
+                        if (data.sejarah.isi) document.getElementById('tampil-sejarah-isi').innerText = data.sejarah.isi;
+                    }
+                    if (data.kontak) {
+                        if (data.kontak.alamat) {
+                            document.getElementById('tampil-alamat').innerText = data.kontak.alamat;
+                            document.getElementById('dapodik-alamat').innerText = data.kontak.alamat;
+                        }
+                        if (data.kontak.email) {
+                            document.getElementById('tampil-email').innerText = data.kontak.email;
+                            document.getElementById('top-email-text').innerText = data.kontak.email;
+                        }
+                        if (data.kontak.telepon) {
+                            document.getElementById('tampil-telepon').innerText = data.kontak.telepon;
+                            document.getElementById('hero-telp').innerText = data.kontak.telepon;
+                        }
+                        if (data.kontak.peta) document.getElementById('tampil-peta').src = data.kontak.peta;
+                    }
+
+                    // Riwayat Kegiatan
+                    if (Array.isArray(data.kegiatan)) {
+                        window.kegiatanData = data.kegiatan;
+                        const contK = document.getElementById('container-kegiatan');
+                        contK.innerHTML = data.kegiatan.length === 0 ? '<p class="col-span-full text-center text-slate-400">Belum ada riwayat kegiatan.</p>' : '';
+                        data.kegiatan.forEach((item, idx) => {
+                            const fotos = (item.foto || '').split(',').map(f => f.trim()).filter(Boolean);
+                            const cover = fotos[0] || 'https://placehold.co/600x400?text=Kegiatan';
+                            const badge = fotos.length > 1 ? `<div class="absolute top-3 right-3 bg-black/75 text-white text-xs font-bold px-3 py-1 rounded-full">📸 +${fotos.length - 1} Foto</div>` : '';
+                            contK.innerHTML += `
+                            <div onclick="openSliderFromKegiatan(${idx})" class="bg-slate-50 dark:bg-slate-800 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-slate-200/80 dark:border-slate-700 cursor-pointer group transition transform hover:-translate-y-1">
+                                <div class="aspect-video bg-slate-200 relative overflow-hidden">
+                                    <img src="${cover}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                    ${badge}
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="font-display font-bold text-lg mb-2 group-hover:text-brand-600 transition">${item.nama}</h3>
+                                    <p class="text-slate-600 dark:text-slate-300 text-xs leading-relaxed line-clamp-3">${item.deskripsi}</p>
+                                </div>
+                            </div>`;
+                        });
+                    }
+
+                    // Fasilitas Sekolah
+                    if (Array.isArray(data.fasilitas)) {
+                        const contF = document.getElementById('container-fasilitas');
+                        contF.innerHTML = data.fasilitas.length === 0 ? '<p class="col-span-full text-center text-slate-400">Belum ada data fasilitas.</p>' : '';
+                        data.fasilitas.forEach(item => {
+                            contF.innerHTML += `
+                            <div class="bg-slate-50 dark:bg-slate-800 rounded-3xl overflow-hidden shadow-sm border border-slate-200/80 dark:border-slate-700 group">
+                                <div class="aspect-video bg-slate-200 overflow-hidden"><img src="${item.foto}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
+                                <div class="p-6"><h3 class="font-display font-bold text-lg mb-1">${item.nama}</h3><p class="text-slate-600 dark:text-slate-300 text-xs leading-relaxed">${item.deskripsi}</p></div>
+                            </div>`;
+                        });
+                    }
+
+                    // Jurusan
+                    if (Array.isArray(data.jurusan) && data.jurusan.length > 0) {
+                        window.jurusanList = data.jurusan;
+                        renderJurusanCards();
+                    }
+
+                    // Guru
+                    if (Array.isArray(data.guru)) {
+                        const contG = document.getElementById('container-guru');
+                        contG.innerHTML = data.guru.length === 0 ? '<p class="col-span-full text-center text-slate-400">Belum ada data guru.</p>' : '';
+                        data.guru.forEach(item => {
+                            contG.innerHTML += `
+                            <div class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm text-center group">
+                                <div class="aspect-square bg-slate-200 overflow-hidden"><img src="${item.foto}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
+                                <div class="p-4"><h3 class="font-display font-bold text-sm truncate">${item.nama}</h3><p class="text-brand-600 dark:text-amber-400 text-xs font-bold uppercase mt-1 truncate">${item.mapel}</p></div>
+                            </div>`;
+                        });
+                    }
+
+                    // Pengumuman / Berita
+                    if (Array.isArray(data.pengumuman) && data.pengumuman.length > 0) {
+                        newsArticles = data.pengumuman.map(p => ({
+                            cat: p.kategori || 'PRESTASI',
+                            badge: p.kategori === 'PKL' ? 'Kegiatan PKL' : (p.kategori === 'UKK' ? 'Uji Kompetensi' : 'Pengumuman'),
+                            date: p.tanggal,
+                            title: p.judul,
+                            excerpt: p.isi,
+                            img: p.foto || 'https://placehold.co/600x360/1e3a8a/ffffff?text=SMKN+1+Haltim'
+                        }));
+                        filterNews('ALL');
+                    }
+
+                    // Galeri Foto
+                    if (Array.isArray(data.galeri)) {
+                        const contGl = document.getElementById('container-galeri');
+                        contGl.innerHTML = data.galeri.map(item => `
+                            <div class="group relative aspect-video bg-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                                <img src="${item.link}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+                                    <p class="text-white text-xs font-semibold truncate">${item.judul}</p>
+                                </div>
+                            </div>`).join('');
+                    }
+
+                    // PKL, Siswa (NISN) & Jadwal
+                    if (Array.isArray(data.pkl) && data.pkl.length > 0) {
+                        pklData.length = 0;
+                        data.pkl.forEach(i => pklData.push(i));
+                        renderPKLTable();
+                    }
+                    if (data.siswa && Object.keys(data.siswa).length > 0) {
+                        Object.assign(sampleStudents, data.siswa);
+                        lookupNISN(document.getElementById('nisn-search-input').value || '0067891234');
+                    }
+                    if (data.jadwal && Object.keys(data.jadwal).length > 0) {
+                        Object.assign(scheduleData, data.jadwal);
+                        filterSchedule('TJKT');
+                    }
+                }
+            });
+        }
+
         window.onload = function () {
-            renderMajorCards();
+            renderJurusanCards();
             renderPKLTable();
             lookupNISN('0067891234');
             filterSchedule('TJKT');
             filterNews('ALL');
-            syncFromGoogleSheets();
+            syncAllFromSheets();
         };
     </script>
 </body>

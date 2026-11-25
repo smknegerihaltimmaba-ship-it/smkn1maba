@@ -137,7 +137,6 @@
             </div>
         </div>
 
-        <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 pt-2 pb-5 space-y-2">
             <a href="#beranda" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Beranda</a>
             <a href="#profil" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Profil, Sejarah & Visi Misi</a>
@@ -191,7 +190,6 @@
                     </div>
                 </div>
 
-                <!-- Right Column: Identitas Showcase Card -->
                 <div class="lg:col-span-5">
                     <div class="glass-card rounded-3xl p-6 sm:p-8 shadow-2xl relative animate-float">
                         <div class="flex items-center justify-between border-b border-white/15 pb-4 mb-5">
@@ -246,7 +244,7 @@
         </div>
     </section>
 
-    <!-- ==================== 3. PROFIL, SAMBUTAN, SEJARAH & VISI MISI (TABS) ==================== -->
+    <!-- ==================== 3. PROFIL, SAMBUTAN, SEJARAH & VISI MISI ==================== -->
     <section id="profil" class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-3xl mx-auto mb-12">
             <span class="text-brand-600 dark:text-amber-400 font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-brand-50 dark:bg-slate-800 border border-brand-200 dark:border-slate-700">Mengenal Lebih Dekat</span>
@@ -487,7 +485,7 @@
         </div>
     </section>
 
-    <!-- ==================== 6. LAYANAN AKADEMIK (CEK NISN, JADWAL & TAUTAN PORTAL PPDB) ==================== -->
+    <!-- ==================== 6. LAYANAN AKADEMIK ==================== -->
     <section id="akademik" class="py-16 lg:py-24 bg-slate-900 text-white relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center max-w-3xl mx-auto mb-10">
@@ -508,7 +506,6 @@
                 </a>
             </div>
 
-            <!-- WIDGET: CEK NISN -->
             <div id="acad-content-nisn" class="acad-tab-content">
                 <div class="max-w-4xl mx-auto bg-slate-800/90 border border-slate-700 rounded-3xl p-6 sm:p-10">
                     <div class="text-center max-w-2xl mx-auto mb-6">
@@ -528,7 +525,6 @@
                 </div>
             </div>
 
-            <!-- WIDGET: JADWAL PRAKTIK RPS -->
             <div id="acad-content-jadwal" class="acad-tab-content hidden">
                 <div class="bg-slate-800/90 border border-slate-700 rounded-3xl p-6 sm:p-8">
                     <div class="flex flex-wrap justify-between items-center gap-4 mb-6">
@@ -561,7 +557,7 @@
         </div>
     </section>
 
-    <!-- ==================== 8. KONTAK & LOKASI SOA GIMALAHA KOTA MABA ==================== -->
+    <!-- ==================== 8. KONTAK & LOKASI ==================== -->
     <section id="kontak" class="py-16 lg:py-24 bg-slate-100/90 dark:bg-slate-900/60 border-t border-slate-200 dark:border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-12 gap-10">
@@ -626,7 +622,7 @@
         </div>
     </section>
 
-    <!-- ==================== FOOTER & MEDIA SOSIAL (TIKTOK, IG, FACEBOOK) ==================== -->
+    <!-- ==================== FOOTER & MEDIA SOSIAL ==================== -->
     <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
             <div class="flex flex-col items-center md:items-start text-center md:text-left space-y-3">
@@ -638,7 +634,6 @@
                     </div>
                 </div>
 
-                <!-- Tombol Bulat Media Sosial -->
                 <div class="pt-1">
                     <span class="text-[11px] uppercase tracking-wider font-semibold text-slate-500 block mb-2">Kunjungi Media Sosial Resmi SMK:</span>
                     <div class="flex items-center justify-center md:justify-start gap-3">
@@ -679,7 +674,7 @@
         </div>
     </div>
 
-    <!-- ==================== MODAL LOGIN ADMIN & SIAKAD (ANTI-AUTOFILL) ==================== -->
+    <!-- ==================== MODAL LOGIN ADMIN & SIAKAD ==================== -->
     <div id="login-modal" class="fixed inset-0 z-50 hidden bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-md w-full shadow-2xl border p-6 sm:p-8 relative">
             <button onclick="closeLoginModal()" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-rose-500 hover:text-white flex items-center justify-center absolute top-5 right-5">&times;</button>
@@ -752,11 +747,9 @@
 
     <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 max-w-sm w-full pointer-events-none"></div>
 
-    <!-- ==================== JAVASCRIPT LOGIC ==================== -->
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbwhUbhWj22lw9Es8fbmUW7aClo8-2z3peG5UJjqzxF6YqwcH49xQxS33Pj8MjQG73jj/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyXkHqnak6LlB8_jhXiqvSOziRS4fXgI5XCig40dgEULkGzwhuGuUzxE-8Tz4BqYJ2U/exec';
 
-        // Penstabil Link Gambar (Otomatis memperbaiki Google Drive & file lokal GitHub)
         function fixImgUrl(rawUrl, fallbackText = 'SMKN+1+Haltim', customFallback = '') {
             const fallback = customFallback || `https://placehold.co/600x400/1e3a8a/fbbf24?text=${encodeURIComponent(fallbackText)}`;
             if (!rawUrl) return fallback;
@@ -844,7 +837,6 @@
             });
         }
 
-        // Data Default & Render Jurusan
         window.jurusanList = [
             { singkatan: 'TJKT / TKJ', nama: 'Teknik Jaringan Komputer & Telekomunikasi', deskripsi: 'Mempelajari perakitan komputer, administrasi server Linux/Windows, konfigurasi routing MikroTik & Cisco, serta instalasi jaringan Fiber Optik (FTTH).', gambar: 'https://placehold.co/600x400/1e3a8a/ffffff?text=Lab+TJKT+SMKN+1+Haltim' },
             { singkatan: 'TITL', nama: 'Teknik Instalasi Tenaga Listrik', deskripsi: 'Membekali siswa dengan keahlian instalasi penerangan & tenaga listrik 1 fasa/3 fasa, panel distribusi, dan kendali motor listrik berbasis PLC.', gambar: 'https://placehold.co/600x400/b45309/ffffff?text=Bengkel+TITL+SMKN+1+Haltim' },
@@ -872,7 +864,6 @@
             });
         }
 
-        // Slider Modal Universal
         let curSlide = 0; let slideTimer; let fotosArr = [];
         function openSliderModal(title, subtitle, desc, rawFotos) {
             fotosArr = (rawFotos || '').split(',').map(f => fixImgUrl(f, title)).filter(Boolean);
@@ -916,7 +907,6 @@
         function nextSlide() { goToSlide(curSlide + 1); }
         function prevSlide() { goToSlide(curSlide - 1); }
 
-        // Direktori Monitoring PKL
         const pklData = [
             { mitra: 'UPT TIK & Lab Fakultas Teknik Unkhair', lokasi: 'Kota Ternate', jurusan: 'TJKT', kuota: '8 Siswa Kelas XII', status: 'Mitra Kampus Aktif' },
             { mitra: 'PT PLN (Persero) ULP Maba', lokasi: 'Kota Maba, Haltim', jurusan: 'TITL', kuota: '6 Siswa Kelas XII', status: 'Penempatan Aktif' },
@@ -1001,7 +991,6 @@
             showToast('Tersimpan!', 'Usulan tempat PKL berhasil dikirim ke Google Sheets.');
         }
 
-        // Cek NISN
         const sampleStudents = {
             '0067891234': { nama: 'Fikri Haikal Tidore', nisn: '0067891234', kelas: 'XII TJKT 1', jurusan: 'Teknik Jaringan Komputer & Telekomunikasi (TJKT)', statusAkademik: 'AKTIF / LULUS UKK', tempatPKL: 'UPT TIK Universitas Khairun Ternate', nilaiUKK: '92.50 (Sangat Kompeten)', waliKelas: 'Bpk. Hendra Wijaya, S.Kom.' },
             '0061122334': { nama: 'Yohanes Halmahera', nisn: '0061122334', kelas: 'XII TITL 1', jurusan: 'Teknik Instalasi Tenaga Listrik (TITL)', statusAkademik: 'AKTIF / LULUS UKK', tempatPKL: 'PT PLN (Persero) ULP Maba', nilaiUKK: '90.75 (Sangat Kompeten)', waliKelas: 'Bpk. M. Darwis, S.T.' },
@@ -1029,7 +1018,6 @@
                 </div>`;
         }
 
-        // Jadwal Praktik RPS
         const scheduleData = {
             TJKT: [
                 { hari: 'Senin - Selasa (07:30 - 14:00 WIT)', mapel: 'Administrasi Sistem Jaringan & Server', ruang: 'Lab Komputer & Server 1' },
@@ -1061,7 +1049,6 @@
                 </div>`).join('');
         }
 
-        // RENDER KARTU PENGUMUMAN
         let newsArticles = [
             { badge: 'PPDB 2027/2028', date: '06 Februari 2027', title: 'Penerimaan Siswa Baru SMKN 1 Halmahera Timur', excerpt: 'Diberitahukan kepada seluruh masyarakat dan calon peserta didik baru bahwa SMK NEGERI 1 HALMAHERA TIMUR secara resmi membuka Penerimaan Peserta Didik Baru (PPDB).', img: 'https://placehold.co/600x360/1e3a8a/ffffff?text=PPDB+SMKN+1+Haltim' }
         ];
@@ -1126,7 +1113,6 @@
             }).join('');
         }
 
-        // Kontak & Login Modal
         function handleContactSubmit(e) {
             e.preventDefault();
             const payload = {
@@ -1172,9 +1158,6 @@
                 });
         }
 
-        // =========================================================================
-        // RENDER DATA & CACHE INSTAN + TIMEOUT ANTI-LOADING LAMA
-        // =========================================================================
         function applyAllDataToUI(data) {
             if (!data || data.status !== 'success') return;
             if (data.profil) {
@@ -1308,13 +1291,11 @@
         }
 
         function syncAllFromSheets() {
-            // 1. Tampilkan cache instan jika sudah pernah dibuka sebelumnya (0 detik)
             try {
                 const cached = localStorage.getItem('smkn1haltim_web_cache_v1');
                 if (cached) applyAllDataToUI(JSON.parse(cached));
             } catch (e) {}
 
-            // 2. Ambil data terbaru dengan batas waktu 10 detik agar tidak menggantung
             const controller = new AbortController();
             const timeoutId = setTimeout(() => controller.abort(), 10000);
 

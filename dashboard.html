@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
     <title>CMS Dashboard - SMK N 1 Haltim (SMKN 1 Maba)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -19,7 +20,7 @@
 </head>
 <body class="bg-slate-100 text-slate-800 min-h-screen flex flex-col">
 
-    <!-- ==================== 1. LAYAR LOGIN WAJIB (ANTI-AUTOFILL) ==================== -->
+    <!-- ==================== 1. LAYAR LOGIN WAJIB ==================== -->
     <div id="login-gate" class="fixed inset-0 z-[100] login-gate-bg flex items-center justify-center p-4 overflow-y-auto">
         <div class="bg-white rounded-3xl max-w-md w-full p-8 shadow-2xl border border-slate-200 relative">
             <div class="text-center mb-6">
@@ -204,7 +205,7 @@
                 </form>
             </div>
 
-            <!-- ==================== PANEL PENGUMUMAN (UPLOAD FOTO LANGSUNG) ==================== -->
+            <!-- ==================== PANEL PENGUMUMAN ==================== -->
             <div id="view-pengumuman" class="bg-white p-6 rounded-2xl shadow-sm border hidden">
                 <div class="flex flex-wrap justify-between items-center border-b pb-4 mb-6 gap-4">
                     <div>
@@ -420,7 +421,7 @@
                 </form>
             </div>
 
-            <!-- ==================== 5. RIWAYAT KEGIATAN (UPLOAD MULTI-FOTO LANGSUNG) ==================== -->
+            <!-- ==================== 5. RIWAYAT KEGIATAN ==================== -->
             <div id="view-kegiatan" class="bg-white p-6 rounded-2xl shadow-sm border hidden">
                 <div class="flex justify-between items-center border-b pb-4 mb-4">
                     <div>
@@ -436,7 +437,7 @@
                 </form>
             </div>
 
-            <!-- ==================== 6. FASILITAS SEKOLAH (UPLOAD FOTO LANGSUNG) ==================== -->
+            <!-- ==================== 6. FASILITAS SEKOLAH ==================== -->
             <div id="view-fasilitas" class="bg-white p-6 rounded-2xl shadow-sm border hidden">
                 <div class="flex justify-between items-center border-b pb-4 mb-4">
                     <div>
@@ -452,7 +453,7 @@
                 </form>
             </div>
 
-            <!-- ==================== 7. KOMPETENSI KEAHLIAN (UPLOAD FOTO LANGSUNG) ==================== -->
+            <!-- ==================== 7. KOMPETENSI KEAHLIAN ==================== -->
             <div id="view-jurusan" class="bg-white p-6 rounded-2xl shadow-sm border hidden">
                 <div class="flex justify-between items-center border-b pb-4 mb-4">
                     <div>
@@ -468,7 +469,7 @@
                 </form>
             </div>
 
-            <!-- ==================== 8. TENAGA PENDIDIK / GURU (UPLOAD FOTO LANGSUNG) ==================== -->
+            <!-- ==================== 8. TENAGA PENDIDIK / GURU ==================== -->
             <div id="view-guru" class="bg-white p-6 rounded-2xl shadow-sm border hidden">
                 <div class="flex justify-between items-center border-b pb-4 mb-4">
                     <div>
@@ -484,7 +485,7 @@
                 </form>
             </div>
 
-            <!-- ==================== 10. GALERI FOTO (UPLOAD FOTO LANGSUNG) ==================== -->
+            <!-- ==================== 10. GALERI FOTO ==================== -->
             <div id="view-galeri" class="bg-white p-6 rounded-2xl shadow-sm border hidden">
                 <div class="flex justify-between items-center border-b pb-4 mb-4">
                     <div>
@@ -562,11 +563,23 @@
     </div>
 
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbwhUbhWj22lw9Es8fbmUW7aClo8-2z3peG5UJjqzxF6YqwcH49xQxS33Pj8MjQG73jj/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyXkHqnak6LlB8_jhXiqvSOziRS4fXgI5XCig40dgEULkGzwhuGuUzxE-8Tz4BqYJ2U/exec';
 
-        // =========================================================================
-        // ENGINE KOMPRESI & UPLOAD GAMBAR LANGSUNG DARI KOMPUTER/HP
-        // =========================================================================
+        function fixImgUrl(rawUrl, fallbackText = 'SMKN+1+Haltim', customFallback = '') {
+            const fallback = customFallback || `https://placehold.co/600x400/1e3a8a/fbbf24?text=${encodeURIComponent(fallbackText)}`;
+            if (!rawUrl) return fallback;
+            let url = String(rawUrl).trim();
+            if (!url) return fallback;
+
+            if (url.includes('drive.google.com')) {
+                const matchId = url.match(/\/d\/([a-zA-Z0-9_-]+)/) || url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+                if (matchId && matchId[1]) {
+                    return `https://lh3.googleusercontent.com/d/${matchId[1]}`;
+                }
+            }
+            return url;
+        }
+
         function compressImageFile(file, maxWidth = 550, quality = 0.65) {
             return new Promise((resolve) => {
                 const reader = new FileReader();
@@ -733,7 +746,7 @@
         function addPengumumanRow(tgl='', jdl='', isi='', tema='Pengumuman Sekolah', foto='') {
             const cleanTgl = formatCleanDate(tgl);
             const cleanTema = (tema === 'PKL' || tema === 'UKK' || tema === 'PRESTASI' || !tema) ? 'Pengumuman Sekolah' : tema;
-            const firstFoto = (foto || '').split(',')[0].trim();
+            const firstFoto = fixImgUrl((foto || '').split(',')[0].trim(), 'Pengumuman', 'https://placehold.co/160x100/1e3a8a/ffffff?text=Belum+Ada+Foto');
 
             const div = document.createElement('div');
             div.className = 'p-5 border-2 border-orange-200/80 rounded-2xl bg-orange-50/30 pengumuman-item relative space-y-3 shadow-sm';
@@ -774,7 +787,7 @@
                     <input type="file" accept="image/*" multiple onchange="handleRowImageUpload(this, '.pengumuman-item', '.i-foto', '.prev-img', true)" class="block w-full text-xs text-slate-600 file:mr-2.5 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-orange-600 file:text-white hover:file:bg-orange-700 cursor-pointer">
                     <input type="hidden" class="i-foto" value="${foto || ''}">
                     <div class="flex items-center gap-3 bg-white p-2 rounded-xl border border-slate-200">
-                        <img src="${firstFoto || 'https://placehold.co/160x100/1e3a8a/ffffff?text=Belum+Ada+Foto'}" onerror="this.src='https://placehold.co/160x100/1e3a8a/ffffff?text=Belum+Ada+Foto'" class="prev-img w-20 h-12 object-cover rounded-lg border">
+                        <img referrerpolicy="no-referrer" src="${firstFoto}" onerror="this.src='https://placehold.co/160x100/1e3a8a/ffffff?text=Belum+Ada+Foto'" class="prev-img w-20 h-12 object-cover rounded-lg border">
                         <span class="text-[11px] text-slate-500 leading-tight">Pratinjau Foto Sampul.<br>Bisa pilih hingga 4 foto sekaligus.</span>
                     </div>
                 </div>
@@ -832,7 +845,7 @@
         }
 
         function addKegiatanRow(nama='', des='', foto='') {
-            const firstFoto = (foto || '').split(',')[0].trim();
+            const firstFoto = fixImgUrl((foto || '').split(',')[0].trim(), 'Kegiatan', 'https://placehold.co/120x80/065f46/ffffff?text=Foto');
             const div = document.createElement('div');
             div.className = 'mb-4 p-4 border rounded-2xl bg-emerald-50/40 kegiatan-item relative space-y-3';
             div.innerHTML = `<button type="button" onclick="this.parentElement.remove()" class="absolute top-3 right-3 bg-red-100 text-red-600 px-2.5 py-1 rounded-lg text-xs font-bold">Hapus</button>
@@ -842,7 +855,7 @@
                     <input type="text" class="i-nama w-full px-3 py-2 border rounded-xl text-sm bg-white" value="${nama}" required>
                 </div>
                 <div class="flex items-center gap-3">
-                    <img src="${firstFoto || 'https://placehold.co/120x80/065f46/ffffff?text=Foto'}" onerror="this.src='https://placehold.co/120x80/065f46/ffffff?text=Foto'" class="prev-keg w-20 h-14 object-cover rounded-xl border bg-white shrink-0">
+                    <img referrerpolicy="no-referrer" src="${firstFoto}" onerror="this.src='https://placehold.co/120x80/065f46/ffffff?text=Foto'" class="prev-keg w-20 h-14 object-cover rounded-xl border bg-white shrink-0">
                     <div class="flex-1">
                         <label class="block text-xs font-bold text-emerald-800 mb-1">Upload Foto Kegiatan (Bisa pilih banyak)</label>
                         <input type="file" accept="image/*" multiple onchange="handleRowImageUpload(this, '.kegiatan-item', '.i-foto', '.prev-keg', true)" class="block w-full text-xs text-slate-600 file:mr-2 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-emerald-600 file:text-white cursor-pointer">
@@ -855,13 +868,14 @@
         }
 
         function addFasilitasRow(nama='', des='', foto='') {
+            const imgSrc = fixImgUrl(foto, 'RPS', 'https://placehold.co/120x80/0e7490/ffffff?text=RPS');
             const div = document.createElement('div');
             div.className = 'mb-4 p-4 border rounded-2xl bg-cyan-50/40 fasilitas-item relative space-y-2';
             div.innerHTML = `<button type="button" onclick="this.parentElement.remove()" class="absolute top-3 right-3 bg-red-100 text-red-600 px-2.5 py-1 rounded-lg text-xs font-bold">Hapus</button>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pr-16 items-center">
                 <div><label class="block text-xs font-bold mb-1">Nama Fasilitas / RPS *</label><input type="text" class="i-nama w-full px-3 py-2 border rounded-xl text-sm bg-white" value="${nama}" required></div>
                 <div class="flex items-center gap-3">
-                    <img src="${foto || 'https://placehold.co/120x80/0e7490/ffffff?text=RPS'}" onerror="this.src='https://placehold.co/120x80/0e7490/ffffff?text=RPS'" class="prev-fas w-20 h-14 object-cover rounded-xl border bg-white shrink-0">
+                    <img referrerpolicy="no-referrer" src="${imgSrc}" onerror="this.src='https://placehold.co/120x80/0e7490/ffffff?text=RPS'" class="prev-fas w-20 h-14 object-cover rounded-xl border bg-white shrink-0">
                     <div class="flex-1">
                         <label class="block text-xs font-bold text-cyan-800 mb-1">Upload Foto Fasilitas</label>
                         <input type="file" accept="image/*" onchange="handleRowImageUpload(this, '.fasilitas-item', '.i-foto', '.prev-fas', false)" class="block w-full text-xs text-slate-600 file:mr-2 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-cyan-600 file:text-white cursor-pointer">
@@ -874,7 +888,7 @@
         }
 
         function addJurusanRow(singkatan='', nama='', des='', gambar='') {
-            const firstImg = (gambar || '').split(',')[0].trim();
+            const firstImg = fixImgUrl((gambar || '').split(',')[0].trim(), 'Jurusan', 'https://placehold.co/120x80/b45309/ffffff?text=Jurusan');
             const div = document.createElement('div');
             div.className = 'mb-4 p-4 border rounded-2xl bg-yellow-50/40 jurusan-item relative space-y-3';
             div.innerHTML = `<button type="button" onclick="this.parentElement.remove()" class="absolute top-3 right-3 bg-red-100 text-red-600 px-2.5 py-1 rounded-lg text-xs font-bold">Hapus</button>
@@ -885,7 +899,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
                 <div><label class="block text-xs font-bold mb-1">Deskripsi Jurusan *</label><textarea class="i-des w-full px-3 py-2 border rounded-xl text-sm bg-white" rows="2" required>${des}</textarea></div>
                 <div class="flex items-center gap-3">
-                    <img src="${firstImg || 'https://placehold.co/120x80/b45309/ffffff?text=Jurusan'}" onerror="this.src='https://placehold.co/120x80/b45309/ffffff?text=Jurusan'" class="prev-jur w-20 h-14 object-cover rounded-xl border bg-white shrink-0">
+                    <img referrerpolicy="no-referrer" src="${firstImg}" onerror="this.src='https://placehold.co/120x80/b45309/ffffff?text=Jurusan'" class="prev-jur w-20 h-14 object-cover rounded-xl border bg-white shrink-0">
                     <div class="flex-1">
                         <label class="block text-xs font-bold text-yellow-800 mb-1">Upload Foto Jurusan / RPS</label>
                         <input type="file" accept="image/*" multiple onchange="handleRowImageUpload(this, '.jurusan-item', '.i-gambar', '.prev-jur', true)" class="block w-full text-xs text-slate-600 file:mr-2 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-yellow-600 file:text-white cursor-pointer">
@@ -897,6 +911,7 @@
         }
 
         function addGuruRow(nama='', mapel='', foto='') {
+            const imgSrc = fixImgUrl(foto, 'Guru', 'https://placehold.co/100x100/581c87/ffffff?text=Guru');
             const div = document.createElement('div');
             div.className = 'mb-4 p-4 border rounded-2xl bg-purple-50/40 guru-item relative';
             div.innerHTML = `<button type="button" onclick="this.parentElement.remove()" class="absolute top-3 right-3 bg-red-100 text-red-600 px-2.5 py-1 rounded-lg text-xs font-bold">Hapus</button>
@@ -904,7 +919,7 @@
                 <div class="md:col-span-4"><label class="block text-xs font-bold mb-1">Nama Guru / Staf *</label><input type="text" class="i-nama w-full px-3 py-2 border rounded-xl text-sm bg-white" value="${nama}" required></div>
                 <div class="md:col-span-4"><label class="block text-xs font-bold mb-1">Jabatan / Mapel *</label><input type="text" class="i-mapel w-full px-3 py-2 border rounded-xl text-sm bg-white" value="${mapel}" required></div>
                 <div class="md:col-span-4 flex items-center gap-3">
-                    <img src="${foto || 'https://placehold.co/100x100/581c87/ffffff?text=Guru'}" onerror="this.src='https://placehold.co/100x100/581c87/ffffff?text=Guru'" class="prev-guru w-14 h-14 object-cover rounded-full border bg-white shrink-0">
+                    <img referrerpolicy="no-referrer" src="${imgSrc}" onerror="this.src='https://placehold.co/100x100/581c87/ffffff?text=Guru'" class="prev-guru w-14 h-14 object-cover rounded-full border bg-white shrink-0">
                     <div class="flex-1">
                         <label class="block text-xs font-bold text-purple-800 mb-1">Upload Foto Guru</label>
                         <input type="file" accept="image/*" onchange="handleRowImageUpload(this, '.guru-item', '.i-foto', '.prev-guru', false)" class="block w-full text-xs text-slate-600 file:mr-2 file:py-1 file:px-2.5 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-purple-600 file:text-white cursor-pointer">
@@ -916,9 +931,10 @@
         }
 
         function addGaleriRow(jdl='', link='') {
+            const imgSrc = fixImgUrl(link, 'Galeri', 'https://placehold.co/120x80/be185d/ffffff?text=Galeri');
             const div = document.createElement('div');
             div.className = 'mb-3 p-4 border rounded-2xl bg-pink-50/40 galeri-item flex flex-col sm:flex-row gap-4 items-center';
-            div.innerHTML = `<img src="${link || 'https://placehold.co/120x80/be185d/ffffff?text=Galeri'}" onerror="this.src='https://placehold.co/120x80/be185d/ffffff?text=Galeri'" class="prev-gal w-24 h-16 object-cover rounded-xl border bg-white shrink-0">
+            div.innerHTML = `<img referrerpolicy="no-referrer" src="${imgSrc}" onerror="this.src='https://placehold.co/120x80/be185d/ffffff?text=Galeri'" class="prev-gal w-24 h-16 object-cover rounded-xl border bg-white shrink-0">
             <div class="w-full sm:w-2/5"><label class="block text-xs font-bold mb-1">Judul Foto *</label><input type="text" class="i-judul w-full px-3 py-2 border rounded-xl text-sm bg-white" value="${jdl}" required></div>
             <div class="w-full sm:w-2/5">
                 <label class="block text-xs font-bold text-pink-800 mb-1">Upload File Foto</label>
@@ -1040,110 +1056,124 @@
             };
         }
 
+        function applyDashboardData(data) {
+            if (!data || data.status !== 'success') return;
+            const p = data.profil || {};
+            document.getElementById('inKepsek').value = p.namaKepsek || '';
+            document.getElementById('inSambutan').value = p.sambutan || '';
+            document.getElementById('inFotoKepsek').value = p.fotoKepsek || '';
+            if (p.fotoKepsek) {
+                document.getElementById('prevFotoKepsek').src = fixImgUrl(p.fotoKepsek, 'Kepsek', 'kepsek.png');
+            }
+            if (p.logoWeb) {
+                const fixedLogo = fixImgUrl(p.logoWeb, 'SMKN 1', 'logo.jpg');
+                document.getElementById('inLogoWeb').value = p.logoWeb;
+                document.getElementById('prevLogoWeb').src = fixedLogo;
+                document.querySelectorAll('.cms-logo').forEach(el => el.src = fixedLogo);
+            }
+
+            const vm = data.visimisi || {};
+            document.getElementById('inVisi').value = vm.visi || '';
+            document.getElementById('inMisi').value = vm.misi || '';
+
+            const sj = data.sejarah || {};
+            document.getElementById('inSejarahJudul').value = sj.judul || '';
+            document.getElementById('inSejarahIsi').value = sj.isi || '';
+
+            const kt = data.kontak || {};
+            document.getElementById('inAlamat').value = kt.alamat || '';
+            document.getElementById('inEmail').value = kt.email || '';
+            document.getElementById('inTelepon').value = kt.telepon || '';
+            document.getElementById('inPeta').value = kt.peta || '';
+            document.getElementById('inTiktok').value = kt.tiktok || '';
+            document.getElementById('inIG').value = kt.ig || '';
+            document.getElementById('inFB').value = kt.fb || '';
+
+            if (data.infoPKL && Object.keys(data.infoPKL).length > 0) {
+                applyInfoPKLToForm(data.infoPKL);
+            }
+
+            document.getElementById('cont-in-kegiatan').innerHTML = '';
+            (data.kegiatan || []).forEach(i => addKegiatanRow(i.nama, i.deskripsi, i.foto));
+
+            document.getElementById('cont-in-fasilitas').innerHTML = '';
+            (data.fasilitas || []).forEach(i => addFasilitasRow(i.nama, i.deskripsi, i.foto));
+
+            document.getElementById('cont-in-jurusan').innerHTML = '';
+            (data.jurusan || []).forEach(i => addJurusanRow(i.singkatan, i.nama, i.deskripsi, i.gambar));
+
+            document.getElementById('cont-in-guru').innerHTML = '';
+            (data.guru || []).forEach(i => addGuruRow(i.nama, i.mapel, i.foto));
+
+            document.getElementById('cont-in-pengumuman').innerHTML = '';
+            const savedLocalPeng = localStorage.getItem('smkn1haltim_pengumuman_data');
+            let pengSource = data.pengumuman || [];
+            if (savedLocalPeng && pengSource.length > 0) {
+                try {
+                    const localArr = JSON.parse(savedLocalPeng);
+                    if (localArr.length > 0) pengSource = localArr;
+                } catch (e) {}
+            }
+            pengSource.forEach(raw => {
+                const item = parsePengumumanItem(raw);
+                addPengumumanRow(item.tanggal, item.judul, item.isi, item.tema, item.foto);
+            });
+
+            document.getElementById('cont-in-galeri').innerHTML = '';
+            (data.galeri || []).forEach(i => addGaleriRow(i.judul, i.link));
+
+            document.getElementById('list-admin').innerHTML = (data.users || []).map(u => `
+                <div class="p-3 border-b flex justify-between items-center">
+                    <span class="font-semibold">${u.username}</span>
+                    <button onclick="deleteUser('${u.username}')" class="text-xs text-red-600 border border-red-200 hover:bg-red-50 px-2.5 py-1 rounded-lg font-bold">Hapus</button>
+                </div>
+            `).join('');
+
+            document.getElementById('cont-in-ppdb').innerHTML = '';
+            (data.ppdbList || []).forEach(i => addPPDBRow(i));
+            document.getElementById('badge-count-ppdb').textContent = (data.ppdbList || []).length;
+
+            document.getElementById('cont-in-pkl').innerHTML = '';
+            const pklSource = (Array.isArray(data.pkl) && data.pkl.length > 0) ? data.pkl : defaultPKLItems;
+            pklSource.forEach(i => addPKLRow(i));
+            document.getElementById('badge-count-pkl').textContent = pklSource.length;
+
+            document.getElementById('cont-in-siswa').innerHTML = '';
+            (data.siswaList || []).forEach(i => addSiswaRow(i));
+
+            document.getElementById('cont-in-jadwal').innerHTML = '';
+            (data.jadwalList || []).forEach(i => addJadwalRow(i));
+
+            document.getElementById('cont-in-pesan').innerHTML = '';
+            (data.pesanList || []).forEach(i => addPesanRow(i));
+            document.getElementById('badge-count-pesan').textContent = (data.pesanList || []).length;
+        }
+
         function loadAllData() {
             const ic = document.getElementById('refreshIcon');
             if (ic) ic.classList.add('fa-spin');
 
-            const localPKLConfig = localStorage.getItem('smkn1haltim_pkl_config');
-            if (localPKLConfig) {
-                try {
-                    const parsed = JSON.parse(localPKLConfig);
-                    if (parsed.infoPKL) applyInfoPKLToForm(parsed.infoPKL);
-                } catch (e) {}
-            }
+            try {
+                const cached = localStorage.getItem('smkn1haltim_web_cache_v2');
+                if (cached) applyDashboardData(JSON.parse(cached));
+            } catch (e) {}
 
-            fetch(scriptURL).then(res => res.json()).then(data => {
-                if (data.status === 'success') {
-                    const p = data.profil || {};
-                    document.getElementById('inKepsek').value = p.namaKepsek || '';
-                    document.getElementById('inSambutan').value = p.sambutan || '';
-                    document.getElementById('inFotoKepsek').value = p.fotoKepsek || '';
-                    if (p.fotoKepsek && !p.fotoKepsek.includes('sanishtech')) document.getElementById('prevFotoKepsek').src = p.fotoKepsek;
-                    if (p.logoWeb) {
-                        document.getElementById('inLogoWeb').value = p.logoWeb;
-                        document.getElementById('prevLogoWeb').src = p.logoWeb;
-                        document.querySelectorAll('.cms-logo').forEach(el => el.src = p.logoWeb);
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 12000);
+
+            fetch(scriptURL, { signal: controller.signal })
+                .then(res => res.json())
+                .then(data => {
+                    clearTimeout(timeoutId);
+                    if (data.status === 'success') {
+                        applyDashboardData(data);
+                        try { localStorage.setItem('smkn1haltim_web_cache_v2', JSON.stringify(data)); } catch (e) {}
                     }
-
-                    const vm = data.visimisi || {};
-                    document.getElementById('inVisi').value = vm.visi || '';
-                    document.getElementById('inMisi').value = vm.misi || '';
-
-                    const sj = data.sejarah || {};
-                    document.getElementById('inSejarahJudul').value = sj.judul || '';
-                    document.getElementById('inSejarahIsi').value = sj.isi || '';
-
-                    const kt = data.kontak || {};
-                    document.getElementById('inAlamat').value = kt.alamat || '';
-                    document.getElementById('inEmail').value = kt.email || '';
-                    document.getElementById('inTelepon').value = kt.telepon || '';
-                    document.getElementById('inPeta').value = kt.peta || '';
-                    document.getElementById('inTiktok').value = kt.tiktok || '';
-                    document.getElementById('inIG').value = kt.ig || '';
-                    document.getElementById('inFB').value = kt.fb || '';
-
-                    if (data.infoPKL && Object.keys(data.infoPKL).length > 0) {
-                        applyInfoPKLToForm(data.infoPKL);
-                    }
-
-                    document.getElementById('cont-in-kegiatan').innerHTML = '';
-                    (data.kegiatan || []).forEach(i => addKegiatanRow(i.nama, i.deskripsi, i.foto));
-
-                    document.getElementById('cont-in-fasilitas').innerHTML = '';
-                    (data.fasilitas || []).forEach(i => addFasilitasRow(i.nama, i.deskripsi, i.foto));
-
-                    document.getElementById('cont-in-jurusan').innerHTML = '';
-                    (data.jurusan || []).forEach(i => addJurusanRow(i.singkatan, i.nama, i.deskripsi, i.gambar));
-
-                    document.getElementById('cont-in-guru').innerHTML = '';
-                    (data.guru || []).forEach(i => addGuruRow(i.nama, i.mapel, i.foto));
-
-                    document.getElementById('cont-in-pengumuman').innerHTML = '';
-                    const savedLocalPeng = localStorage.getItem('smkn1haltim_pengumuman_data');
-                    let pengSource = data.pengumuman || [];
-                    if (savedLocalPeng && pengSource.length > 0) {
-                        try {
-                            const localArr = JSON.parse(savedLocalPeng);
-                            if (localArr.length > 0) pengSource = localArr;
-                        } catch (e) {}
-                    }
-                    pengSource.forEach(raw => {
-                        const item = parsePengumumanItem(raw);
-                        addPengumumanRow(item.tanggal, item.judul, item.isi, item.tema, item.foto);
-                    });
-
-                    document.getElementById('cont-in-galeri').innerHTML = '';
-                    (data.galeri || []).forEach(i => addGaleriRow(i.judul, i.link));
-
-                    document.getElementById('list-admin').innerHTML = (data.users || []).map(u => `
-                        <div class="p-3 border-b flex justify-between items-center">
-                            <span class="font-semibold">${u.username}</span>
-                            <button onclick="deleteUser('${u.username}')" class="text-xs text-red-600 border border-red-200 hover:bg-red-50 px-2.5 py-1 rounded-lg font-bold">Hapus</button>
-                        </div>
-                    `).join('');
-
-                    document.getElementById('cont-in-ppdb').innerHTML = '';
-                    (data.ppdbList || []).forEach(i => addPPDBRow(i));
-                    document.getElementById('badge-count-ppdb').textContent = (data.ppdbList || []).length;
-
-                    document.getElementById('cont-in-pkl').innerHTML = '';
-                    const pklSource = (Array.isArray(data.pkl) && data.pkl.length > 0) ? data.pkl : defaultPKLItems;
-                    pklSource.forEach(i => addPKLRow(i));
-                    document.getElementById('badge-count-pkl').textContent = pklSource.length;
-
-                    document.getElementById('cont-in-siswa').innerHTML = '';
-                    (data.siswaList || []).forEach(i => addSiswaRow(i));
-
-                    document.getElementById('cont-in-jadwal').innerHTML = '';
-                    (data.jadwalList || []).forEach(i => addJadwalRow(i));
-
-                    document.getElementById('cont-in-pesan').innerHTML = '';
-                    (data.pesanList || []).forEach(i => addPesanRow(i));
-                    document.getElementById('badge-count-pesan').textContent = (data.pesanList || []).length;
-                }
-            }).finally(() => {
-                if (ic) ic.classList.remove('fa-spin');
-            });
+                })
+                .finally(() => {
+                    clearTimeout(timeoutId);
+                    if (ic) ic.classList.remove('fa-spin');
+                });
         }
 
         function applyInfoPKLToForm(ip) {
@@ -1164,15 +1194,21 @@
                 e.preventDefault();
                 const btn = document.getElementById(btnId);
                 const txt = btn.innerHTML;
-                btn.innerHTML = 'Menyimpan...';
+                btn.innerHTML = 'Menyimpan ke Google Drive & Sheets...';
                 btn.disabled = true;
                 fetch(scriptURL, { method: 'POST', body: JSON.stringify(payloadBuilder()) })
                     .then(res => res.json())
-                    .then(() => {
-                        alert('Data berhasil disimpan ke Google Sheets!');
+                    .then(res => {
+                        if (res.status === 'error') {
+                            alert('Gagal menyimpan: ' + (res.message || 'Terjadi kesalahan.'));
+                            return;
+                        }
+                        localStorage.removeItem('smkn1haltim_web_cache_v2');
+                        alert('Data & foto berhasil disimpan ke Google Drive dan Google Sheets!');
                         showMenu('dashboard');
                         loadAllData();
                     })
+                    .catch(() => alert('Koneksi gagal saat menyimpan. Periksa jaringan internet Anda.'))
                     .finally(() => {
                         btn.innerHTML = txt;
                         btn.disabled = false;
@@ -1239,8 +1275,13 @@
                 body: JSON.stringify({ action: 'updatePengumuman', pengumumanData: arrForSheets })
             })
             .then(r => r.json())
-            .then(() => {
-                alert('Berhasil! Tema Pengumuman & Foto Sampul telah disimpan.');
+            .then(res => {
+                if (res.status === 'error') {
+                    alert('Gagal menyimpan: ' + (res.message || 'Kesalahan server.'));
+                    return;
+                }
+                localStorage.removeItem('smkn1haltim_web_cache_v2');
+                alert('Berhasil! Tema Pengumuman & Foto Sampul telah disimpan ke Google Drive.');
                 showMenu('dashboard');
                 loadAllData();
             })
@@ -1290,6 +1331,7 @@
             })
             .then(r => r.json())
             .then(() => {
+                localStorage.removeItem('smkn1haltim_web_cache_v2');
                 alert('Berhasil! Pengaturan Kiri & Tabel Kanan Monitoring PKL telah disimpan.');
                 showMenu('dashboard');
                 loadAllData();
@@ -1305,17 +1347,23 @@
                 e.preventDefault();
                 const btn = document.getElementById(btnId);
                 const txt = btn.innerHTML;
-                btn.innerHTML = 'Menyimpan Foto & Data...';
+                btn.innerHTML = 'Menyimpan Foto ke Google Drive...';
                 btn.disabled = true;
                 let arr = [];
                 document.querySelectorAll(itemSelector).forEach(el => arr.push(mapper(el)));
                 fetch(scriptURL, { method: 'POST', body: JSON.stringify({ action: action, [keyName]: arr }) })
                     .then(res => res.json())
-                    .then(() => {
-                        alert('Seluruh foto dan data berhasil disimpan ke Google Sheets!');
+                    .then(res => {
+                        if (res.status === 'error') {
+                            alert('Gagal menyimpan: ' + (res.message || 'Kesalahan server.'));
+                            return;
+                        }
+                        localStorage.removeItem('smkn1haltim_web_cache_v2');
+                        alert('Seluruh foto dan data berhasil disimpan ke Google Drive & Google Sheets!');
                         showMenu('dashboard');
                         loadAllData();
                     })
+                    .catch(() => alert('Koneksi gagal saat menyimpan foto.'))
                     .finally(() => {
                         btn.innerHTML = txt;
                         btn.disabled = false;
@@ -1373,7 +1421,10 @@
             if (confirm(`Hapus admin ${u}?`)) {
                 fetch(scriptURL, { method: 'POST', body: JSON.stringify({ action: 'deleteUser', username: u }) })
                     .then(res => res.json())
-                    .then(() => loadAllData());
+                    .then(() => {
+                        localStorage.removeItem('smkn1haltim_web_cache_v2');
+                        loadAllData();
+                    });
             }
         }
 

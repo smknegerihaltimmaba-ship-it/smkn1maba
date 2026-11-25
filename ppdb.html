@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer">
-    <title>Portal PPDB Online — SMK Negeri 1 Halmahera Timur (SMKN 1 Maba)</title>
+    <title>Portal PPDB Online | SMK Negeri 1 Halmahera Timur (SMKN 1 Maba)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script>
         tailwind.config = {
@@ -17,307 +17,281 @@
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         display: ['Plus Jakarta Sans', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            50: '#eff6ff',
-                            100: '#dbeafe',
-                            500: '#2563eb',
-                            600: '#1d4ed8',
-                            700: '#1e40af',
-                            800: '#1e3a8a',
-                            900: '#172554',
-                        }
                     }
                 }
             }
         }
     </script>
-    <style>
-        .ppdb-hero {
-            background-color: #172554;
-            background-image: radial-gradient(at 15% 15%, rgba(37, 99, 235, 0.4) 0px, transparent 50%),
-                              radial-gradient(at 85% 80%, rgba(245, 158, 11, 0.25) 0px, transparent 50%);
-        }
-        @media print {
-            body * { visibility: hidden; }
-            #ppdb-receipt-card, #ppdb-receipt-card * { visibility: visible; }
-            #ppdb-receipt-card { position: fixed; left: 0; top: 0; width: 100%; box-shadow: none; border: 2px solid #1e3a8a; }
-        }
-    </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col">
+<body class="bg-slate-100 text-slate-800 font-sans antialiased min-h-screen flex flex-col">
 
-    <!-- NAVBAR PORTAL PPDB -->
-    <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-3.5">
-                <img src="logo.jpg" onerror="this.onerror=null; this.src='https://placehold.co/120x120/1e3a8a/fbbf24?text=SMKN+1';" alt="Logo SMKN 1 Haltim" class="site-logo w-12 h-12 rounded-full object-cover shadow border border-slate-200 bg-white">
+    <!-- HEADER PORTAL PPDB -->
+    <header class="bg-slate-900 text-white sticky top-0 z-40 shadow-lg border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-wrap justify-between items-center gap-3">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <img src="logo.jpg" onerror="this.onerror=null; this.src='https://placehold.co/120x120/1e3a8a/fbbf24?text=SMKN+1';" alt="Logo SMKN 1 Haltim" class="site-logo w-11 h-11 rounded-full object-cover bg-white p-0.5 border-2 border-amber-400">
                 <div>
-                    <div class="flex items-center gap-2">
-                        <span class="font-display font-extrabold text-lg sm:text-xl text-slate-900">PORTAL PPDB ONLINE</span>
-                        <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-amber-100 text-amber-800">SMKN 1 Maba</span>
-                    </div>
-                    <p class="text-xs text-slate-500 font-medium">SMK Negeri 1 Halmahera Timur • NPSN: 60200659</p>
+                    <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-amber-500 text-slate-950">Portal PPDB Resmi</span>
+                    <h1 class="font-display font-extrabold text-base sm:text-lg leading-tight mt-0.5">SMK NEGERI 1 HALMAHERA TIMUR</h1>
+                    <p class="text-[11px] text-slate-400">SMKN 1 Maba • Desa Soa Gimalaha, Kec. Kota Maba</p>
                 </div>
             </a>
-
-            <div class="flex items-center gap-2.5">
-                <a href="index.html" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs sm:text-sm transition">
-                    <i class="fa-solid fa-arrow-left"></i>
-                    <span>Kembali ke Web Profil</span>
-                </a>
-                <a href="dashboard.html" class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-xs sm:text-sm shadow transition">
-                    <i class="fa-solid fa-user-shield"></i>
-                    <span>Admin PPDB</span>
+            <div class="flex items-center gap-2">
+                <a href="index.html" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3.5 py-2 rounded-xl text-xs font-semibold transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-arrow-left text-amber-400"></i>
+                    <span>Kembali ke Beranda Utama</span>
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- BANNER HEADER PPDB -->
-    <section class="ppdb-hero text-white py-12 sm:py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
-            <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 border border-white/20 text-amber-300 text-xs font-bold uppercase tracking-wider mb-3">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Penerimaan Peserta Didik Baru (PPDB)
+    <!-- BANNER PPDB -->
+    <section class="bg-gradient-to-br from-blue-950 via-slate-900 to-blue-900 text-white py-10 px-4 border-b border-slate-800">
+        <div class="max-w-5xl mx-auto text-center space-y-3">
+            <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-400/30 text-xs font-bold">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                Penerimaan Peserta Didik Baru (PPDB) Online
             </span>
-            <h1 class="font-display font-extrabold text-3xl sm:text-5xl leading-tight">Pendaftaran Siswa Baru Online</h1>
-            <p class="text-slate-200 text-sm sm:text-base mt-3 leading-relaxed">
-                Lengkapi formulir di bawah ini untuk mendaftar sebagai calon peserta didik baru di <strong>SMK Negeri 1 Halmahera Timur</strong>. Data Anda tersimpan otomatis di database Google Sheets dan kartu bukti registrasi langsung diterbitkan.
+            <h2 class="font-display font-extrabold text-2xl sm:text-4xl">Formulir Pendaftaran Siswa Baru & Cek Status Seleksi</h2>
+            <p class="text-slate-300 text-xs sm:text-sm max-w-2xl mx-auto">
+                Silakan lengkapi biodata calon peserta didik baru di bawah ini. Nomor Registrasi dan status verifikasi otomatis tersimpan di database panitia PPDB SMKN 1 Maba.
             </p>
         </div>
     </section>
 
-    <!-- AREA FORMULIR & KARTU BUKTI REGISTRASI -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-1 w-full">
-        <div class="grid lg:grid-cols-12 gap-8 items-start">
+    <!-- KONTEN UTAMA -->
+    <main class="max-w-5xl mx-auto px-4 py-8 flex-1 w-full">
 
-            <!-- KOLOM KIRI: FORMULIR PENDAFTARAN LENGKAP -->
-            <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200">
-                <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-6">
-                    <div>
-                        <h2 class="font-display font-bold text-xl text-slate-900">Formulir Biodata Calon Peserta Didik</h2>
-                        <p class="text-xs text-slate-500">Pastikan seluruh data diisi sesuai Ijazah / Kartu Keluarga (KK).</p>
-                    </div>
-                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">Gelombang Aktif</span>
-                </div>
-
-                <form id="ppdb-form" onsubmit="handlePPDBSubmit(event)" class="space-y-4">
-                    <div class="grid sm:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1.5">Nama Lengkap Calon Siswa *</label>
-                            <input type="text" id="ppdb-nama" required placeholder="Contoh: Rian Saputra" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-600">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1.5">Nomor Induk Siswa Nasional (NISN) *</label>
-                            <input type="text" id="ppdb-nisn" required maxlength="10" placeholder="10 Digit NISN" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-brand-600">
-                        </div>
-                    </div>
-
-                    <div class="grid sm:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1.5">Sekolah Asal (SMP / MTs) *</label>
-                            <input type="text" id="ppdb-smp" required placeholder="Contoh: SMP Negeri 1 Maba" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-600">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1.5">Jalur Pendaftaran *</label>
-                            <select id="ppdb-jalur" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-600">
-                                <option value="Reguler / Umum">Jalur Reguler / Umum</option>
-                                <option value="Prestasi Akademik / Non-Akademik">Jalur Prestasi</option>
-                                <option value="Afirmasi (KIP / PIP)">Jalur Afirmasi (KIP / PIP)</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="grid sm:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1.5">Pilihan Kompetensi Keahlian 1 *</label>
-                            <select id="ppdb-jurusan1" required class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-600">
-                                <option value="Teknik Jaringan Komputer & Telekomunikasi (TJKT)">Teknik Jaringan Komputer & Telekomunikasi (TJKT)</option>
-                                <option value="Teknik Instalasi Tenaga Listrik (TITL)">Teknik Instalasi Tenaga Listrik (TITL)</option>
-                                <option value="Teknik Konstruksi dan Perumahan (TKP)">Teknik Konstruksi dan Perumahan (TKP)</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1.5">Pilihan Kompetensi Keahlian 2</label>
-                            <select id="ppdb-jurusan2" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-600">
-                                <option value="Teknik Instalasi Tenaga Listrik (TITL)">Teknik Instalasi Tenaga Listrik (TITL)</option>
-                                <option value="Teknik Konstruksi dan Perumahan (TKP)">Teknik Konstruksi dan Perumahan (TKP)</option>
-                                <option value="Teknik Jaringan Komputer & Telekomunikasi (TJKT)">Teknik Jaringan Komputer & Telekomunikasi (TJKT)</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="grid sm:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1.5">Nomor WhatsApp Aktif Ortu/Siswa *</label>
-                            <input type="tel" id="ppdb-wa" required placeholder="Contoh: 085311884115" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-600">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1.5">Alamat Domisili (Desa / Kecamatan) *</label>
-                            <input type="text" id="ppdb-alamat" required placeholder="Contoh: Desa Soa Gimalaha, Kota Maba" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-600">
-                        </div>
-                    </div>
-
-                    <div class="pt-2">
-                        <button type="submit" id="btn-submit-ppdb" class="w-full py-4 px-6 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-lg shadow-brand-600/25 transition flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-paper-plane"></i>
-                            <span>Kirim Pendaftaran ke Database & Terbitkan Kartu Bukti</span>
-                        </button>
-                    </div>
-                </form>
-            </div>
-
-            <!-- KOLOM KANAN: KARTU BUKTI PENDAFTARAN & CEK STATUS PPDB -->
-            <div class="lg:col-span-5 space-y-6">
-                <div class="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-xl">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="font-display font-bold text-base text-amber-400 flex items-center gap-2">
-                            <i class="fa-solid fa-receipt"></i> Kartu Bukti Pendaftaran
-                        </h3>
-                        <span id="ppdb-status-pill" class="text-[11px] px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-300">Menunggu Input</span>
-                    </div>
-
-                    <div id="ppdb-receipt-card" class="bg-white text-slate-900 rounded-2xl p-5 space-y-3 border-t-8 border-brand-600 text-xs">
-                        <div class="flex items-center justify-between border-b pb-3">
-                            <div>
-                                <div class="font-display font-extrabold text-sm text-brand-800">PANITIA PPDB SMKN 1 HALTIM</div>
-                                <div class="text-[11px] text-slate-500">Desa Soa Gimalaha, Kec. Kota Maba • NPSN 60200659</div>
-                            </div>
-                            <img src="logo.jpg" onerror="this.onerror=null; this.src='https://placehold.co/120x120/1e3a8a/fbbf24?text=SMKN+1';" class="site-logo w-10 h-10 rounded-full object-cover">
-                        </div>
-                        <div class="flex justify-between"><span>No. Registrasi:</span><strong id="rec-noreg" class="font-mono text-brand-700">PPDB-HALTIM-2026-001</strong></div>
-                        <div class="flex justify-between"><span>Nama Siswa:</span><strong id="rec-nama">Belum Diisi</strong></div>
-                        <div class="flex justify-between"><span>NISN / Asal:</span><strong id="rec-nisn">-</strong></div>
-                        <div class="flex justify-between"><span>Jalur Pilihan:</span><strong id="rec-jalur">Reguler / Umum</strong></div>
-                        <div class="pt-2 border-t border-dashed">
-                            <span class="text-slate-500 block">Pilihan Kompetensi Keahlian 1:</span>
-                            <strong id="rec-jurusan1" class="text-brand-700 block bg-blue-50 px-2.5 py-1.5 rounded-lg mt-1">Teknik Jaringan Komputer & Telekomunikasi (TJKT)</strong>
-                        </div>
-                        <div>
-                            <span class="text-slate-500 block">Pilihan Kompetensi Keahlian 2:</span>
-                            <strong id="rec-jurusan2" class="text-slate-700">Teknik Instalasi Tenaga Listrik (TITL)</strong>
-                        </div>
-                        <div class="bg-amber-50 border border-amber-200 rounded-xl p-2.5 text-[11px] text-amber-900">
-                            <strong>Catatan Verifikasi:</strong> Bawa cetakan kartu ini beserta fotokopi Ijazah/SKL & Kartu Keluarga ke Sekretariat PPDB SMKN 1 Maba.
-                        </div>
-                    </div>
-
-                    <div class="mt-4">
-                        <button onclick="window.print()" class="w-full py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-xs font-bold text-white transition flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-print"></i> Cetak / Simpan Kartu Bukti (PDF)
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Kotak Cek Status Verifikasi Pendaftar -->
-                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200">
-                    <h4 class="font-display font-bold text-base text-slate-900 mb-1">Cek Status Verifikasi PPDB</h4>
-                    <p class="text-xs text-slate-500 mb-4">Masukkan 10 digit NISN Anda untuk melihat status verifikasi berkas dari Panitia Admin.</p>
-                    <div class="flex gap-2">
-                        <input type="text" id="cek-ppdb-nisn" maxlength="10" placeholder="Ketik 10 digit NISN..." class="flex-1 px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-xs font-mono">
-                        <button onclick="cekStatusPPDB()" class="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-brand-600 text-white text-xs font-bold transition">Cek</button>
-                    </div>
-                    <div id="hasil-cek-ppdb" class="mt-3 text-xs"></div>
-                </div>
-            </div>
-
+        <!-- TABS FORMULIR & CEK STATUS -->
+        <div class="flex flex-wrap justify-center gap-3 mb-8">
+            <button type="button" onclick="pindahTabPPDB('daftar')" id="btn-tab-daftar" class="px-6 py-3 rounded-xl font-bold text-sm bg-amber-500 text-slate-950 shadow-md flex items-center gap-2 transition">
+                <i class="fa-solid fa-file-pen"></i> 1. Isi Formulir Pendaftaran Baru
+            </button>
+            <button type="button" onclick="pindahTabPPDB('cek')" id="btn-tab-cek" class="px-6 py-3 rounded-xl font-bold text-sm bg-white text-slate-700 border border-slate-300 hover:bg-slate-50 flex items-center gap-2 transition">
+                <i class="fa-solid fa-magnifying-glass"></i> 2. Cek Status Pendaftaran (NISN / No. Reg)
+            </button>
         </div>
+
+        <!-- TAB 1: FORMULIR PENDAFTARAN -->
+        <div id="tab-ppdb-daftar" class="bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-slate-200">
+            <form id="formPPDBOnline" onsubmit="kirimPendaftaranPPDB(event)" class="space-y-5 text-xs sm:text-sm">
+                <div class="border-b pb-3">
+                    <h3 class="font-display font-bold text-lg text-slate-900">Biodata Calon Peserta Didik Baru</h3>
+                    <p class="text-xs text-slate-500">Pastikan NISN dan Nomor WhatsApp aktif untuk konfirmasi panitia PPDB.</p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Nama Lengkap (Sesuai Ijazah/KK) *</label>
+                        <input type="text" id="ppdb-nama" required placeholder="Contoh: Muhammad Rizky" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">NISN (10 Digit) *</label>
+                        <input type="text" id="ppdb-nisn" required placeholder="Contoh: 0091234567" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 font-mono focus:ring-2 focus:ring-blue-600 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Asal Sekolah (SMP / MTs) *</label>
+                        <input type="text" id="ppdb-smp" required placeholder="Contoh: SMP Negeri 1 Kota Maba" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Jalur Pendaftaran *</label>
+                        <select id="ppdb-jalur" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:outline-none">
+                            <option value="Reguler / Umum">Reguler / Umum</option>
+                            <option value="Afirmasi (KIP / PKH)">Afirmasi (KIP / PKH)</option>
+                            <option value="Prestasi Akademik / Non-Akademik">Prestasi Akademik / Non-Akademik</option>
+                            <option value="Perpindahan Tugas Orang Tua">Perpindahan Tugas Orang Tua</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Pilihan Kompetensi Keahlian 1 *</label>
+                        <select id="ppdb-jur1" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 font-semibold text-blue-900 focus:ring-2 focus:ring-blue-600 focus:outline-none">
+                            <option value="Teknik Jaringan Komputer & Telekomunikasi (TJKT)">Teknik Jaringan Komputer & Telekomunikasi (TJKT)</option>
+                            <option value="Teknik Instalasi Tenaga Listrik (TITL)">Teknik Instalasi Tenaga Listrik (TITL)</option>
+                            <option value="Teknik Konstruksi dan Perumahan (TKP)">Teknik Konstruksi dan Perumahan (TKP)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Pilihan Kompetensi Keahlian 2 *</label>
+                        <select id="ppdb-jur2" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:outline-none">
+                            <option value="Teknik Instalasi Tenaga Listrik (TITL)">Teknik Instalasi Tenaga Listrik (TITL)</option>
+                            <option value="Teknik Konstruksi dan Perumahan (TKP)">Teknik Konstruksi dan Perumahan (TKP)</option>
+                            <option value="Teknik Jaringan Komputer & Telekomunikasi (TJKT)">Teknik Jaringan Komputer & Telekomunikasi (TJKT)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Nomor WhatsApp Siswa / Orang Tua *</label>
+                        <input type="text" id="ppdb-wa" required placeholder="Contoh: 085311884115" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Alamat Domisili (Desa / Kecamatan) *</label>
+                        <input type="text" id="ppdb-alamat" required placeholder="Contoh: Desa Soa Gimalaha, Kec. Kota Maba" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:outline-none">
+                    </div>
+                </div>
+
+                <div class="pt-3">
+                    <button type="submit" id="btn-kirim-ppdb" class="w-full py-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-display font-bold text-sm shadow-lg shadow-blue-600/25 transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>Kirim Formulir Pendaftaran PPDB</span>
+                    </button>
+                </div>
+            </form>
+
+            <!-- BUKTI REGISTRASI OTOMATIS -->
+            <div id="bukti-ppdb-box" class="hidden mt-8 p-6 rounded-2xl bg-emerald-50 border-2 border-emerald-400 space-y-3">
+                <div class="flex items-center gap-3 text-emerald-800">
+                    <i class="fa-solid fa-circle-check text-2xl"></i>
+                    <div>
+                        <h4 class="font-display font-bold text-lg">Pendaftaran Berhasil Tercatat!</h4>
+                        <p class="text-xs">Simpan Nomor Registrasi di bawah ini untuk pengecekan berkas & daftar ulang.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-emerald-200 grid sm:grid-cols-2 gap-2 text-xs">
+                    <div><span class="text-slate-500">Nomor Registrasi:</span> <strong id="res-noreg" class="font-mono text-blue-700 text-sm"></strong></div>
+                    <div><span class="text-slate-500">Nama Calon Siswa:</span> <strong id="res-nama"></strong></div>
+                    <div><span class="text-slate-500">NISN:</span> <strong id="res-nisn" class="font-mono"></strong></div>
+                    <div><span class="text-slate-500">Jurusan Pilihan 1:</span> <strong id="res-jur1" class="text-emerald-700"></strong></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 2: CEK STATUS PENDAFTARAN -->
+        <div id="tab-ppdb-cek" class="hidden bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-slate-200">
+            <div class="max-w-xl mx-auto text-center space-y-3 mb-6">
+                <h3 class="font-display font-bold text-xl text-slate-900">Cek Status Verifikasi & Kelulusan PPDB</h3>
+                <p class="text-xs text-slate-500">Masukkan <strong>NISN</strong> atau <strong>Nomor Registrasi</strong> yang diperoleh saat mendaftar.</p>
+                <div class="flex gap-2 pt-2">
+                    <input type="text" id="input-cari-ppdb" placeholder="Ketik NISN atau PPDB-SMKN1MABA-..." class="flex-1 px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 font-mono text-sm">
+                    <button type="button" onclick="cariDataPPDB()" class="px-6 py-3 rounded-xl bg-slate-900 hover:bg-blue-700 text-white font-bold text-sm transition">Cari</button>
+                </div>
+            </div>
+            <div id="hasil-cari-ppdb" class="max-w-2xl mx-auto"></div>
+        </div>
+
     </main>
 
     <footer class="bg-slate-950 text-slate-400 py-6 text-center text-xs border-t border-slate-800">
-        © 2026 Portal PPDB Online SMK Negeri 1 Halmahera Timur (SMKN 1 Maba) • NPSN: 60200659.
+        © 2026 Panitia PPDB SMK Negeri 1 Halmahera Timur (SMKN 1 Maba) • NPSN: 60200659.
     </footer>
 
-    <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 max-w-sm w-full pointer-events-none"></div>
-
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbwhUbhWj22lw9Es8fbmUW7aClo8-2z3peG5UJjqzxF6YqwcH49xQxS33Pj8MjQG73jj/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyXkHqnak6LlB8_jhXiqvSOziRS4fXgI5XCig40dgEULkGzwhuGuUzxE-8Tz4BqYJ2U/exec';
+        let daftarPPDBCache = [];
 
-        fetch(scriptURL).then(r => r.json()).then(d => {
-            if (d.status === 'success' && d.profil && d.profil.logoWeb) {
-                document.querySelectorAll('.site-logo').forEach(el => el.src = d.profil.logoWeb);
+        function fixImgUrl(rawUrl, fallbackText = 'SMKN+1', customFallback = '') {
+            const fallback = customFallback || `https://placehold.co/120x120/1e3a8a/fbbf24?text=${encodeURIComponent(fallbackText)}`;
+            if (!rawUrl) return fallback;
+            let url = String(rawUrl).trim();
+            if (!url) return fallback;
+            if (url.includes('drive.google.com')) {
+                const matchId = url.match(/\/d\/([a-zA-Z0-9_-]+)/) || url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+                if (matchId && matchId[1]) return `https://lh3.googleusercontent.com/d/${matchId[1]}`;
             }
-        }).catch(() => {});
-
-        function showToast(title, message) {
-            const container = document.getElementById('toast-container');
-            const toast = document.createElement('div');
-            toast.className = 'pointer-events-auto p-4 rounded-2xl shadow-2xl border-l-4 bg-slate-900 border-emerald-500 text-white text-xs';
-            toast.innerHTML = `<div class="font-bold text-sm">${title}</div><div class="text-slate-300 mt-0.5">${message}</div>`;
-            container.appendChild(toast);
-            setTimeout(() => toast.remove(), 4500);
+            return url;
         }
 
-        function handlePPDBSubmit(e) {
+        function pindahTabPPDB(tab) {
+            document.getElementById('tab-ppdb-daftar').classList.toggle('hidden', tab !== 'daftar');
+            document.getElementById('tab-ppdb-cek').classList.toggle('hidden', tab !== 'cek');
+
+            document.getElementById('btn-tab-daftar').className = tab === 'daftar'
+                ? 'px-6 py-3 rounded-xl font-bold text-sm bg-amber-500 text-slate-950 shadow-md flex items-center gap-2 transition'
+                : 'px-6 py-3 rounded-xl font-bold text-sm bg-white text-slate-700 border border-slate-300 hover:bg-slate-50 flex items-center gap-2 transition';
+            document.getElementById('btn-tab-cek').className = tab === 'cek'
+                ? 'px-6 py-3 rounded-xl font-bold text-sm bg-amber-500 text-slate-950 shadow-md flex items-center gap-2 transition'
+                : 'px-6 py-3 rounded-xl font-bold text-sm bg-white text-slate-700 border border-slate-300 hover:bg-slate-50 flex items-center gap-2 transition';
+
+            if (tab === 'cek' && daftarPPDBCache.length === 0) muatDataPPDB();
+        }
+
+        function muatDataPPDB() {
+            fetch(scriptURL)
+                .then(r => r.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        if (data.profil && data.profil.logoWeb) {
+                            document.querySelectorAll('.site-logo').forEach(el => el.src = fixImgUrl(data.profil.logoWeb, 'SMKN 1', 'logo.jpg'));
+                        }
+                        if (Array.isArray(data.ppdbList)) {
+                            daftarPPDBCache = data.ppdbList;
+                        }
+                    }
+                })
+                .catch(() => {});
+        }
+
+        function kirimPendaftaranPPDB(e) {
             e.preventDefault();
-            const btn = document.getElementById('btn-submit-ppdb');
+            const btn = document.getElementById('btn-kirim-ppdb');
             const orig = btn.innerHTML;
             btn.disabled = true;
-            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Menyimpan Data ke Google Sheets...';
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Mengirim Data ke Panitia PPDB...';
 
+            const noReg = 'PPDB-SMKN1MABA-' + Math.floor(1000 + Math.random() * 9000);
             const payload = {
                 action: 'addPPDB',
-                noReg: 'PPDB-SMKN1MABA-' + Math.floor(1000 + Math.random() * 9000),
+                noReg: noReg,
                 nama: document.getElementById('ppdb-nama').value.trim(),
                 nisn: document.getElementById('ppdb-nisn').value.trim(),
                 smp: document.getElementById('ppdb-smp').value.trim(),
                 jalur: document.getElementById('ppdb-jalur').value,
-                jurusan1: document.getElementById('ppdb-jurusan1').value,
-                jurusan2: document.getElementById('ppdb-jurusan2').value,
+                jurusan1: document.getElementById('ppdb-jur1').value,
+                jurusan2: document.getElementById('ppdb-jur2').value,
                 wa: document.getElementById('ppdb-wa').value.trim(),
                 alamat: document.getElementById('ppdb-alamat').value.trim()
             };
 
             fetch(scriptURL, { method: 'POST', body: JSON.stringify(payload) })
-                .then(res => res.json())
+                .then(r => r.json())
                 .then(() => {
-                    document.getElementById('rec-noreg').textContent = payload.noReg;
-                    document.getElementById('rec-nama').textContent = payload.nama;
-                    document.getElementById('rec-nisn').textContent = `${payload.nisn} (${payload.smp})`;
-                    document.getElementById('rec-jalur').textContent = payload.jalur;
-                    document.getElementById('rec-jurusan1').textContent = payload.jurusan1;
-                    document.getElementById('rec-jurusan2').textContent = payload.jurusan2;
-
-                    const pill = document.getElementById('ppdb-status-pill');
-                    pill.textContent = 'Tersimpan di Database';
-                    pill.className = 'text-[11px] px-2.5 py-0.5 rounded-full bg-emerald-500 text-slate-950 font-bold';
-
-                    showToast('Pendaftaran Berhasil!', `Data PPDB atas nama ${payload.nama} (${payload.noReg}) telah masuk ke Google Sheets.`);
+                    document.getElementById('res-noreg').textContent = payload.noReg;
+                    document.getElementById('res-nama').textContent = payload.nama;
+                    document.getElementById('res-nisn').textContent = payload.nisn;
+                    document.getElementById('res-jur1').textContent = payload.jurusan1;
+                    document.getElementById('bukti-ppdb-box').classList.remove('hidden');
+                    daftarPPDBCache.push({ ...payload, status: 'Terdaftar Sementara' });
+                    e.target.reset();
                 })
-                .catch(() => {
-                    showToast('Koneksi Terhambat', 'Silakan periksa koneksi internet Anda dan coba kembali.');
-                })
+                .catch(() => alert('Gagal mengirim pendaftaran. Periksa koneksi internet Anda.'))
                 .finally(() => {
                     btn.disabled = false;
                     btn.innerHTML = orig;
                 });
         }
 
-        function cekStatusPPDB() {
-            const nisn = document.getElementById('cek-ppdb-nisn').value.trim();
-            const box = document.getElementById('hasil-cek-ppdb');
-            if (!nisn) {
-                box.innerHTML = '<p class="text-amber-600 font-semibold">Silakan masukkan 10 digit NISN terlebih dahulu.</p>';
+        function cariDataPPDB() {
+            const q = document.getElementById('input-cari-ppdb').value.trim().toLowerCase();
+            const box = document.getElementById('hasil-cari-ppdb');
+            if (!q) return;
+
+            const found = daftarPPDBCache.find(i =>
+                String(i.nisn || '').toLowerCase() === q ||
+                String(i.noReg || '').toLowerCase() === q
+            );
+
+            if (!found) {
+                box.innerHTML = `<div class="p-4 rounded-2xl bg-amber-50 border border-amber-200 text-amber-800 text-xs font-semibold text-center">Data dengan NISN / Nomor Registrasi tersebut belum ditemukan.</div>`;
                 return;
             }
-            box.innerHTML = '<p class="text-slate-500"><i class="fa-solid fa-spinner fa-spin mr-1"></i> Memeriksa database Google Sheets...</p>';
 
-            fetch(scriptURL).then(r => r.json()).then(data => {
-                const list = data.ppdbList || [];
-                const found = list.find(item => String(item.nisn).replace(/^'/, '').trim() === nisn);
-                if (found) {
-                    box.innerHTML = `
-                        <div class="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 space-y-1">
-                            <div class="font-bold">${found.nama} (${found.noReg})</div>
-                            <div>Jurusan Pilihan 1: <strong>${found.jurusan1}</strong></div>
-                            <div>Status Seleksi: <span class="px-2 py-0.5 rounded bg-emerald-600 text-white font-bold">${found.status}</span></div>
-                        </div>`;
-                } else {
-                    box.innerHTML = '<div class="p-3 rounded-xl bg-amber-50 border border-amber-200 text-amber-800 font-semibold">NISN belum terdaftar di database PPDB. Silakan isi formulir di samping.</div>';
-                }
-            });
+            box.innerHTML = `
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3 text-xs">
+                    <div class="flex flex-wrap justify-between items-center border-b pb-3 gap-2">
+                        <div>
+                            <span class="font-mono font-bold text-blue-700">${found.noReg}</span>
+                            <h4 class="font-display font-bold text-lg text-slate-900">${found.nama}</h4>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 font-bold">${found.status || 'Terdaftar Sementara'}</span>
+                    </div>
+                    <div class="grid sm:grid-cols-2 gap-2">
+                        <div><span class="text-slate-500">NISN:</span> <strong class="font-mono">${found.nisn}</strong></div>
+                        <div><span class="text-slate-500">Asal Sekolah:</span> <strong>${found.smp}</strong></div>
+                        <div><span class="text-slate-500">Pilihan 1:</span> <strong class="text-blue-800">${found.jurusan1}</strong></div>
+                        <div><span class="text-slate-500">Pilihan 2:</span> <strong>${found.jurusan2}</strong></div>
+                    </div>
+                </div>`;
         }
+
+        window.onload = muatDataPPDB;
     </script>
 </body>
 </html>
